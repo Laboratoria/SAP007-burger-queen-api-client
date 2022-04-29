@@ -7,7 +7,8 @@
 * [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
 * [4. Considerações gerais](#4-considerações-gerais)
 * [5. Critérios de aceitação mínimos do projeto](#5-critérios-de-aceitação-mínimos-do-projeto)
-* [6. Pistas, tips e leituras complementares](#6-pistas-tips-e-leituras-complementares)
+* [6. Hacker Edition](#6-hacker-edition)
+* [7. Pistas, tips e leituras complementares](#7-pistas-tips-e-leituras-complementares)
 
 ***
 
@@ -446,7 +447,12 @@ rapidamente aos clientes.
 
 ***
 
-## 6. Pistas, tips e leituras complementares
+## 6. Hacker Edition
+
+As seções chamadas Hacker Edition são opcionais. Se você terminou tudo e ainda sobrou tempo, faça essa parte. Assim você poderá aprofundar e exercitar mais sobre os objetivos de aprendizagem do projeto.
+
+A aplicação deve seguir 80% ou mais das pontuações de Performance, Progressive
+Web App, Accessibility e Best Practices do Lighthouse.
 
 ### Frameworks / bibliotecas
 
