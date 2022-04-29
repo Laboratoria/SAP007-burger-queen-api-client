@@ -6,7 +6,7 @@
 * [2. Resumo do projeto](#2-resumo-do-projeto)
 * [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
 * [4. Considerações gerais](#4-considerações-gerais)
-* [5. Critérios de aceitação mínimos do projeto](#5-critérios-de-aceitação-mínimos-do-projeto)
+* [5. Critérios de aceitação mínimos do projeto](#5-critérios-mínimos-de-aceitação-do-projeto)
 * [6. Hacker Edition](#6-hacker-edition)
 * [7. Pistas, tips e leituras complementares](#7-pistas-tips-e-leituras-complementares)
 
@@ -454,6 +454,7 @@ As seções chamadas Hacker Edition são opcionais. Se você terminou tudo e ain
 A aplicação deve seguir 80% ou mais das pontuações de Performance, Progressive
 Web App, Accessibility e Best Practices do Lighthouse.
 
+## 7. Pistas, tips e leituras complementares
 ### Frameworks / bibliotecas
 
 * [React](https://reactjs.org/)
