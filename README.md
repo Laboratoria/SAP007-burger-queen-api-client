@@ -21,8 +21,8 @@ Este projeto tem duas áreas: interface (cliente) e API (servidor). Nosso
 cliente nos pediu para desenvolver uma interface que se integre com a API
 que outra equipe de desenvolvedoras está trabalhando simultaneamente.
 
-[React](https://reactjs.org/) e [Angular](https://angular.io/)
-são alguns dos _frameworks_ e _bibliotecas_ de JavaScript mais usados
+[React](https://reactjs.org/)
+é um dos _frameworks_ e _bibliotecas_ de JavaScript mais usados
 na área de desenvolvimento ao redor do mundo e existe uma razão para isso.
 No contexto do navegador, [_manter a interface sincronizada com o estado é
 difícil_](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445).
@@ -82,6 +82,10 @@ Estas são as informações que temos do cliente:
 >|Bebida gaseificada 500ml   |     7|
 >|Bebida gaseificada 750ml   |    10|
 >
+> **Importante:** Os clientes podem escolher entre hambúrgueres de carne bovina,
+> frango ou vegetariano. Além disso, por um adicional de R\$ 1,00 , eles podem
+> adicionar queijo **ou** ovo.
+>
 >Nossos clientes são bastante indecisos, por isso é muito comum que eles mudem o
 >seu pedido várias vezes antes de finalizar.
 
@@ -91,7 +95,7 @@ adicionar e a interface deve mostrar o _resumo do pedido_ com o custo total.
 
 ![out](https://user-images.githubusercontent.com/110297/45984241-b8b51c00-c025-11e8-8fa4-a390016bee9d.gif)
 
-Além disso a cliente nos deu um [link da documentação](https://laboratoria.github.io/burger-queen-api/)
+Além disso a cliente nos deu um [link da documentação](https://lab-api-bq.herokuapp.com/api-docs/)
 que especifica o comportamento esperado da API que iremos expor por HTTP.
 Lá podemos encontrar todos os detalhes dos _endpoints_, como por exemplo
 que parâmetros esperam, o que devem responder, etc.
@@ -114,7 +118,7 @@ Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projet
 
   <details><summary>Links</summary><p>
 
-  * [HTML semántico](https://curriculum.laboratoria.la/pt/topics/html/02-html5/02-semantic-html)
+  * [HTML semântico](https://curriculum.laboratoria.la/pt/topics/html/02-html5/02-semantic-html)
   * [Semantics in HTML - MDN](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
 </p></details>
 
@@ -125,7 +129,7 @@ Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projet
   <details><summary>Links</summary><p>
 
   * [Intro a CSS](https://curriculum.laboratoria.la/pt/topics/css/01-css/01-intro-css)
-  * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
+  * [CSS Selectors - MDN](https://developer.mozilla.org//pt-BR/docs/Web/CSS/CSS_Selectors)
 </p></details>
 
 - [ ] **Empregar o modelo de caixa (box model): borda, margem, preenchimento**
@@ -160,7 +164,7 @@ Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projet
 
   <details><summary>Links</summary><p>
 
-  * [CSS media queries - MDN](https://developer.mozilla.org/es/docs/CSS/Media_queries)
+  * [CSS media queries - MDN](https://developer.mozilla.org/pt-BR/docs/web/css/media_queries/using_media_queries)
 </p></details>
 
 ### JavaScript
@@ -272,24 +276,6 @@ Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projet
   * [Cross-Origin Resource Sharing (CORS) - MDN](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/CORS)
 </p></details>
 
-### angular
-
-- [ ] **components-and-templates**
-
-- [ ] **structural-directives**
-
-- [ ] **input-output**
-
-- [ ] **services**
-
-- [ ] **routing**
-
-- [ ] **observables**
-
-- [ ] **http-client**
-
-- [ ] **styles**
-
 ### react
 
 - [ ] **jsx**
@@ -310,28 +296,6 @@ Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projet
 
 - [ ] **routing**
 
-### vue
-
-- [ ] **instance**
-
-- [ ] **data-and-methods**
-
-- [ ] **components**
-
-- [ ] **props**
-
-- [ ] **directives**
-
-- [ ] **iteration**
-
-- [ ] **events**
-
-- [ ] **computed-props-and-observers**
-
-- [ ] **routing**
-
-- [ ] **classes-and-styles**
-
 ### user-centricity
 
 - [ ] **Desenhar a aplicação pensando e entendendo a usuária**
@@ -348,11 +312,8 @@ Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projet
 
 ## 4. Considerações gerais
 
-Este projeto deve ser feito em pares. Lembre-se que deverá consumir uma
-API que suas companheiras desenvolverão, entretanto, não deve esperar que esta API
-esteja terminada para começar a codar. Pode utilizar ferramentas
-como [nock](https://github.com/nock/nock), [json-server](https://www.npmjs.com/package/json-server)
-ou [mockoon](https://mockoon.com) para mockar a API.
+Este projeto deve ser feito em pares. Lembre-se que deverá consumir a
+API [Burger Queen API](https://lab-api-bq.herokuapp.com/api-docs/).
 
 Trabalhe integralmente uma história de usuário antes de passar para a próxima.
 Cumpra todas as histórias possíveis dentro do tempo especificado.
@@ -360,8 +321,7 @@ Cumpra todas as histórias possíveis dentro do tempo especificado.
 A lógica do projeto deve ser totalmente implementada em JavaScript (ES6 +), HTML
 e CSS e empacotada de forma automatizada.
 
-Neste projeto você deve usar [React](https://reactjs.org/) ou
-[Angular](https://angular.io/)).
+Neste projeto você deve usar [React](https://reactjs.org/).
 
 O aplicativo deve ser um _Single Page App_. Os pedidos serão enviados por meio
 de um _tablet_, mas **não queremos um aplicativo nativo**, mas sim um aplicativo
@@ -369,9 +329,6 @@ Web que seja **mobile-first**.
 
 Precisamos pensar bem sobre o UX para aqueles que vão receber os pedidos, o
 tamanho e a aparência dos botões, a visibilidade do estado atual do pedido, etc.
-
-A aplicação deve seguir 80% ou mais das pontuações de Performance, Progressive
-Web App, Accessibility e Best Practices do Lighthouse.
 
 O aplicativo deve fazer uso de `npm-scripts` e ter scripts `start`, `test`,
 `build` e `deploy`, que são responsáveis por inicializar, rodar os testes,
@@ -489,66 +446,24 @@ rapidamente aos clientes.
 
 ***
 
-#### [Historia de usuário 5] Administrador(a) de loja deve administrar seus funcionários
-
-Eu como administrador(a) de loja quero gerenciar os usuários da
-plataforma para manter atualizado as informações de meus funcionários.
-
-##### Critérios de aceitação
-
-* Ver lista de funcionários.
-* Adicionar funcionários.
-* Excluir funcionários.
-* Atualizar dados dos funcionários.
-
-##### Definição de pronto
-
-* Você deve ter recebido _code review_ de pelo menos uma parceira.
-* Fez _testes_ unitários e, além disso, testou seu produto manualmente.
-* Você fez _testes_ de usabilidade e incorporou o _feedback_ do usuário.
-* Você deu deploy de seu aplicativo e marcou sua versão (tag git).
-
-***
-
-#### [História de usuário 6] Administrador(a) de loja deve administrar os produtos
-
-Eu como administrador(a) de loja quero gerenciar os produtos
-para manter atualizado o menu.
-
-##### Critérios de aceitação
-
-* Ver lista de produtos.
-* Adicionar produtos.
-* Excluir produtos.
-* Atualizar dados de produtos.
-
-##### Definição de pronto
-
-* Você deve ter recebido _code review_ de pelo menos uma parceira.
-* Fez _testes_ unitários e, além disso, testou seu produto manualmente.
-* Você fez _testes_ de usabilidade e incorporou o _feedback_ do usuário.
-* Você deu deploy de seu aplicativo e marcou sua versão (tag git).
-
-***
-
 ## 6. Pistas, tips e leituras complementares
 
 ### Frameworks / bibliotecas
 
 * [React](https://reactjs.org/)
-* [Angular](https://angular.io/)
+- [Configuração inicial (vídeo)](https://youtu.be/38iZjr-jH5E)
 
 ### ferramentas
 
 * [npm-scripts](https://docs.npmjs.com/misc/scripts)
 * [Babel](https://babeljs.io/)
 * [webpack](https://webpack.js.org/)
-* [json-server](https://www.npmjs.com/package/json-server)
-* [mockoon](https://mockoon.com)
-* [nock](https://github.com/nock/nock)
+
+### Rotas
+
+- [React Router](https://reactrouter.com/web/guides/quick-start)
 
 ### PWA
 
 * [Seu primeiro Progressive Web App - Google developers](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=es)
 * [Progressive Web Apps - codigofacilito.com](https://codigofacilito.com/articulos/progressive-apps)
-* [Usando Service Workers - MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Service_Worker_API/Using_Service_Workers)
