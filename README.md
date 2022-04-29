@@ -14,18 +14,11 @@
 
 ## 1. Prefácio
 
-Um pequeno restaurante de hambúrgueres, que está crescendo, necessita uma
-interface em que se possa realizar pedidos utilizando um _tablet_, e enviá-los
-para a cozinha para que sejam preparados de forma ordenada e eficiente.
-
-Este projeto tem duas áreas: interface (cliente) e API (servidor). Nosso
-cliente nos pediu para desenvolver uma interface que se integre com a API
-que outra equipe de desenvolvedoras está trabalhando simultaneamente.
-
-[React](https://reactjs.org/)
-é um dos _frameworks_ e _bibliotecas_ de JavaScript mais usados
-na área de desenvolvimento ao redor do mundo e existe uma razão para isso.
-No contexto do navegador, [_manter a interface sincronizada com o estado é
+[React](https://reactjs.org/), [Angular](https://angular.io/) e
+[Vue](https://vuejs.org/) são alguns dos _frameworks_ e _bibliotecas_ de
+JavaScript mais usados na área de desenvolvimento ao redor do mundo e existe uma
+razão para isso. No contexto do navegador, [_manter a interface sincronizada com
+o estado é
 difícil_](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445).
 Ao eleger um _framework_ ou _biblioteca_ para nossa interface, nos apoiamos em
 uma série de convenções e implementações _testadas_ e _documentadas_ para
@@ -44,11 +37,18 @@ você for trabalhar.
 
 ## 2. Resumo do projeto
 
+Um pequeno restaurante de hambúrgueres, que está crescendo, necessita uma
+interface em que se possa realizar pedidos utilizando um _tablet_, e enviá-los
+para a cozinha para que sejam preparados de forma ordenada e eficiente.
+
+![burger-queen](https://user-images.githubusercontent.com/110297/42118136-996b4a52-7bc6-11e8-8a03-ada078754715.jpg)
+
+Este projeto tem duas áreas: interface (cliente) e API (servidor). Nosso
+cliente nos pediu para desenvolver uma interface que se integre com a API.
+
 Desta vez temos um projeto 100% por demanda. Você sempre pode (e deve) fazer
 sugestões de melhora e mudança, mas muitas vezes trabalhará em um projeto em que
 primeiro deve se assegurar de cumprir os requisitos.
-
-![burger-queen](https://user-images.githubusercontent.com/110297/42118136-996b4a52-7bc6-11e8-8a03-ada078754715.jpg)
 
 Estas são as informações que temos do cliente:
 
@@ -102,7 +102,7 @@ Lá podemos encontrar todos os detalhes dos _endpoints_, como por exemplo
 que parâmetros esperam, o que devem responder, etc.
 
 O objetivo principal é aprender a construir uma _interface web_ usando o
-_framework_ escolhido (React ou Angular). Esses framework front-end ataca
+_framework_ React. Esses framework front-end ataca
 o seguinte problema: **como manter a interface e estado sincronizados**.
 Portanto, esta experiência espera familiarizá-la com o conceito de _estado da
 tela_, e como cada mudança no estado vai refletir na interface (por exemplo,
@@ -335,7 +335,7 @@ O aplicativo deve fazer uso de `npm-scripts` e ter scripts `start`, `test`,
 `build` e `deploy`, que são responsáveis por inicializar, rodar os testes,
 empacotar e fazer deploy do aplicativo, respectivamente.
 
-Os testes unitários devem cobrir um mínimo de 90% de _statements_, _functions_,
+Os testes unitários devem cobrir um mínimo de 70% de _statements_, _functions_,
 _lines_ e _branches_.
 
 Por outro lado, vocês devem definir a estrutura das pastas e arquivos que considerem
@@ -352,7 +352,7 @@ este _backlog_ que é o resultado do seu trabalho com o cliente até hoje.
 
 ***
 
-#### [Historia de usuario 1] Garçom/Garçonete deve poder entrar no sistema, caso o admin já lhe tenha dado as credenciais
+#### [História de usuário 1] Garçom/Garçonete deve poder entrar no sistema
 
 Eu, como garçom/garçonete quero entrar no sistema de pedidos.
 
@@ -426,7 +426,7 @@ está pronto para ser entregue ao cliente.
 
 ***
 
-#### [Historia de usuário 4] Garçom/Garçonete deve ver os pedidos prontos para servir
+#### [História de usuário 4] Garçom/Garçonete deve ver os pedidos prontos para servir
 
 Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá-los
 rapidamente aos clientes.
@@ -458,9 +458,11 @@ Web App, Accessibility e Best Practices do Lighthouse.
 ### Frameworks / bibliotecas
 
 * [React](https://reactjs.org/)
-- [Configuração inicial (vídeo)](https://youtu.be/38iZjr-jH5E)
+* [React beta - versão em construção usando Hooks ](https://beta.reactjs.org/)
+* [Create React App](https://create-react-app.dev/docs/getting-started)
+* [Configuração inicial (vídeo)](https://youtu.be/38iZjr-jH5E)
 
-### ferramentas
+### Ferramentas
 
 * [npm-scripts](https://docs.npmjs.com/misc/scripts)
 * [Babel](https://babeljs.io/)
@@ -474,3 +476,9 @@ Web App, Accessibility e Best Practices do Lighthouse.
 
 * [Seu primeiro Progressive Web App - Google developers](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=es)
 * [Progressive Web Apps - codigofacilito.com](https://codigofacilito.com/articulos/progressive-apps)
+
+### Deploy
+
+* Veja a documentação [de deploy do Create React App](https://create-react-app.dev/docs/deployment).
+Você pode utilizar qualquer um dos serviços listados na documentação,
+sendo recomendado o Firebase, Vercel, Netlify, Github Pages ou Heroku.
