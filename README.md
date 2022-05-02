@@ -452,9 +452,30 @@ rapidamente aos clientes.
 As seções chamadas Hacker Edition são opcionais. Se você terminou tudo e ainda sobrou tempo, faça essa parte. Assim você poderá aprofundar e exercitar mais sobre os objetivos de aprendizagem do projeto.
 
 A aplicação deve seguir 80% ou mais das pontuações de Performance, Progressive
-Web App, Accessibility e Best Practices do Lighthouse.
+Web App, Accessibility e Best Practices do [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 
 ## 7. Pistas, tips e leituras complementares
+### Primeiros passos
+
+1. Faça um _fork_ deste repositório (no GitHub).
+
+2. Clone seu _fork_ no seu computador:
+
+   ```sh
+   git clone git@github.com:<tu-usuario-de-github>/<cohortid>-burger-queen.git
+   cd <cohortid>-burger-queen
+   ```
+
+3. Crie uma branch a partir da `main` para começar a trabalhar. Por exemplo:
+
+   ```sh
+   git checkout -b develop
+   ```
+
+4. Veja o video de configuração inicial para você poder começar com o _front-end_ :wink:. 
+
+***
+
 ### Frameworks / bibliotecas
 
 * [React](https://reactjs.org/)
@@ -470,7 +491,7 @@ Web App, Accessibility e Best Practices do Lighthouse.
 
 ### Rotas
 
-- [React Router](https://reactrouter.com/web/guides/quick-start)
+* [React Router](https://reactrouter.com/web/guides/quick-start)
 
 ### PWA
 
