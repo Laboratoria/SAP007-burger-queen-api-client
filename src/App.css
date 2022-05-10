@@ -1,0 +1,24 @@
+body{
+    background-color: #FFECDC;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 15vmin;
+    pointer-events: none;
+    margin-top: 40px;
+}
+  
+.App-header {
+    min-height: 100vh;
+    color: #400101;
+}
+  
+.App-header p{
+    font-weight: bolder;
+    font-size: 30px;
+}
