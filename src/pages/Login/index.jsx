@@ -1,18 +1,28 @@
 import { useState } from "react";
+import { Input } from "../../components/Input";
 import { Layout } from "../../components/Layout";
 
 
 export const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [name, setName] = useState("");
+    // const [name, setName] = useState(""); 
     
     return (
     <Layout>
-      <input
-        type="text" placeholder="Digite seu email"
+      <Input
+      placeholder= "Digite seu email"
+      type= "email"
+      value= {email}
+      onChange={(e) => setEmail(e.target.value)}
       />
-                
+      <Input
+      placeholder= "*******"
+      type= "password"
+      value= {password}
+      onChange={(e) => setPassword(e.target.value)}
+      />
+      
     </Layout>
    ); 
 
