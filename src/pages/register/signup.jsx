@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// template TESTE 
+// refazer essa template string, importando o input e button dos componentes react
+
 const SignUp = () => {
   const history = useNavigate();
 
