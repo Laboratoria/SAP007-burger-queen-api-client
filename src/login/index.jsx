@@ -1,7 +1,7 @@
-import logo from './logo_bq.png';
-import './App.css';
+import logo from'../img/logo_bq.png'
+import './style.css'
 
-function App() {
+function Login() {
   return (
     <div className="App">
       <header className="App-header">
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
