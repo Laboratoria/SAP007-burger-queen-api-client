@@ -1,4 +1,4 @@
-import logo from './logo_bq.png';
+import logo from'../img/logo_bq.png'
 import './style.css'
 
 function Login() {
