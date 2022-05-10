@@ -1,10 +1,16 @@
+import logo from './logo_bq.png';
 import './style.css'
 
 function Login() {
   return (
-    <header>
-      <h1>Burger Queen Service</h1>
-    </header>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          SERVICE SYSTEM
+        </p>
+      </header>
+    </div>
   );
 }
 
