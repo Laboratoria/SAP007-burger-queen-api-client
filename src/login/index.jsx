@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from'../img/logo_bq.png';
 import './login.css';
+import '../App.css'
 import Input from './input';
 import Button from './button';
 import Footer from './footer';
