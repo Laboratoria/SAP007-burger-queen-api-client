@@ -1,0 +1,15 @@
+.selectLogin{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    border-color: #400101;
+    color: #400101;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    outline: 0;
+    font-weight: lighter;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

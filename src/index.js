@@ -1,8 +1,8 @@
 import React from 'react';
 //import ReactDOM from 'react-dom/client';
 import ReactDom from 'react-dom'
-import Login from './login';
-import Oi from './waiter';
+import Login from './Login';
+// import Oi from './waiter';
 
 /*const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +15,7 @@ root.render(
 ReactDom.render(
   <>
     <Login/>
-    <Oi/>
+    {/* <Oi/> */}
   </>,
   document.getElementById('root')
 )

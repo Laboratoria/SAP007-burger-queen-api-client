@@ -10,7 +10,7 @@ body{
 .App-logo {
     height: 15vmin;
     pointer-events: none;
-    margin-top: 40px;
+    margin-top: 60px;
 }
   
 .App-header {
@@ -19,6 +19,5 @@ body{
 }
   
 .App-header p{
-    font-weight: bolder;
     font-size: 30px;
 }

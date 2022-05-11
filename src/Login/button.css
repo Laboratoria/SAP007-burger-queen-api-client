@@ -1,0 +1,12 @@
+.buttonLogin {
+    margin-top: 20px;
+    background-color: #D97904;
+    border-style: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #FFECDC;
+    cursor: pointer;
+}
