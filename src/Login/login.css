@@ -26,6 +26,40 @@ body{
 }
 
 .infoLogin{
-    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
     margin-bottom: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.infoLogin h1{
+    padding-bottom: 5px;
+}
+
+.formLogin{
+    width: 300px;
+    margin: 0 auto;
+}
+
+.ph-spinner{
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.msgError{
+    margin-top: 20px;
+    color: red;
+    font-size: 20px;
+}
+
+.msgSucesso{
+    margin-top: 20px;
+    color: green;
+    font-size: 20px;
+    word-wrap: break-word;
+    width: 500px;
+    margin: 0 auto;
 }

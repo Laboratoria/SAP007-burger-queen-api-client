@@ -1,6 +1,17 @@
+.inputLoginContainer {
+    position: relative;
+    width: 100%;
+}
+
+.inputLoginIcon {
+    position: absolute;
+    top: 10px;
+    left: 6px;
+}
+
 .inputLogin{
-    width: 270px;
-    height: 30px;
+    width: 100%;
+    height: 40px;
     font-size: 15px;
     border-color: #400101;
     border: solid 1px;
@@ -8,7 +19,7 @@
     border-radius: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     outline: 0;
-    margin-bottom: 30px;
+    padding-left: 35px;
 }
 
 .ph-envelope, .ph-lock-key{

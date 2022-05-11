@@ -1,10 +1,10 @@
 .buttonLogin {
-    margin-top: 20px;
+    margin-top: 45px;
     background-color: #D97904;
     border-style: none;
     border-radius: 5px;
-    height: 40px;
-    width: 300px;
+    height: 50px;
+    width: 100%;
     font-size: 20px;
     font-weight: bolder;
     color: #FFECDC;

@@ -1,11 +1,14 @@
 footer{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
 }
 
 footer p{
     margin: 0;
     padding: 2px;
     font-weight: lighter;
+    text-align: center;
+    font-size: 15px;
 }
