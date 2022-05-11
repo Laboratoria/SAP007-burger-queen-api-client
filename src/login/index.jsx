@@ -21,6 +21,7 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    //Dados de login: email: engamandagusmao@gmail.com /senha: bq123456 /role: waiter
     try {
       const resultadoApi = await fetch('https://lab-api-bq.herokuapp.com/auth', {
         method: 'POST',
