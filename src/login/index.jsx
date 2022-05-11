@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import logo from'../img/logo_bq.png';
+import logo from'../Img/logo_bq.png';
 import './login.css';
-import '../App.css'
+import '../Style.css'
 import Input from './input';
 import Button from './button';
 import Footer from './footer';
@@ -59,7 +59,7 @@ const Login = () => {
         </p>
 
         {Boolean(loading) && (
-          <i class="ph-spinner">Carregando</i>
+          <i className="ph-spinner">Carregando</i>
         )}
 
         {Boolean(error) && (

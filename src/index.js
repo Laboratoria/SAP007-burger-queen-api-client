@@ -2,7 +2,7 @@ import React from 'react';
 //import ReactDOM from 'react-dom/client';
 import ReactDom from 'react-dom'
 import Login from './Login';
-import './App.css'
+import './Style.css'
 // import Oi from './waiter';
 
 /*const root = ReactDOM.createRoot(document.getElementById('root'));
