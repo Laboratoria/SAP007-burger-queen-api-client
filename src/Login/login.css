@@ -51,13 +51,13 @@ body{
 
 .msgError{
     margin-top: 20px;
-    color: red;
+    color: #D90B1C;
     font-size: 20px;
 }
 
 .msgSucesso{
     margin-top: 20px;
-    color: green;
+    color:#7B9A3B;
     font-size: 20px;
     word-wrap: break-word;
     width: 500px;
