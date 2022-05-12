@@ -1,8 +1,10 @@
+import Login from './pages/login/login.js';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <h1>Tá Chovendo Hambúrguer</h1>
+      <Login/>
     </div>
   );
 }
