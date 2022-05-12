@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from'../Img/logo_bq.png';
+import logo from'../img/logo_bq.png';
 import './login.css';
 import '../Style.css'
 import Input from './input';
