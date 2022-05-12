@@ -1,4 +1,4 @@
-import { Login } from "./pages/Login";
+import { RoutesBurger } from "./routes";
 
 function App() {
   return (
@@ -10,9 +10,9 @@ function App() {
           </p>
         
         </header>
-        <Login />
+    
       </div>
-      
+      <RoutesBurger/>
     </>
   );
 }
