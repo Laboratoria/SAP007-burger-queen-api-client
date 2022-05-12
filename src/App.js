@@ -1,9 +1,12 @@
+import { Footer } from "./components/Footer.js"
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <h1>Burger</h1>
+      < Footer />
     </div>
-  );
+  )
 }
 
 export default App;
