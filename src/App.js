@@ -1,10 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
+import InputEmail from "./components/InputEmail";
+import InputPassword from "./components/InputPassword";
+import Button from "./components/Button";
+import Footer from "./components/Footer"
+
+
 
 function App() {
   return (
     <div className="App">
-      <h1>HelloWorld</h1>
+      <InputEmail/>
+      <InputPassword />
+      <Button />
+      <a href='#register' className='Hiperlink'>Cadastre-se</a>
+      <Footer/>
     </div>
   );
 }
