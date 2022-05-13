@@ -27,7 +27,7 @@ const SignUp = () => {
         <input className='form-input' type='password' placeholder='Confirme sua senha' name='confirmPassword' />
         <span className='errors-message'>
         </span>
-        <button className='form-button draw' type='submit' onClick={() => { history('/login') }}>Cadastrar</button>  
+        <button className='form-button' type='submit' onClick={() => { history('/login') }}>Cadastrar</button>  
       </section>
     </div>
   );
