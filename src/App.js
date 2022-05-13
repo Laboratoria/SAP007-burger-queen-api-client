@@ -1,8 +1,9 @@
+import Login from './pages/Login/index.js';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <Login/>
     </div>
   );
 }

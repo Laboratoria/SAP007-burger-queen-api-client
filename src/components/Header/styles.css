@@ -1,0 +1,8 @@
+.container-logotype{
+    display: flex;
+    justify-content: center;
+}
+.container-logotype img {
+    width: 14%;
+    margin-top: 2%;
+}
