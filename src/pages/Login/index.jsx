@@ -24,7 +24,7 @@ export const Login = () => {
       onChange={(e) => setPassword(e.target.value)}
       />
       <Button
-      className="botaozinho"
+      className="button"
       btnText="clique"
       />
     </Layout>
