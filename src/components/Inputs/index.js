@@ -1,3 +1,5 @@
+import "./styles.css";
+
 function Input({
     className, type, placeholder, onChange, value, name}){
     return (

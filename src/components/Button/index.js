@@ -1,3 +1,5 @@
+import "./styles.css";
+
 function Button({
     className, type, onClick,nome
 }){
