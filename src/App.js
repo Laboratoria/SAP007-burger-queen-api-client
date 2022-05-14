@@ -1,10 +1,12 @@
 import './App.css';
+import InputsLogin from './components/InputsLogin';
 
 function App() {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <>
+      <h1>BURGUER QUEEN</h1>    
+      <InputsLogin />
+    </>
   );
 }
 
