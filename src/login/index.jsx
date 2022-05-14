@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from'../img/logo_bq.png';
 import './login.css';
 import '../Style.css'
@@ -9,14 +10,13 @@ import Footer from './footer';
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [sucesso, setSucesso] = useState(false);
+  const navigate = useNavigate();
 
   const onLogin = async (e) => {
     e.preventDefault();
 
     setLoading(true);
     setError(false);
-    setSucesso(false);
 
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -40,7 +40,15 @@ const Login = () => {
       if (resultadoApi.status !== 200) {
         setError(conteudo.message);
       } else {
-        setSucesso(JSON.stringify(conteudo));
+        if (conteudo.role === 'waiter'){
+          navigate('/waiter');
+        } else if (conteudo.role === 'chef'){
+          navigate('/chef');
+        } else if (conteudo.role === 'admin'){
+          navigate('/admin');;
+        } else {
+          navigate('/not-found');;
+        }
       }
       
       console.log(conteudo);
@@ -66,9 +74,9 @@ const Login = () => {
           <h1 className="msgError">{error}</h1>
         )}
 
-        {Boolean(sucesso) && (
+        {/* {Boolean(sucesso) && (
           <h1 className="msgSucesso">{sucesso}</h1>
-        )}
+        )} */}
 
         <form className="formLogin" onSubmit={onLogin}>
           <div className="infoLogin">

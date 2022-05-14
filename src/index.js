@@ -1,22 +1,11 @@
 import React from 'react';
-//import ReactDOM from 'react-dom/client';
-import ReactDom from 'react-dom'
-import Login from './Login';
+import ReactDom from 'react-dom/client'
 import './Style.css'
-// import Oi from './waiter';
+import Routes from './routes';
 
-/*const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDom.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Routes />
   </React.StrictMode>
-); 
-*/
-
-ReactDom.render(
-  <>
-    <Login/>
-    {/* <Oi/> */}
-  </>,
-  document.getElementById('root')
-)
+);
