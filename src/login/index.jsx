@@ -74,10 +74,6 @@ const Login = () => {
           <h1 className="msgError">{error}</h1>
         )}
 
-        {/* {Boolean(sucesso) && (
-          <h1 className="msgSucesso">{sucesso}</h1>
-        )} */}
-
         <form className="formLogin" onSubmit={onLogin}>
           <div className="infoLogin">
             <h1>E-mail</h1>
