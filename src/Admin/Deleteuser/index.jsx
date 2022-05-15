@@ -1,10 +1,24 @@
 import React from 'react';
 import AdminTemplate from '../adminTemplate';
+import Input from './input';
+import Button from './button';
 
 const DeleteUser = () =>{
   return (
     <AdminTemplate>
-      <p>DELETAR USUÁRIO</p>
+      <form className="formLogin">
+        <h1>DELETAR UM USUÁRIO</h1>
+          <div className="infoLogin">
+            <h1>ID do Funcionário</h1>
+              <Input
+                type="text"
+                placeholder="Número de identificação do funcionário"
+                name="email"
+                icon={<i className="ph-circle-wavy-check"></i>}
+                />
+          </div>
+        <Button title="DELETAR" />
+      </form>
     </AdminTemplate>
   );
 }
