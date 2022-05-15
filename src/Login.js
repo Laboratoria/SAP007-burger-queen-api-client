@@ -1,7 +1,7 @@
 import './App.css';
 import InputsLogin from './components/InputsLogin';
 
-function App() {
+function Login() {
   return (
     <>
       <h1>BURGUER QUEEN</h1>    
@@ -10,4 +10,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
