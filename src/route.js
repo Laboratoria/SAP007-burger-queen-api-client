@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './pages/login/login.js';
 
 
-const Root = () => {
+const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
@@ -15,4 +15,4 @@ const Root = () => {
   );
 }
 
-export default Root;
+export default Routes;
