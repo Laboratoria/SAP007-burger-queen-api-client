@@ -1,20 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './pages/login/login.jsx';
-import SignUp from './pages/register/signup.jsx';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Login from './pages/login/login.js';
 
-const AllRoute = () => {
+
+const Root = () => {
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/login' element={<Login />} />
-        </Routes>
-      </div>
-    </Router>
+    <BrowserRouter>
+      <Switch>
+        <Route path='/' exact component={Login} />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={SignUp} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
-export default AllRoute;
+export default Root;
