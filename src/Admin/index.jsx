@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Waiter = () =>{
+const Admin = () =>{
   return (
     <div>
-      <p>Oi, eu sou a página dos garçons!</p>
+      <p>Oi, eu sou a página dos administradores!</p>
       <nav>
         <ul>
           <li>
@@ -25,4 +25,4 @@ const Waiter = () =>{
   );
 }
 
-export default Waiter;
+export default Admin;
