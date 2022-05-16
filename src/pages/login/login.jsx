@@ -26,3 +26,13 @@ const Login = () => {
   const handleRegister = () => {
     history.push('/signup')
   }
+
+  //Como o handleChange é executado a cada tecla pressionada para atualizar o estado do React, 
+  //o valor exibido será atualizado conforme o usuário digita.
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    defineValues({
+      ...values,
+      [name]: value,
+    });
+  };
