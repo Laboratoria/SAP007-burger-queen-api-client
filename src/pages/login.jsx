@@ -4,7 +4,7 @@ import Button from "./components/Button";
 import Footer from "./components/Footer"
 
 function logedIn(){
-    console.log('Logando usuário')
+    console.log("Logando usuário")
 }
 function Login() {
     return (
@@ -12,7 +12,7 @@ function Login() {
         <InputEmail/>
         <InputPassword />
         <Button onClick={logedIn} text="LOGAR"/>
-        <a href='#register' className='Hiperlink'>Cadastre-se</a>
+        <a href="#register" className="Hiperlink">Cadastre-se</a>
         <Footer/>
       </div>
     );
