@@ -62,4 +62,53 @@ const Register = () => {
         console.log(errors)
       });
   }
-  
+  return (
+    <>
+      <div className='content display-flexbox'>
+        <div className='cont-login-register display-flexbox'>
+          <img src={logo} alt='logo' className='logo-login' />
+          <h1>Registro</h1>
+
+          <form onSubmit={handleSubmit}>
+            <div className='display-flexbox'>
+              <Input name='name' type='text' placeholder='Nome:' className='input-field'
+                onChange={handleChange} />
+              <p className="error-msg">{errors.name}</p>
+
+              <Input name='email' type='email' placeholder='Email:' className='input-field'
+                onChange={handleChange} />
+              <p className="error-msg">{errors.email}</p>
+
+              <Input name='password' type='password' placeholder='Senha: ' className='input-field'
+                onChange={handleChange} />
+              <p className="error-msg">{errors.password}</p>
+
+              <div>
+                <h3 className="h3-function">Escolha sua função:</h3>
+                <label htmlFor="hall">Salão</label>
+                <input type="radio" name="role" id="hall" text="Salão" value="hall" onChange={handleChange} />
+                <label htmlFor="kitchen">Cozinha</label>
+                <input type="radio" name="role" id="kitchen" text="Cozinha" value="kitchen" onChange={handleChange} />
+                <p className="error-msg">{errors.role}</p>
+              </div>
+
+            </div>
+            <div className='display-flexbox'>
+              <Button className='button' type='submit' text='Cadastrar' />
+            </div>
+          </form>
+
+          <Button className='button' onClick={handleLogin} text='Voltar' />
+
+          {showModalErrors ? (
+            <ModalErrors onClose={() => defineShowModalErrors(false)}>
+              <h3>Eita... Email já cadastrado.</h3>
+            </ModalErrors>) : null}
+        </div>
+       
+      </div>
+    </>
+  )
+}
+
+export default Register;
