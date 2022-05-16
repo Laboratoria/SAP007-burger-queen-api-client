@@ -1,8 +1,8 @@
 import React from 'react';
 import AdminTemplate from '../adminTemplate';
-import Input from './input';
-import Select from './select';
-import Button from './button';
+import Input from '../../Components/input';
+import Button from '../../Components/button';
+import Select from '../../Components/select';
 
 const UpdateUser = () =>{
   return (
