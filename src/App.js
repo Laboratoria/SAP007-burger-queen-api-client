@@ -1,9 +1,9 @@
-import Login from './pages/Login/index.js';
+import AppRoutes from './routes.js';
 
 function App() {
   return (
     <div className="App">
-      <Login/>
+      <AppRoutes/>
     </div>
   );
 }
