@@ -1,10 +1,20 @@
-import Register from "./pages/register";
+import {BrowserRouter, Routes, Route } from "react-router-dom"
+import Login from "../src/pages/login"
+import Register from "../src/pages/register"
+
+import Footer from "./components/Footer"
 
 function App() {
   return (
-    <div className="App">
-      <Register/>
-    </div>
+      <BrowserRouter>
+      <Login/>
+            <Routes>
+            <Route  exact path="/login" element={<Login/>}/>
+            <Route  path="/register" element={<Register/>}/>
+          </Routes>
+        <Footer/>
+    </BrowserRouter>
+   
   );
 }
 
