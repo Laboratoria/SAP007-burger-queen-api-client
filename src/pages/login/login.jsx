@@ -64,3 +64,41 @@ const Login = () => {
       console.log(error)
     })
   };
+
+  return (
+    <>
+      <div className='content display-flexbox'>
+        <div className='cont-login-register display-flexbox'>
+          <img src={logo} alt='logo' className='logo-login' />
+          <h3>Seja bem vinda, colaboradora!</h3>
+          <h1>Login</h1>
+          <form onSubmit={handleSubmit}>
+            <div className='display-flexbox'>
+              <Input name='email' type='email' placeholder='Email:'
+                className='input-field' onChange={handleChange} />
+              <p className="error-msg">{errors.email}</p>
+
+              <Input name='password' type='password' placeholder='Senha: '
+                className='input-field' onChange={handleChange} />
+              <p className="error-msg">{errors.password}</p>
+            </div>
+            <div className='display-flexbox'>
+              <Button className='button' type='submit' text='Login' />
+            </div>
+          </form>
+
+          {showModalErrors ? (
+            <ModalErrors onClose={() => defineShowModalErrors(false)}>
+              <h3>Vish, email e/ou senha inválidos</h3>
+            </ModalErrors>) : null}
+
+          <h3>Não possui uma conta?</h3>
+          <Button className='button' onClick={handleRegister} text='Registre-se' />
+        </div>
+        
+      </div>
+    </>
+  );
+};
+
+export default Login;
