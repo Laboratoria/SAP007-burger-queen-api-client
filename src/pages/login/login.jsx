@@ -18,3 +18,11 @@ const Login = () => {
     email: '',
     password: '',
   });
+
+  const [showModalErrors, defineShowModalErrors] = useState(false);
+
+  const history = useHistory();
+
+  const handleRegister = () => {
+    history.push('/signup')
+  }
