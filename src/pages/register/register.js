@@ -7,3 +7,21 @@ import { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import ModalErrors from "../../components/modal/modal-errors";
 
+const Register = () => {
+  localStorage.clear();
+
+  const [values, defineValues] = useState({
+    name: '',
+    email: '',
+    password: '',
+    role: '',
+  });
+
+  const [errors, defineErrors] = useState({
+    name: '',
+    email: '',
+    password: '',
+    role: '',
+  });
+
+  
