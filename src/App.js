@@ -4,7 +4,7 @@ import Form from "./components/Form.js"
 function App() {
   return (
     <div className="App">
-      <h1>Burger</h1>
+      <h1>Burger Heroes</h1>
       < Form />
       < Footer />
     </div>
