@@ -1,20 +1,22 @@
-import InputEmail from "../components/Input/InputEmail";
-import InputPassword from "../components/Input/InputPassword";
-import Button from "../components/Button";
+import Input from "../components/Input";
+import {Button} from "../components/Button";
 import Logo from "../components/Logo";
+import {Link} from "react-router-dom";
 
 function logedIn(){
     console.log("Logando usuário")
 }
+
+
 function Login() {
     return (
-      <div >
+      <form >
         <Logo />
-        <InputEmail/>
-        <InputPassword />
-        <Button onClick={logedIn} text="LOGAR"/>
-        <a href="/register"className="Hiperlink">Cadastre-se</a>
-      </div>
+        <Input type="email" placeholder="E-MAIL"/>
+        <Input type="password" placeholder="SENHA"/>
+        <Button text="LOGAR" type= "button" onClick={logedIn} />
+        <Link to="/register"className="Hiperlink">Cadastre-se</Link>
+      </form>
     );
   }
   

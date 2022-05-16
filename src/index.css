@@ -2,6 +2,7 @@ body {
  margin: 0;
  padding: 0;
  background:  #11b4d9;
+ overflow-y: hidden;
 }
 a{
   display: inline-block;
