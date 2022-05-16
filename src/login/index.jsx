@@ -45,9 +45,9 @@ const Login = () => {
         } else if (conteudo.role === 'chef'){
           navigate('/chef');
         } else if (conteudo.role === 'admin'){
-          navigate('/admin');;
+          navigate('/admin');
         } else {
-          navigate('/not-found');;
+          navigate('/not-found');
         }
       }
       
