@@ -1,7 +1,7 @@
-import InputEmail from "../components/InputEmail";
-import InputPassword from "../components/InputPassword";
+import InputEmail from "../components/Input/InputEmail";
+import InputPassword from "../components/Input/InputPassword";
 import Button from "../components/Button";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import {useState} from "react";
 
 function Register() {
