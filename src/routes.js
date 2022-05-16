@@ -6,6 +6,10 @@ import Waiter from "./Waiter";
 import Chef from "./Chef";
 import Admin from "./Admin";
 import NotFound from "./Notfound";
+import ListUsers from "./Admin/Listusers";
+import CreateUser from "./Admin/Createuser";
+import UpdateUser from "./Admin/Updateuser";
+import DeleteUser from "./Admin/Deleteuser";
 
 const Routes = () => {
    return(
@@ -16,6 +20,10 @@ const Routes = () => {
           <Route element={<Chef />} path="/chef" />
           <Route element={<Admin />} path="/admin" />
           <Route element={<NotFound />} path="/not-found" />
+          <Route element={<ListUsers />} path="/list-users" />
+          <Route element={<CreateUser />} path="/create-user" />
+          <Route element={<UpdateUser />} path="/update-user" />
+          <Route element={<DeleteUser />} path="/delete-user" />
         </RoutesDOM>
       </BrowserRouter>
    );
