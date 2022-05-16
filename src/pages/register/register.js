@@ -24,4 +24,17 @@ const Register = () => {
     role: '',
   });
 
+  const [showModalErrors, defineShowModalErrors] = useState(false);
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    defineValues({
+      ...values,
+      [name]: value
+    });
+  };
+
+  const history = useHistory();
+  const handleLogin = () => history.push('/login')
+
   
