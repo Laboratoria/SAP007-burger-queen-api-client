@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import logo from'../img/logo_bq.png';
 import './login.css';
 import '../Style.css'
-import Input from './input';
-import Button from './button';
-import Footer from './footer';
+import Input from '../Components/input';
+import Button from '../Components/button';
+import Footer from '../Components/footer';
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -22,6 +22,7 @@ const Login = () => {
     const password = e.target.password.value;
 
     //Dados de login: email: engamandagusmao@gmail.com /senha: bq123456 /role: waiter
+    //Dados de login: email: bq@admin.com /senha: bq123456 /role: admin
     try {
       const resultadoApi = await fetch('https://lab-api-bq.herokuapp.com/auth', {
         method: 'POST',

@@ -1,7 +1,7 @@
 import React from 'react';
 import AdminTemplate from '../adminTemplate';
-import Input from './input';
-import Button from './button';
+import Input from '../../Components/input';
+import Button from '../../Components/button';
 
 const DeleteUser = () =>{
   return (
