@@ -6,4 +6,15 @@ import '../../../src/style.css';
 import errorsMessages from "./login-validation";
 import ModalErrors from "../../components/modal/modal-errors";
 
+const Login = () => {
+  localStorage.clear();
 
+  const [values, defineValues] = useState({
+    email: '',
+    password: '',
+  });
+
+  const [errors, defineErrors] = useState({
+    email: '',
+    password: '',
+  });
