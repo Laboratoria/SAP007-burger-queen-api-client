@@ -1,8 +1,9 @@
 import InputEmail from "../components/Input/InputEmail";
 import InputPassword from "../components/Input/InputPassword";
 import Button from "../components/Button";
-import Footer from "../components/Footer/Footer";
 import {useState} from "react";
+import { Link } from "react-router-dom"
+import Logo from "../components/Logo";
 
 function Register() {
   const [email, setEmail] = useState ("");
@@ -14,14 +15,14 @@ function Register() {
   }
   
   return (
-    <form onSubmit={createUser}className="App">
+    <form onSubmit={createUser}>
+      <Logo />
       <InputEmail htmlFor="email" value="email" id="email" onChange={(e) => setEmail(e.target.value)}/>
       <InputPassword htmlFor="password" value="password" id="password"onChange={(e) => setPassword(e.target.value)}/>
       <Button text="CADASTRAR"/>
-      <a href="#login" className="Hiperlink">
+      <Link to="/login" className="Hiperlink">
         Já tenho cadastro
-      </a>
-      <Footer />
+      </Link>
     </form>
   );
 }

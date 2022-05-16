@@ -1,4 +1,4 @@
-import  logo from "./img/logo.jpeg"
+import  logo from "../../img/logo.jpeg"
 import styles from "./style.module.css"
 function Logo(){
   return(
