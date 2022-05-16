@@ -37,4 +37,29 @@ const Register = () => {
   const history = useHistory();
   const handleLogin = () => history.push('/login')
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    (defineErrors(errorsMessages(values)));
+
+    register(values.name, values.email, values.password, values.role)
+      .then((response) => {
+        if (response.code === 403) {
+          defineShowModalErrors(true);
+        } else {
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('id', response.id);
+
+          if (response.role === "hall") {
+            history.push('/hall')
+          }
+          else if (response.role === "kitchen") {
+            history.push('/kitchen')
+          }
+        }
+      })
+      .catch((errors) => {
+        console.log(errors)
+      });
+  }
   
