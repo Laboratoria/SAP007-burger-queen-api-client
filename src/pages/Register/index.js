@@ -5,7 +5,7 @@ import Banner from "../../components/Banner";
 import Footer from "../../components/Footer";
 import "./styles.modules.css";
 import Checkbox from "../../components/Checkbox";
-import {useState} from 'react'
+import {useState} from 'react';
 
 function Register() {
     function registerUser(e) {
@@ -19,8 +19,8 @@ function Register() {
             "name": name,
             "email": email,
             "password": password,
-            "role": "sample role",
-            "restaurant": "sample restaurant"
+            "role": role,
+            "restaurant": "Tá chovendo hambúrguer"
           }
         const callApi = {
             method: "POST",
@@ -30,6 +30,7 @@ function Register() {
         fetch("https://lab-api-bq.herokuapp.com/users", callApi)
         .then(response => response.json())
         .then(data =>{
+            debugger;
             console.log(data)
         })
 
@@ -37,9 +38,9 @@ function Register() {
 
     const [name, setName] = useState();
     const [email, setEmail] = useState();
-    const [password, setPassword] = useState()
-    // const [user, setUser] = useState({})
-    
+    const [password, setPassword] = useState();
+    const [role, setRole] = useState();
+
     return (
         <>
             <Header />
@@ -47,13 +48,13 @@ function Register() {
                 <aside className="container-banner">
                     <Banner className="banner" />
                 </aside>
-                <form className="register" onSubmit={registerUser}> 
-                    <Input className="user-name" type="text" placeholder="Nome" name="name" onChange={(e) => setName(e.target.value)} />
+                <form className="register" onSubmit={registerUser} required> 
+                    <Input className="user-name" type="text" placeholder="nome" name="name" onChange={(e) => setName(e.target.value)} />
                     <Input className="email" type="email" placeholder="email@email.com" name="email" onChange={(e) => setEmail(e.target.value)}/>
                     <Input className="password" type="password" placeholder="senha" name="password" onChange={(e) => setPassword(e.target.value)}/>
                     <div className="checkbox">
-                        <Checkbox className="user-kitchen" type="checkbox" label="Atendimento"/>
-                        <Checkbox className="user-waitress" type="checkbox" label="Cozinha"/>
+                        <Checkbox name="role" className="user-waitress" value="waitress" checked={role === "waitress"} onChange={(e) => setRole(e.target.value)} label="Atendimento"/>
+                        <Checkbox name="role" className="user-kitchen" value="kitchen" checked={role === "kitchen"} onChange={(e) => setRole(e.target.value)} label="Cozinha"/>
                     </div>
                     <Button className="button-register" type="submit" nome="Cadastrar"/>
                     <a className="login-link" href="/"> Ou entre aqui</a>

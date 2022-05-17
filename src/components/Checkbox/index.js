@@ -1,8 +1,8 @@
-import "./style.css";
-const Checkbox = ({ label, value, onChange }) => {
+import "./style.modules.css";
+const Checkbox = ({ name, label, value, onChange }) => {
   return (
     <label>
-      <input type="checkbox" checked={value} onChange={onChange} />
+      <input name={name} type="radio" onChange={onChange} />
       {label}
     </label>
   );

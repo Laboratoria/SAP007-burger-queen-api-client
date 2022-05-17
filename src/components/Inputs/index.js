@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles.modules.css";
 
 function Input({
     className, type, placeholder, onChange, value, name}){
@@ -10,6 +10,7 @@ function Input({
         onChange={onChange}
         value={value}
         name={name}
+        required
       />
     );
   }
