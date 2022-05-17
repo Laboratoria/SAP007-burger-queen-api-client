@@ -1,15 +1,16 @@
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// import Login from "./App";
+// páginas
+import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
 
-const Routes = () => {
-   return(
-       <BrowserRouter>
-           <Route component = { Home }  path="/" exact />
-           <Route component = { Sobre }  path="/sobre" />
-           <Route component = { Usuario }  path="/usuario" />
-       </BrowserRouter>
-   )
+export function Router() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route exact path={"/"} element={<Login />} />
+        <Route path={"/register"} element={<Register />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default Routes;
