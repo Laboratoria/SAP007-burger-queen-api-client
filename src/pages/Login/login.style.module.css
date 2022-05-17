@@ -1,0 +1,33 @@
+body {
+    background-color: #1a3042;
+}
+
+.containerLogin {
+	display: flex;
+    max-width: 420px;
+    border: 1px solid #ccc;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./../../assets/images/logo-queen.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+/* .containerLogin .item {
+	flex: 1;
+	padding: 10px;
+} */
+
+/* .item {
+	flex: 1;
+	margin: 50px;
+	padding: 0 10px;
+	text-align: center;
+	font-size: 1.5em;
+} */
+
+/* .item:first-child {
+	padding-top: 20px;
+} */
