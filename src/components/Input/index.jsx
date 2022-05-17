@@ -1,10 +1,11 @@
 import style from "./input.style.module.css";
 
-export function Input() {
+export function Input(props) {
 
     return (
         <>
-         <input className={style.input} type={"text"}></input>
+        {props.label && <label>{props.label}</label>}
+         <input className={style.input} placeholder={props.placeholder} type={props.type || "text"}></input>
         </>
     );
 }
