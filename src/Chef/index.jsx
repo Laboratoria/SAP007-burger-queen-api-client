@@ -1,27 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import ChefTemplate from './chefTemplate';
+import './chef.css';
 
 const Chef = () =>{
   return (
-    <div>
-      <p>Oi, eu sou a página dos cozinheiros!</p>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Login</Link>
-          </li>
-          <li>
-            <Link to="/admin">Administração</Link>
-          </li>
-          <li>
-            <Link to="/chef">Cozinha</Link>
-          </li>
-          <li>
-            <Link to="/waiter">Garçom</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <ChefTemplate>
+      <h1 className="title-admin">Bem vindo(a) à página da cozinha!</h1>
+      <p className="text-admin">Utilize esse espaço para gerenciar os pedidos e preparo dos alimentos.</p>
+      <p className="text-admin">Aqui, você poderá:</p>
+      <p className="text-admin">- Visualizar todos os pedidos;</p>
+      <p className="text-admin">- Atualizar os pedidos pendentes;</p>
+      <p className="text-admin">- Atualizar os pedidos em preparo;</p>
+      <p className="text-admin">- Atualizar os pedidos prontos para entrega;</p>
+      <p className="text-admin">Visualizar os pedidos entregues.</p>
+      <p className="text-admin">Em caso de dúvidas, falar com a administração.</p>
+      <i class="ph-hamburger"></i>
+    </ChefTemplate>
   );
 }
 
