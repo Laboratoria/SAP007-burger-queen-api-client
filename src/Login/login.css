@@ -28,12 +28,8 @@
     font-size: 20px;
 }
 
-.msgSucesso{
+.msgSuccess{
     margin-top: 20px;
     color:#7B9A3B;
     font-size: 20px;
-    word-wrap: break-word;
-    width: 500px;
-    margin-right: auto;
-    margin-left: auto;
 }
