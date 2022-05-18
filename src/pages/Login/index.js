@@ -1,8 +1,8 @@
 import Input from "../../components/Inputs";
-import Button from "../../components/Button";
-import Header from "../../components/Header";
-import Banner from "../../components/Banner";
-import Footer from "../../components/Footer";
+import Button from "../../components/button";
+import Header from "../../components/header";
+import Banner from "../../components/banner";
+import Footer from "../../components/footer";
 import {useState} from 'react';
 import "./styles.modules.css";
 
