@@ -14,7 +14,7 @@ import WaiterMenu from "./Waiter/Menu";
 import WaiterOrder from "./Waiter/Order";
 import ChefAllOrders from "./Chef/Allorders";
 import ChefDelivered from "./Chef/Delivered";
-import ChefDone from "./Chef/Done";
+import ChefReady from "./Chef/Ready";
 import ChefPending from "./Chef/Pending";
 import ChefPreparation from "./Chef/Preparation";
 
@@ -35,7 +35,7 @@ const Routes = () => {
           <Route element={<WaiterOrder />} path="/order" />
           <Route element={<ChefAllOrders />} path="/all-orders" />
           <Route element={<ChefDelivered />} path="/delivered" />
-          <Route element={<ChefDone />} path="/done" />
+          <Route element={<ChefReady />} path="/ready" />
           <Route element={<ChefPending />} path="/pending" />
           <Route element={<ChefPreparation />} path="/preparation" />
         </RoutesDOM>

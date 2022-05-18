@@ -1,7 +1,7 @@
 import React from 'react';
 import ChefTemplate from '../chefTemplate';
 
-const ChefDone = () =>{
+const ChefReady = () =>{
   return (
     <ChefTemplate>
       <p>Pedidos Prontos Para a Entrega</p>
@@ -9,4 +9,4 @@ const ChefDone = () =>{
   );
 }
 
-export default ChefDone;
+export default ChefReady;

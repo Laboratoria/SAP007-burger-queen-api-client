@@ -22,7 +22,7 @@ const ChefTemplate = ({ children }) =>{
           <Link to="/preparation">Em preparo</Link>
           </li>
           <li>
-          <Link to="/done">Prontos para a entrega</Link>
+          <Link to="/ready">Prontos para a entrega</Link>
           </li>
           <li>
           <Link to="/delivered">Entregue</Link>
