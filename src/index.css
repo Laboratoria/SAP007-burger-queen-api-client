@@ -8,9 +8,17 @@ a{
   display: inline-block;
   margin-top: 50px;
   margin-left: 40%;
+  font-size: 18px;
 }
 a.Hiperlink{
   color: white;
+  cursor: pointer;
+}
+.label{
+  color: white;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 

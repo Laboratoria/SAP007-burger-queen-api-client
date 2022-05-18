@@ -5,11 +5,12 @@
 }
 .btn{
   background-color: #F2BB16;
- 
+  cursor: pointer;
   color: white;
   margin-top: 40px;
-  padding: 10px;
+  padding: 15px;
   width: 150px;
   border-radius: 10px;
   border: black;
+  font-size: 16px;
 }
