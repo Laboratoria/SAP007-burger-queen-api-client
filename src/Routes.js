@@ -1,10 +1,9 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Login from './pages/Login/Login'
-import Kitchen from './pages/Kitchen/Kitchen'
-import Hall from './pages/Hall/Hall'
-import NavBar from './components/layout/NavBar'
+import Login from './pages/Login'
+import Kitchen from './pages/Kitchen'
+import Hall from './pages/Hall'
 import Footer from './components/layout/Footer'
-import Register from './pages/Register/Register'
+import Register from './pages/Register'
 import Container from './components/layout/Container'
 
 
@@ -12,7 +11,6 @@ function App() {
 
   return (
     <Router>
-      <NavBar/>
       <Container customClass="min-height">
     <Routes>
       <Route exact path="/" element={<Login/>}></Route>

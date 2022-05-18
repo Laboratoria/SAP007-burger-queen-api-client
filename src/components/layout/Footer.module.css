@@ -16,6 +16,10 @@
     margin: 0 1em;
 }
 
+.social_list li:hover {
+color: #F5B924;
+}
+
 .social_list svg {
     font-size: 1.5em;
     cursor: pointer;
