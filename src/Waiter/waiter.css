@@ -1,0 +1,18 @@
+.title-admin{
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #400101;
+}
+
+.text-admin{
+    font-size: 15px;
+    font-weight: lighter;
+    line-height:30px;
+}
+
+.ph-hamburger{
+    font-size: 60px;
+    margin-top: 10px;
+    color: #F2AB27;
+}

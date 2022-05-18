@@ -1,27 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import WaiterTemplate from './waiterTemplate';
+import './waiter.css';
 
 const Waiter = () =>{
   return (
-    <div>
-      <p>Oi, eu sou a página dos garçons!</p>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Login</Link>
-          </li>
-          <li>
-            <Link to="/admin">Administração</Link>
-          </li>
-          <li>
-            <Link to="/chef">Cozinha</Link>
-          </li>
-          <li>
-            <Link to="/waiter">Garçom</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <WaiterTemplate>
+      <h1 className="title-admin">Bem vindo(a) à página de atendimento!</h1>
+      <p className="text-admin">Utilize esse espaço para gerenciar os pedidos e atendimento aos seus clientes.</p>
+      <p className="text-admin">Aqui, você poderá:</p>
+      <p className="text-admin">- Visualizar o cardápio;</p>
+      <p className="text-admin">- Enviar os pedidos à cozinha;</p>
+      <p className="text-admin">- Verificar os status dos pedidos;</p>
+      <p className="text-admin">- Controlar o fluxo de clientes;</p>
+      <p className="text-admin">Certifique-se de conferir atentamente cada pedido.</p>
+      <p className="text-admin">Em caso de dúvidas, falar com a administração.</p>
+      <i class="ph-hamburger"></i>
+    </WaiterTemplate>
   );
 }
 
