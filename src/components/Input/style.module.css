@@ -11,7 +11,11 @@
   margin-top: 50px;
   border: black;
   text-align: center;
+  font-size: 16px;
 }
 .Input::placeholder{
   color: white;
+}
+.Input[type="radio" i] {
+  color:red;
 }
