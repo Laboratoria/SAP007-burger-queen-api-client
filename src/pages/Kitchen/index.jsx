@@ -1,0 +1,1 @@
+// import style from "./kitchen.style.module.css";

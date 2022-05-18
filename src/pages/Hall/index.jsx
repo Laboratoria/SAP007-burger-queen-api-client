@@ -1,0 +1,1 @@
+// import style from "./hall.style.module.css";

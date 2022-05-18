@@ -6,7 +6,7 @@ export function Select(props) {
 
   return (
     <>
-      <select name="cars" id="cars">
+      <select name="setor" id="setor">
         {
           options.map((item, index) => {
             return <option value={item.value} selected={item.selected} disabled={item.disabled}>{item.text}</option>

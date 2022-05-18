@@ -4,8 +4,12 @@ export function Input(props) {
 
     return (
         <>
-        {props.label && <label>{props.label}</label>}
-         <input className={style.input} placeholder={props.placeholder} type={props.type || "text"}></input>
+            {props.label && <label>{props.label}</label>}
+            <input
+                className={style.input}
+                placeholder={props.placeholder}
+                type={props.type || "text"}
+                onInput={props.onInput} />
         </>
     );
 }

@@ -10,6 +10,8 @@ export function Router() {
       <Routes>
         <Route exact path={"/"} element={<Login />} />
         <Route path={"/register"} element={<Register />} />
+        {/* <Route path={"/hall"} element={<Hall />} />
+        <Route path={"/kitchen"} element={<Kitchen />} /> */}
       </Routes>
     </BrowserRouter>
   );
