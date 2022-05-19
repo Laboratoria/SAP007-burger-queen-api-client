@@ -52,7 +52,7 @@ function Register() {
                     <Input className="email" type="email" placeholder="email@email.com" name="email" onChange={(e) => setEmail(e.target.value)}/>
                     <Input className="password" type="password" placeholder="senha" name="password" onChange={(e) => setPassword(e.target.value)}/>
                     <div className="checkbox">
-                        <Checkbox className="user-kitchen" type="checkbox" label="Atendimento"/>
+                        <Checkbox className="user-kitchen" type="checkbox"  label="Atendimento"/>
                         <Checkbox className="user-waitress" type="checkbox" label="Cozinha"/>
                     </div>
                     <Button className="button-register" type="submit" nome="Cadastrar"/>
