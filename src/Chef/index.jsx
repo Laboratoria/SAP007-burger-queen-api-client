@@ -12,7 +12,7 @@ const Chef = () =>{
       <p className="text-admin">- Atualizar os pedidos pendentes;</p>
       <p className="text-admin">- Atualizar os pedidos em preparo;</p>
       <p className="text-admin">- Atualizar os pedidos prontos para entrega;</p>
-      <p className="text-admin">Visualizar os pedidos entregues.</p>
+      <p className="text-admin">- Visualizar os pedidos entregues.</p>
       <p className="text-admin">Em caso de dúvidas, falar com a administração.</p>
       <i class="ph-cooking-pot"></i>
     </ChefTemplate>

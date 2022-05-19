@@ -53,12 +53,11 @@ const CreateUser = () =>{
           setError('Preencha o campo do cargo');
         }
         else if(resultAPi.status === 200){
-          setSuccess('Usuário cadastrado com sucesso')
+          setSuccess('Usuário cadastrado com sucesso!')
         }
         else{
           setError(content.message)
-        }      
-        console.log(content.message);
+        }
       } catch (e) {
         setLoading(false);
       }
