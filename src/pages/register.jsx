@@ -4,32 +4,32 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../components/Logo";
 import { createUser } from "../services/api";
-//import { codeError } from "../services/error";
+import ErrorMessage from '../components/ErrorMessage';
 import { setToken } from "../services/token";
 
 function Register() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [role, setRole] = useState();
-  //const [codeError, setError] = useState();
-  const navigate = useNavigate();
+  const [name, setName] = useState(" ");
+  const [email, setEmail] = useState(" ");
+  const [password, setPassword] = useState(" ");
+  const [role, setRole] = useState(" ");
+  const [error, setError] = useState(" ");
+  const navigate = useNavigate(" ");
 
   function handleSubmit(e) {
     e.preventDefault();
     createUser(name, email, password, role)
-    .then((response)=>{
-      if (response.status === 200){
-        return response.json();
-      }
-    //  setError(response);
-    })
-    .then((data )=>{
-      setToken(data.token);
-      navigate (data.role === "role"? "/hall" : "/kitchen")
+      .then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        }
+        setError(ErrorMessage(response));
+      })
+      .then((data) => {
+        setToken(data.token);
+        navigate(data.role === "role" ? "/hall" : "/kitchen")
 
-    })
-    .catch((error) => console.log(error))
+      })
+      .catch((error) => console.log(error))
   }
 
 
@@ -76,11 +76,15 @@ function Register() {
         name="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Button text="CADASTRAR" onClick={handleSubmit}/>
+      <Button text="CADASTRAR" onClick={handleSubmit} />
       <Link to="/login" className="Hiperlink">
         Já tenho cadastro
       </Link>
+      <ErrorMessage
+        disable={error ? false : true}
+        message={error} />
     </form>
+
   );
 }
 export default Register;
