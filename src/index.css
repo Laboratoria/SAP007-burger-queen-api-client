@@ -2,12 +2,16 @@ body {
  margin: 0;
  padding: 0;
  background:  #11b4d9;
- overflow-y: hidden;
+ display: flex;
+ height: 100vh;
 }
+form{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
 a{
-  display: inline-block;
-  margin-top: 50px;
-  margin-left: 40%;
   font-size: 18px;
 }
 a.Hiperlink{
@@ -16,9 +20,6 @@ a.Hiperlink{
 }
 .label{
   color: white;
-  display:flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 

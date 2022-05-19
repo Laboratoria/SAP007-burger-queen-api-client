@@ -44,22 +44,22 @@ function Register() {
         name="name"
         onChange={(e) => setName(e.target.value)}
       />
-      {/* <label className="label">COZINHA</label>
+      <label className="label">COZINHA</label>
       <Input
         type="radio"
         value="kitchen"
-        name="kitchen"
-        id="role"
+        name="role"
+        id="kitchen"
         onChange={(e) => setRole(e.target.name)}
       />
       <label className="label">SALÃO</label>
       <Input
         type="radio"
         value="hall"
-        name="hall"
-        id="role"
+        name="role"
+        id="hall"
         onChange={(e) => setRole(e.target.name)}
-      /> */}
+      />
       <Input
         type="email"
         placeholder="E-MAIL"
