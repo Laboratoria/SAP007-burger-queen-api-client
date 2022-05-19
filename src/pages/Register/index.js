@@ -1,67 +1,101 @@
 import Input from "../../components/Inputs";
-import Button from "../../components/Button";
-import Header from "../../components/Header";
-import Banner from "../../components/Banner";
-import Footer from "../../components/Footer";
+import Button from "../../components/button";
+import Header from "../../components/header";
+import Banner from "../../components/banner";
+import Footer from "../../components/footer";
+import Error from "../../components/errors";
+import {Navigate} from "react-router-dom";
 import "./styles.modules.css";
-import Checkbox from "../../components/Checkbox";
-import {useState} from 'react'
+import Radio from "../../components/radio";
+import { createUser } from "../../services/auth";
+import { useState } from "react";
 
 function Register() {
-    function registerUser(e) {
-        e.preventDefault()
-        console.log("clicou")
-        console.log(name)
-        console.log(email)
-        console.log(password)
-        // console.log(user)
-        const body = {
-            "name": name,
-            "email": email,
-            "password": password,
-            "role": "sample role",
-            "restaurant": "sample restaurant"
+  function registerUser(e) {
+    e.preventDefault();
+    createUser(name, email, password, role)
+    .then((data) => {
+          if (data.code) {
+              setError(data.message)
+              hideMessage()
           }
-        const callApi = {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(body)
-        }
-        fetch("https://lab-api-bq.herokuapp.com/users", callApi)
-        .then(response => response.json())
-        .then(data =>{
-            console.log(data)
-        })
+          if(data.token) {
+            <Navigate to={{ path: '/' }} />}
+        console.log(data);
+    });
+  }
 
-    }
+  function hideMessage (){
+    setTimeout(() => {
+        setError("");
+      }, 5000)
+  }
 
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState()
-    // const [user, setUser] = useState({})
-    
-    return (
-        <>
-            <Header />
-            <section className="container-register">
-                <aside className="container-banner">
-                    <Banner className="banner" />
-                </aside>
-                <form className="register" onSubmit={registerUser}> 
-                    <Input className="user-name" type="text" placeholder="Nome" name="name" onChange={(e) => setName(e.target.value)} />
-                    <Input className="email" type="email" placeholder="email@email.com" name="email" onChange={(e) => setEmail(e.target.value)}/>
-                    <Input className="password" type="password" placeholder="senha" name="password" onChange={(e) => setPassword(e.target.value)}/>
-                    <div className="checkbox">
-                        <Checkbox className="user-kitchen" type="checkbox"  label="Atendimento"/>
-                        <Checkbox className="user-waitress" type="checkbox" label="Cozinha"/>
-                    </div>
-                    <Button className="button-register" type="submit" nome="Cadastrar"/>
-                    <a className="login-link" href="/"> Ou entre aqui</a>
-                </form>
-            </section>
-            <Footer />
-        </>
-    );
-};
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [role, setRole] = useState();
+  const [error, setError] = useState("");
 
-export default Register; 
+  return (
+    <>
+      <Header />
+      <section className="container-register">
+        <aside className="container-banner">
+          <Banner className="banner" />
+        </aside>
+        <form className="register" onSubmit={registerUser} required>
+          <Input
+            className="user-name"
+            type="text"
+            placeholder="nome"
+            name="name"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <Input
+            className="email"
+            type="email"
+            placeholder="email@email.com"
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            className="password"
+            type="password"
+            placeholder="senha"
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div className="checkbox">
+            <Radio
+              name="role"
+              className="user-waitress"
+              value="waitress"
+              checked={role === "waitress"}
+              onChange={(e) => setRole(e.target.value)}
+              label="Atendimento"
+            />
+            <Radio
+              name="role"
+              className="user-kitchen"
+              value="kitchen"
+              checked={role === "kitchen"}
+              onChange={(e) => setRole(e.target.value)}
+              label="Cozinha"
+            />
+          </div>
+          {/* <p>{errorMessage}</p> */}
+          <Error text={error} />
+          <Button className="button-register" type="submit" nome="Cadastrar" />
+          <a className="login-link" href="/">
+            {" "}
+            Ou entre aqui
+          </a>
+        </form>
+      </section>
+      <Footer />
+    </>
+  );
+}
+
+export default Register;

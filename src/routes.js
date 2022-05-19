@@ -5,8 +5,8 @@ import {
     Routes
     // Navigate
 } from "react-router-dom";
-import Login from './pages/Login/index.js';
-import Register from "./pages/Register/index.js"
+import Login from './pages/login/index.js';
+import Register from "./pages/register/index.js"
 // import { isAuth } from "./Auth.js";
 
 
@@ -27,7 +27,6 @@ const AppRoutes = () => (
         <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            
         </Routes>
     </BrowserRouter>
 );

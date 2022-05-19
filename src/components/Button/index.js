@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles.modules.css";
 
 function Button({
     className, type, onClick,nome
