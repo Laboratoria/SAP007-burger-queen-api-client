@@ -15,7 +15,7 @@ const Admin = () =>{
       <p className="text-admin">Certifique-se de atualizar atentamente os dados cadastrais aqui inseridos.</p>
       <p className="text-admin">Em caso de dúvidas, falar com as pessoas desenvolvedoras desse site:</p>
       <p className="text-admin">Amanda Gusmão e Malu Santana, da SAP-007, Laboratoria - 2022.</p>
-      <i class="ph-notepad"></i>
+      <i className="ph-notepad"></i>
     </AdminTemplate>
   );
 }

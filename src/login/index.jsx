@@ -25,7 +25,7 @@ const Login = () => {
     //Dados de login: email: bq@admin.com /senha: bq123456 /role: admin
     //Dados de login: email: aisha@bms2.com /senha: bq123456 /role: chef
     try {
-      const resultadoApi = await fetch('https://lab-api-bq.herokuapp.com/auth', {
+      const resultApi = await fetch('https://lab-api-bq.herokuapp.com/auth', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,24 +36,25 @@ const Login = () => {
           password: password,
         }),
       });
-      const conteudo = await resultadoApi.json();
+      const content = await resultApi.json();
       setLoading(false);
 
-      if (resultadoApi.status !== 200) {
-        setError(conteudo.message);
+      if (resultApi.status !== 200) {
+        setError(content.message);
       } else {
-        if (conteudo.role === 'waiter'){
+        if (content.role === 'waiter'){
           navigate('/waiter');
-        } else if (conteudo.role === 'chef'){
+        } else if (content.role === 'chef'){
           navigate('/chef');
-        } else if (conteudo.role === 'admin'){
+        } else if (content.role === 'admin'){
           navigate('/admin');
         } else {
           navigate('/not-found');
         }
       }
       
-      console.log(conteudo);
+      console.log(content);
+      localStorage.setItem('Token', content.token);
     } catch (e) {
       setLoading(false);
       setError('Erro desconhecido');

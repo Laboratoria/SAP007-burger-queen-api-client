@@ -14,7 +14,7 @@ const Waiter = () =>{
       <p className="text-admin">- Controlar o fluxo de clientes;</p>
       <p className="text-admin">Certifique-se de conferir atentamente cada pedido.</p>
       <p className="text-admin">Em caso de dúvidas, falar com a administração.</p>
-      <i class="ph-hamburger"></i>
+      <i className="ph-hamburger"></i>
     </WaiterTemplate>
   );
 }
