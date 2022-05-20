@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import Login from './pages/login/index.js';
 import Register from "./pages/register/index.js"
+import Kitchen from "./pages/kitchen/index.js";
+import Waitress from "./pages/waitress/index.js";
 // import { isAuth } from "./Auth.js";
 
 
@@ -27,6 +29,9 @@ const AppRoutes = () => (
         <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/kitchen" element={<Kitchen />} /> 
+            <Route path="/waitress" element={<Waitress />} />
+
         </Routes>
     </BrowserRouter>
 );

@@ -1,4 +1,4 @@
-import "./style.modules.css";
+import "./styles.modules.css";
 const Radio = ({ name, label, value, onChange }) => {
   return (
     <label>

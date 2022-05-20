@@ -10,3 +10,11 @@ export function createUser(name, email, password, role){
       }
     return request("/users", "POST", body);
 }
+
+export function userLogin(email, password){
+  const body = {
+    "email": email,
+    "password": password
+  }
+  return request("/auth", "POST", body)
+}

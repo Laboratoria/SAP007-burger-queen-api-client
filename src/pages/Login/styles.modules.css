@@ -21,7 +21,15 @@
     border-radius: 3%;
 }
 .button-login {
-    margin-top: 20%;
+    margin-top: 15%;
+}
+
+.error-login{
+    margin-top: 5%;
+    background-color: #F75B42;
+    text-decoration-line: underline;
+    text-decoration-color: #FEF2E4;
+    font-size: 16px;
 }
 .register-link{
     background-color: #F75B42;
