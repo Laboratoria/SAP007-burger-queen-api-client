@@ -1,9 +1,7 @@
 import styles from "./style.module.css";
-function Input({type, name, placeholder, onChange}) {
+function Input({type, name, placeholder, onChange,value}) {
   return (
-    <div className={styles.DivInput}>
-      <input type={type} name={name} placeholder={placeholder} onChange={onChange} className={styles.Input}/>
-    </div>
+      <input type={type} value={value} name={name} placeholder={placeholder} onChange={onChange} className={styles.Input}/>
   );
 }
 export default Input;

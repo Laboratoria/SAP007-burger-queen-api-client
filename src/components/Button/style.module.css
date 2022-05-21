@@ -1,13 +1,8 @@
-.DivBtn{
-  display: flex;
-  justify-content:center;
 
-}
 .btn{
   background-color: #F2BB16;
   cursor: pointer;
   color: white;
-  margin-top: 40px;
   padding: 15px;
   width: 150px;
   border-radius: 10px;
