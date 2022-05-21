@@ -1,4 +1,4 @@
-export function request (endpoint, method, body){
+export function request(endpoint, method, body) {
     const options = {
         method,
         headers: { 'Content-Type': 'application/json' },
