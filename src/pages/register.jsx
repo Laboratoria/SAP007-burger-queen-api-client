@@ -1,20 +1,31 @@
 import Input from "../components/Input";
 import { Button } from "../components/Button";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import Logo from "../components/Logo";
 import { createUser } from "../services/api";
-import ErrorMessage from '../components/ErrorMessage';
+import Message from '../components/Message';
+import { codeError } from '../services/error';
 import { setToken } from "../services/token";
+import { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+
 
 function Register() {
-  const [name, setName] = useState(" ");
-  const [email, setEmail] = useState(" ");
-  const [password, setPassword] = useState(" ");
-  const [role, setRole] = useState(" ");
-  const [error, setError] = useState(" ");
-  const navigate = useNavigate(" ");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate("");
 
+  const location = useLocation()
+  let feedback = ''
+  if (location.state) {
+    feedback = location.state.feedback
+  }
+  console.log(name)
+  console.log(email)
+  console.log(password)
+  console.log(role)
   function handleSubmit(e) {
     e.preventDefault();
     createUser(name, email, password, role)
@@ -22,12 +33,13 @@ function Register() {
         if (response.status === 200) {
           return response.json();
         }
-        setError(ErrorMessage(response));
+        setError(codeError(response));
       })
       .then((data) => {
         setToken(data.token);
-        navigate(data.role === "role" ? "/hall" : "/kitchen")
-
+        if (data.token) {
+          navigate(data.role === "hall" ? "/hall" : "/kitchen");
+        }
       })
       .catch((error) => console.log(error))
   }
@@ -50,7 +62,7 @@ function Register() {
         value="kitchen"
         name="role"
         id="kitchen"
-        onChange={(e) => setRole(e.target.name)}
+        onChange={(e) => setRole(e.target.value)}
       />
       <label className="label">SALÃO</label>
       <Input
@@ -58,7 +70,7 @@ function Register() {
         value="hall"
         name="role"
         id="hall"
-        onChange={(e) => setRole(e.target.name)}
+        onChange={(e) => setRole(e.target.value)}
       />
       <Input
         type="email"
@@ -80,9 +92,8 @@ function Register() {
       <Link to="/login" className="Hiperlink">
         Já tenho cadastro
       </Link>
-      <ErrorMessage
-        disable={error ? false : true}
-        message={error} />
+      {feedback && <Message type="error" msg={feedback} />}
+      {error && <Message type="error" msg={error} />}
     </form>
 
   );
