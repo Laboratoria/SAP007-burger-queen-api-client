@@ -1,7 +1,7 @@
 import React from 'react';
 import { Background, CloseModalButton, ModalContent, ModalWrapper } from './ModalStyle';
 
-const Modal = ({showModal, setShowModal, children}) => {
+const ModalSucessRegister = ({showModal, setShowModal, children}) => {
     return (
     <>
     {showModal ? (
@@ -22,4 +22,4 @@ const Modal = ({showModal, setShowModal, children}) => {
     )
 };
 
-export default Modal
+export default ModalSucessRegister;

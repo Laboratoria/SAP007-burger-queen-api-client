@@ -45,7 +45,7 @@ const Register = () => {
           name="name"
           type="text"
           onChange={handleChange}
-          placeholder="Digite o seu nome completo"
+          placeholder="Digite o seu nome"
         />
         <LoginRegisterParagraph>
           {errors.name && errors.name}
@@ -92,7 +92,7 @@ const Register = () => {
             name="confirmPassword"
             type={showPassword2 ? "type" : "password"}
             onChange={handleChange}
-            placeholder="Digite a sua senha novamente:"
+            placeholder="Confirme sua senha"
           />
           <span className="login-eye">
             {showPassword2 ? (
@@ -141,10 +141,10 @@ const Register = () => {
         <Button onClick={() => handleSubmit(callModal)}>Cadastre-se</Button>
       </form>
       <Modal showModal={showModal} setShowModal={setShowModal}>
-        <p>Cadastro realizado com sucesso!</p>
+        <p>Uhuuul, registro realizado com sucesso.</p>
         <div style={{ textAlign: "center" }}>
           <Link to="/login">
-            <>Fazer Login</>
+            <>Faça Login aqui</>
           </Link>
         </div>
       </Modal>

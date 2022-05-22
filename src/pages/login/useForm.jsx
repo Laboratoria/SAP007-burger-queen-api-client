@@ -60,12 +60,12 @@ const useForm = (validation) => {
             } else if (response.role === "cozinheiro") {
               routerKitchen();
             } else {
-              alert("função/role desconhecida " + response.role);
+              alert("função desconhecida " + response.role);
             }
           }
         })
         .catch((error) => {
-          setMessageError("Erro na requisição. [" + error.message + "]");
+          setMessageError("Ops, algo deu errado. [" + error.message + "]");
           console.log(messageError);
         });
     }
