@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { LoginRegisterParagraph } from "../../components/style-html-elements/elements-style";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import StyleBackgroundImg from "../../components/img-background/style-bg-img";
+import Header from "../../components/header/Header";
 
 const Register = () => {
   const { handleChange, handleSubmit, errors } = UseForm(ErrorsMessage);
@@ -31,6 +32,7 @@ const Register = () => {
 
   return (
     <section>
+      <Header />
       <StyleBackgroundImg />
       <form
         className="container container-register"

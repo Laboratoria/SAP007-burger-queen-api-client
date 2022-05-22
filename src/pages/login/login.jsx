@@ -8,12 +8,14 @@ import {
   DefaultParagraph,
 } from "../../components/style-html-elements/elements-style";
 import { LoginRegisterParagraph } from "../../components/style-html-elements/elements-style";
+import Header from "../../components/header/Header";
 
 const LoginUser = () => {
   const { handleChange, handleSubmit, errors } = useForm(ErrorsMessage);
 
   return (
     <>
+    <Header />
       <section>
         <form
           className="container container-login"
