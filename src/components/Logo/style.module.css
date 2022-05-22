@@ -1,7 +1,16 @@
-
 .LogoImg {
   width: 200px;
   height: 200px;
-  border-radius: 15px;
-
+  border-radius: 50px;
+  padding: 5%;
+}
+@media(min-width: 1024px) and (max-width:1440px){
+  .LogoImg{
+    width: 400px;
+    height: 400px;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 80px;
+  
+  }
 }
