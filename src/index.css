@@ -3,6 +3,8 @@ body {
  padding: 0;
  background:  #11b4d9;
  display: flex;
+ justify-content: center;
+ align-items: center;
  height: 100vh;
 }
 form{
@@ -10,7 +12,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 }
-
 a{
   font-size: 18px;
 }
@@ -21,5 +22,9 @@ a.Hiperlink{
 .label{
   color: white;
 }
-
-
+@media(min-width: 1024px) and (max-width:1440px){
+  form{
+  justify-content: space-between;
+  width: 100vw;
+  }
+}
