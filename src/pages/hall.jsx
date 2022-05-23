@@ -1,14 +1,16 @@
-import { Button } from '../components/Button'
+import  Button  from '../components/Button'
+import { useNavigate } from 'react-router-dom'
 
 function Hall() {
-
+    const navigate = useNavigate();
+    
     function handleLogout() {
-        window.history.back()
-
+        localStorage.removeItem("token");
+        navigate("/login");
     }
     return (
         <div>
-            <p>Cozinha</p>
+            <p>Hall</p>
             <Button text="sair" onClick={handleLogout} />
         </div>
     )

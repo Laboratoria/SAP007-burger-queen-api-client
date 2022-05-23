@@ -13,8 +13,8 @@ function App() {
             <Route  exact path="/login" element={<Login/>}/>
             <Route  path="/register" element={<Register/>}/>
             {/* <AuthProvider> */}
-            <Route  path="/kitchen" element={<Kitchen/>}/>
-            <Route  path="/hall" element={<Hall/>}/>
+            <Route  path="kitchen" element={<Kitchen/>}/>
+            <Route  path="hall" element={<Hall/>}/>
             {/* </AuthProvider> */}
             <Route path="/" element={<Navigate replace to="/login" />} />
           </Routes>

@@ -6,8 +6,8 @@
 }
 @media(min-width: 1024px) and (max-width:1440px){
   .LogoImg{
-    width: 400px;
-    height: 400px;
+    width: 420px;
+    height: 420px;
     justify-content: flex-start;
     align-items: center;
     border-radius: 80px;

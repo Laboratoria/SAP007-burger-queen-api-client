@@ -1,9 +1,13 @@
-.footer{
+.footer {
+  display: flex;
+  justify-content: center;
   text-align: center;
   color: white;
-  margin-top: auto;
+  margin-top: 5px; 
+  font-size: 18px;
 }
-.footer a{
+a{
+  /* text-align: center; */
     color:white;
    
 }
