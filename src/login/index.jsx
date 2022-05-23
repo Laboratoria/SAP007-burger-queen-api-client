@@ -52,8 +52,6 @@ const Login = () => {
           navigate('/not-found');
         }
       }
-      
-      console.log(content);
       localStorage.setItem('Token', content.token);
     } catch (e) {
       setLoading(false);

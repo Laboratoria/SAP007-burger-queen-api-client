@@ -44,8 +44,6 @@ const UpdateUser = () =>{
           setSuccess('Usuário atualizado com sucesso!');
         }
       }
-      
-      console.log(content);
     } catch (e) {
       setLoading(false);
       setError('Erro desconhecido');
