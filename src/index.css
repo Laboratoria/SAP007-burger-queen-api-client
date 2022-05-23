@@ -1,30 +1,56 @@
 body {
- margin: 0;
- padding: 0;
- background:  #11b4d9;
- display: flex;
- justify-content: center;
- align-items: center;
- height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #11b4d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-form{
-display: flex;
-flex-direction: column;
-align-items: center;
+
+.DivForm {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-a{
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
   font-size: 18px;
 }
-a.Hiperlink{
+
+a.Hiperlink {
   color: white;
   cursor: pointer;
 }
-.label{
+
+.label {
   color: white;
 }
-@media(min-width: 1024px) and (max-width:1440px){
-  form{
-  justify-content: space-between;
-  width: 100vw;
+/* .DivRole {
+  height: 35px;
+    width: 280px;
+} */
+
+@media(min-width: 1024px) and (max-width:1440px) {
+  .DivForm {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 91px;
+    align-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .DivForm form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
