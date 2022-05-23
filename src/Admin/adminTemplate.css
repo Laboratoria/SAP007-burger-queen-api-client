@@ -8,7 +8,7 @@
 }
 
 .menu-admin{
-    width: 250px;
+    width: 200px;
     margin: 0; 
     padding: 0;
     float: left;
@@ -52,7 +52,7 @@
 
 .menu-admin p{
     color: #FFECDC;
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 100px;
     margin-bottom: 50px;
 }
