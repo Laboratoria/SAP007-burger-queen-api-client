@@ -36,8 +36,6 @@ const DeleteUser = () =>{
           setSuccess('Usuário deletado com sucesso!');
         }
       }
-      
-      console.log(content);
     } catch (e) {
       setLoading(false);
       setError('Erro desconhecido');

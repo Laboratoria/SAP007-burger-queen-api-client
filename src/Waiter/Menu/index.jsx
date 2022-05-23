@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import WaiterTemplate from '../waiterTemplate';
 import Button from '../../Components/button';
 
 const WaiterMenu = () =>{
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false)
+  const [products, setProducts] = useState([]);
+  const [filter, setFilter] = useState('');
 
-  const onMenu = async (e) => {
-    e.preventDefault();
-
+  const getProducts = async () => {
     setLoading(true);
     setError(false);
-    setSuccess(false);
 
     const token = localStorage.getItem('Token');
 
@@ -31,36 +29,53 @@ const WaiterMenu = () =>{
         setError(content.message);
       } else {
         if (resultApi.status === 200){
-          setSuccess(JSON.stringify(content));
+          setProducts(content);
         }
       }
-
     } catch (e) {
       setLoading(false);
       setError('Erro desconhecido');
     }
   };
 
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const productsFilter = products.filter((product) => {
+    if (product.sub_type === filter) {
+      return true;
+    } else{
+      return false;
+    }
+  });
+
   return (
     <WaiterTemplate>
-      <form className="formLogin" onSubmit={onMenu}>
-        <h1>CARDÁPIO</h1>
-          
-          {Boolean(loading) && (
-            <i className="ph-spinner">Carregando</i>
-          )}
+      <h1>CARDÁPIO</h1>
+        
+        {Boolean(loading) && (
+          <i className="ph-spinner">Carregando</i>
+        )}
 
-          {Boolean(error) && (
-            <h1 className="msgError">{error}</h1>
-          )}
-          
-          <Button title="OBTER PRODUTOS" />
+        {Boolean(error) && (
+          <h1 className="msgError">{error}</h1>
+        )}
+        
+        <Button title="Café da Manhã" onClick={() => setFilter('breakfast')} />
+        <Button title="Lanches" onClick={() => setFilter('hamburguer')} />
+        <Button title="Acompanhamentos" onClick={() => setFilter('side')} />
+        <Button title="Bebidas" onClick={() => setFilter('drinks')} />
 
-          {Boolean(success) && (
-          <h1 className="msgSuccess">{success}</h1>
-          )}
-
-      </form>
+        {productsFilter.map((product) => (
+          <div>
+            <h1>{product.name}</h1>
+            {/* <img src={product.image}/> */}
+            <p>{product.flavor}</p>
+            <p>{product.complement}</p>
+            <p>{product.price}</p>
+          </div>
+        ))}
     </WaiterTemplate>
   );
 }
