@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import WaiterTemplate from '../waiterTemplate';
 import Button from '../../Components/button';
+import Item from './menu'
 
 const WaiterMenu = () =>{
   const [loading, setLoading] = useState(false);
@@ -53,13 +54,8 @@ const WaiterMenu = () =>{
           {Boolean(error) && (
             <h1 className="msgError">{error}</h1>
           )}
-          
           <Button title="OBTER PRODUTOS" />
-
-          {Boolean(success) && (
-          <h1 className="msgSuccess">{success}</h1>
-          )}
-
+        <Item/>
       </form>
     </WaiterTemplate>
   );
