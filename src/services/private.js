@@ -1,33 +1,28 @@
-// import { Route, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import Kitchen from "../pages/kitchen/index.js";
+import Waitress from "../pages/waitress/index.js";
 
-// //   const token = () => localStorage.getItem('token');
-// const isAuthenticated = () => {
-//   const token = localStorage.getItem("token");
-//   if (token !== null && token !== "undefined") {
-//     return true;
-//   }
-//   return false;
-// };
+//   const token = () => localStorage.getItem('token');
 
-// const role = () => localStorage.getItem("role");
+const role = () => localStorage.getItem("role");
+const isAuthenticated = () => {
+  const token = localStorage.getItem("token");
+  if (token !== null && token !== "undefined") {
+    return true;
+  }
+  return false;
+};
 
-// const PrivateRoute = (props) => {
-//     const navigate = useNavigate()
-//   if (isAuthenticated) {
-//     if (role() === "kitchen") {
-//       if (props.path === "/kitchen") {
-//         return <Route {...props} />;
-//       }
-//       return navigate('/kitchen', { message: "redirecionado" });
-//     }
-//     if (role() === "waitress") {
-//       if (props.path === "/waitress") {
-//         return <Route {...props} />;
-//       }
-//       return navigate('/waitress', { message: "redirecionado" });
-//     }
-//   }
-//   return navigate('/', { message: "redirecionado" });
-// };
+const PrivateRoute = () => {
+  if (isAuthenticated) {
+    if (role() === "kitchen") {
+      return <Kitchen />;
+    }
+    if (role() === "waitress") {
+      return <Waitress />;
+    }
+  }
+  return <Navigate to="/" />;
+};
 
-// export default PrivateRoute;
+export default PrivateRoute;

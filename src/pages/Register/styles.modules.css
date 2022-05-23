@@ -9,16 +9,11 @@
     justify-content: center;
 }
 
-.banner {
-    width: 70%;
-    border-radius: 3%;
-}
-
 .register {
     display: flex;
     flex-direction: column;
     background-color: #F75B42;
-    margin: 5%;
+    margin: 3%;
     padding: 4%;
     align-items: center;
     border-radius: 3%;
