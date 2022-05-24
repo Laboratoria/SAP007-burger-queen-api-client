@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AllRoute from './route.js';
+import App from './App.js';
+// import { render } from "react-dom";
+import reportWebVitals from "./reportWebVitals";
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AllRoute/>
+    <App/>
   </React.StrictMode>
 );
 
+reportWebVitals();
