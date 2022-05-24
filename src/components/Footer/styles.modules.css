@@ -1,6 +1,5 @@
 .footer {
-    bottom: 0;
-    position:relative;
+    position:static;
     text-align: center;
     font-size: 15px;
 }

@@ -34,3 +34,8 @@
     font-size: 110%;
     color: black;
 }
+
+@media (min-width: 1024px) and (max-width: 2000px) {
+    .container-login {
+        justify-content: initial;
+    }}

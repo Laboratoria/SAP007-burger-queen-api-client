@@ -1,8 +1,15 @@
-.container-logotype{
-    display: flex;
-    justify-content: center;
+.container-logotype {
+  display: flex;
+  justify-content: center;
 }
 .container-logotype img {
-    width: 14%;
-    margin-top: 2%;
+  width: 14%;
+  margin-top: 2%;
+}
+
+@media (min-width: 1024px) and (max-width: 2000px) {
+  .container-logotype img {
+    width: 13%;
+    margin-top: 1%;
+  }
 }
