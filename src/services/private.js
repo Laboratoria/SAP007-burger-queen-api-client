@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
-import Kitchen from "../Pages/kitchen/index.js";
-import Waitress from "../Pages/waitress/index.js";
+import Kitchen from "../pages/kitchen/index.js";
+import Waitress from "../pages/waitress/index.js";
 
 //   const token = () => localStorage.getItem('token');
 
