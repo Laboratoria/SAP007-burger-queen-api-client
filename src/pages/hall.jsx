@@ -11,7 +11,7 @@ function Hall() {
     return (
         <div>
             <p>Hall</p>
-            <Button text="sair" onClick={handleLogout} />
+            <Button children="sair" onClick={handleLogout} />
         </div>
     )
 }

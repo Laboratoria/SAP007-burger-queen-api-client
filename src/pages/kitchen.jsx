@@ -10,7 +10,7 @@ function Kitchen() {
   return (
     <div>
       <p>Cozinha</p>
-      <Button text="sair" onClick={handleLogout} />
+      <Button children="sair" onClick={handleLogout} />
     </div>
   );
 }
