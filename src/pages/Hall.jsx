@@ -48,3 +48,11 @@ const Hall = () => {
       .catch((error) => {
         alert("Erro na requisição. [" + error.message + "]");
       });
+
+   GetOrders().then((json) => {
+      const FinishedOrders = json.filter(
+        (item) => item.status === "Finalizado"
+      );
+      setReadyOrder(FinishedOrders ? FinishedOrders.length : 0);
+    });
+  }, []);
