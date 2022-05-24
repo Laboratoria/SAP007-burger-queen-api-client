@@ -1,23 +1,19 @@
 import { useState } from "react";
-import { createUser} from '../../services/auth';
+import { useNavigate } from 'react-router-dom'
+import { LoginWithEmailPassword } from '../../services/auth';
 
-const UseForm = (validation) => {
+const useForm = (validation) => {
   localStorage.clear();
-  
+  const [messageError, setMessageError] = useState('');
+
   const [values, setValues] = useState({
-    name: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    role: '',
   });
 
   const [errors, setErrors] = useState({
-    name: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    role: '',
   });
 
   const handleChange = (e) => {
@@ -33,23 +29,49 @@ const UseForm = (validation) => {
     
   };
 
-  const handleSubmit = (callback) => {
+  const navigate = useNavigate()
+
+  const routerHall = () => {
+    navigate('/hall')
+  }
+  const routerKitchen = () => {
+    navigate('/kitchen')
+  }
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     const validations = validation(values)
     setErrors(validations);
 
     if(validations.ok) {
-      createUser(values.name, values.email, values.password, values.role)
+      LoginWithEmailPassword(values.email, values.password)
         .then((response) => {
           
           if (response.code && (response.code === 400 || response.code === 403)) {
             alert(response.message)
           } else {
-            callback();
+            localStorage.setItem('token', response.token);
+            localStorage.setItem("id", response.id);
+
+            if (response.role === "atendente") {
+              routerHall();
+               
+            } 
+            else if (response.role === "cozinheiro") {
+              routerKitchen();
+              
+            }
+            else {
+              alert('função desconhecida '+response.role);
+            }
           }
 
         })
         .catch((error) => {
-          console.log('Erro na requisição. [' + error.message + ']')
+          setMessageError('Erro na requisição. [' + error.message + ']');
+          console.log(messageError)
         })
       }
   };
@@ -57,5 +79,4 @@ const UseForm = (validation) => {
   return { handleChange, handleSubmit, errors };
 }
 
-
-export default UseForm;
+export default useForm;
