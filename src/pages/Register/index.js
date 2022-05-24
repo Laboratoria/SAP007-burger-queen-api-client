@@ -1,12 +1,12 @@
-import Input from "../../components/Inputs";
-import Button from "../../components/button";
-import Header from "../../components/header";
-import Banner from "../../components/banner";
-import Footer from "../../components/footer";
-import Error from "../../components/errors";
+import Input from "../../Components/Inputs";
+import Button from "../../Components/button";
+import Header from "../../Components/header";
+import Banner from "../../Components/banner";
+import Footer from "../../Components/footer";
+import Error from "../../Components/errors";
 import { useNavigate } from "react-router-dom";
 import "./styles.modules.css";
-import Radio from "../../components/radio";
+import Radio from "../../Components/radio";
 import { createUser } from "../../services/auth";
 import { useState } from "react";
 

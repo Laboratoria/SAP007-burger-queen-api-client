@@ -1,9 +1,9 @@
-import Input from "../../components/Inputs";
-import Button from "../../components/button";
-import Header from "../../components/header";
-import Banner from "../../components/banner";
-import Footer from "../../components/footer";
-import Error from "../../components/errors";
+import Input from "../../Components/Inputs";
+import Button from "../../Components/button";
+import Header from "../../Components/header";
+import Banner from "../../Components/banner";
+import Footer from "../../Components/footer";
+import Error from "../../Components/errors";
 import { useState } from "react";
 import { userLogin } from "../../services/auth";
 import { useNavigate } from "react-router-dom";

@@ -6,8 +6,8 @@ import {
   // Navigate
 } from "react-router-dom";
 import PrivateRoute from "./services/private.js";
-import Login from "./pages/login/index.js";
-import Register from "./pages/register/index.js";
+import Login from "./Pages/login/index.js";
+import Register from "./Pages/register/index.js";
 
 const AppRoutes = () => (
   <BrowserRouter>
