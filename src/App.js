@@ -1,6 +1,13 @@
-import React from 'react';
-import Root from './Root.js';
+import AllRoutesApp from './Routes';
+import GlobalStyle from './globalStyles';
 
-const App = () => <Root />
+function App() {
+  return (
+    <>
+      <AllRoutesApp />
+      <GlobalStyle />
+    </>
+  );
+}
 
 export default App;

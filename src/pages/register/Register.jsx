@@ -1,10 +1,10 @@
-import UseForm from "./UseForm";
+import UseForm from "./useForm";
 import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
 import ErrorsMessage from "./registerValidation";
 import { useState } from "react";
 import Modal from "../../components/modal/Modal";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import StyleBackgroundImg from "../../components/img-background/style-bg-img";
 import CircleOption from "../../components/circle-option/CircleOption";
