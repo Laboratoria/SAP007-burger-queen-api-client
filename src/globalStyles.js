@@ -9,19 +9,7 @@ export default createGlobalStyle`
     text-decoration: none;     
 }
 
-:root {
-    --white: #FFF;
-    --light-white: #dadada;
-    --black: #000000;
-    --light-black: #121212;
-    --yellow: #F6C964;
-    --dark-purple: #050441;
-    --grey: #4D4C80;
-    --dark-grey: #363636;
-    --red: red;
-    --light-orange: #CE8E43;
-    --dark-orange: #E29D4B;
-    --green: #0F7A1A;   
+
      
 }
 
