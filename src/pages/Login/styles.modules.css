@@ -7,24 +7,30 @@
     display: flex;
     justify-content: center;
 }
-.banner {
-    width: 70%;
-    border-radius: 3%;
-}
+
 .login{
     display: flex;
     flex-direction: column;
     background-color: #F75B42;
-    margin: 5%;
+    margin: 3%;
     padding: 4%;
     align-items: center;
     border-radius: 3%;
 }
 .button-login {
-    margin-top: 20%;
+    margin-top: 15%;
+}
+
+.error-login{
+    margin-top: 5%;
+    background-color: #F75B42;
+    text-decoration-line: underline;
+    text-decoration-color: #FEF2E4;
+    font-size: 16px;
 }
 .register-link{
     background-color: #F75B42;
     margin-top: 5%;
     font-size: 110%;
+    color: black;
 }

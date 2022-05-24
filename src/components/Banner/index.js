@@ -1,4 +1,5 @@
 import banner from "../../Images/hamburguer-theme.jpeg";
+import "./styles.css"
 
 function Banner({
     className}){

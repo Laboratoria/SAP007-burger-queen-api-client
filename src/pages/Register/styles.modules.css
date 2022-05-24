@@ -1,0 +1,45 @@
+.container-register {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-banner {
+    display: flex;
+    justify-content: center;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    background-color: #F75B42;
+    margin: 3%;
+    padding: 4%;
+    align-items: center;
+    border-radius: 3%;
+}
+
+.checkbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #F75B42;
+    margin: 5%;
+    padding: 4%;
+    width: max-content;
+}
+
+.error-register{
+    margin-bottom: 3%;
+    background-color: #F75B42;
+    text-decoration-line: underline;
+    text-decoration-color: #FEF2E4;
+    font-size: 18px;
+}
+
+.login-link {
+    background-color: #F75B42;
+    margin-top: 5%;
+    font-size: 110%;
+    color: black;
+}
