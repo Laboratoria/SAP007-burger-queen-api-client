@@ -5,6 +5,7 @@ const firstInputValue = "value-1";
 const firstLabel = "kitchen";
 const secondInputValue = "value-2";
 const secondLabel = "waitress";
+const name = "roles"
 describe("Tests for ButtonRadio component", () => {
   it("should render two radio buttons with the informations", () => {
     render(
@@ -48,10 +49,11 @@ describe("Tests for ButtonRadio component", () => {
 
   it('should change the checked input and call a function when any button is clicked', () => {
     const onChange = jest.fn()
+
     render(
         <>
-          <Radio value={firstInputValue} label={firstLabel} />
-          <Radio value={secondInputValue} label={secondLabel} />
+          <Radio value={firstInputValue} label={firstLabel} onChange={onChange} name={name}/>
+          <Radio value={secondInputValue} label={secondLabel} onChange={onChange}  name={name}/>
         </>
       );
     const input1 = screen.getByLabelText(firstLabel)

@@ -16,15 +16,11 @@ function Login() {
     userLogin(email, password).then((user) => {
       console.log(user);
       if (user.token) {
-        if (user.role === "kitchen") {
-          navigate("/kitchen", { message: "redirecionado" });
-        } else if (user.role === "waitress") {
-          navigate("/waitress", { message: "redirecionado" });
-        }
         localStorage.setItem("name", user.name);
         localStorage.setItem("token", user.token);
         localStorage.setItem("role", user.role);
-        return user.role;
+        navigate("/panel", { message: "redirecionado" })
+        return user;
       } else if (user.code) {
         setError(user.message);
         hideMessage();

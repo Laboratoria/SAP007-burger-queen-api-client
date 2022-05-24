@@ -20,17 +20,13 @@ function Register() {
         hideMessage();
       }
       if (data.token) {
-        if (data.role === "kitchen") {
-          navigate("/kitchen", { message: "redirecionado" });
-        } else if (data.role === "waitress") {
-          navigate("/waitress", { message: "redirecionado" });
-        }
+        
         localStorage.setItem("name", data.name);
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", data.role);
+        navigate("/panel", {message: "redirecionando"})
+        return data
       }
-
-      console.log(data);
     });
     function hideMessage() {
       setTimeout(() => {

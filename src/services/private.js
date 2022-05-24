@@ -16,6 +16,7 @@ const isAuthenticated = () => {
 const PrivateRoute = () => {
   if (isAuthenticated) {
     if (role() === "kitchen") {
+      
       return <Kitchen />;
     }
     if (role() === "waitress") {
