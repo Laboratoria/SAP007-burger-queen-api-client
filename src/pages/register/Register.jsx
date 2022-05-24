@@ -1,7 +1,7 @@
 import UseForm from "./useForm";
 import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
-import ErrorsMessage from "./registerValidation";
+import ErrorsMessage from "./register-valid";
 import { useState } from "react";
 import Modal from "../../components/modal/Modal";
 import { Link } from "react-router-dom";

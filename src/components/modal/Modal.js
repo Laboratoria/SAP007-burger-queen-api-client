@@ -1,17 +1,17 @@
 import React from 'react';
-import { Background, CloseModalButton, ModalContent, ModalWrapper } from './ModalStyle';
+import { Background, CloseModalOfMenuOptions, ModalContentSentToKitchen, ModalOrderSentWithSucess } from './ModalStyle';
 
 const ModalSucessRegister = ({showModal, setShowModal, children}) => {
     return (
     <>
     {showModal ? (
         <Background>
-            <ModalWrapper showModal={showModal}>
-            <ModalContent>
+            <ModalOrderSentWithSucess showModal={showModal}>
+            <ModalContentSentToKitchen>
                 {children}
-            </ModalContent>
-            <CloseModalButton aria-label='Close Modal' onClick={() => setShowModal(prev => !prev)} />
-            </ModalWrapper>
+            </ModalContentSentToKitchen>
+            <CloseModalOfMenuOptions aria-label='Close Modal' onClick={() => setShowModal(prev => !prev)} />
+            </ModalOrderSentWithSucess>
         </Background>
 
     
