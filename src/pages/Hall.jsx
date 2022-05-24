@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { GetAllProducts, PostOrders } from "../services/products.js";
+import { RenderAllProducts, PostOrders } from "../services/products.js";
 import { Title } from "../components/modal-menu/header/HeaderCardStyle";
 import HeaderCard from "../components/modal-menu/header/HeaderCard";
 import MenuCardModal from "../components/modal-menu/body/MenuCardModal";
@@ -28,19 +28,3 @@ import burguerDuploImg from "../images/bg-duplo.png";
 import drinkImg from "../images/drink.png";
 import friesImg from "../images/fries.png";
 import StyleBackgroundImg from "../components/img-background/style-bg-img";
-
-const Hall = () => {
-    const [showBreakfast, setShowBreakfast] = useState(false);
-    const [showHamburguer, setShowHamburguer] = useState(false);
-    const [showHamburguerDuplo, setShowHamburguerDuplo] = useState(false);
-    const [showDrink, setShowDrink] = useState(false);
-    const [showSide, setShowSide] = useState(false);
-    const [nameClient, setNameClient] = useState("");
-    const [table, setTable] = useState("");
-    const [order, setOrder] = useState([]);
-    const [allValue, setAllValue] = useState("");
-    const [showResume, setShowResume] = useState(false);
-    const [showModal, setShowModal] = useState(false);
-    const [showCancelModal, setShowCancelModal] = useState(false);
-    const [menu, setMenu] = useState([]);
-    const [readyOrder, setReadyOrder] = useState([]);
