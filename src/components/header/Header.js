@@ -1,5 +1,5 @@
-import img from '../../images/logo2.png'
-
+import img from '../../images/logo5.png'
+import { Container } from './HeaderStyle';
 import { Logout } from '../logout/Logout';
 
 const Header = ({showLogOut}) => {
