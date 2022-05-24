@@ -1,0 +1,11 @@
+.DivCard{
+    width: 310px;
+    height: 110px;
+    background-color: #9EF277 ;
+}
+.DivCardItem{
+    width: 100px;
+    height: 80px;
+    background-color: #4ED90D;
+    color: #ffffff;
+}
