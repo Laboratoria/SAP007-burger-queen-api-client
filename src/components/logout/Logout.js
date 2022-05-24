@@ -11,7 +11,7 @@ export const Logout = () => {
     }
   }
   return (
-    <FiLogOut style={{fontSize: '1rem',  cursor: 'pointer'}} onClick={() => handleLogout()} />
+    <FiLogOut style={{fontSize: '1.4em',  cursor: 'pointer'}} onClick={() => handleLogout()} />
   
     )
 };

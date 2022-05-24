@@ -1,14 +1,14 @@
-export const errosMessages = (values) => {
+export const ErrorsMessage = (values) => {
   let errors = {};
   
   if (!values.email) {
-    errors.email = 'Preencha seu email.';
+    errors.email = 'Eita, faltou o email.';
   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
     errors.email = 'Ops, email inválido.';
   }
 
   if (!values.password) {
-    errors.password = 'Preencha sua senha'
+    errors.password = 'Ops, faltou a senha.'
   } else if (values.password.length < 6) {
     errors.password = 'Vish, senha curta.';
   }
@@ -18,4 +18,4 @@ export const errosMessages = (values) => {
   return errors;
 }
 
-export default errosMessages;
+export default ErrorsMessage;
