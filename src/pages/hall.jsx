@@ -6,6 +6,7 @@ import PurchaseOrder from "../components/PurchaseOrder";
 import { useNavigate} from "react-router-dom";
 
 function Hall() {
+<<<<<<< HEAD
   const navigate = useNavigate();
 
   function handleLogout() {
@@ -13,6 +14,21 @@ function Hall() {
     navigate("/login");
   }
 
+=======
+    const navigate = useNavigate();
+    
+    function handleLogout() {
+        localStorage.removeItem("token");
+        navigate("/login");
+    }
+    return (
+        <div>
+            <p>Hall</p>
+            <Button children="sair" onClick={handleLogout} />
+        </div>
+    )
+}
+>>>>>>> bf030f714f3f3cd65a14c324c61dfc13d2b0511b
 
 
   return (
