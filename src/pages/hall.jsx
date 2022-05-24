@@ -3,45 +3,51 @@ import Header from "../components/Header";
 import Input from "../components/Input";
 import Card from "../components/Card";
 import PurchaseOrder from "../components/PurchaseOrder";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { getProduct } from "../services/api";
+import { useState } from "react";
+
 
 function Hall() {
-<<<<<<< HEAD
   const navigate = useNavigate();
-
+  const [client, setClient] = useState();
+  const [table, setTable] = useState();
+  const [products, setProducts] = useState([])
+  console.log(setProducts)
   function handleLogout() {
     localStorage.removeItem("token");
     navigate("/login");
   }
 
-=======
-    const navigate = useNavigate();
-    
-    function handleLogout() {
-        localStorage.removeItem("token");
-        navigate("/login");
-    }
-    return (
-        <div>
-            <p>Hall</p>
-            <Button children="sair" onClick={handleLogout} />
-        </div>
-    )
-}
->>>>>>> bf030f714f3f3cd65a14c324c61dfc13d2b0511b
 
+function PushedProducts (){
+  getProduct()
+  .then ((response)=> response.json())
+  // .then ((data)=> setProducts(data.name)) 
+}
+PushedProducts()
 
   return (
     <div>
       <Header text="PEDIDOS" />
-      <Button text="sair" onClick={handleLogout} />
+      <Button children="sair" onClick={handleLogout} />
       <Input placeholder="MENU PRINCIPAL" />
       <Input placeholder="CAFÉ DA MANHÃ" />
-      <Card />
+      <Card item={products.name}/>
       <PurchaseOrder />
-      <Input  />
-        
-      <Input placeholder="MESA" />
+      <Input
+        placeholder="CLIENTE"
+        value={client}
+        onChange={(e) => setClient(e.target.value)}
+        />
+        {console.log(setClient)}
+      <Input
+        placeholder="MESA"
+        value={table}
+        onChange={(e) => setTable(e.target.value)}
+      />
+      <PurchaseOrder />
+      
     </div>
   );
 }
