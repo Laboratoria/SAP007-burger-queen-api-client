@@ -50,6 +50,27 @@ export const Label = styled.label `
               
   }
 `
+
+export const ClientData = styled.input `
+    min-width: 260px;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    outline: none;
+    margin: 20px;
+    text-align: center;
+    height: 50px;
+    font-size: 20px;
+    color: black;
+    min-width: 260px;
+    border: 1px solid black;
+    border-radius: 20px;
+
+    &&::placeholder {
+    font-size: 1em;
+    color: black;
+}
+`
     
 
 

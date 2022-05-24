@@ -19,3 +19,12 @@ import {
   ButtonsHall,
   CancelOrder,
 } from "../components/button/ButtonStyle.js";
+import { Link } from "react-router-dom";
+import { GetOrders } from "../services/products";
+import { ClientData } from "../components/input/InputStyle.js";
+import breakfastImg from "../images/breakfast.png";
+import burguerSimplesImg from "../images/bg-simples.png";
+import burguerDuploImg from "../images/bg-duplo.png";
+import drinkImg from "../images/drink.png";
+import friesImg from "../images/fries.png";
+import StyleBackgroundImg from "../components/img-background/style-bg-img";
