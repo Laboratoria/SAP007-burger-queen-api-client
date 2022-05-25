@@ -74,3 +74,77 @@ const Hall = () => {
       setShowHamburguerDuplo(!showHamburguerDuplo);
     }
   };
+
+  const handleChange = (e) => {
+    setNameClient(e.target.value);
+  };
+
+  const handleChangeTable = (e) => {
+    setTable(e.target.value);
+  };
+
+  const addOrderSummary = (
+    idProduct,
+    nameProduct,
+    price,
+    quantityProduct,
+    flavor,
+    complement
+  ) => {
+    let updatedOrder = [...order.filter((item) => item.id !== idProduct)];
+
+    if (quantityProduct > 0) {
+      updatedOrder.push({
+        id: idProduct,
+        quantity: quantityProduct,
+        name: nameProduct,
+        price: price,
+        totalProductPrice: price * quantityProduct,
+        flavor: flavor,
+        complement: complement,
+      });
+    }
+
+    const updatedMenu = menu.map((item) => {
+      if (item.id === idProduct) {
+        return { ...item, quantity: quantityProduct };
+      }
+      return item;
+    });
+
+    setMenu(updatedMenu);
+    setOrder(updatedOrder);
+    totalValue(updatedOrder);
+  };
+
+  const sendSummary = () => {
+    if (nameClient !== "" && table !== "" && order.length > 0) {
+      const allProducts = order.map((item) => {
+        const productsArr = {
+          id: item.id,
+          qtd: item.quantity,
+        };
+        return productsArr;
+      });
+
+      PostOrders(nameClient, table, allProducts).then(() => {
+        setShowModal(true);
+        setShowResume(false);
+        setNameClient("");
+        setTable("");
+        setMenu(
+          menu.map((item) => {
+            item.quantity = 0;
+            return item;
+          })
+        );
+        setOrder([]);
+        setShowBreakfast(false);
+        setShowHamburguer(false);
+        setShowHamburguerDuplo(false);
+        setShowSide(false);
+        setShowDrink(false);
+        window.scrollTo(0, 0);
+      });
+    }
+  };
