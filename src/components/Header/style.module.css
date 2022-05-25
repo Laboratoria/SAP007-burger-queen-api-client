@@ -1,0 +1,16 @@
+.DivHeader{
+  margin-top: 0%;
+  background-color: #ffffff;
+  width: 320px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.finn{
+  width: 15%;
+  border-radius: 50%;
+  align-items: center;
+}
+.title{
+  color: #117DBF;
+}
