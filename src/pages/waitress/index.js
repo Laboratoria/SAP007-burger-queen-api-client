@@ -1,6 +1,12 @@
+import HeaderPedidos from "../../components/headerPedidos";
+
 function Waitress() {
-    return(
-        <h1>Atendimento</h1>
+    return (
+        <>        
+            <HeaderPedidos />
+            <h1>Atendimento</h1>
+        </>
+
     )
 }
 

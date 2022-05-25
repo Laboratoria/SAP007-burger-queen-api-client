@@ -1,0 +1,44 @@
+.header-pedidos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logotype{
+    width: 10%;
+}
+
+.menu{
+    display: inline;
+    width: 50%;
+}
+
+.menu ul{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.menu li{
+    list-style-type: none;
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+
+}
+
+.logout{
+    background-color: transparent;
+  width: 10%;
+  margin: initial;
+  padding: initial;
+  border-radius: initial;
+  box-shadow: initial;
+  border: initial;
+  text-align: initial;
+  cursor: pointer;
+}
+.logout img{
+    width: 35%;
+}
