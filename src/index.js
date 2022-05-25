@@ -1,23 +1,17 @@
 import React from 'react';
-import ReactDom from 'react-dom/client';
-import App from './App';
-
-
-const root = ReactDom.createRoot(document.getElementById ('root'));
-
+import ReactDOM from 'react-dom/client';
+import App from './pages-js/login';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
   <App/>  
   </React.StrictMode>
-)
+);
 
+// const App= ()=> {
+//   return (
+//       <h1>Welcome</h1>
+//   )
+// }
 
-
-
-
-//ReactDOM.render(
-   // <React.StrictMode>
-//        <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+// export default App;
