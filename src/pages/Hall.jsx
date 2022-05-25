@@ -148,3 +148,18 @@ const Hall = () => {
       });
     }
   };
+
+  const remove = (index) => {
+    const updatedList = [...order];
+    const deletedItems = updatedList.splice(index, 1);
+    setOrder(updatedList);
+    setAllValue(allValue - deletedItems[0].totalProductPrice);
+
+    const updatedMenu = menu.map((item) => {
+      if (item.id === deletedItems[0].id) {
+        return { ...item, quantity: 0 };
+      }
+      return item;
+    });
+    setMenu(updatedMenu);
+  };
