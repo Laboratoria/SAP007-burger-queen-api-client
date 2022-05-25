@@ -177,3 +177,11 @@ const Hall = () => {
       total = 0;
     }
   };
+
+  const confirmcancelOrder = () => {
+    if (nameClient === "" || table === "") {
+      setShowCancelModal(false);
+    } else {
+      setShowCancelModal(true);
+    }
+  };
