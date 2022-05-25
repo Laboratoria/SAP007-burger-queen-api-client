@@ -41,24 +41,26 @@ function Register() {
       <Logo />
       <form onSubmit={createUser}>
         <div className="DivRole">
-          <label className="label">COZINHA</label>
+          <div>
+          <label className="label">
           <Input
             type="radio"
             value="kitchen"
             name="role"
             id="kitchen"
             onChange={(e) => setRole(e.target.value)}
-          />
-        {/* </div> */}
-        {/* <div  className="DivRole"> */}
-          <label className="label">SALÃO</label>
+          />COZINHA
+          </label>
+          <label className="label">
           <Input
             type="radio"
             value="hall"
             name="role"
             id="hall"
             onChange={(e) => setRole(e.target.value)}
-          />
+          />SALÃO
+          </label>
+          </div>
         </div>
         <Input
           type="name"

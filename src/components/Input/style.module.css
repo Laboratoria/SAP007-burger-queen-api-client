@@ -13,10 +13,12 @@
 .Input::placeholder{
   color: white;
 }
-.Input[type="radio" i]{
+.Input[type="radio"]{
   width: 5%;
-  margin: 0%;
-  padding: 10px;
-  float: left;
-}
+  height: 25px;
+  margin-bottom: 0%;
+ }
 
+.Input[type="text"]{
+  margin-left: 10%;
+}

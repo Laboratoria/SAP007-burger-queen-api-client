@@ -1,23 +1,6 @@
 .DivCard{
-<<<<<<< HEAD
-    width: 310px;
-    height: 110px;
-    background-color: #9EF277 ;
-}
-.DivCardItem{
-    width: 100px;
-    height: 80px;
-    background-color: #4ED90D;
-    color: #ffffff;
-=======
-  width: 310px;
-  height: 110px;
+  width: 160px;
+  height: 90px;
   background-color: #9EF277 ;
 }
-.DivCardItem{
-  width: 100px;
-  height: 80px;
-  background-color: #4ED90D;
-  color: #ffffff;
->>>>>>> 9fe1a3fc14a7a82d5f884cd98027cb5c97a316eb
-}
+
