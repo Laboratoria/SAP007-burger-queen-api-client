@@ -12,5 +12,22 @@ export const RenderAllProducts = async () => {
   }).then(res => res.json())
 }
 
+export const PostOrders = async (client, table, allProducts) => {
+  const token = localStorage.getItem("token");
+  return await fetch(`${baseURL}/orders`, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json",
+      'Authorization': `${token}`,
+    },
+    body: JSON.stringify({
+      client: client,
+      table: table,
+      products: allProducts,
+    })
+  })
+}
+
+
 
   
