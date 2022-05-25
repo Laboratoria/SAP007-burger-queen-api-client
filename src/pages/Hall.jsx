@@ -56,3 +56,21 @@ const Hall = () => {
       setReadyOrder(FinishedOrders ? FinishedOrders.length : 0);
     });
   }, []);
+
+  const handleClick = (typeProduct) => {
+    if (typeProduct === "breakfast") {
+      setShowBreakfast(!showBreakfast);
+    }
+    if (typeProduct === "hamburguer") {
+      setShowHamburguer(!showHamburguer);
+    }
+    if (typeProduct === "drink") {
+      setShowDrink(!showDrink);
+    }
+    if (typeProduct === "side") {
+      setShowSide(!showSide);
+    }
+    if (typeProduct === "hamburguerDuplo") {
+      setShowHamburguerDuplo(!showHamburguerDuplo);
+    }
+  };
