@@ -185,3 +185,15 @@ const Hall = () => {
       setShowCancelModal(true);
     }
   };
+
+  const cancelOrder = () => {
+    setShowCancelModal(false);
+    setShowResume(false);
+  };
+
+  const msgError =
+    nameClient === "" || table === "" ? (
+      <p style={{ color: "#531CB3" }}>
+        <b>Por favor, preencha os dados do Cliente</b>
+      </p>
+    ) : null;
