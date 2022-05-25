@@ -257,3 +257,78 @@ const Hall = () => {
       showCard={showBreakfast}
       callback={addOrderSummary}
     />
+
+<HeaderCard onClick={() => handleClick("hamburguer")}>
+            <Title>Burguer Simples</Title>
+            <img
+              src={burguerSimplesImg}
+              alt="burguer-simples"
+              className="img-capa"
+            />
+          </HeaderCard>
+          <MenuCardModal
+            itens={menu.filter((item) => item.name === "Hambúrguer simples")}
+            showCard={showHamburguer}
+            callback={addOrderSummary}
+          />
+
+          <HeaderCard onClick={() => handleClick("hamburguerDuplo")}>
+            <Title>Burgão Duplo</Title>
+            <img
+              src={burguerDuploImg}
+              alt="burguer-duplo"
+              className="img-capa"
+            />
+          </HeaderCard>
+          <MenuCardModal
+            itens={menu.filter((item) => item.name === "Hambúrguer duplo")}
+            showCard={showHamburguerDuplo}
+            callback={addOrderSummary}
+          />
+
+          <HeaderCard onClick={() => handleClick("drink")}>
+            <Title>Bebidas</Title>
+            <img src={drinkImg} alt="bebidas" className="img-capa" />
+          </HeaderCard>
+          <MenuCardModal
+            itens={menu.filter((item) => item.sub_type === "drinks")}
+            showCard={showDrink}
+            callback={addOrderSummary}
+          />
+
+          <HeaderCard onClick={() => handleClick("side")}>
+            <Title>Acompanhamento</Title>
+            <img src={friesImg} alt="acompanhamento" className="img-capa" />
+          </HeaderCard>
+          <MenuCardModal
+            itens={menu.filter((item) => item.sub_type === "side")}
+            showCard={showSide}
+            callback={addOrderSummary}
+          />
+
+          {/* -----------------pedido do cliente---------------------*/}
+          {showResume ? (
+            <div className="container container-client-data">
+              <BackgroundCard>
+                <h3>Comanda</h3>
+                {msgError}
+                <DefaultParagraph>Cliente: {nameClient}</DefaultParagraph>
+                <DefaultParagraph>Mesa: {table}</DefaultParagraph>
+
+                {order.map((item, index) => (
+                  <DivProduct key={item.id}>
+                    <p>
+                      Qtd: {item.quantity} x {item.price}{" "}
+                    </p>
+                    <p> {item.name} </p>
+                    <p>{item.flavor}</p>
+                    <p>{item.complement}</p>
+                    <p> R$ {item.totalProductPrice}</p>
+
+                    <MdDelete
+                      onClick={() => remove(index)}
+                      style={{ color: "#d13030", cursor: "pointer" }}
+                    />
+                  </DivProduct>
+                ))}
+
