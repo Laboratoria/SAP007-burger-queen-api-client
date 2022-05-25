@@ -197,3 +197,5 @@ const Hall = () => {
         <b>Por favor, preencha os dados do Cliente</b>
       </p>
     ) : null;
+
+    const alertOrderIsReady = readyOrder > 0 ? <> ({readyOrder}) </> : null;
