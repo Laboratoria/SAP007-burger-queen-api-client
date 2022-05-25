@@ -342,4 +342,7 @@ const Hall = () => {
             </div>
           ) : null}
         </div>
+        <Modal showModal={showModal} setShowModal={setShowModal}>
+          <p>Uhuul, pedido enviado com sucesso.</p>
+        </Modal>
 
