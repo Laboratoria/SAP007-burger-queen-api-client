@@ -331,4 +331,15 @@ const Hall = () => {
                     />
                   </DivProduct>
                 ))}
+                <DefaultParagraph>Total: R$ {allValue} </DefaultParagraph>
+                <BtnSendOrderToKitchenAndPrepareIt onClick={() => sendSummary()}>
+                  Enviar
+                </BtnSendOrderToKitchenAndPrepareIt>
+                <CancelOrder onClick={() => confirmcancelOrder()}>
+                  Cancelar
+                </CancelOrder>
+              </BackgroundCard>
+            </div>
+          ) : null}
+        </div>
 
