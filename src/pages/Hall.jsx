@@ -219,3 +219,27 @@ const Hall = () => {
               <ButtonsHall>Pedidos Entregues</ButtonsHall>
             </Link>
           </div>
+          <div className="container data-ready-order-client">
+          <ClientData
+            placeholder="Nome do cliente"
+            label="Nome do Cliente"
+            id="name"
+            className="input"
+            name="nameClient"
+            type="text"
+            onChange={handleChange}
+            value={nameClient}
+          />
+
+          <ClientData
+            placeholder="Mesa"
+            label="Mesa do Cliente"
+            className="input"
+            name="tableClient"
+            type="number"
+            onChange={handleChangeTable}
+            value={table}
+            step="any"
+            min="0"
+          />
+        </div>
