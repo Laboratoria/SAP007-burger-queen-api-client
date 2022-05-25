@@ -163,3 +163,17 @@ const Hall = () => {
     });
     setMenu(updatedMenu);
   };
+
+  const totalValue = (currentOrder) => {
+    let total = 0;
+    currentOrder.forEach((item) => {
+      total += item.totalProductPrice;
+    });
+    setAllValue(total);
+
+    if (total > 0) {
+      setShowResume(true);
+    } else {
+      total = 0;
+    }
+  };
