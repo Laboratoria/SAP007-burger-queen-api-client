@@ -1,7 +1,9 @@
 import { useState } from 'react' //é um hook do React muito bom para ser usado com eventos
+import { Button } from '../components/Button'
+import { Input } from '../components/Input'
 
-export function Form() {
-    function cadastrarUsuario(e) {
+export function Login() {
+    function loginUser(e) {
         e.preventDefault()
         console.log(`Usuário ${email} foi cadastrado com a senha: ${password}`)
     }
@@ -11,28 +13,27 @@ export function Form() {
 
     return (
         <div>
-            <h1>Meu cadastro</h1>
-            <form onSubmit={cadastrarUsuario}>
+            <h1>Efetuar login</h1>
+            <form onSubmit={loginUser}>
                 <div>
-                    <input
+                    <Input
                         type='text'
-                        id='email'
                         name='email'
+                        id='email'
                         placeholder='E-mail'
-                        onChange={(e) => setName(e.target.value)}
+                        handleOnChange={(e) => setName(e.target.value)}
                     />
                 </div>
                 <div>
-                    <input
+                    <Input
                         type='password'
                         id='password'
                         name='password'
                         placeholder='Senha'
-                        onChange={(e) => setPassword(e.target.value)}
+                        handleOnChange={(e) => setPassword(e.target.value)}
                     />
-                </div>
-                <div>
-                    <input type='submit' value='Cadastrar' />
+                    <Button clickFunction={loginUser} option="Entrar" />
+                    <a href='/Register'>Cadastrar</a>
                 </div>
             </form>
         </div>

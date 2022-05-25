@@ -1,10 +1,10 @@
-import { Register } from "../components/Register"
+import { Login } from "./Login"
 
 export function Attendance() {
     return (
         <>
             <h1>Atendimento</h1>
-            <Register />
+            <Login />
         </>
     )
 }
