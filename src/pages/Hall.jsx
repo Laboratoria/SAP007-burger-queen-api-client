@@ -243,3 +243,17 @@ const Hall = () => {
             min="0"
           />
         </div>
+        </div>
+
+<div className="container-menu-and-modal">
+  <div className="container container-menu">
+    <HeaderCard onClick={() => handleClick("breakfast")}>
+      <Title>Café da Manhã</Title>
+
+      <img src={breakfastImg} alt="cafe-da-manha" className="img-capa" />
+    </HeaderCard>
+    <MenuCardModal
+      itens={menu.filter((item) => item.type === "breakfast")}
+      showCard={showBreakfast}
+      callback={addOrderSummary}
+    />
