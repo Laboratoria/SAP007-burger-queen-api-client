@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import {getToken} from "./token"
+=======
+import {getToken} from "../services/token"
+>>>>>>> 9fe1a3fc14a7a82d5f884cd98027cb5c97a316eb
 const URL = "https://lab-api-bq.herokuapp.com";
 
 export const createUser = (name, email, password, role) => {
@@ -30,7 +34,10 @@ export const logedIn = (email, password) => {
     })
   });
 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9fe1a3fc14a7a82d5f884cd98027cb5c97a316eb
 export const getProduct = () => {
   return fetch(`${URL}/products`,{
     method: "GET",
@@ -40,4 +47,7 @@ export const getProduct = () => {
       }
   });
 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9fe1a3fc14a7a82d5f884cd98027cb5c97a316eb

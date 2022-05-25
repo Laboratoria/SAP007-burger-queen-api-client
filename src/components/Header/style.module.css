@@ -1,4 +1,5 @@
 .DivHeader{
+<<<<<<< HEAD
     margin-top: 0%;
     background-color: #ffffff;
     width: 320px;
@@ -13,4 +14,20 @@
 }
 .title{
     color: #117DBF;
+=======
+  margin-top: 0%;
+  background-color: #ffffff;
+  width: 320px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.finn{
+  width: 15%;
+  border-radius: 50%;
+  align-items: center;
+}
+.title{
+  color: #117DBF;
+>>>>>>> 9fe1a3fc14a7a82d5f884cd98027cb5c97a316eb
 }
