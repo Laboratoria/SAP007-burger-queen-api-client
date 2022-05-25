@@ -199,3 +199,23 @@ const Hall = () => {
     ) : null;
 
     const alertOrderIsReady = readyOrder > 0 ? <> ({readyOrder}) </> : null;
+
+    return (
+      <>
+        <StyleBackgroundImg />
+        <Header showLogOut={true} />
+  
+        <div className="container-client-and-btn">
+          <div className="container data-ready-order-client">
+            <Link to="/readyorders">
+              <ButtonsHall>
+                {" "}
+                Pedidos Prontos
+                {alertOrderIsReady}
+              </ButtonsHall>{" "}
+            </Link>
+  
+            <Link to="/ordersdelivered">
+              <ButtonsHall>Pedidos Entregues</ButtonsHall>
+            </Link>
+          </div>
