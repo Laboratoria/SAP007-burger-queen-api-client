@@ -346,3 +346,21 @@ const Hall = () => {
           <p>Uhuul, pedido enviado com sucesso.</p>
         </Modal>
 
+        <Modal showModal={showCancelModal} setShowModal={setShowCancelModal}>
+          <p>Cancelar esse pedido?</p>
+          <div style={{ textAlign: "center" }}>
+            <CancelOrder
+              style={{ width: "150px" }}
+              onClick={() => cancelOrder()}
+            >
+              Cancelar
+            </CancelOrder>
+          </div>
+        </Modal>
+      </div>
+    </>
+  );
+};
+
+export default Hall;
+
