@@ -43,3 +43,20 @@ const Kitchen = () => {
         } else {
             return;
         }   
+
+        OrderStatusUpdate(item.id, newState).then(() => {
+            if (newState === "Preparando..."){
+
+                const updatedKitchenArray = kitchen.map((pedido) => {
+                    if(pedido.id === item.id) {
+                        pedido.status = newState;
+                        pedido.updatedAt = new Date()
+                    }
+                    return pedido
+                });
+
+                setKitchen(updatedKitchenArray)
+            }
+        })
+           
+    }
