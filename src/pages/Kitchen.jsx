@@ -28,3 +28,18 @@ const Kitchen = () => {
             })
             
     }, [])
+
+    const changeStatus = (item, option) => {
+        let newState = item.status;
+        if(item.status === 'Pendente' && option === 'Preparar') {
+            newState = "Preparando..."            
+        } else if (item.status === 'Preparando...' && option === 'Finalizar') {
+            alert('Pedido enviado para o atendente')
+            const newArray = kitchen.filter(pedido => pedido.id !== item.id );
+            setKitchen(newArray)
+            newState = "Finalizado"
+        } else if(item.status === 'Pendente' && option === 'Finalizar') {
+            alert('Eita, prepare o pedido primeiro.')
+        } else {
+            return;
+        }   
