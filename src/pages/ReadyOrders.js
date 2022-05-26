@@ -8,5 +8,28 @@ import { Link } from "react-router-dom";
 import StyleBackgroundImg from "../components/img-background/style-bg-img";
 
 
+const ReadyOrders = () => {
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        GetOrders()
+            .then((json) => {
+                
+                const FinishedOrders = json.filter((item) => item.status === 'Finalizado');
+                setOrders(FinishedOrders)
+               
+            })
+    }, [])
 
 
+    const changeStatus = (item, index) => {
+             
+        OrderStatusUpdate(item.id, "Entregue").then(() => {
+            const updatedList = [...orders];
+            updatedList.splice(index, 1);
+            setOrders(updatedList);
+         })
+
+    }
+
+    
