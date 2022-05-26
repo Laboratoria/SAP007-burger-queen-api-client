@@ -7,16 +7,16 @@ import Modal from "../../components/modal/Modal";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import StyleBackgroundImg from "../../components/img-background/style-bg-img";
-import CircleOption from "../../components/circle-option/CircleOption";
+import CheckboxRole from "../../components/circle-option/CheckboxRole";
 import { LoginRegisterParagraph } from "../../components/style-html-elements/elements-style";
 import { ModalOfMenuOptions } from "../../components/button/ButtonStyle";
 import Header from "../../components/header/Header";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { handleChange, handleSubmit, errors } = UseForm(ErrorsMessage);
   const [showPassword, setShowPassword] = useState(false);
-  
+
   const [showModal, setShowModal] = useState(false);
 
   const handleClick = (e) => {
@@ -25,8 +25,8 @@ const Register = () => {
   };
 
   const navigate = useNavigate();
-  const handleLogin = () => navigate('/login')
-  
+  const handleLogin = () => navigate("/login");
+
   const callModal = () => {
     setShowModal((prev) => !prev);
   };
@@ -46,7 +46,7 @@ const Register = () => {
           name="name"
           type="text"
           onChange={handleChange}
-          placeholder="Digite o seu nome completo"
+          placeholder="Digite o seu nome"
         />
         <LoginRegisterParagraph>
           {errors.name && errors.name}
@@ -64,32 +64,30 @@ const Register = () => {
           {errors.email && errors.email}
         </LoginRegisterParagraph>
 
-        <div>
-          <Input
-            label="Senha"
-            id="password"
-            name="password"
-            type={showPassword ? "type" : "password"}
-            onChange={handleChange}
-            placeholder="Digite a sua senha"
-          />
-          <span className="login-eye">
-            {showPassword ? (
-              <FaEye size={20} onClick={handleClick} />
-            ) : (
-              <FaEyeSlash size={20} onClick={handleClick} />
-            )}
-          </span>
-          <LoginRegisterParagraph>
-            {" "}
-            {errors.password && errors.password}
-          </LoginRegisterParagraph>
-        </div>
+        <Input
+          label="Senha"
+          id="password"
+          name="password"
+          type={showPassword ? "type" : "password"}
+          onChange={handleChange}
+          placeholder="Digite a sua senha"
+        />
+        <span className="login-eye">
+          {showPassword ? (
+            <FaEye size={20} onClick={handleClick} />
+          ) : (
+            <FaEyeSlash size={20} onClick={handleClick} />
+          )}
+        </span>
+        <LoginRegisterParagraph>
+          {" "}
+          {errors.password && errors.password}
+        </LoginRegisterParagraph>
 
         <p>Sua função:</p>
         <div>
           <div className="choose-role">
-            <CircleOption
+            <CheckboxRole
               className="option-role"
               text="Atendente"
               label="Atendente"
@@ -101,7 +99,7 @@ const Register = () => {
             />
           </div>
           <div className="choose-role">
-            <CircleOption
+            <CheckboxRole
               className="option-role"
               text="Cozinheiro"
               label="Cozinheiro"
@@ -117,11 +115,12 @@ const Register = () => {
             {errors.role && errors.role}
           </LoginRegisterParagraph>
         </div>
-        
-        <div className="buttons-register-return">
 
-        <Button onClick={() => handleSubmit(callModal)}>Cadastre-se</Button>
-        <Button className='button' onClick={handleLogin}>Voltar</Button>
+        <div className="buttons-register-return">
+          <Button onClick={() => handleSubmit(callModal)}>Cadastre-se</Button>
+          <Button className="button" onClick={handleLogin}>
+            Voltar
+          </Button>
         </div>
       </form>
       <Modal showModal={showModal} setShowModal={setShowModal}>
@@ -137,4 +136,3 @@ const Register = () => {
 };
 
 export default Register;
-

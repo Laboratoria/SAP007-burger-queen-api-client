@@ -31,6 +31,8 @@ p {
 
 }
 
+
+
 h3 {
     text-align: center;
 }
@@ -61,8 +63,13 @@ h3 {
         width: 80%;       
     } 
 }
+
+.container-welcome {
+
+}
+
 .container-register {
-    height: 625px;
+    height: 650px;
     margin-bottom: 100px;
     
 }
@@ -97,10 +104,8 @@ h3 {
    margin-bottom: 100px;
 }
 
-.container-modal-menu {
-    display: flex;
-    width: 500px;
-    margin-bottom
+.container-do-modal {
+    display: grid;
 }
 
 
@@ -168,5 +173,8 @@ h3 {
     justify-content: center;
 }
 
+.container-teste {
+    display: flex;
+}
 
 `;

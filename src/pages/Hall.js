@@ -246,17 +246,25 @@ const Hall = () => {
       </div>
 
       <div className="container-menu-and-modal">
-        <div className="container container-menu">
-          <HeaderCard onClick={() => handleClick("breakfast")}>
-            <Title>Café da Manhã</Title>
+       
+          <div className="container-teste">
+            <HeaderCard onClick={() => handleClick("breakfast")}>
+              <Title>Café da Manhã</Title>
 
-            <img src={breakfastImg} alt="cafe-da-manha" className="img-capa" />
-          </HeaderCard>
-          <MenuCardModal
-            itens={menu.filter((item) => item.type === "breakfast")}
-            showCard={showBreakfast}
-            callback={addOrderSummary}
-          />
+              <img
+                src={breakfastImg}
+                alt="cafe-da-manha"
+                className="img-capa"
+              />
+            </HeaderCard>
+            <div className="container-do-modal">
+            <MenuCardModal
+              itens={menu.filter((item) => item.type === "breakfast")}
+              showCard={showBreakfast}
+              callback={addOrderSummary}
+            />
+            </div>
+          
 
           <HeaderCard onClick={() => handleClick("hamburguer")}>
             <Title>Burguer Simples</Title>
@@ -266,35 +274,46 @@ const Hall = () => {
               className="img-capa"
             />
           </HeaderCard>
+          <div className="container-do-modal">
           <MenuCardModal
             itens={menu.filter((item) => item.name === "Hambúrguer simples")}
             showCard={showHamburguer}
             callback={addOrderSummary}
           />
+          </div>
+          </div>
 
-          <HeaderCard onClick={() => handleClick("hamburguerDuplo")}>
-            <Title>Burgão Duplo</Title>
-            <img
-              src={burguerDuploImg}
-              alt="burguer-duplo"
-              className="img-capa"
+          <div className="container-teste">
+            <HeaderCard onClick={() => handleClick("hamburguerDuplo")}>
+              <Title>Burgão Duplo</Title>
+              <img
+                src={burguerDuploImg}
+                alt="burguer-duplo"
+                className="img-capa"
+              />
+            </HeaderCard>
+            <div className="container-do-modal">
+            <MenuCardModal
+              itens={menu.filter((item) => item.name === "Hambúrguer duplo")}
+              showCard={showHamburguerDuplo}
+              callback={addOrderSummary}
             />
-          </HeaderCard>
-          <MenuCardModal
-            itens={menu.filter((item) => item.name === "Hambúrguer duplo")}
-            showCard={showHamburguerDuplo}
-            callback={addOrderSummary}
-          />
+            </div>
 
-          <HeaderCard onClick={() => handleClick("drink")}>
-            <Title>Bebidas</Title>
-            <img src={drinkImg} alt="bebidas" className="img-capa" />
-          </HeaderCard>
-          <MenuCardModal
-            itens={menu.filter((item) => item.sub_type === "drinks")}
-            showCard={showDrink}
-            callback={addOrderSummary}
-          />
+            <HeaderCard onClick={() => handleClick("drink")}>
+              <Title>Bebidas</Title>
+              <img src={drinkImg} alt="bebidas" className="img-capa" />
+            </HeaderCard>
+            <div className="container-do-modal">
+            <MenuCardModal
+              itens={menu.filter((item) => item.sub_type === "drinks")}
+              showCard={showDrink}
+              callback={addOrderSummary}
+            />
+          </div>
+          </div>
+
+
 
           <HeaderCard onClick={() => handleClick("side")}>
             <Title>Acompanhamento</Title>
@@ -343,7 +362,7 @@ const Hall = () => {
               </BackgroundCard>
             </div>
           ) : null}
-        </div>
+         {/* a div <div className="container container-menu"></div> acabava aqui e começava na linha 249*/}
         <Modal showModal={showModal} setShowModal={setShowModal}>
           <p>Uhuul, pedido enviado com sucesso.</p>
         </Modal>
