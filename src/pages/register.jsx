@@ -7,6 +7,7 @@ import { codeError } from "../services/error";
 import { setToken } from "../services/token";
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import Role from '../components/Role';
 
 function Register() {
   const [name, setName] = useState("");
@@ -40,26 +41,22 @@ function Register() {
     <div className="DivForm">
       <Logo />
       <form onSubmit={createUser}>
-        <div className="DivRole">
-          <label className="label">COZINHA</label>
-          <Input
-            type="radio"
-            value="kitchen"
-            name="role"
-            id="kitchen"
-            onChange={(e) => setRole(e.target.value)}
-          />
-        {/* </div> */}
-        {/* <div  className="DivRole"> */}
-          <label className="label">SALÃO</label>
-          <Input
-            type="radio"
-            value="hall"
-            name="role"
-            id="hall"
-            onChange={(e) => setRole(e.target.value)}
-          />
-        </div>
+        <Role
+          type="radio"
+          value="kitchen"
+          name="role"
+          id="kitchen"
+          label="COZINHA"
+          onChange={(e) => setRole(e.target.value)}
+        />
+        <Role
+          type="radio"
+          value="hall"
+          name="role"
+          id="hall"
+          label="SALÃO"
+          onChange={(e) => setRole(e.target.value)}
+        />
         <Input
           type="name"
           placeholder="NOME"
