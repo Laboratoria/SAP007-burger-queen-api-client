@@ -1,0 +1,13 @@
+.orders {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.client-infos {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.client-cart {
+    border: 2px red;
+}

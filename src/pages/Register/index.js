@@ -46,7 +46,7 @@ function Register() {
       <Header />
       <section className="container-register">
         <aside className="container-banner">
-          <Banner className="banner" />
+          <Banner />
         </aside>
         <form className="register" onSubmit={registerUser} required>
           <Input

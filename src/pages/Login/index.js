@@ -41,7 +41,7 @@ function Login() {
       <Header />
       <section className="container-login">
         <aside className="container-banner">
-          <Banner className="banner" />
+          <Banner/>
         </aside>
         <form className="login" onSubmit={loginUser}>
           <Input

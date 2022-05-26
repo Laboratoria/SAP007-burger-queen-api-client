@@ -1,9 +1,9 @@
-img {
+.banner {
   width: 70%;
   border-radius: 3%;
 }
 @media (min-width: 1024px) and (max-width: 2000px) {
-  img {
+  .banner {
     width: 50%;
   }
 }
