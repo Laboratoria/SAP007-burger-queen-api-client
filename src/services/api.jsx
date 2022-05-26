@@ -1,4 +1,6 @@
-import {getToken} from "../services/token"
+
+import {getToken} from "./token"
+
 const URL = "https://lab-api-bq.herokuapp.com";
 
 export const createUser = (name, email, password, role) => {
@@ -30,6 +32,7 @@ export const logedIn = (email, password) => {
     })
   });
 };
+
 export const getProduct = () => {
   return fetch(`${URL}/products`,{
     method: "GET",
@@ -39,3 +42,23 @@ export const getProduct = () => {
       }
   });
 };
+
+export const createOrder = (client, table, id, qtd) =>{
+  return fetch(`${URL}/orders`,{
+    method:"POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": getToken(),
+      },
+      body: JSON.stringify({
+        client: client,
+        table: table,
+        products: [
+          {
+            id: id,
+            qtd: qtd
+          }
+        ]
+      })
+  })
+}

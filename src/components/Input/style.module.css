@@ -14,4 +14,6 @@
   color: white;
 }
 
-
+.Input[type="text"]{
+  margin-left: 10%;
+}
