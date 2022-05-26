@@ -119,6 +119,11 @@ h3 {
     display: flex;
 }
 
+.div-btn-prepare-finish-order {
+    display: flex;
+    justify-content: center;
+}
+
 .ocultar-senha {
     position: absolute;
     

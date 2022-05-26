@@ -8,6 +8,7 @@ import {
   BtnKitchenFinishOrder,
 } from "../components/button/ButtonStyle";
 import StyleBackgroundImg from "../components/img-background/style-bg-img";
+import HeaderWelcome from "../components/header/headerWelcome";
 
 const Kitchen = () => {
   const [kitchen, setKitchen] = useState([]);
@@ -68,6 +69,7 @@ const Kitchen = () => {
     <>
       <StyleBackgroundImg />
       <Header showLogOut={true} />
+      <HeaderWelcome />
 
       {kitchen.map((item) => (
         <div className="container" key={item.id}>
@@ -95,7 +97,7 @@ const Kitchen = () => {
               ))}
             </div>
 
-            <div>
+            <div className="div-btn-prepare-finish-order">
               <BtnSendOrderToKitchenAndPrepareIt
                 onClick={() => changeStatus(item, "Preparar")}
               >
