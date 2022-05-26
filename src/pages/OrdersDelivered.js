@@ -6,3 +6,19 @@ import { BackgroundCard, DivProductKitchen } from "../components/modal-menu/body
 import { Link } from "react-router-dom";
 import StyleBackgroundImg from "../components/img-background/style-bg-img";
 
+const OrdersDelivered = () => {
+
+    const [orders, setOrders] = useState([]);
+    
+    useEffect(() => {
+        GetOrders()
+            .then((json) => {
+               
+                const orderDelivered = json.filter((item) => item.status === 'Entregue');
+                setOrders(orderDelivered)
+
+            })
+
+    }, [])
+
+    
