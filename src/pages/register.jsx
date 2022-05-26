@@ -7,6 +7,7 @@ import { codeError } from "../services/error";
 import { setToken } from "../services/token";
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import Role from '../components/Role';
 
 function Register() {
   const [name, setName] = useState("");
@@ -43,7 +44,7 @@ function Register() {
         <div className="DivRole">
           <div>
           <label className="label">
-          <Input
+          <Role
             type="radio"
             value="kitchen"
             name="role"
@@ -52,7 +53,7 @@ function Register() {
           />COZINHA
           </label>
           <label className="label">
-          <Input
+          <Role
             type="radio"
             value="hall"
             name="role"
