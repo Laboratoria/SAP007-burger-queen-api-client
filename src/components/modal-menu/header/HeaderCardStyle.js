@@ -16,6 +16,7 @@ export const ButtonCard = styled.button`
   }
 `;
 export const Content = styled.div`
+  height: 5rem;
   font-size: 1.5em;
   display: flex;
   align-items: center;

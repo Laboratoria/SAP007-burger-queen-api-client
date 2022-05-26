@@ -4,6 +4,7 @@ export const DefaultParagraph = styled.p`
   color: #531CB3;
   margin-top: 0.7em;
   margin-bottom: 0.2em;
+  margin-left: 2em;
 `;
 
 export const ParagraphOrderKitchen = styled.p `

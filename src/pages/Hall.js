@@ -193,7 +193,7 @@ const Hall = () => {
 
   const msgError =
     nameClient === "" || table === "" ? (
-      <p style={{ color: "#531CB3" }}>
+      <p className="p-comanda">
         <b>Por favor, preencha os dados do Cliente</b>
       </p>
     ) : null;
@@ -245,140 +245,119 @@ const Hall = () => {
         </div>
       </div>
 
-      <div className="container-menu-and-modal">
-       
-          <div className="container-teste">
-            <HeaderCard onClick={() => handleClick("breakfast")}>
-              <Title>Café da Manhã</Title>
+      {/* -----------------pedido do cliente---------------------*/}
 
-              <img
-                src={breakfastImg}
-                alt="cafe-da-manha"
-                className="img-capa"
-              />
-            </HeaderCard>
-            <div className="container-do-modal">
-            <MenuCardModal
-              itens={menu.filter((item) => item.type === "breakfast")}
-              showCard={showBreakfast}
-              callback={addOrderSummary}
-            />
-            </div>
-          
+      {showResume ? (
+        <div className="container-teste-order">
+          <div className="container container-client-data">
+            <BackgroundCard>
+              <h3>Comanda</h3>
+              {msgError}
+              <DefaultParagraph>Cliente: {nameClient}</DefaultParagraph>
+              <DefaultParagraph>Mesa: {table}</DefaultParagraph>
 
-          <HeaderCard onClick={() => handleClick("hamburguer")}>
-            <Title>Burguer Simples</Title>
-            <img
-              src={burguerSimplesImg}
-              alt="burguer-simples"
-              className="img-capa"
-            />
-          </HeaderCard>
-          <div className="container-do-modal">
-          <MenuCardModal
-            itens={menu.filter((item) => item.name === "Hambúrguer simples")}
-            showCard={showHamburguer}
-            callback={addOrderSummary}
+              {order.map((item, index) => (
+                <DivProduct key={item.id}>
+                  <p >
+                    Qtd: {item.quantity} x {item.price}{" "}
+                  </p>
+                  <p> {item.name} </p>
+                  <p>{item.flavor}</p>
+                  <p>{item.complement}</p>
+                  <p> R$ {item.totalProductPrice}</p>
+
+                  <MdDelete
+                    onClick={() => remove(index)}
+                    style={{ color: "#d13030", cursor: "pointer" }}
+                  />
+                </DivProduct>
+              ))}
+              <DefaultParagraph>Total: R$ {allValue} </DefaultParagraph>
+              <BtnSendOrderToKitchenAndPrepareIt onClick={() => sendSummary()}>
+                Enviar
+              </BtnSendOrderToKitchenAndPrepareIt>
+              <CancelOrder onClick={() => confirmcancelOrder()}>
+                Cancelar
+              </CancelOrder>
+            </BackgroundCard>
+          </div>
+        </div>
+      ) : null}
+
+      <div className="container-teste">
+        <HeaderCard onClick={() => handleClick("breakfast")}>
+          <Title>Café da Manhã</Title>
+
+          <img src={breakfastImg} alt="cafe-da-manha" className="img-capa" />
+        </HeaderCard>
+
+        <MenuCardModal
+          itens={menu.filter((item) => item.type === "breakfast")}
+          showCard={showBreakfast}
+          callback={addOrderSummary}
+        />
+
+        <HeaderCard onClick={() => handleClick("hamburguer")}>
+          <Title>Burguer Simples</Title>
+          <img
+            src={burguerSimplesImg}
+            alt="burguer-simples"
+            className="img-capa"
           />
-          </div>
-          </div>
+        </HeaderCard>
 
-          <div className="container-teste">
-            <HeaderCard onClick={() => handleClick("hamburguerDuplo")}>
-              <Title>Burgão Duplo</Title>
-              <img
-                src={burguerDuploImg}
-                alt="burguer-duplo"
-                className="img-capa"
-              />
-            </HeaderCard>
-            <div className="container-do-modal">
-            <MenuCardModal
-              itens={menu.filter((item) => item.name === "Hambúrguer duplo")}
-              showCard={showHamburguerDuplo}
-              callback={addOrderSummary}
-            />
-            </div>
+        <MenuCardModal
+          itens={menu.filter((item) => item.name === "Hambúrguer simples")}
+          showCard={showHamburguer}
+          callback={addOrderSummary}
+        />
 
-            <HeaderCard onClick={() => handleClick("drink")}>
-              <Title>Bebidas</Title>
-              <img src={drinkImg} alt="bebidas" className="img-capa" />
-            </HeaderCard>
-            <div className="container-do-modal">
-            <MenuCardModal
-              itens={menu.filter((item) => item.sub_type === "drinks")}
-              showCard={showDrink}
-              callback={addOrderSummary}
-            />
-          </div>
-          </div>
+        <HeaderCard onClick={() => handleClick("hamburguerDuplo")}>
+          <Title>Burgão Duplo</Title>
+          <img src={burguerDuploImg} alt="burguer-duplo" className="img-capa" />
+        </HeaderCard>
 
+        <MenuCardModal
+          itens={menu.filter((item) => item.name === "Hambúrguer duplo")}
+          showCard={showHamburguerDuplo}
+          callback={addOrderSummary}
+        />
 
+        <HeaderCard onClick={() => handleClick("drink")}>
+          <Title>Bebidas</Title>
+          <img src={drinkImg} alt="bebidas" className="img-capa" />
+        </HeaderCard>
 
-          <HeaderCard onClick={() => handleClick("side")}>
-            <Title>Acompanhamento</Title>
-            <img src={friesImg} alt="acompanhamento" className="img-capa" />
-          </HeaderCard>
-          <MenuCardModal
-            itens={menu.filter((item) => item.sub_type === "side")}
-            showCard={showSide}
-            callback={addOrderSummary}
-          />
+        <MenuCardModal
+          itens={menu.filter((item) => item.sub_type === "drinks")}
+          showCard={showDrink}
+          callback={addOrderSummary}
+        />
 
-          {/* -----------------pedido do cliente---------------------*/}
-          {showResume ? (
-            <div className="container container-client-data">
-              <BackgroundCard>
-                <h3>Comanda</h3>
-                {msgError}
-                <DefaultParagraph>Cliente: {nameClient}</DefaultParagraph>
-                <DefaultParagraph>Mesa: {table}</DefaultParagraph>
-
-                {order.map((item, index) => (
-                  <DivProduct key={item.id}>
-                    <p>
-                      Qtd: {item.quantity} x {item.price}{" "}
-                    </p>
-                    <p> {item.name} </p>
-                    <p>{item.flavor}</p>
-                    <p>{item.complement}</p>
-                    <p> R$ {item.totalProductPrice}</p>
-
-                    <MdDelete
-                      onClick={() => remove(index)}
-                      style={{ color: "#d13030", cursor: "pointer" }}
-                    />
-                  </DivProduct>
-                ))}
-                <DefaultParagraph>Total: R$ {allValue} </DefaultParagraph>
-                <BtnSendOrderToKitchenAndPrepareIt
-                  onClick={() => sendSummary()}
-                >
-                  Enviar
-                </BtnSendOrderToKitchenAndPrepareIt>
-                <CancelOrder onClick={() => confirmcancelOrder()}>
-                  Cancelar
-                </CancelOrder>
-              </BackgroundCard>
-            </div>
-          ) : null}
-         {/* a div <div className="container container-menu"></div> acabava aqui e começava na linha 249*/}
-        <Modal showModal={showModal} setShowModal={setShowModal}>
-          <p>Uhuul, pedido enviado com sucesso.</p>
-        </Modal>
-
-        <Modal showModal={showCancelModal} setShowModal={setShowCancelModal}>
-          <p>Cancelar esse pedido?</p>
-          <div style={{ textAlign: "center" }}>
-            <CancelOrder
-              style={{ width: "150px" }}
-              onClick={() => cancelOrder()}
-            >
-              Cancelar
-            </CancelOrder>
-          </div>
-        </Modal>
+        <HeaderCard onClick={() => handleClick("side")}>
+          <Title>Acompanhamento</Title>
+          <img src={friesImg} alt="acompanhamento" className="img-capa" />
+        </HeaderCard>
+        <MenuCardModal
+          itens={menu.filter((item) => item.sub_type === "side")}
+          showCard={showSide}
+          callback={addOrderSummary}
+        />
       </div>
+
+      {/* modais pedidos enviados com sucesso ou para cancelar */}
+      <Modal showModal={showModal} setShowModal={setShowModal}>
+        <p>Uhuul, pedido enviado com sucesso.</p>
+      </Modal>
+
+      <Modal showModal={showCancelModal} setShowModal={setShowCancelModal}>
+        <p>Cancelar esse pedido?</p>
+        <div style={{ textAlign: "center" }}>
+          <CancelOrder style={{ width: "150px" }} onClick={() => cancelOrder()}>
+            Cancelar
+          </CancelOrder>
+        </div>
+      </Modal>
     </>
   );
 };

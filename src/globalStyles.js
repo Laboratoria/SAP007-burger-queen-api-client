@@ -39,6 +39,7 @@ h3 {
 .p-comanda {
     text-align: center;
     color: #531cb3;
+    margin-top: 10px;
 }
 
 .buttons-register-return {
@@ -108,6 +109,15 @@ h3 {
     display: grid;
 }
 
+.container-modal-menu {
+    width: 480px;
+    margin-left: 60px;
+    
+}
+
+.container-teste-order {
+    display: flex;
+}
 
 .ocultar-senha {
     position: absolute;
@@ -174,7 +184,7 @@ h3 {
 }
 
 .container-teste {
-    display: flex;
+    display: inline-block;
 }
 
 `;
