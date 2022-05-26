@@ -9,6 +9,8 @@ import {
 } from "../components/button/ButtonStyle";
 import StyleBackgroundImg from "../components/img-background/style-bg-img";
 import HeaderWelcome from "../components/header/headerWelcome";
+import { ButtonsHall } from "../components/button/ButtonStyle.js";
+import { Link } from "react-router-dom";
 
 const Kitchen = () => {
   const [kitchen, setKitchen] = useState([]);
@@ -70,6 +72,12 @@ const Kitchen = () => {
       <StyleBackgroundImg />
       <Header showLogOut={true} />
       <HeaderWelcome />
+
+      <div className="container data-ready-order-client">
+        <Link to="/ordersdelivered">
+          <ButtonsHall>Pedidos Entregues</ButtonsHall>
+        </Link>
+      </div>
 
       {kitchen.map((item) => (
         <div className="container" key={item.id}>
