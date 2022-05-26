@@ -73,10 +73,11 @@ export const BtnReadyAndDeliveredOrders = styled(Container)`
 
 `;
 export const ModalOfMenuOptions = styled(Container)`
-  background: var(--dark-orange);
-  color: red;
+  background: #FF5B27;
+  color: #F7F7FF;
   box-shadow: none;
   border: none;
+  margin-bottom: 18px
 
   &:hover {
     background: var(--light-orange);
