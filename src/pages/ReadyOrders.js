@@ -32,4 +32,54 @@ const ReadyOrders = () => {
 
     }
 
-    
+    return (
+        <>
+
+            <StyleBackgroundImg />          
+            <Header showLogOut={true} />                    
+            <div className="container">
+                <DefaultTitle>Pedidos Prontos</DefaultTitle>
+                <Link to="/hall"><div style={{color: '#ce8e43', textAlign: "left"}} > Voltar</div></Link>
+            </div>
+            
+        
+            <section className="container">
+            
+                {orders.map((item, index) => (
+                    
+                        <BackgroundCard key={item.id}>
+                            <DivProductKitchen  >
+                                <OrderSummaryH2>Pedido {item.id} </OrderSummaryH2>
+                                 <ParagraphReadyOrders>{item.status} em: {new Date(item.updatedAt).toLocaleString()}</ParagraphReadyOrders>
+                                
+                                <DefaultParagraph>Nome: {item.client_name}</DefaultParagraph>
+                                <DefaultParagraph>Mesa: {item.table}</DefaultParagraph>
+                                
+                                <div className="container">
+                                    {item.Products.map((product) =>
+                                    <span key={product.id}>
+                                        <p>{product.qtd} {product.name} {product.flavor} {product.complement}</p>                                   
+                                    </span>
+                                    )}
+                                </div>
+
+                                <div>
+                                    <BtnSendOrderToKitchenAndPrepareIt onClick={() => changeStatus(item,index)}> Entregar </BtnSendOrderToKitchenAndPrepareIt >
+                                </div>
+
+                            </DivProductKitchen>
+                        </BackgroundCard>
+                    
+                    
+                ))}
+            </section>
+
+
+
+        </>
+    )
+
+}
+
+export default ReadyOrders;
+
