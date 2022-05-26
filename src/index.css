@@ -30,13 +30,7 @@ a.Hiperlink {
   cursor: pointer;
 }
 
-.label {
-  color: white;
-}
-/* .DivRole {
-  height: 35px;
-    width: 280px;
-} */
+
 
 @media(min-width: 1024px) and (max-width:1440px) {
   .DivForm {
