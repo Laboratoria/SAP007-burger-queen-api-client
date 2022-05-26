@@ -1,17 +1,17 @@
 import React from 'react';
-import { Background, CloseModalOfMenuOptions, ModalContentSentToKitchen, ModalOrderSentWithSucess } from './ModalStyle';
+import { Background, CloseModalOfMenuOptions, ModalContent, ModalWrapper } from './ModalStyle';
 
 const ModalSucessRegister = ({showModal, setShowModal, children}) => {
     return (
     <>
     {showModal ? (
         <Background>
-            <ModalOrderSentWithSucess showModal={showModal}>
-            <ModalContentSentToKitchen>
+            <ModalWrapper showModal={showModal}>
+            <ModalContent>
                 {children}
-            </ModalContentSentToKitchen>
+            </ModalContent>
             <CloseModalOfMenuOptions aria-label='Close Modal' onClick={() => setShowModal(prev => !prev)} />
-            </ModalOrderSentWithSucess>
+            </ModalWrapper>
         </Background>
 
     
@@ -23,3 +23,4 @@ const ModalSucessRegister = ({showModal, setShowModal, children}) => {
 };
 
 export default ModalSucessRegister;
+

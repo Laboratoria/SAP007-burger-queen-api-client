@@ -15,7 +15,7 @@ top: 0;
 `
 
 // modal pedido enviado com sucesso 
-export const ModalOrderSentWithSucess = styled.div `
+export const ModalWrapper = styled.div `
 width: 100%;
 height: 53vh;
 box-shadow: 0 0px 63px #a2835f;
@@ -51,7 +51,7 @@ height: 55vh;
 
 `
 // modal do pedido enviado para a cozinha - que será visto pelo cozinheiro
-export const ModalContentSentToKitchen = styled.div `
+export const ModalContent = styled.div `
 display: flex;
 flex-direction: column;
 justify-content: space-between;
