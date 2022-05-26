@@ -2,7 +2,7 @@ import { GetOrders, OrderStatusUpdate } from '../services/products';
 import { useState, useEffect } from 'react';
 import Header from '../components/header/Header';
 import { BackgroundCard } from '../components/modal-menu/body/MenuCardModalStyle';
-import { DefaultTitle, ParagraphOrderKitchen } from '../components/style-html-elements/elements-style';
+import { ParagraphOrderKitchen } from '../components/style-html-elements/elements-style';
 import { BtnSendOrderToKitchenAndPrepareIt, BtnKitchenFinishOrder} from '../components/button/ButtonStyle';
 import StyleBackgroundImg from "../components/img-background/style-bg-img";
 
@@ -60,3 +60,43 @@ const Kitchen = () => {
         })
            
     }
+
+    return (
+        <>
+            <StyleBackgroundImg />
+            <Header showLogOut={true} />
+            
+                          
+            {kitchen.map((item) => (
+                <div className="container" key={item.id}  >
+                    <BackgroundCard >
+                        <ParagraphOrderKitchen>Solicitado: {new Date(item.createdAt).toLocaleString()}</ParagraphOrderKitchen>
+                                                               
+                        <ParagraphOrderKitchen style={{fontSize:"1em", color:"red"}}>Status: {item.status}</ParagraphOrderKitchen>
+                        <ParagraphOrderKitchen>Nome: {item.client_name}</ParagraphOrderKitchen>
+                        <ParagraphOrderKitchen>Mesa: {item.table}</ParagraphOrderKitchen>
+                            
+                        <div className="container">
+                            {item.Products.map((product) =>
+                            <span key={product.id}>
+                                <p className="p-comanda">{product.qtd} {product.name} {product.flavor} {product.complement}</p>                                   
+                            </span>
+                            )}
+                        </div>
+                                                   
+                        <div>
+                            <BtnSendOrderToKitchenAndPrepareIt onClick={() => changeStatus(item, 'Preparar')}> Preparar </BtnSendOrderToKitchenAndPrepareIt >
+                            <BtnKitchenFinishOrder onClick={() => changeStatus(item, 'Finalizar')} > Finalizar </BtnKitchenFinishOrder >
+
+                        </div>
+                        
+                    </BackgroundCard>
+                </div>
+                
+            ))}               
+                          
+        </>
+    )
+}
+
+export default Kitchen;
