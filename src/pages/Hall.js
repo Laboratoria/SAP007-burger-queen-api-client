@@ -49,7 +49,7 @@ const Hall = () => {
         alert("Erro na requisição. [" + error.message + "]");
       });
 
-   GetOrders().then((json) => {
+    GetOrders().then((json) => {
       const FinishedOrders = json.filter(
         (item) => item.status === "Finalizado"
       );
@@ -198,28 +198,28 @@ const Hall = () => {
       </p>
     ) : null;
 
-    const alertOrderIsReady = readyOrder > 0 ? <> ({readyOrder}) </> : null;
+  const alertOrderIsReady = readyOrder > 0 ? <> ({readyOrder}) </> : null;
 
-    return (
-      <>
-        <StyleBackgroundImg />
-        <Header showLogOut={true} />
-  
-        <div className="container-client-and-btn">
-          <div className="container data-ready-order-client">
-            <Link to="/readyorders">
-              <ButtonsHall>
-                {" "}
-                Pedidos Prontos
-                {alertOrderIsReady}
-              </ButtonsHall>{" "}
-            </Link>
-  
-            <Link to="/ordersdelivered">
-              <ButtonsHall>Pedidos Entregues</ButtonsHall>
-            </Link>
-          </div>
-          <div className="container data-ready-order-client">
+  return (
+    <>
+      <StyleBackgroundImg />
+      <Header showLogOut={true} />
+
+      <div className="container-client-and-btn">
+        <div className="container data-ready-order-client">
+          <Link to="/readyorders">
+            <ButtonsHall>
+              {" "}
+              Pedidos Prontos
+              {alertOrderIsReady}
+            </ButtonsHall>{" "}
+          </Link>
+
+          <Link to="/ordersdelivered">
+            <ButtonsHall>Pedidos Entregues</ButtonsHall>
+          </Link>
+        </div>
+        <div className="container data-ready-order-client">
           <ClientData
             placeholder="Nome do cliente"
             label="Nome do Cliente"
@@ -243,22 +243,22 @@ const Hall = () => {
             min="0"
           />
         </div>
-        </div>
+      </div>
 
-<div className="container-menu-and-modal">
-  <div className="container container-menu">
-    <HeaderCard onClick={() => handleClick("breakfast")}>
-      <Title>Café da Manhã</Title>
+      <div className="container-menu-and-modal">
+        <div className="container container-menu">
+          <HeaderCard onClick={() => handleClick("breakfast")}>
+            <Title>Café da Manhã</Title>
 
-      <img src={breakfastImg} alt="cafe-da-manha" className="img-capa" />
-    </HeaderCard>
-    <MenuCardModal
-      itens={menu.filter((item) => item.type === "breakfast")}
-      showCard={showBreakfast}
-      callback={addOrderSummary}
-    />
+            <img src={breakfastImg} alt="cafe-da-manha" className="img-capa" />
+          </HeaderCard>
+          <MenuCardModal
+            itens={menu.filter((item) => item.type === "breakfast")}
+            showCard={showBreakfast}
+            callback={addOrderSummary}
+          />
 
-<HeaderCard onClick={() => handleClick("hamburguer")}>
+          <HeaderCard onClick={() => handleClick("hamburguer")}>
             <Title>Burguer Simples</Title>
             <img
               src={burguerSimplesImg}
@@ -332,7 +332,9 @@ const Hall = () => {
                   </DivProduct>
                 ))}
                 <DefaultParagraph>Total: R$ {allValue} </DefaultParagraph>
-                <BtnSendOrderToKitchenAndPrepareIt onClick={() => sendSummary()}>
+                <BtnSendOrderToKitchenAndPrepareIt
+                  onClick={() => sendSummary()}
+                >
                   Enviar
                 </BtnSendOrderToKitchenAndPrepareIt>
                 <CancelOrder onClick={() => confirmcancelOrder()}>
@@ -363,4 +365,3 @@ const Hall = () => {
 };
 
 export default Hall;
-

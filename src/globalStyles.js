@@ -148,7 +148,7 @@ h3 {
     padding-top: 2em;
 }
 
-.data-ready-order-client, data-ready-order-client-client {
+.data-ready-order-client {
     display: flex;
     align-items: center;
     justify-content: center;

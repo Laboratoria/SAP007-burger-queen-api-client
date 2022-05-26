@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import img from '../../images/bq3.jpeg';
-import imgBigger from '../../images/bq3.jpeg';
+import img from '../../images/burguer-capa2.jpeg';
+import ImgForMediaQuery from '../../images/burguer-capa2.jpeg';
 
 const StyleBackgroundImg = styled.div `
    
@@ -16,10 +16,9 @@ const StyleBackgroundImg = styled.div `
     filter: blur(4px);
 
     @media screen and (min-width: 768px) {
-        background-image: url(${imgBigger});
-        
+        background-image: url(${ImgForMediaQuery});
+    
     }
 
 `
 export default StyleBackgroundImg
-
