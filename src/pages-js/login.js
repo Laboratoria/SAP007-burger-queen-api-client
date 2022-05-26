@@ -1,22 +1,22 @@
 import React from 'react';
-//import logo from './componentes/img/logo.png';
+import logo from '../componentes/img/logo.png';
 //import App.css from './src/App.css';
 import Button from '../componentes/button';
+import Form from '../componentes/form.js';
 
 function App() {
   return (
     <section>
       <header>
-        {/* <img className='logo-img' src={logo} /> */}
-        <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-        <Button nome= "camila">camila</Button>
-        <Button nome= "raynara">raynara</Button>
+        <img className='logo-img' src={logo} /> 
+        <Form>
+        <label>Email</label>
+                <input type="text"/>
+            <label>Senha</label>
+                <input type="password"/>
+                <Button cor="azul" className='button-form'>entrar</Button>
+                <Button  cor="vermelho"className='button-form'>cadastrar</Button>
+        </Form>
       </header>
     </section>
   );
