@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Login from './pages/Login/Login';
+import Login from './pages/login/login';
 import Register from './pages/register/Register';
-import Notfound from './pages/NotFound';
+
 import Hall from './pages/Hall';
 
 // import PrivateRoute from './privateRoute.js';

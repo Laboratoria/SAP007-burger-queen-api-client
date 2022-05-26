@@ -1,5 +1,5 @@
 import { BackgroundCardMenuAndOrder, DivProduct } from './MenuCardModalStyle';
-import MenuToggleBtn from './MenuToggleBtn';
+import MenuToggleBtn from '../body/MenuToggleBtn';
 
 
 const MenuCardModal = ({itens, showCard, callback }) => {

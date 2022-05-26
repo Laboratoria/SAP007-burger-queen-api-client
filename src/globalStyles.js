@@ -10,9 +10,6 @@ export default createGlobalStyle`
 }
 
 
-     
-}
-
 body {
     color: ;
     font-family: 'Lato', sans-serif;
@@ -29,6 +26,11 @@ p {
     font-size: 20px;
 }
 
+.p-product {
+    margin-right: 10px;
+
+}
+
 h3 {
     text-align: center;
 }
@@ -40,6 +42,7 @@ h3 {
 .buttons-register-return {
     width: 90%;
     text-align: center;
+    display: contents;
    
     
   
@@ -60,11 +63,13 @@ h3 {
 }
 .container-register {
     height: 625px;
+    margin-bottom: 100px;
     
 }
 
 .container-login {
-    height: 450px;
+    height: 415px;
+    margin-bottom: 100px;
 }
 
 .container-login, .container-register {
@@ -89,11 +94,13 @@ h3 {
 .container-menu {
    margin-top: 0.8em;
    margin-left: 0;
+   margin-bottom: 100px;
 }
 
 .container-modal-menu {
     display: flex;
     width: 500px;
+    margin-bottom
 }
 
 
@@ -141,7 +148,7 @@ h3 {
     padding-top: 2em;
 }
 
-.side-elements, side-elements-client {
+.data-ready-order-client, data-ready-order-client-client {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,7 +158,7 @@ h3 {
     margin-right: 0px;
 }
 
-.side-elements-client {
+.data-ready-order-client-client {
     width: 100%;
     font-size: 1em;
 }
@@ -160,5 +167,6 @@ h3 {
     display: flex;
     justify-content: center;
 }
+
 
 `;
