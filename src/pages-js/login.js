@@ -1,19 +1,34 @@
-import React from 'react';
-import logo from '../componentes/img/logo.png';
-//import App.css from './src/App.css';
+import React, {useState} from 'react';
+import logo from '../img/logo.png';
 import Button from '../componentes/button';
-import Form from '../componentes/form.js';
+import Form from '../componentes/form';
+import Input from '../componentes/input'
+
 
 function App() {
+
+  const [email, setEmail]=useState("");
+  const [password, setPassword]=useState("");
+
   return (
     <section>
       <header>
         <img className='logo-img' src={logo} /> 
         <Form>
         <label>Email</label>
-                <input type="text"/>
+                <Input 
+                type="email"
+                placeholder="user@user.com"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                required/>
             <label>Senha</label>
-                <input type="password"/>
+                <Input
+                type="password"
+                placeholder="******"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                required/> 
                 <Button cor="azul" className='button-form'>entrar</Button>
                 <Button  cor="vermelho"className='button-form'>cadastrar</Button>
         </Form>
