@@ -5,10 +5,12 @@ import Kitchen from "../src/pages/kitchen"
 import Hall from "../src/pages/hall"
 import Footer from "./components/Footer"
 import { PrivateRoute } from "../src/services/PrivateRoute"
+import GlobalState from './global/GlobalState'
 
 function App() {
   return (
     <BrowserRouter>
+    <GlobalState>
       <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -19,6 +21,7 @@ function App() {
         <Route path="/" element={<Navigate replace to="/login" />} />
       </Routes>
       <Footer />
+      </GlobalState>
     </BrowserRouter>
   );
 }
