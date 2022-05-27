@@ -1,7 +1,7 @@
 export function Footer() {
     return (
         <>
-            <footer>
+            <footer className="footer">
                 Desenvolvido por
                 <a
                     href="https://github.com/Fe-Monteiro"

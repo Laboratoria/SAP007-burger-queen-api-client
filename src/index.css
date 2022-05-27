@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas: "header, root, footer";
+    grid-template-columns: auto;
+    grid-template-rows: 50px auto auto;
+}
+
+
+.background {
+    opacity: 0.4;
+    position: absolute;
+    z-index: -1;
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-position: 30% 45%;
+    background-size: cover;
+}

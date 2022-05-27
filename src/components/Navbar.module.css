@@ -1,0 +1,25 @@
+.navbar {
+    display: grid;
+    padding: 1rem;
+    background-color: #6CA6D9;
+}
+
+.list {
+    display: grid;
+    list-style: none;
+    align-items: right;
+}
+
+.item {
+    margin-right: 1rem;
+    /* font-family:; */
+}
+
+.item a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.item a:hover {
+    color: #2669BF
+}

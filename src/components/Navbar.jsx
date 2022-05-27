@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
+import styles from "./Navbar.module.css"
 
 export const Navbar = () => {
 
@@ -9,27 +10,25 @@ export const Navbar = () => {
             role="navigation"
         // aria-label="main navigation"
         >
-            <div className="container">
+            <div className={styles.navbar}>
 
                 <div >
-                    <div className="navbar-start">
-                        <NavLink to="/">
+                    <div className={styles.list}>
+                        <NavLink to="/" className={styles.item}>
                             Home
                         </NavLink>
 
-                        <NavLink
-                            to="/Attendance"
+                        <NavLink to="/Login" className={styles.item}
                         >
                             Atendimento
                         </NavLink>
 
-                        <NavLink
-                            to="/Kitchen"
+                        <NavLink className={styles.item} to="/Login"
                         >
                             Cozinha
                         </NavLink>
 
-                        <NavLink
+                        <NavLink className={styles.item}
                             to="/Client"
                         >
                             Área do cliente

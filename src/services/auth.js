@@ -1,6 +1,6 @@
 const URL = 'https://lab-api-bq.herokuapp.com';
 
-export const CreateUser = (name, email, password, role) => {
+export const createUser = (name, email, password, role) => {
     return fetch(`${URL}/users`, {
         method: 'POST',
         headers: {
@@ -11,12 +11,12 @@ export const CreateUser = (name, email, password, role) => {
             email: email,
             password: password,
             role: role,
-            restaurant: 'Burger Heroes',
+            restaurant: 'burger heroes',
         })
     });
 };
 
-export const LogInt = (email, password) => {
+export const logInt = (email, password) => {
     return fetch(`${URL}/auth`, {
         method: 'POST',
         headers: {
