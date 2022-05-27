@@ -1,0 +1,19 @@
+.layoutForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+.container {
+    box-shadow: 0 2px 6px rgb(0 0 0 / 50%);
+    background-color: #F2BB77;
+    opacity: 0.2;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    padding-bottom: 15px;
+    margin-top: 35px;
+}
