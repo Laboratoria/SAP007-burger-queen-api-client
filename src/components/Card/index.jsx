@@ -1,24 +1,15 @@
-import { useContext } from 'react'
-import { GlobalContext } from '../../global/GlobalContext'
-import Button from '../Button'
+// import Button from '../Button'
 import styles from "./style.module.css"
 
 // puxar a lista de produtos
-function Card ({product}){
-  const {states, setter} = useContext(GlobalContext)
-  const setPedidos = setter.setPedidos
-  const pedidos= states.pedidos
-//  console.log(pedidos)
+function Card ({product, onClick}){
 
- const addProduto =(product)=>{
-    const novaLista =[pedidos,product]
-    setPedidos(novaLista)
-    console.log(pedidos)
-  }
-  
   return(
-    <div>
-      <ul className={styles.DivCard}>
+    <div onClick={onClick}>
+         <ul className={styles.DivCard}>
+         <li>
+          <p>{product.id}</p>
+          </li>
          <li>
           <p>{product.name}</p>
           </li>
@@ -26,8 +17,11 @@ function Card ({product}){
           <p>R${(product.price).toFixed(2)}</p>
           </li>
           {product.flavor ? <li><p>{product.flavor}</p></li>:null}
+          <li>
+            <p>{product.qtd}</p>
+          </li>
       </ul>
-      <Button  type="button" onClick={()=>addProduto(product)} children="Adicionar"/>
+      {/* <Button  type="button" onClick={onClick} children="Adicionar"/> */}
       
       </div>
   )
