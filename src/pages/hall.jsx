@@ -52,6 +52,7 @@ function Hall() {
     if (productList) {
       productList.qtd += 1;
     } else {
+      console.log(order)
       const newList = {
         id: product.id,
         name: product.name,
@@ -100,15 +101,18 @@ function Hall() {
           placeholder="CLIENTE"
           type="text"
           name="client"
+          value={info.client}
           onChange={handleInfo}
         />
         <Input
           placeholder="MESA"
           type="text"
           name="table"
+          value={info.table}
           onChange={handleInfo}
         />
       </div>
+      <section>
       {order.map((item) => {
         return (
           <PurchaseOrder
@@ -119,9 +123,12 @@ function Hall() {
             flavor={item.flavor}
             qtd={1}
             onChange={() => handleProduct(item)}
-          />
+          />       
         );
       })}
+      <p>Cliente:{info.client} Mesa: {info.table}</p> 
+      
+      </section>
       <Button children="Sair" onClick={handleLogout} />
     </div>
   );
