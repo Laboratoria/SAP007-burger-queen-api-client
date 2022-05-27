@@ -1,0 +1,25 @@
+:root {
+    --background-color: #1C232E;
+    --shadow: #2F3A4B;
+    --letter: black;
+    --menu: #3C4A5F;
+    --buttons: #546B8D;
+    --main-font: 'Poiret One', cursive;
+    --font-color: black;
+    --font-color-error: red;
+    --font-color-success: green;
+}
+
+@font-face {
+    font-family: 'actionManBold';
+    src: url(../layout/fontes/Action_Man_Bold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lulaBorgesNegrito';
+    src: url(../layout/fontes/lula_borges_negrito_italico.ttf);
+    font-weight: normal;
+    font-style: normal;
+}

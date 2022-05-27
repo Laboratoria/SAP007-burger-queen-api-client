@@ -1,0 +1,17 @@
+@import '../layout/variables.css';
+
+
+.about {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    align-items: center;
+    color: #0C0129;
+    font-family: 'actionManBold';
+}
+
+.title {
+    display: grid;
+    color: #0C0129;
+    font-family: 'lulaBorgesNegrito';
+    text-align: center;
+}

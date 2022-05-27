@@ -1,0 +1,15 @@
+.message {
+    width: 50%;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+}
+
+.success {
+    background-color: blue;
+    width: 50%;
+}
+
+.error {
+    background-color: red;
+    width: 50%;
+}

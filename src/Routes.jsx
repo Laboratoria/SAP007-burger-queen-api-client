@@ -15,16 +15,14 @@ import {
 export function Routes() {
     return (
         <Router>
-            <div>
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/Attendance' element={<Attendance />} />
-                    <Route path='/Client' element={<Client />} />
-                    <Route path='/Kitchen' element={<Kitchen />} />
-                </Routes>
-                <Navbar />
-                <Footer />
-            </div>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/Attendance' element={<Attendance />} />
+                <Route path='/Client' element={<Client />} />
+                <Route path='/Kitchen' element={<Kitchen />} />
+            </Routes>
+            <Navbar />
+            <Footer />
         </Router>
     )
 }
