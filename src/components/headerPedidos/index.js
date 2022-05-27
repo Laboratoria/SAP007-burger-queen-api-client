@@ -1,21 +1,29 @@
-import { Children } from "react";
+
 import logo from "../../Images/logotipo.png";
 import logout from "../../Images/logout.jpg";
 import "./styles.modules.css";
 
-function HeaderPedidos(Children) {
+function HeaderPedidos(/*{setOptions}*/props) {
     return (
         <header
             className="header-pedidos">
-            <img src={logo} alt="logotipo" className="logotype"/>
+            <img src={logo} alt="logotipo" className="logotype" />
             <navbar className="menu">
                 <ul>
-                    {Children}
+                    <li>
+                        <a href="" onClick={/*(e)=> setOptions(e.target.value)*/ props.value}>Café da manhã</a>
+                    </li>
+                    <li>
+                        <a href="" onClick="onClick"> Dia Todo</a>
+                    </li>
+                    <li>
+                        <a href="" onClick="onClick">Pedidos</a>
+                    </li>
                 </ul>
                 <hr></hr>
             </navbar>
             <button className="logout">
-                    <img src={logout}></img>
+                <img src={logout}></img>
             </button>
         </header>
     );
