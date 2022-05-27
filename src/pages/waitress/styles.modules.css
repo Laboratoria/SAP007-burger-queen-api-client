@@ -9,5 +9,6 @@
 }
 
 .client-cart {
-    border: 2px red;
+    width: 50%;
+    justify-content: center;
 }

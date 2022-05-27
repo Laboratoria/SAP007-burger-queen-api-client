@@ -4,7 +4,7 @@
     border: black;
     text-align: center;
     width: 20%;
-    padding: 2%;
+    padding: 1%;
     margin: initial;
 }
 
@@ -14,6 +14,7 @@
     border: black;
     text-align: center;
     width: 20%;
-    padding: 2%;
+    padding: 1%;
     background-color: #F2D6A2; 
+    margin: initial;
 }
