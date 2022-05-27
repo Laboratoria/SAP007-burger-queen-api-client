@@ -43,7 +43,7 @@ export const getProduct = () => {
   });
 };
 
-export const createOrder = (client, table, id, qtd) =>{
+export const createOrder = (info, products) =>{
   return fetch(`${URL}/orders`,{
     method:"POST",
       headers: {
@@ -51,14 +51,9 @@ export const createOrder = (client, table, id, qtd) =>{
         "Authorization": getToken(),
       },
       body: JSON.stringify({
-        client: client,
-        table: table,
-        products: [
-          {
-            id: id,
-            qtd: qtd
-          }
-        ]
+        client: info.client,
+        table: info.table,
+        products: products,
       })
   })
 }

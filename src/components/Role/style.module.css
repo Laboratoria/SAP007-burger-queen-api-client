@@ -5,13 +5,10 @@
   display: flex;
   padding: 4%;
 }
-
 label{
   color: #ffffff;
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-
 }
 

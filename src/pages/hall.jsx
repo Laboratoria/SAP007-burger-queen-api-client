@@ -1,19 +1,18 @@
 import Button from "../components/Button";
 import Header from "../components/Header";
-import Input from "../components/Input";
 import Card from "../components/Card";
-import filterProducts from "../services/Products";
+import Input from "../components/Input";
 import { codeError } from "../services/error";
 import PurchaseOrder from "../components/PurchaseOrder";
 import { useNavigate } from "react-router-dom";
-import { getProduct, createOrder} from "../services/api";
+import { createOrder, getProduct } from "../services/api";
 import { useState, useEffect } from "react";
 
 function Hall() {
   const navigate = useNavigate();
-  const [info, setInfo] = useState({client:"", table:""});
-  const [products, setProducts] = useState([])
-  const [item, setItem] = useState([]);
+  const [info, setInfo] = useState({ client: "", table: "" });
+  const [products, setProducts] = useState([]);
+  const [order, setOrder] = useState([]);
   const [error, setError] = useState("");
 
   function handleLogout() {
@@ -24,76 +23,105 @@ function Hall() {
   function PushedProducts(option) {
     getProduct()
       .then((response) => response.json())
-      .then((data) => setProducts(filterProducts(data, option)));
+      .then((data) => {
+        setProducts(
+          data.filter((item) => {
+            return item.type === option;
+          })
+        );
+      });
   }
- 
+
   useEffect(() => {
     PushedProducts("breakfast");
   }, []);
 
-  const handleInfo = (e) =>{
+  const handleInfo = (e) => {
     return setInfo(() => {
-      const auxInfo = {...info};
+      const auxInfo = { ...info };
       auxInfo[e.target.name] = e.target.value;
-      console.log(auxInfo)
+      console.log(auxInfo);
       return auxInfo;
-    })
-  }
+    });
+  };
 
-  const handleProduct = (product) =>{
-    const productIndex = item.findIndex((item)=> item.id === product.id);
-    if(productIndex === -1){
-      setItem([...item,{...product, qtd:1}]);
-    }else{
-      item[productIndex].qtd += 1;
-      console.log(productIndex)
-      setItem([...item]);
+  function handleProduct(product) {
+    const productList = order.find((item) => {
+      return item.id === product.id;
+    });
+    if (productList) {
+      productList.qtd += 1;
+    } else {
+      const newList = {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        flavor: product.flavor,
+        qtd: 1,
+      };
+      order.push(newList);
     }
+    setOrder([...order]);
   }
+  console.log(order);
 
-  function order(){
-    createOrder(info, item)
-    .then((response) => response.json())
-    .then ((data)=> {
-      if(data.code ===400){
-        setError(codeError(error))
-      }else{
-        setItem([]);
-        setInfo({client:"", table:""})
-      }
-    })
+  function listOrder(order) {
+    createOrder(info, order)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.code === 400) {
+          setError(codeError(error));
+        } else {
+          setOrder([]);
+          setInfo({ client: "", table: "" });
+        }
+      });
   }
-  order()
+  listOrder(order); //função será chamada futuramente e apagaremos essa linha
 
   return (
     <div>
       <Header children="PEDIDOS" />
-      <Button children="CAFÉ" onClick={()=>PushedProducts("breakfast")} />
-      <Button children="+ MENU" onClick={()=>PushedProducts("all-day")} />
+      <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
+      <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />
       <ul>
         {products.map((item) => {
           return (
-            <Card  key={item.id} 
+            <Card
+              key={item.id}
               product={item}
-              onClick={handleProduct}
+              onClick={() => handleProduct(item)}
             />
-            );
-          })}
+          );
+        })}
       </ul>
-      <PurchaseOrder />
-      <Input
-        placeholder="CLIENTE"
-        type="text"
-        name="client"
-        onChange={handleInfo}
-      />
-      <Input
-        placeholder="MESA"
-        type="text"
-        name="table"
-        onChange={handleInfo}
-      />
-      <PurchaseOrder />
+      <div>
+        <Input
+          placeholder="CLIENTE"
+          type="text"
+          name="client"
+          onChange={handleInfo}
+        />
+        <Input
+          placeholder="MESA"
+          type="text"
+          name="table"
+          onChange={handleInfo}
+        />
+      </div>
+      {order.map((item) => {
+        return (
+          <PurchaseOrder
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            price={item.price}
+            flavor={item.flavor}
+            qtd={1}
+            onChange={() => handleProduct(item)}
+          />
+        );
+      })}
       <Button children="Sair" onClick={handleLogout} />
     </div>
   );

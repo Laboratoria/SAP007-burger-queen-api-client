@@ -1,10 +1,8 @@
-import styles from "./style.module.css"
+import styles from "./style.module.css";
 
-// card com dados do pedido (mesa e )
-
-function PurchaseOrder(){
-       return(
-        <div className={styles.DivPurschaseOrder}></div>
-    )
+function PurchaseOrder({ order, onChange}) {
+  return (
+    <div className={styles.DivPurschaseOrder} order={order} onChange={onChange}></div>
+  );
 }
-export default PurchaseOrder
+export default PurchaseOrder;
