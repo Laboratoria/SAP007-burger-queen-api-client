@@ -1,23 +1,16 @@
+import { Children } from "react";
 import logo from "../../Images/logotipo.png";
 import logout from "../../Images/logout.jpg";
 import "./styles.modules.css";
 
-function HeaderPedidos(onClick) {
+function HeaderPedidos(Children) {
     return (
         <header
             className="header-pedidos">
             <img src={logo} alt="logotipo" className="logotype"/>
             <navbar className="menu">
                 <ul>
-                    <li>
-                        <a href="" onClick={onClick}>Café da manhã</a>
-                    </li>
-                    <li>
-                        <a href="" onClick={onClick}> Dia Todo</a>
-                    </li>
-                    <li>
-                        <a href="" onClick={onClick}>Pedidos</a>
-                    </li>
+                    {Children}
                 </ul>
                 <hr></hr>
             </navbar>
