@@ -3,6 +3,7 @@ import logo from '../img/logo.png';
 import Button from '../componentes/button';
 import Form from '../componentes/form';
 import Input from '../componentes/input'
+import '../pages-css/login.css';
 
 
 function App() {
@@ -11,9 +12,10 @@ function App() {
   const [password, setPassword]=useState("");
 
   return (
-    <section>
+    <>
       <header>
         <img className='logo-img' src={logo} /> 
+      </header>
         <Form>
         <label>Email</label>
                 <Input 
@@ -32,8 +34,7 @@ function App() {
                 <Button cor="azul" className='button-form'>entrar</Button>
                 <Button  cor="vermelho"className='button-form'>cadastrar</Button>
         </Form>
-      </header>
-    </section>
+    </>
   );
 }
 
