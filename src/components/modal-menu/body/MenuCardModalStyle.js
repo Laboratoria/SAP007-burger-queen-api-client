@@ -8,8 +8,9 @@ export const BackgroundCard = styled.div`
   border-radius: 10px;
   animation: up 1s;
   background-repeat: round;
-  padding-top: 15px;
+  
   padding-bottom: 23px;
+  margin-bottom: 30px;
  
 `;
 // style apenas do modal menu em MenuCardModal.js 
@@ -22,6 +23,8 @@ export const BackgroundCardMenuAndOrder = styled.div`
   background-repeat: round;
   padding-top: 15px;
   padding-bottom: 23px;
+  margin-bottom: 30px;
+
 
   p {
     color: black;

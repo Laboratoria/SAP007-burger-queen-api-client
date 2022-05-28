@@ -39,6 +39,17 @@ h3 {
     color: #531cb3;
 }
 
+.p-voltar {
+   color: #531CB3;
+   textAlign: center;
+   background-color: #F7F7FF;
+   border-radius: 0.4rem;
+   text-align: center;
+   margin: auto;
+   margin-top: 10px;
+   height: 45px;
+}
+
 .buttons-register-return {
     width: 90%;
     text-align: center;
@@ -56,6 +67,7 @@ h3 {
     margin-right: auto;
     margin-top: 1em;
     border-radius: 12px;
+    
 
     @media (min-width: 1024px) {
         width: 80%;       

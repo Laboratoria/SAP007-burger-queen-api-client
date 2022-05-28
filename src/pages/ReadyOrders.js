@@ -42,7 +42,7 @@ const ReadyOrders = () => {
       <div className="container">
         <DefaultTitle>Pedidos Prontos</DefaultTitle>
         <Link to="/hall">
-          <div style={{ color: "#ce8e43", textAlign: "left" }}> Voltar</div>
+          <div className="p-voltar"> Voltar</div>
         </Link>
       </div>
 

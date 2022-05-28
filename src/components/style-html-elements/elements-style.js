@@ -34,13 +34,15 @@ color: red;
 export const LinkStyle = styled.span`
 color: #531CB3;
 `
-
+// pedidos prontos e entregues
 export const DefaultTitle = styled.p`
 text-align: center;
-font-size: 1.5em;
-margin: 0.7em;
-color: black;
+font-size: 1em;
+
 font-family: 'Lato', sans-serif;
+border-radius: 0.4rem;
+background-color: #531CB3;
+padding: 10px;
 
 `
 export const OrderSummaryH2 = styled.h2`

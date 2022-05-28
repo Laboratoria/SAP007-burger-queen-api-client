@@ -28,7 +28,7 @@ const OrdersDelivered = () => {
            
             <div className="container">
                 <DefaultTitle>Pedidos Entregues</DefaultTitle>
-                <Link to="/hall"><div style={{color: '#ce8e43', textAlign: "left"}} > Voltar</div></Link>
+                <Link to="/hall"><div className="p-voltar"> Voltar</div></Link>
             </div>
                 
             {orders.map((item) => (
