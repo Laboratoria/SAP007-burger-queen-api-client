@@ -35,20 +35,17 @@ test("It should submit button on register screen", () => {
   expect(handleSubmit).toHaveBeenCalledTimes(1);
 });
 
-// testes componente input 
-describe('Testing input component', () => {
-  it('should render the input component', () => {
-      render(<Input />)
+// testes componente input
+describe("Testing input component", () => {
+  it("should render the input component", () => {
+    render(<Input />);
   });
-  
-  it('should call the onChange function when value is changed', () => {
-      const onChange = jest.fn()
-      render(<Input onChange={onChange} />)
+
+  it("should call the onChange function when value is changed", () => {
+    const onChange = jest.fn();
+    render(<Input onChange={onChange} />);
   });
-})
-
-
-
+});
 
 /* veio no projeto
 import { render, screen } from '@testing-library/react';
