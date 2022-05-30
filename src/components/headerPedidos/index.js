@@ -20,7 +20,7 @@ function HeaderPedidos({links}) {
                 <hr></hr>
             </navbar>
             <button className="logout">
-                <img src={logout}></img>
+                <img src={logout} alt="Deslogar"></img>
             </button>
         </header>
     );

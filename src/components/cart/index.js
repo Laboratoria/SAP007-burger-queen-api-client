@@ -1,7 +1,10 @@
+
 import trash from "../../Images/trash-icon.png";
 import "./styles.modules.css";
 
-function Cart({orderList}) {
+function Cart({ orderList, total }) {
+  
+
   return (
     <>
       <table>
@@ -14,22 +17,32 @@ function Cart({orderList}) {
           </tr>
         </thead>
         <tbody>
-            {orderList.map(product => (
-          <tr>
+          {orderList.map((product) => (
+           
+
+            < tr >
               
               <><td>{product.name}</td>
-              <td>{product.qtd}</td>
+              <td >{product.qtd}</td>
               <td>{product.price}</td></>
 
-            <td>
+           <td>
               <button className="trash">
                 <img className="trash-icon" src={trash} alt="deletar"></img>
               </button>
             </td>
+          
           </tr>
+          
             ))}
-        </tbody>
-      </table>
+        <tr>
+          <td>Total: {total} R$</td>
+          <td>
+            <button>Finalizar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
     </>
   );
 }

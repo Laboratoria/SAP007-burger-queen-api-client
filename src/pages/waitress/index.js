@@ -10,31 +10,26 @@ import { useState, useEffect } from "react";
 function Waitress() {
   const [products, setProducts] = useState([]);
   const [order, setOrder] = useState([]);
-  const [client, setClient] = useState({name: ""});
-  const [table, setTable] = useState({  table: ""});
-  // let [options, setOptions] = useState();
-  // console.log(client)
-  // console.log(table)
-  // console.log(options)
+  const [client, setClient] = useState({ name: "" });
+  const [table, setTable] = useState({ table: "" });
+  const [total, setTotal] = useState()
 
   const token = localStorage.getItem("token");
 
   function getProducts(option) {
     getAllProducts(token).then((data) => {
-      
-        let filterProduts = data.filter((item) => {
-          
-          return item.type === option
 
-        }
-      
+      let filterProduts = data.filter((item) => {
+
+        return item.type === option
+
+      }
+
       );
       setProducts(filterProduts)
     });
 
   }
-
-  // console.log(products)
 
   useEffect(() => {
     getProducts("breakfast");
@@ -54,17 +49,21 @@ function Waitress() {
         price: product.price,
         flavor: product.flavor,
         qtd: 1,
+        client,
+        table
       };
+      console.log(newList);
       order.push(newList);
     }
     setOrder([...order]);
+    totalPrice()
   }
-  
+  // console.log(order);
 
   const links = [
     {
       name: "Café da manhã",
-      onClick: ()=> getProducts("breakfast"),
+      onClick: () => getProducts("breakfast"),
     },
     {
       name: "Dia-Todo",
@@ -72,12 +71,22 @@ function Waitress() {
     }
   ];
 
+  function totalPrice(){
+    let price = 0
+    order.forEach((product)=> {
+      price += (parseFloat(product.price) * parseFloat(product.qtd))
+      console.log(product.price, product.qtd)
+    })
+    console.log(price)
+   
+    return  setTotal( price)
+  }
+ 
 
   return (
     <>
       <HeaderPedidos links={links} />
 
-    
       <main className="orders">
         <section className="products">
           <h1>produtos </h1>
@@ -87,7 +96,7 @@ function Waitress() {
                 <Card
                   key={item.id}
                   product={item}
-                  onClick={() => OrderProduct(item)}
+                  onClick={() => OrderProduct(item) }
                 />
               );
             })}
@@ -96,21 +105,12 @@ function Waitress() {
         <section className="client-cart">
           <div className="client-infos">
 
-            <Client setClient={setClient} setTable={setTable}/>
+            <Client setClient={setClient} setTable={setTable} />
           </div>
           <div className="cart">
-            {order.map((item) => {
-              return ( 
-                <Cart 
-                orderList={order}
-                // product= {item}
-                // name= {item.name}
-                // qtd= {item.qtd}
-                // price= {item.price}
-                />
 
-              )
-            })}
+            <Cart orderList={order} total={total}/>
+
           </div>
         </section>
       </main>
