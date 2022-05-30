@@ -9,7 +9,6 @@ import Role from '../components/Role';
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
-
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,6 +17,7 @@ function Register() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const minLength = 6
+
   const location = useLocation();
   let feedback = " ";
   if (location.state) {
@@ -86,6 +86,8 @@ function Register() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Button children="CADASTRAR" onClick={handleSubmit} disable={password.length < minLength}/>
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <Link to="/login" className="Hiperlink">
           Já tenho cadastro
         </Link>
