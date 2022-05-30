@@ -13,3 +13,7 @@ header {
     align-items: center;
     width: 100%;
 }
+
+p{
+    font-family: Andale Mono, monospace;  
+}
