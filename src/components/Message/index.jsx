@@ -1,7 +1,7 @@
 import styles from "./style.module.css"
 import {useState, useEffect} from "react"
 
-  function Message({msg,type}){
+  function Message({msg}){
     const [visible, setVisible] = useState(false)
 
     useEffect(() => {
@@ -18,7 +18,7 @@ import {useState, useEffect} from "react"
     
   return(
     <>{visible && (
-      <div className={`${styles.msg}${styles[type]}`}>{msg}</div>
+      <div className={styles.message}>{msg}</div>
       )}
     </>
   )
