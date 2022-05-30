@@ -1,0 +1,20 @@
+.layoutForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+.container {
+    background-color: rgb(242 187 119 / 20%);
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    padding-bottom: 15px;
+    margin-top: 35px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
