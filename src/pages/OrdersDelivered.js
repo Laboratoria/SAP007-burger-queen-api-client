@@ -1,4 +1,4 @@
-import Header from "../components/header/Header";
+import HeaderLogo from "../components/header/HeaderLogo";
 import { DefaultTitle, ParagraphUniversal, OrderSummaryH2 } from "../components/style-html-elements/elements-style";
 import { GetOrders} from '../services/products';
 import { useState, useEffect } from 'react';
@@ -24,7 +24,7 @@ const OrdersDelivered = () => {
     return (
         <>
             <StyleBackgroundImg />
-            <Header showLogOut={true} />                    
+            <HeaderLogo showLogOut={true} />                    
            
             <div className="container">
                 <DefaultTitle>Pedidos Entregues</DefaultTitle>

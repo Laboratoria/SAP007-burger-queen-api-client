@@ -9,7 +9,7 @@ import {
   ParagraphUniversal,
 } from "../../components/style-html-elements/elements-style";
 import { LoginRegisterParagraph } from "../../components/style-html-elements/elements-style";
-import Header from "../../components/header/Header";
+import HeaderLogo from "../../components/header/HeaderLogo";
 import HeaderWelcome from "../../components/header/headerWelcome";
 
 const LoginUser = () => {
@@ -17,7 +17,7 @@ const LoginUser = () => {
 
   return (
     <>
-      <Header />
+      <HeaderLogo />
       <HeaderWelcome />
 
       <section>

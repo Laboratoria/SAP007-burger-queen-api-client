@@ -69,7 +69,7 @@ h3 {
     } 
 }
 .container-register {
-    height: 76vh;
+    height: 85vh;
     margin-bottom: 100px;
     
 }

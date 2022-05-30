@@ -1,8 +1,8 @@
 import img from '../../images/logo5.png'
-import { Container } from './HeaderStyle';
+import { Container } from './HeaderLogoStyle';
 import { Logout } from '../logout/Logout';
 
-const Header = ({showLogOut}) => {
+const HeaderLogo = ({showLogOut}) => {
     const iconLogOut = <Logout />
    
     return (
@@ -13,4 +13,4 @@ const Header = ({showLogOut}) => {
     )
 }
 
-export default Header
+export default HeaderLogo

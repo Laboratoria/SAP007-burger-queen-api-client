@@ -10,7 +10,7 @@ import StyleBackgroundImg from "../../components/img-background/style-bg-img";
 import CheckboxRole from "../../components/circle-option/CheckboxRole";
 import { LoginRegisterParagraph } from "../../components/style-html-elements/elements-style";
 import { ModalOfMenuOptions } from "../../components/button/ButtonStyle";
-import Header from "../../components/header/Header";
+import HeaderLogo from "../../components/header/HeaderLogo";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -33,7 +33,7 @@ const Register = () => {
 
   return (
     <section>
-      <Header />
+      <HeaderLogo />
       <StyleBackgroundImg />
       <form
         className="container container-register"

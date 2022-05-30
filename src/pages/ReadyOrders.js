@@ -1,4 +1,4 @@
-import Header from "../components/header/Header";
+import HeaderLogo from "../components/header/HeaderLogo";
 import {
   DefaultTitle,
   ParagraphReadyOrders,
@@ -38,7 +38,7 @@ const ReadyOrders = () => {
   return (
     <>
       <StyleBackgroundImg />
-      <Header showLogOut={true} />
+      <HeaderLogo showLogOut={true} />
       <div className="container">
         <DefaultTitle>Pedidos Prontos</DefaultTitle>
         <Link to="/hall">

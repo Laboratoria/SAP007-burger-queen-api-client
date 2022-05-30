@@ -1,6 +1,6 @@
 import { GetOrders, OrderStatusUpdate } from "../services/products";
 import { useState, useEffect } from "react";
-import Header from "../components/header/Header";
+import HeaderLogo from "../components/header/HeaderLogo";
 import { BackgroundCard } from "../components/modal-menu/body/MenuCardModalStyle";
 import { ParagraphOrderKitchen } from "../components/style-html-elements/elements-style";
 import {
@@ -70,7 +70,7 @@ const Kitchen = () => {
   return (
     <>
       <StyleBackgroundImg />
-      <Header showLogOut={true} />
+      <HeaderLogo showLogOut={true} />
       <HeaderWelcome />
 
     {/*  <div className="container data-ready-order-client">

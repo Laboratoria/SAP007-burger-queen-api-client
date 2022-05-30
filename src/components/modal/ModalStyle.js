@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md'
-import burguerGif from '../images/burguer-gif.gif';
+import burguerGif from '../images/burguer.gif';
 
 // fundo do modal "pedido eviado" - que deixa tudo preto e com transparência
 export const Background = styled.div `
@@ -35,7 +35,7 @@ background-color: white;
   }
 
 @media (max-width: 768px) {
-    width: 80vw;       
+    width: 65vw;       
   }
 
 @media (min-width: 769px) {
