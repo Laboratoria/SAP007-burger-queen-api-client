@@ -46,7 +46,7 @@ const Register = () => {
           name="name"
           type="text"
           onChange={handleChange}
-          placeholder="Digite o seu nome"
+          placeholder="Seja bem vinda :)"
         />
         <LoginRegisterParagraph>
           {errors.name && errors.name}
@@ -58,7 +58,7 @@ const Register = () => {
           name="email"
           type="email"
           onChange={handleChange}
-          placeholder="Digite o seu email"
+          placeholder="username@email.com"
         />
         <LoginRegisterParagraph>
           {errors.email && errors.email}
@@ -70,7 +70,7 @@ const Register = () => {
           name="password"
           type={showPassword ? "type" : "password"}
           onChange={handleChange}
-          placeholder="Digite a sua senha"
+          placeholder="Pelo menos 6 caracteres"
         />
         <span className="login-eye">
           {showPassword ? (

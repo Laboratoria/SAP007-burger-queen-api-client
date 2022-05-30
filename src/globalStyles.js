@@ -27,7 +27,7 @@ p {
 }
 
 .p-product {
-    margin-right: 10px;
+
 
 }
 
@@ -51,18 +51,13 @@ h3 {
 }
 
 .buttons-register-return {
-    width: 90%;
+    width: 100%;
     text-align: center;
-    display: contents;
-   
-    
-  
-  
 }
 
 .container {
     
-    width: 350px;
+    width: 70vh;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1em;
@@ -74,7 +69,7 @@ h3 {
     } 
 }
 .container-register {
-    height: 625px;
+    height: 76vh;
     margin-bottom: 100px;
     
 }
@@ -88,7 +83,7 @@ h3 {
   
     background-color: #F7F7FF;
     padding-top: 20px;
-    width: 350px;
+    width: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,7 +107,12 @@ h3 {
 .container-modal-menu {
     display: flex;
     width: 500px;
-    margin-bottom
+    justify-content: center;
+    text-align: left;
+}
+
+.container-teste-order {
+    margin-left: 24vh;
 }
 
 .div-btn-prepare-finish-order {

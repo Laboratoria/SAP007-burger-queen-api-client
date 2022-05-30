@@ -2,7 +2,7 @@ import Header from "../components/header/Header";
 import {
   DefaultTitle,
   ParagraphReadyOrders,
-  DefaultParagraph,
+  ParagraphUniversal,
   OrderSummaryH2,
 } from "../components/style-html-elements/elements-style";
 import { GetOrders, OrderStatusUpdate } from "../services/products";
@@ -55,8 +55,8 @@ const ReadyOrders = () => {
                 {item.status} em: {new Date(item.updatedAt).toLocaleString()}
               </ParagraphReadyOrders>
 
-              <DefaultParagraph>Nome: {item.client_name}</DefaultParagraph>
-              <DefaultParagraph>Mesa: {item.table}</DefaultParagraph>
+              <ParagraphUniversal>Nome: {item.client_name}</ParagraphUniversal>
+              <ParagraphUniversal>Mesa: {item.table}</ParagraphUniversal>
 
               <div className="container">
                 {item.Products.map((product) => (

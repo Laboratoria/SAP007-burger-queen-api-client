@@ -1,5 +1,5 @@
 import Header from "../components/header/Header";
-import { DefaultTitle, DefaultParagraph, OrderSummaryH2 } from "../components/style-html-elements/elements-style";
+import { DefaultTitle, ParagraphUniversal, OrderSummaryH2 } from "../components/style-html-elements/elements-style";
 import { GetOrders} from '../services/products';
 import { useState, useEffect } from 'react';
 import { BackgroundCard, DivProductKitchen } from "../components/modal-menu/body/MenuCardModalStyle";
@@ -36,8 +36,8 @@ const OrdersDelivered = () => {
                     <BackgroundCard >
                         <DivProductKitchen>
                             <OrderSummaryH2>Status: {item.status}</OrderSummaryH2>
-                            <DefaultParagraph>Nome: {item.client_name}</DefaultParagraph>
-                            <DefaultParagraph>Mesa: {item.table}</DefaultParagraph>
+                            <ParagraphUniversal>Nome: {item.client_name}</ParagraphUniversal>
+                            <ParagraphUniversal>Mesa: {item.table}</ParagraphUniversal>
                             <div className="container">
                             {item.Products.map((product) =>
                                 <span key={product.id}>

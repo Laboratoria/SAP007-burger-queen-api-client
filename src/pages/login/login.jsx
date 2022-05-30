@@ -4,7 +4,7 @@ import Button from "../../components/button/Button";
 import ErrorsMessage from "./loginValidation";
 import { Link } from 'react-router-dom';
 import StyleBackgroundImg from "../../components/img-background/style-bg-img";
-import { LinkStyle, DefaultParagraph } from "../../components/style-html-elements/elements-style";
+import { LinkToRegisterStyle, ParagraphUniversal } from "../../components/style-html-elements/elements-style";
 import { LoginRegisterParagraph } from "../../components/style-html-elements/elements-style";
 import Header from "../../components/header/Header";
 import HeaderWelcome from "../../components/header/headerWelcome";
@@ -29,7 +29,7 @@ const LoginUser = () => {
           name="email"
           type="text"
           onChange={handleChange}
-          placeholder="Digite seu email"
+          placeholder="username@email.com"
         />
         <LoginRegisterParagraph>{errors.email && errors.email}</LoginRegisterParagraph>
 
@@ -40,13 +40,13 @@ const LoginUser = () => {
           name="password"
           type="password"
           onChange={handleChange}
-          placeholder="Digite sua senha"
+          placeholder="Deixe-me adivinhar: é batatinha?"
         />
         <LoginRegisterParagraph>{errors.password && errors.password}</LoginRegisterParagraph>
 
         <Button>Entrar</Button>
-        <DefaultParagraph>Ainda não tem uma conta?</DefaultParagraph>
-        <Link to="/register"><LinkStyle>Registre-se aqui</LinkStyle></Link>
+        <ParagraphUniversal>Ainda não tem uma conta?</ParagraphUniversal>
+        <Link to="/register"><LinkToRegisterStyle>Registre-se aqui</LinkToRegisterStyle></Link>
 
       </form>
     </section>

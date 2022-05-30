@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const DefaultParagraph = styled.p`
+export const ParagraphUniversal = styled.p`
   color: #531CB3;
   margin-top: 0.7em;
   margin-bottom: 0.2em;
-  margin-left: 2em;
+  
 `;
 
 export const ParagraphOrderKitchen = styled.p `
@@ -21,18 +21,19 @@ export const ParagraphTitleStatusOrder = styled.p `
 `;
 
 
-export const ParagraphReadyOrders = styled(DefaultParagraph)`
+export const ParagraphReadyOrders = styled(ParagraphUniversal)`
   color: #edcca4;
   margin-top: 0.7em;
   font-style: italic;
 `;
 
-export const LoginRegisterParagraph = styled(DefaultParagraph) `
+export const LoginRegisterParagraph = styled(ParagraphUniversal) `
 color: red;
 `
 
-export const LinkStyle = styled.span`
-color: #531CB3;
+export const LinkToRegisterStyle = styled.span`
+color: blue;
+font-family: 'Lato', sans-serif;
 `
 // pedidos prontos e entregues
 export const DefaultTitle = styled.p`

@@ -8,7 +8,7 @@ import {
   DivProduct,
 } from "../components/modal-menu/body/MenuCardModalStyle.js";
 import { MdDelete } from "react-icons/md";
-import { DefaultParagraph } from "../components/style-html-elements/elements-style.js";
+import { ParagraphUniversal } from "../components/style-html-elements/elements-style.js";
 import Header from "../components/header/Header.js";
 import Modal from "../components/modal/Modal.js";
 import {
@@ -215,9 +215,9 @@ const Hall = () => {
             </ButtonsHall>{" "}
           </Link>
 
-          <Link to="/ordersdelivered">
+         <Link to="/ordersdelivered">
             <ButtonsHall>Pedidos Entregues</ButtonsHall>
-          </Link>
+          </Link>  
         </div>
         <div className="container data-ready-order-client">
           <ClientData
@@ -253,8 +253,8 @@ const Hall = () => {
             <BackgroundCard>
               <h3>Comanda</h3>
               {msgError}
-              <DefaultParagraph>Cliente: {nameClient}</DefaultParagraph>
-              <DefaultParagraph>Mesa: {table}</DefaultParagraph>
+              <ParagraphUniversal>Cliente: {nameClient}</ParagraphUniversal>
+              <ParagraphUniversal>Mesa: {table}</ParagraphUniversal>
 
               {order.map((item, index) => (
                 <DivProduct key={item.id}>
@@ -272,7 +272,7 @@ const Hall = () => {
                   />
                 </DivProduct>
               ))}
-              <DefaultParagraph>Total: R$ {allValue} </DefaultParagraph>
+              <ParagraphUniversal>Total: R$ {allValue} </ParagraphUniversal>
               <BtnSendOrderToKitchenAndPrepareIt onClick={() => sendSummary()}>
                 Enviar
               </BtnSendOrderToKitchenAndPrepareIt>
