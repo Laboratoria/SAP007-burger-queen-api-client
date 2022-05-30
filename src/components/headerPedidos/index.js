@@ -3,22 +3,19 @@ import logo from "../../Images/logotipo.png";
 import logout from "../../Images/logout.jpg";
 import "./styles.modules.css";
 
-function HeaderPedidos(/*{setOptions}*/props) {
+function HeaderPedidos({links}) {
     return (
         <header
             className="header-pedidos">
             <img src={logo} alt="logotipo" className="logotype" />
             <navbar className="menu">
                 <ul>
-                    <li>
-                        <a href="" onClick={/*(e)=> setOptions(e.target.value)*/ props.value}>Café da manhã</a>
-                    </li>
-                    <li>
-                        <a href="" onClick="onClick"> Dia Todo</a>
-                    </li>
-                    <li>
-                        <a href="" onClick="onClick">Pedidos</a>
-                    </li>
+                    {links.map((link, index) => (
+                        <li key={index}>
+                            <button onClick={link.onClick}>{link.name}</button>
+                        </li>
+                    ))}
+                   
                 </ul>
                 <hr></hr>
             </navbar>

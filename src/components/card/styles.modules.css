@@ -1,0 +1,16 @@
+.add-button{
+    background-color:initial;
+  width: 10%;
+  margin: initial;
+  padding: initial;
+  border-radius: 100%;
+  box-shadow: initial;
+  border: black;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.plus-icon{
+    width: 60%;
+}

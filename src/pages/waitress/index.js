@@ -13,8 +13,8 @@ function Waitress() {
   const [client, setClient] = useState({name: ""});
   const [table, setTable] = useState({  table: ""});
   // let [options, setOptions] = useState();
-  console.log(client)
-  console.log(table)
+  // console.log(client)
+  // console.log(table)
   // console.log(options)
 
   const token = localStorage.getItem("token");
@@ -34,13 +34,14 @@ function Waitress() {
 
   }
 
-  console.log(products)
+  // console.log(products)
 
   useEffect(() => {
     getProducts("breakfast");
-  });
+  }, []);
 
-  function handleProduct(product) {
+  function OrderProduct(product) {
+    console.log("entrou");
     const productList = order.find((item) => {
       return item.id === product.id;
     });
@@ -58,14 +59,25 @@ function Waitress() {
     }
     setOrder([...order]);
   }
-  // console.log(order);
+  
+
+  const links = [
+    {
+      name: "Café da manhã",
+      onClick: ()=> getProducts("breakfast"),
+    },
+    {
+      name: "Dia-Todo",
+      onClick: () => getProducts("all-day")
+    }
+  ];
 
 
   return (
     <>
-      <HeaderPedidos event={getProducts("breakfast")} /*setOptions={setOptions="breakfest"}*/ >
+      <HeaderPedidos links={links} />
 
-      </HeaderPedidos>
+    
       <main className="orders">
         <section className="products">
           <h1>produtos </h1>
@@ -75,7 +87,7 @@ function Waitress() {
                 <Card
                   key={item.id}
                   product={item}
-                  onClick={() => handleProduct(item)}
+                  onClick={() => OrderProduct(item)}
                 />
               );
             })}
@@ -87,7 +99,18 @@ function Waitress() {
             <Client setClient={setClient} setTable={setTable}/>
           </div>
           <div className="cart">
-            <Cart />
+            {order.map((item) => {
+              return ( 
+                <Cart 
+                orderList={order}
+                // product= {item}
+                // name= {item.name}
+                // qtd= {item.qtd}
+                // price= {item.price}
+                />
+
+              )
+            })}
           </div>
         </section>
       </main>

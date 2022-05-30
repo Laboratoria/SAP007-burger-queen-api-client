@@ -1,11 +1,10 @@
 import styles from "./styles.modules.css";
-import Button from "../../components/Button"
-
+import plusIcon from "../../Images/plus-icon.png"
 
 function Card ({product, onClick}){
 
     return(
-      <div onClick={onClick}>
+      <div >
            <ul className={styles.DivCard}>
            <li>
             <p>{product.id}</p>
@@ -21,7 +20,9 @@ function Card ({product, onClick}){
               <p>{product.qtd}</p>
             </li>
         </ul>
-        <Button type="button" onClick={onClick} children="Adicionar"/>
+        <button type="button" onClick={onClick} className="add-button">
+            <img src={plusIcon} alt="Adicionar Produto" className="plus-icon"></img>
+        </button>
         
         </div>
     )
