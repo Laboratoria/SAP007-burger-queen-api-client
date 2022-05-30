@@ -86,8 +86,8 @@ function Register() {
         <Link to="/login" className="Hiperlink">
           Já tenho cadastro
         </Link>
-        {feedback && <Message type="error" msg={feedback} />}
-        {error && <Message type="error" msg={error} />}
+        {feedback && <Message msg={feedback} />}
+        {error && <Message  msg={error} />}
       </form>
     </div>
   );
