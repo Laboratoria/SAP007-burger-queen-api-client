@@ -1,14 +1,12 @@
 .Radio{
   margin: 0;
 }
-.DivRole{
-  display: flex;
-  padding: 4%;
-}
 label{
   color: #ffffff;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-right: 4%;
 }
+
 

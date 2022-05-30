@@ -50,9 +50,10 @@ function Login() {
         type="password"
         value={password}
         placeholder="SENHA"
+        minlength="6"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Button children="LOGAR" type="button" onClick={handleOnClick} />
+      <Button children="LOGAR" type="button" onClick={handleOnClick}/>
       <Link to="/register" className="Hiperlink">
         Cadastre-se
       </Link>

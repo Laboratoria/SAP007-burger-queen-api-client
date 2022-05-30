@@ -9,7 +9,6 @@ import Role from '../components/Role';
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
-
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -17,6 +16,7 @@ function Register() {
   const [role, setRole] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const minLength = 6
 
   const location = useLocation();
   let feedback = " ";
@@ -42,6 +42,7 @@ function Register() {
     <div className="DivForm">
       <Logo />
       <form onSubmit={createUser}>
+      <div className="DivRole">
         <Role
           type="radio"
           value="kitchen"
@@ -58,6 +59,7 @@ function Register() {
           label="SALÃO"
           onChange={(e) => setRole(e.target.value)}
         />
+      </div>
         <Input
           type="name"
           placeholder="NOME"
@@ -80,9 +82,12 @@ function Register() {
           value={password}
           id="password"
           name="password"
+          minlength="6"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button children="CADASTRAR" onClick={handleSubmit} />
+        <Button children="CADASTRAR" onClick={handleSubmit} disable={password.length < minLength}/>
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <Link to="/login" className="Hiperlink">
           Já tenho cadastro
         </Link>

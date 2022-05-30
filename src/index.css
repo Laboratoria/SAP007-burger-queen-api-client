@@ -27,7 +27,10 @@ form {
   flex-direction: column;
   align-items: center;
 }
-
+.DivRole{
+  display: flex;
+  padding: 8%;
+}
 a {
   font-size: 18px;
 }
