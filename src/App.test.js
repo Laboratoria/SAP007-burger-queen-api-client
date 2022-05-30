@@ -29,9 +29,9 @@ test("It should submit button on login screen", () => {
 
 test("It should submit button on register screen", () => {
   const handleSubmit = jest.fn();
-  render(<Button onClick={handleSubmit}>Cadastrar</Button>);
+  render(<Button onClick={handleSubmit}>Cadastre-se</Button>);
   expect(handleSubmit).toHaveBeenCalledTimes(0);
-  fireEvent.click(screen.getByText(/Cadastrar/i));
+  fireEvent.click(screen.getByText(/Cadastre-se/i));
   expect(handleSubmit).toHaveBeenCalledTimes(1);
 });
 
