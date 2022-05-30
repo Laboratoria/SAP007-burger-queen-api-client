@@ -13,7 +13,7 @@ import Header from "../components/header/Header.js";
 import Modal from "../components/modal/Modal.js";
 import {
   BtnSendOrderToKitchenAndPrepareIt,
-  ButtonsHall,
+  ButtonsHallSeeOrders,
   CancelOrder,
 } from "../components/button/ButtonStyle.js";
 import { Link } from "react-router-dom";
@@ -208,16 +208,16 @@ const Hall = () => {
       <div className="container-client-and-btn">
         <div className="container data-ready-order-client">
           <Link to="/readyorders">
-            <ButtonsHall>
+            <ButtonsHallSeeOrders>
               {" "}
               Pedidos Prontos
               {alertOrderIsReady}
-            </ButtonsHall>{" "}
+            </ButtonsHallSeeOrders>{" "}
           </Link>
 
-         <Link to="/ordersdelivered">
-            <ButtonsHall>Pedidos Entregues</ButtonsHall>
-          </Link>  
+          <Link to="/ordersdelivered">
+            <ButtonsHallSeeOrders>Pedidos Entregues</ButtonsHallSeeOrders>
+          </Link>
         </div>
         <div className="container data-ready-order-client">
           <ClientData
@@ -258,7 +258,7 @@ const Hall = () => {
 
               {order.map((item, index) => (
                 <DivProduct key={item.id}>
-                  <p >
+                  <p>
                     Qtd: {item.quantity} x {item.price}{" "}
                   </p>
                   <p> {item.name} </p>

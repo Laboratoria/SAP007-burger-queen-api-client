@@ -9,7 +9,7 @@ import {
 } from "../components/button/ButtonStyle";
 import StyleBackgroundImg from "../components/img-background/style-bg-img";
 import HeaderWelcome from "../components/header/headerWelcome";
-//import { ButtonsHall } from "../components/button/ButtonStyle.js";
+//import { ButtonsHallSeeOrdersSeeOrders } from "../components/button/ButtonStyle.js";
 //import { Link } from "react-router-dom";
 
 const Kitchen = () => {
@@ -75,7 +75,7 @@ const Kitchen = () => {
 
     {/*  <div className="container data-ready-order-client">
         <Link to="/ordersdelivered">
-          <ButtonsHall>Pedidos Entregues</ButtonsHall>
+          <ButtonsHallSeeOrdersSeeOrders>Pedidos EnButtonsHallSeeOrdersttonsHallSeeOrders>
         </Link>
   </div> */}
 

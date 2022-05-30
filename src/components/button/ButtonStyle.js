@@ -15,7 +15,7 @@ export const Container = styled.button`
   
 `;
 
-export const ButtonsHall = styled.button `
+export const ButtonsHallSeeOrders = styled.button `
   width: 14rem;
   background: #FF5B27;
   border-radius: 0.4rem;
