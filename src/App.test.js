@@ -1,20 +1,11 @@
-/*import { render, screen } from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-}); 
-*/
-
+import { fireEvent, render, screen } from "@testing-library/react";
 import LoginUser from "../src/pages/login/login";
 import Register from "../src/pages/register/Register";
-import { fireEvent, render, screen } from "@testing-library/react";
 import Button from "../src/components/button/Button";
+import Input from "../src/components/input/Input";
 
 /* eslint-disable */
-// test login e registro
+// testes login e registro
 describe("Login", () => {
   it("It should be a function", () => {
     expect(typeof LoginUser).toBe("function");
@@ -27,7 +18,7 @@ describe("Register", () => {
   });
 });
 
-// test componente botão
+// testes componente botão
 test("It should submit button on login screen", () => {
   const handleSubmit = jest.fn();
   render(<Button onClick={handleSubmit}>Entrar</Button>);
@@ -43,3 +34,29 @@ test("It should submit button on register screen", () => {
   fireEvent.click(screen.getByText(/Cadastrar/i));
   expect(handleSubmit).toHaveBeenCalledTimes(1);
 });
+
+// testes componente input 
+describe('Testing input component', () => {
+  it('should render the input component', () => {
+      render(<Input />)
+  });
+  
+  it('should call the onChange function when value is changed', () => {
+      const onChange = jest.fn()
+      render(<Input onChange={onChange} />)
+  });
+})
+
+
+
+
+/* veio no projeto
+import { render, screen } from '@testing-library/react';
+import App from './App';
+
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+}); 
+*/
