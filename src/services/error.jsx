@@ -10,5 +10,5 @@ export function codeError (response){
             return"Usuário não encontrado";
         default:
             return "Ocorreu algum erro";
-    }
-}
+    };
+};

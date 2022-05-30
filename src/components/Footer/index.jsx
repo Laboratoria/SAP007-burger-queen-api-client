@@ -1,4 +1,5 @@
 import styles from "./style.module.css"
+
 function Footer() {
   return (
     <footer className={styles.footer}>Desenvolvido por
@@ -7,4 +8,4 @@ function Footer() {
     </footer>
   )
 }
- export default Footer  
+ export default Footer;  
