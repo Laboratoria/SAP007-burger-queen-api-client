@@ -14,11 +14,11 @@ function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const location = useLocation()
+  const location = useLocation();
   let message = " "
   if (location.state) {
-    message = location.state.message
-  }
+    message = location.state.message;
+  };
 
   function handleOnClick(e) {
     e.preventDefault();
@@ -56,7 +56,7 @@ function Login() {
       <Link to="/register" className="Hiperlink">
         Cadastre-se
       </Link>
-      {message && <Message type="error" msg={message} />}
+      {message && <Message type="erro" msg={message} />}
       {error && <Message type="error" msg={error} />}
     </form>
     </div>

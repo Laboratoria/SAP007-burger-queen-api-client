@@ -1,5 +1,4 @@
-
-import {getToken} from "./token"
+import {getToken} from "./token";
 
 const URL = "https://lab-api-bq.herokuapp.com";
 
@@ -15,7 +14,7 @@ export const createUser = (name, email, password, role) => {
       password: password,
       role: role,
       restaurant: "hora de burger",
-    })
+    }),
   });
 };
 
@@ -29,7 +28,7 @@ export const logedIn = (email, password) => {
     body: JSON.stringify({
       email: email,
       password: password,
-    })
+    }),
   });
 };
 
@@ -38,8 +37,8 @@ export const getProduct = () => {
     method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": getToken("token")
-      }
+        "Authorization": getToken("token"),
+      },
   });
 };
 
@@ -54,6 +53,6 @@ export const createOrder = (info, products) =>{
         client: info.client,
         table: info.table,
         products: products,
-      })
-  })
-}
+      }),
+  });
+};

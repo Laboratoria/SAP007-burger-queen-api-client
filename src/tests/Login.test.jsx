@@ -1,16 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import user from '@testing-library/user-event';
-import login from '../pages/login';
+import { render, screen } from "@testing-library/react";
+import user from "@testing-library/user-event";
+import login from "../pages/login";
 
 
-describe('Login', () => {
+describe("Login", () => {
 
-  it('Deverá ser uma função', () => {
-    expect(typeof login).toBe('function');
+  it("Deverá ser uma função", () => {
+    expect(typeof login).toBe("function");
   });
 
-    it('deverá disparar uma função de click', () => {
-    const text = 'Entar'
+    it("deverá disparar uma função de click", () => {
+    const text = "Entar"
     const onClick = jest.fn();
     render(<button onClick={onClick}>{text}</button>);
 

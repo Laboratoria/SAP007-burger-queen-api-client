@@ -6,8 +6,7 @@ function Header({children}){
         <div className={styles.DivHeader}>
             <img src={finn} alt="Finn comendo um sanduíche" className={styles.finn}/>
             <h1 className={styles.title}>{children}</h1>
-
         </div>
     )
 }
-export default Header
+export default Header;

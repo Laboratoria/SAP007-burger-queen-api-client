@@ -1,9 +1,6 @@
-// import Button from '../Button'
 import styles from "./style.module.css"
 
-// puxar a lista de produtos
 function Card ({product, onClick}){
-
   return(
     <div onClick={onClick}>
          <ul className={styles.DivCard}>
@@ -20,10 +17,8 @@ function Card ({product, onClick}){
           <li>
             <p>{product.qtd}</p>
           </li>
-      </ul>
-      {/* <Button  type="button" onClick={onClick} children="Adicionar"/> */}
-      
+      </ul>     
       </div>
   )
 }
-export default Card
+export default Card;
