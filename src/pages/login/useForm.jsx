@@ -60,7 +60,7 @@ const useForm = (validation) => {
             } else if (response.role === "cozinheiro") {
               routerKitchen();
             } else {
-              alert("função desconhecida " + response.role);
+              alert("Hmm, função desconhecida " + response.role);
             }
           }
         })
