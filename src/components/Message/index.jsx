@@ -6,12 +6,12 @@ import {useState, useEffect} from "react"
 
     useEffect(() => {
       if (!msg) {
-        setVisible(false)
-        return
-      }
+        setVisible(false);
+        return;
+      };
       setVisible(true)
       const timer = setTimeout(() => {
-        setVisible(false)
+        setVisible(false);
       }, 5000)
       return () => clearTimeout(timer)
     }, [msg])
@@ -19,8 +19,8 @@ import {useState, useEffect} from "react"
   return(
     <>{visible && (
       <p className={`${styles.msg}${styles[type]}`}>{msg}</p>
-      )}
+      )};
     </>
   )
-}
-export default Message
+};
+export default Message;

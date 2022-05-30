@@ -14,11 +14,11 @@ function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const location = useLocation()
-  let message = " "
+  const location = useLocation();
+  let message = " ";
   if (location.state) {
-    message = location.state.message
-  }
+    message = location.state.message;
+  };
 
   function handleOnClick(e) {
     e.preventDefault();
