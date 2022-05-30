@@ -1,0 +1,15 @@
+.footer-container{
+    bottom: 0;
+    width: 100%;
+    background-color: #F2BB77;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.text-footer{
+    font-weight: lighter;
+    text-align: center;
+    font-size: 15px;
+    margin: 0;
+    font-family: Andale Mono, monospace;
+}

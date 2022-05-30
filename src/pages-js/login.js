@@ -4,6 +4,7 @@ import Button from '../componentes/button';
 import Form from '../componentes/form';
 import Input from '../componentes/input'
 import '../pages-css/login.css';
+import Footer from '../componentes/footer';
 
 
 function App() {
@@ -12,20 +13,20 @@ function App() {
   const [password, setPassword]=useState("");
 
   return (
-    <>
+  <>
       <header>
         <img className='logo-img' src={logo} /> 
       </header>
         <Form>
         <label>Email</label>
-                <Input 
+                <Input  className="inputs"
                 type="email"
                 placeholder="user@user.com"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 required/>
             <label>Senha</label>
-                <Input
+                <Input className="inputs"
                 type="password"
                 placeholder="******"
                 onChange={(e) => setPassword(e.target.value)}
@@ -34,7 +35,8 @@ function App() {
                 <Button cor="azul" className='button-form'>entrar</Button>
                 <Button  cor="vermelho"className='button-form'>cadastrar</Button>
         </Form>
-    </>
+     <Footer/>
+  </>
   );
 }
 
