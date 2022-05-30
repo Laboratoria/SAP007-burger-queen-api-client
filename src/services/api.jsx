@@ -59,6 +59,11 @@ export const allOrders = () =>{
     headers: {
       "Content-Type": "application/json",
       "Authorization": getToken(),
-    },
-})
-}
+      body: JSON.stringify({
+        client: info.client,
+        table: info.table,
+        products: products,
+      }),
+  });
+};
+

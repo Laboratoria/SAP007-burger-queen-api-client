@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Card from "../components/Card";
 import Input from "../components/Input";
 import { codeError } from "../services/error";
-import TemplateOrder from "../components/TemplateOrder";
+import  TemplateOrder from "../components/TemplateOrder";
 import { createOrder, getProduct } from "../services/api";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -67,23 +67,6 @@ function Hall() {
     setOrder([...newOrder]);
   };
   console.log(order);
-
-  function listOrder() {
-    const openTable = {
-      client: info.client,
-      table: info.table,
-      products: order.map((item) => {
-        const infosOrder = {
-          id: item.id,
-          name: item.name,
-          price: item.price,
-          flavor: item.flavor,
-          qtd: 1,
-        }
-        console.log(infosOrder);
-        return infosOrder;
-      }),
-
     };
     createOrder(openTable)
       .then(() => {
@@ -94,6 +77,7 @@ function Hall() {
       });
     console.log(createOrder(openTable));
   };
+
 
   return (
     <div>
@@ -147,16 +131,4 @@ function Hall() {
 
 export default Hall;
 
-// function listOrder(order) {
-//   //   createOrder(info, order)
-//   //     .then((response) => response.json())
-//   //     .then((data) => {
-//   //       if (data.code === 400) {
-//   //         setError(codeError(error));
-//   //       } else {
-//   //         setOrder([]);
-//   //         setInfo({ client: "", table: "" });
-//   //       }
-//   //     });
-//   // }
-//   // listOrder(order); //função será chamada futuramente e apagaremos essa linha
+

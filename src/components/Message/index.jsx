@@ -11,7 +11,7 @@ import {useState, useEffect} from "react"
       };
       setVisible(true)
       const timer = setTimeout(() => {
-        setVisible(false)
+        setVisible(false);
       }, 5000)
       return () => clearTimeout(timer)
     }, [msg])
