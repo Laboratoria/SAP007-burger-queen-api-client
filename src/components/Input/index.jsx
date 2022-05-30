@@ -5,3 +5,4 @@ function Input({type, name, placeholder, onChange,value, minlengt}) {
   );
 }
 export default Input;
+

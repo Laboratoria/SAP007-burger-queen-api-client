@@ -10,3 +10,4 @@ describe("<Input />", () => {
     expect(input).toBeInTheDocument();
   });
 });
+

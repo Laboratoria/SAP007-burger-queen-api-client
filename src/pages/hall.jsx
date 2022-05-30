@@ -37,7 +37,7 @@ function Hall() {
     PushedProducts("breakfast");
   }, []);
 
-  const handleInfo = (e) => {
+   const handleInfo = (e) => {
     return setInfo(() => {
       const auxInfo = { ...info };
       auxInfo[e.target.name] = e.target.value;
@@ -47,7 +47,8 @@ function Hall() {
   };
 
   function handleProduct(product) {
-    const productList = order.find((item) => {
+   const newOrder = order;
+    const productList = newOrder.find((item) => {
       return item.id === product.id;
     });
     if (productList) {
@@ -61,40 +62,23 @@ function Hall() {
         flavor: product.flavor,
         qtd: 1,
       };
-      order.push(newList);
+      newOrder.push(newList);
     };
-    setOrder([...order]);
+    setOrder([...newOrder]);
   };
   console.log(order);
-
-  function listOrder(){
-    const openTable ={
-      client:info.client,
-      table:info.table,
-      products:order.map((item)=> {
-      const infosOrder = {
-        id: item.id,
-        name:item.name,
-        price: item.price,
-        flavor: item.flavor,
-        qtd: 1,
-      }
-       console.log(infosOrder);
-       return infosOrder;
-      }),
-   
     };
     createOrder(openTable)
-    .then((response)=> {
-      response.json()
-      navigate("/kitchen");
-    })
-    .catch((error)=>{
-    setError(codeError(error));
-  });
-  console.log(openTable);
+      .then(() => {
+        navigate("/kitchen");
+      })
+      .catch((error) => {
+        setError(codeError(error));
+      });
+    console.log(createOrder(openTable));
   };
-  
+
+
   return (
     <div>
       <Header children="PEDIDOS" />
@@ -128,20 +112,16 @@ function Hall() {
         />
       </div>
       <section>
-      {order.map((item) => {
-        return (
-          < TemplateOrder
+        {order.map((item) => {
+          return (
+            <TemplateOrder
             key={item.id}
-            id={item.id}
-            name={item.name}
-            price={item.price}
-            flavor={item.flavor}
-            qtd={1}
-            onChange={() => handleProduct(item)}
-          />       
-        )
-      })}
-      <p>Cliente:{info.client} Mesa: {info.table}</p>   
+            product={item}
+            onClick={() => handleProduct(item)}
+            />
+          )
+        })}
+        <p>Cliente:{info.client} Mesa: {info.table}</p>
       </section>
       <Button children="Sair" onClick={handleLogout} />
       <Button children="finalizar Pedido" onClick={listOrder} />
@@ -151,16 +131,4 @@ function Hall() {
 
 export default Hall;
 
-// function listOrder(order) {
-//   //   createOrder(info, order)
-//   //     .then((response) => response.json())
-//   //     .then((data) => {
-//   //       if (data.code === 400) {
-//   //         setError(codeError(error));
-//   //       } else {
-//   //         setOrder([]);
-//   //         setInfo({ client: "", table: "" });
-//   //       }
-//   //     });
-//   // }
-//   // listOrder(order); //função será chamada futuramente e apagaremos essa linha
+
