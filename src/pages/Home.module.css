@@ -1,5 +1,11 @@
 @import '../layout/variables.css';
 
+.container{
+    grid: [row1-start] 'h1 h1 h1' 1fr [row1-end]
+    [row2-start] 'p p p' 2fr [row2-end]
+    [row3-start] 'navbar navbar navbar' 50px [row3-end]
+ / auto 50px auto;
+ }
 
 .about {
     display: grid;

@@ -1,5 +1,8 @@
 .navbar {
     display: grid;
+    grid-template-columns: 60px 60px 60px 60px;
+    grid-template-rows: 50px 50px;
+    grid-auto-flow: column;
     padding: 1rem;
     background-color: #6CA6D9;
 }

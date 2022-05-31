@@ -7,6 +7,7 @@ import { ErrorsMessage } from "../services/ErrorsMessage";
 import { login } from "../services/token";
 import { ShowErrors } from "../components/ShowErrors";
 
+
 export function Register() {
     const [name, setName] = useState();
     const [email, setEmail] = useState();//o email é o nome que vc deu no campo do input
