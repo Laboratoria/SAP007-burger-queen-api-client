@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import logo from '../img/logo.png';
+// import logo from '../img/logo.png';
+import Icone from '../componentes/icone'
 import Button from '../componentes/button';
 import Form from '../componentes/form';
 import Input from '../componentes/input'
@@ -13,10 +14,11 @@ function App() {
   const [password, setPassword]=useState("");
 
   return (
-  <>
-      <header>
+    <>
+  <Icone />
+      {/* <header>
         <img className='logo-img' src={logo} /> 
-      </header>
+      </header> */}
       <Form>
         <label className="label">Email</label>
           <Input  className="inputs"
@@ -41,11 +43,3 @@ function App() {
 }
 
 export default App;
-
-
-{/* <a
-className="App-link"
-href="https://reactjs.org"
-target="_blank"
-rel="noopener noreferrer"
-> */}
