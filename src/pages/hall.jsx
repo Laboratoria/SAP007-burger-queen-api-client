@@ -67,7 +67,23 @@ function Hall() {
     setOrder([...newOrder]);
   };
   console.log(order);
-    };
+
+    function listOrder(){
+      const openTable ={
+        client:info.client,
+        table:info.table,
+        products:order.map((item)=> {
+        const infosOrder = {
+          id: item.id,
+          name:item.name,
+          price: item.price,
+          flavor: item.flavor,
+          qtd: 1,
+        }
+         console.log(infosOrder);
+         return infosOrder;
+        }),
+      };
     createOrder(openTable)
       .then(() => {
         navigate("/kitchen");
@@ -75,10 +91,33 @@ function Hall() {
       .catch((error) => {
         setError(codeError(error));
       });
+  
     console.log(createOrder(openTable));
-  };
-
-
+    }
+    function handleRemoveItem(product) {
+      let updateOrder = [...order];
+       const productInList = updateOrder.find((item) => {
+         return product.id ===item.id;
+       });
+       if (productInList.qtd > 1) {
+        productInList.qtd -= 1;
+       } else {
+        updateOrder = updateOrder.filter((element) => 
+        element.id !== product.id)
+       setOrder(updateOrder);
+     };
+     console.log(productInList);
+     console.log(updateOrder);
+     return handleRemoveItem();
+    };
+    // function totalValue (){
+    //   const wholeAmount = []
+    //   for (let i=0; i< order.length; i++){
+    //     const totalSum = order[i].qtd * order[i].price
+    //     wholeAmount.push(totalSum);
+    //   }
+    // }
+  
   return (
     <div>
       <Header children="PEDIDOS" />
@@ -117,18 +156,17 @@ function Hall() {
             <TemplateOrder
             key={item.id}
             product={item}
-            onClick={() => handleProduct(item)}
-            />
-          )
+            onClickAdd={() => handleProduct(item)}
+            onClickRemove={()=>handleRemoveItem(item)}
+           />
+          ) 
         })}
         <p>Cliente:{info.client} Mesa: {info.table}</p>
+        {/* <p> Valor total : R${totalValue()}</p> */}
       </section>
       <Button children="Sair" onClick={handleLogout} />
       <Button children="finalizar Pedido" onClick={listOrder} />
     </div>
   );
 }
-
 export default Hall;
-
-

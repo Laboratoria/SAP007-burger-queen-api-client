@@ -53,17 +53,18 @@ export const createOrder = (info) =>{
   });
 };
 
-export const allOrders = () =>{
+export const allOrders = (client, table, products) =>{
   return fetch(`${URL}/orders`,{
     method:"GET",
     headers: {
       "Content-Type": "application/json",
       "Authorization": getToken(),
       body: JSON.stringify({
-        client: info.client,
-        table: info.table,
+        client: client.client,
+        table: table.table,
         products: products,
       }),
+    }
   });
 };
 
