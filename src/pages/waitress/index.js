@@ -6,37 +6,59 @@ import Card from "../../components/card";
 import { getAllProducts } from "../../services/products";
 import "./styles.modules.css";
 import { useState, useEffect } from "react";
+import Navbar from "../../components/navbarAllDay";
 
 function Waitress() {
   const [products, setProducts] = useState([]);
+  const [tab, setTab] = useState("breakfast");
+  const [allDayTab, setAllDayTab] = useState("hamburguer");
   const [order, setOrder] = useState([]);
   const [client, setClient] = useState({ name: "" });
   const [table, setTable] = useState({ table: "" });
-  const [total, setTotal] = useState()
+  const [total, setTotal] = useState();
 
   const token = localStorage.getItem("token");
 
-  function getProducts(option) {
-    getAllProducts(token).then((data) => {
+  // function getAllDay(option) {
+  //   getAllProducts(token).then((data) => {
+  //     let filterProduts = data.filter((item) => {
+  //       return item.sub_type === option;
+  //     });
+  //     setProducts(filterProduts);
+  //   });
+  // }
 
-      let filterProduts = data.filter((item) => {
-
-        return item.type === option
-
-      }
-
-      );
-      setProducts(filterProduts)
-    });
-
-  }
+  // function menuIndicator () {
+  //   option.classList.toggle('active');
+  // }
 
   useEffect(() => {
-    getProducts("breakfast");
+    getAllProducts(token).then((data) => {
+      const breakfast = data.filter((item) => {
+        return item.type === "breakfast";
+      });
+      const hamburguer = data.filter((item) => {
+        return item.sub_type === "hamburguer";
+      });
+      const drink = data.filter((item) => {
+        return item.sub_type === "drinks";
+      });
+      const side = data.filter((item) => {
+        return item.sub_type === "side";
+      });
+      const filterProducts = {
+        breakfast,
+        "all-day": {
+          hamburguer,
+          drink,
+          side,
+        }
+      }
+      setProducts(filterProducts);
+    });
   }, []);
 
   function OrderProduct(product) {
-    console.log("entrou");
     const productList = order.find((item) => {
       return item.id === product.id;
     });
@@ -50,38 +72,54 @@ function Waitress() {
         flavor: product.flavor,
         qtd: 1,
         client,
-        table
+        table,
       };
       console.log(newList);
       order.push(newList);
     }
     setOrder([...order]);
-    totalPrice()
+    totalPrice();
   }
-  // console.log(order);
 
   const links = [
     {
       name: "Café da manhã",
-      onClick: () => getProducts("breakfast"),
+      onClick: () => setTab("breakfast"),
     },
     {
-      name: "Dia-Todo",
-      onClick: () => getProducts("all-day")
-    }
+      name: "Dia Todo",
+      onClick: () => setTab("all-day"),
+    },
   ];
 
-  function totalPrice(){
-    let price = 0
-    order.forEach((product)=> {
-      price += (parseFloat(product.price) * parseFloat(product.qtd))
-      console.log(product.price, product.qtd)
-    })
-    console.log(price)
-   
-    return  setTotal( price)
+  const linksAllDay = [
+    {
+      name: "Hambúgueres",
+      onClick: () => setAllDayTab("hamburguer"),
+    },
+    {
+      name: "Bebidas",
+      onClick: () => setAllDayTab("drinks"),
+    },
+    {
+      name: "Acompanhamentos",
+      onClick: () => setAllDayTab("side"),
+    },
+  ];
+
+  function totalPrice() {
+    let price = 0;
+    order.forEach((product) => {
+      price += parseFloat(product.price) * parseFloat(product.qtd);
+      console.log(product.price, product.qtd);
+    });
+    console.log(price);
+
+    return setTotal(price);
   }
- 
+
+  const activeProducts = tab === "all-day" ? products[tab][allDayTab] : products[tab];
+  const hasProduct = products.length > 0;
 
   return (
     <>
@@ -90,13 +128,14 @@ function Waitress() {
       <main className="orders">
         <section className="products">
           <h1>produtos </h1>
+          <Navbar links={linksAllDay} />
           <ul>
-            {products.map((item) => {
+            {hasProduct && activeProducts.map((item) => {
               return (
                 <Card
                   key={item.id}
                   product={item}
-                  onClick={() => OrderProduct(item) }
+                  onClick={() => OrderProduct(item)}
                 />
               );
             })}
@@ -104,13 +143,10 @@ function Waitress() {
         </section>
         <section className="client-cart">
           <div className="client-infos">
-
             <Client setClient={setClient} setTable={setTable} />
           </div>
           <div className="cart">
-
-            <Cart orderList={order} total={total}/>
-
+            <Cart orderList={order} total={total} />
           </div>
         </section>
       </main>

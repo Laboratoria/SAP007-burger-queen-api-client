@@ -20,16 +20,27 @@
 }
 .menu li{
     list-style-type: none;
+    width: 40%;
+    display: flex;
+    justify-content: center;
 }
 
-.menu a{
-    text-decoration: none;
-    color: black;
-
+.option {
+    background-color: transparent;
+    width: max-content;
+    font-size: 16px;
+    font-weight: bold;
+    margin: initial;
+    padding: initial;
+    border-radius: initial;
+    box-shadow: initial;
+    border: initial;
+    text-align: center;
+    cursor: pointer;
 }
 
 .logout{
-    background-color: transparent;
+  background-color: transparent;
   width: 10%;
   margin: initial;
   padding: initial;

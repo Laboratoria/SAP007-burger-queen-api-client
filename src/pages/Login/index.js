@@ -57,7 +57,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Error text={error} className="error-login" />
-          <Button className="button-login" type="submit" nome="Entrar" />
+          <Button className="button-login" type="submit" children="Entrar" />
           <a className="register-link" href="/register">
             {" "}
             Ou cadastre-se aqui

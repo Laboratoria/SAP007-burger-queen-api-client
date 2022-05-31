@@ -89,7 +89,7 @@ function Register() {
           </div>
           {/* <p>{errorMessage}</p> */}
           <Error text={error} className="error-register" />
-          <Button className="button-register" type="submit" nome="Cadastrar" />
+          <Button className="button-register" type="submit" children="Cadastrar" />
           <a className="login-link" href="/">
             {" "}
             Ou entre aqui

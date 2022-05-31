@@ -12,7 +12,7 @@ function HeaderPedidos({links}) {
                 <ul>
                     {links.map((link, index) => (
                         <li key={index}>
-                            <button onClick={link.onClick}>{link.name}</button>
+                            <button className="option" onClick={link.onClick}>{link.name}</button>
                         </li>
                     ))}
                    
