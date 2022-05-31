@@ -7,6 +7,7 @@ import  TemplateOrder from "../components/TemplateOrder";
 import { createOrder, getProduct } from "../services/api";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import {FaTrash} from "react-icons/fa";
 
 function Hall() {
   const navigate = useNavigate();
@@ -94,36 +95,40 @@ function Hall() {
   
     console.log(createOrder(openTable));
     }
-    function handleRemoveItem(product) {
-      let updateOrder = [...order];
-       const productInList = updateOrder.find((item) => {
-         return product.id ===item.id;
-       });
-       if (productInList.qtd > 1) {
-        productInList.qtd -= 1;
-       } else {
-        updateOrder = updateOrder.filter((element) => 
-        element.id !== product.id)
-       setOrder(updateOrder);
-     };
-     console.log(productInList);
-     console.log(updateOrder);
-     return handleRemoveItem();
-    };
-    // function totalValue (){
-    //   const wholeAmount = []
-    //   for (let i=0; i< order.length; i++){
-    //     const totalSum = order[i].qtd * order[i].price
-    //     wholeAmount.push(totalSum);
-    //   }
-    // }
-  
+
+    function handleRemoveItem (item){
+      const productInList = order.find((element) => element.id === item.id);
+
+      if(productInList){
+        if(productInList.qtd === 1){
+          order.splice(order.findIndex((element) => element.id === item.id), 1);
+          productInList.qtd = 0;
+        }
+        if(productInList.qtd > 1){
+          productInList.qtd -= 1;
+        }
+      }
+      setOrder([...order])
+    }
+      
+    function totalValue (){
+      const wholeAmount = []
+      for (let i=0; i< order.length; i++){
+        const totalSum = order[i].qtd * order[i].price
+        wholeAmount.push(totalSum);
+      }
+      const valueInitial = 0
+      const wholeInitial = wholeAmount.reduce((value, currentValue) =>
+        value + currentValue, valueInitial
+      )
+      return wholeInitial
+    }
   return (
     <div>
       <Header children="PEDIDOS" />
       <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
       <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />
-      <ul>
+     
         {products.map((item) => {
           return (
             <Card
@@ -133,8 +138,7 @@ function Hall() {
             />
           )
         })}
-      </ul>
-      <div>
+       <div className="InfoClient">
         <Input
           placeholder="CLIENTE"
           type="text"
@@ -150,20 +154,17 @@ function Hall() {
           onChange={handleInfo}
         />
       </div>
-      <section>
         {order.map((item) => {
           return (
             <TemplateOrder
             key={item.id}
             product={item}
-            onClickAdd={() => handleProduct(item)}
             onClickRemove={()=>handleRemoveItem(item)}
            />
           ) 
         })}
-        <p>Cliente:{info.client} Mesa: {info.table}</p>
-        {/* <p> Valor total : R${totalValue()}</p> */}
-      </section>
+       <FaTrash/>
+        <p> Valor total : R${totalValue()}</p>
       <Button children="Sair" onClick={handleLogout} />
       <Button children="finalizar Pedido" onClick={listOrder} />
     </div>
