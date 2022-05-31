@@ -57,8 +57,8 @@ function Login() {
       <Link to="/register" className="Hiperlink">
         Cadastre-se
       </Link>
-      {message && <Message type="error" msg={message} />}
-      {error && <Message type="error" msg={error} />}
+      {message && <Message msg={message} />}
+      {error && <Message msg={error} />}
     </form>
     </div>
   );

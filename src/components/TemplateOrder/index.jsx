@@ -1,8 +1,10 @@
 import styles from "./style.module.css";
+import Button from '../Button';
 
-function TemplateOrder( {product, onClick} ) {
+function TemplateOrder( {product, onClickAdd,onClickRemove} ) {
+
   return (
-    <div className={styles.DivPurschaseOrder} onClick={onClick}>
+    <div className={styles.DivPurschaseOrder}>
       <ul>
          <li>
           <p>{product.id}</p>
@@ -15,7 +17,8 @@ function TemplateOrder( {product, onClick} ) {
           </li>
           {product.flavor ? <li><p>{product.flavor}</p></li>:null}
           <li>
-            <p>{product.qtd}</p>
+            <p>{product.qtd}<Button onClick={onClickAdd}/></p>
+           <Button onClick={onClickRemove}/>
           </li>
       </ul>  
     </div>
