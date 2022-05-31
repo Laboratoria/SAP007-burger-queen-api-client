@@ -3,23 +3,19 @@ import { Button } from '../components/Button';
 import { Input } from '../components/Input';
 import { logInt } from "../services/auth";
 import { login } from '../services/token';
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { ErrorsMessage } from "../services/ErrorsMessage";
 import { ShowErrors } from '../components/ShowErrors';
 
 export function Login() {
-    function loginUser(e) {
-        e.preventDefault()
-        console.log(`Usuário ${email} foi cadastrado com a senha: ${password}`)
-    }
-
-    const [email, setName] = useState()
-    const [password, setPassword] = useState()
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
     const navigate = useNavigate();
     const [error, setError] = useState();
 
     function loginUser(e) {
         e.preventDefault();
+        console.log(`Usuário ${email} foi cadastrado com a senha: ${password}`)
         logInt(email, password)
             .then((response) => {
                 if (response.status === 200) {
@@ -45,7 +41,7 @@ export function Login() {
                         name='email'
                         id='email'
                         placeholder='E-mail'
-                        handleOnChange={(e) => setName(e.target.value)}
+                        handleOnChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div>
