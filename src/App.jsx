@@ -1,7 +1,11 @@
 import React from 'react';
-import Routes from '../src/routes/routes.jsx'
+import AllRoutes from '../src/routes/routes.jsx'
 
+function App (){
+    return(
+        <AllRoutes/>
+    )
+} 
 
-const App = () => <Routes/>
 
 export default App;

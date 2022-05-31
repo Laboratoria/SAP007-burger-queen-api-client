@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from "react-router"
+import { BrowserRouter , Route, Routes } from "react-router-dom"
 import Home from "../pages/home/home.jsx"
 import Login from "../pages/login/login.jsx"
 import Register from "../pages/register/register.jsx"
@@ -6,13 +6,15 @@ import Register from "../pages/register/register.jsx"
 
 const AllRoutes = () => {
     return (
-        <div>
-            <Router>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login/>}/>
-                <Route path="/register" element={<Register/>}/>
-            </Router>
-        </div>
+
+        <BrowserRouter>     
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                </Routes>
+        </BrowserRouter>
+
 
     )
 

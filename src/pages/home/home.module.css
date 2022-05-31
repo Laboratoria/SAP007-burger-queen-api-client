@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@200;300;400&family=Slabo+13px&display=swap');
+
+.btnLogin {
+    width: 10%;
+    height: 10%;
+    background: #FFF733;
+}
+
+.containerLogo{
+    height: auto;
+    width: 100%;
+}
+
+.logo{
+    height: auto;
+    width: 100%;
+    margin: 15% auto;
+}
+
+.btnLogin{
+    background: #FFF733;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 54px;
+    height: 60px;
+    width: 40%;
+    font-size: 45px;
+}
+
+.noRegister{
+    margin-top: 2%;
+    color: #ffffff;
+    font-family: slabo, noto sna;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.btnRegister{
+    margin-top: 2%;
+    background: transparent;
+    color:#FFF733;
+    font-size: 30px;
+    border-bottom: solid 2px #FFF733;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
