@@ -1,10 +1,11 @@
+import React from 'react';
+import AllRoutes from '../src/routes/routes.jsx'
 
-function App() {
-  return (
-    <div className="App">
-      <h1>hello word</h1>
-    </div>
-  );
-}
+function App (){
+    return(
+        <AllRoutes/>
+    )
+} 
+
 
 export default App;
