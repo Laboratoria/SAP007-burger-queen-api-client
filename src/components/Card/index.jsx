@@ -2,10 +2,10 @@ import styles from "./style.module.css"
 
 function Card ({product, onClick}){
   return(
-    <div onClick={onClick}>
-         <ul className={styles.DivCard}>
+    <div className={styles.DivCard}onClick={onClick}>
+         <ul className={styles.UlCard}>
          <li>
-          <p>{product.id}</p>
+          <p className={styles.id}>{product.id}</p>
           </li>
          <li>
           <p>{product.name}</p>

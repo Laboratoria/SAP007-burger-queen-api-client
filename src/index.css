@@ -41,6 +41,11 @@ a.Hiperlink {
   margin-top: 20%;
 }
 
+.InfoClient{
+  display: flex;
+  justify-content: space-around;
+}
+
 @media(min-width: 1024px) and (max-width:1440px) {
   .DivForm {
     display: flex;
