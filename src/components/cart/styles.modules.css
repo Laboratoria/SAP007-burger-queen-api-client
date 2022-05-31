@@ -1,0 +1,16 @@
+.trash {
+    background-color: transparent;
+  width: 10%;
+  margin: initial;
+  padding: initial;
+  border-radius: initial;
+  box-shadow: initial;
+  border: initial;
+  text-align: initial;
+  cursor: pointer;
+}
+
+.trash-icon {
+    width: 90%;
+}
+

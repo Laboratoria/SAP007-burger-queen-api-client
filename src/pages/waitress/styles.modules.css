@@ -1,0 +1,14 @@
+.orders {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.client-infos {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.client-cart {
+    width: 50%;
+    justify-content: center;
+}

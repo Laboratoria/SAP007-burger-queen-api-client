@@ -20,7 +20,6 @@ function Register() {
         hideMessage();
       }
       if (data.token) {
-        
         localStorage.setItem("name", data.name);
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", data.role);
@@ -46,7 +45,7 @@ function Register() {
       <Header />
       <section className="container-register">
         <aside className="container-banner">
-          <Banner className="banner" />
+          <Banner />
         </aside>
         <form className="register" onSubmit={registerUser} required>
           <Input
@@ -90,7 +89,7 @@ function Register() {
           </div>
           {/* <p>{errorMessage}</p> */}
           <Error text={error} className="error-register" />
-          <Button className="button-register" type="submit" nome="Cadastrar" />
+          <Button className="button-register" type="submit" children="Cadastrar" />
           <a className="login-link" href="/">
             {" "}
             Ou entre aqui

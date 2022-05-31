@@ -1,7 +1,7 @@
 import "./styles.modules.css";
 
 function Button({
-    className, type, onClick,nome
+    className, type, onClick, children
 }){
     return(
         <button 
@@ -9,7 +9,7 @@ function Button({
         type={type}
         onClick={onClick}
         >
-        {nome}
+        {children}
         </button>
 
     )

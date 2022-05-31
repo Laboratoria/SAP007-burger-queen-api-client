@@ -41,7 +41,7 @@ function Login() {
       <Header />
       <section className="container-login">
         <aside className="container-banner">
-          <Banner className="banner" />
+          <Banner/>
         </aside>
         <form className="login" onSubmit={loginUser}>
           <Input
@@ -57,7 +57,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Error text={error} className="error-login" />
-          <Button className="button-login" type="submit" nome="Entrar" />
+          <Button className="button-login" type="submit" children="Entrar" />
           <a className="register-link" href="/register">
             {" "}
             Ou cadastre-se aqui

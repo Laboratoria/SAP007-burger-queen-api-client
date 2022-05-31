@@ -1,0 +1,55 @@
+.header-pedidos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logotype{
+    width: 10%;
+}
+
+.menu{
+    display: inline;
+    width: 50%;
+}
+
+.menu ul{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.menu li{
+    list-style-type: none;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.option {
+    background-color: transparent;
+    width: max-content;
+    font-size: 16px;
+    font-weight: bold;
+    margin: initial;
+    padding: initial;
+    border-radius: initial;
+    box-shadow: initial;
+    border: initial;
+    text-align: center;
+    cursor: pointer;
+}
+
+.logout{
+  background-color: transparent;
+  width: 10%;
+  margin: initial;
+  padding: initial;
+  border-radius: initial;
+  box-shadow: initial;
+  border: initial;
+  text-align: initial;
+  cursor: pointer;
+}
+.logout img{
+    width: 35%;
+}

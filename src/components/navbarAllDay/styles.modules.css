@@ -1,0 +1,35 @@
+.menu-all-day {
+    display: inline;
+    width: 50%;
+}
+
+.menu-all-day ul{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4%;
+    
+}
+.menu-all-day li{
+    list-style-type: none;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.line-all-day {
+    margin-bottom: 4%;
+}
+
+.all-day-option {
+    background-color: transparent;
+    width: max-content;
+    font-size: 14px;
+    font-weight: bold;
+    margin: initial;
+    padding: initial;
+    border-radius: initial;
+    box-shadow: initial;
+    border: initial;
+    text-align: center;
+    cursor: pointer;
+}
