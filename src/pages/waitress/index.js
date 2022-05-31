@@ -16,6 +16,8 @@ function Waitress() {
   const [client, setClient] = useState({ name: "" });
   const [table, setTable] = useState({ table: "" });
   const [total, setTotal] = useState();
+  const [hasProducts, setHasProducts] = useState(false);
+  const [hasAllDay, setHasAllDay] = useState(false);
 
   const token = localStorage.getItem("token");
 
@@ -40,7 +42,7 @@ function Waitress() {
       const hamburguer = data.filter((item) => {
         return item.sub_type === "hamburguer";
       });
-      const drink = data.filter((item) => {
+      const drinks = data.filter((item) => {
         return item.sub_type === "drinks";
       });
       const side = data.filter((item) => {
@@ -50,11 +52,12 @@ function Waitress() {
         breakfast,
         "all-day": {
           hamburguer,
-          drink,
+          drinks,
           side,
         }
       }
       setProducts(filterProducts);
+      setHasProducts(true);
     });
   }, []);
 
@@ -84,14 +87,24 @@ function Waitress() {
   const links = [
     {
       name: "Café da manhã",
-      onClick: () => setTab("breakfast"),
+      onClick: () => changeStateBreakfast(),
     },
     {
       name: "Dia Todo",
-      onClick: () => setTab("all-day"),
+      onClick: () => changeStateAllDay(),
     },
   ];
 
+  function changeStateAllDay () {
+    setTab("all-day");
+    setHasAllDay(true);
+  }
+
+  function changeStateBreakfast () {
+    setTab("breakfast");
+    setHasAllDay(false);
+  }
+  
   const linksAllDay = [
     {
       name: "Hambúgueres",
@@ -119,7 +132,7 @@ function Waitress() {
   }
 
   const activeProducts = tab === "all-day" ? products[tab][allDayTab] : products[tab];
-  const hasProduct = products.length > 0;
+  // products.length > 0;
 
   return (
     <>
@@ -127,10 +140,9 @@ function Waitress() {
 
       <main className="orders">
         <section className="products">
-          <h1>produtos </h1>
-          <Navbar links={linksAllDay} />
           <ul>
-            {hasProduct && activeProducts.map((item) => {
+            {hasAllDay === true ? <Navbar links={linksAllDay} /> : null}
+            {hasProducts === true && activeProducts.map((item) => {
               return (
                 <Card
                   key={item.id}
