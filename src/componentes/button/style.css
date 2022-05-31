@@ -1,3 +1,22 @@
-.azul {
-    background-color: blue;
+.button{
+    display: flex;
+    width: 300px;
+    height: 75px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px; 
+    margin-bottom: 25px;   
+}
+
+.blue{
+    background-color: #C6EDFD;  
+    border: 10px solid #91DFFF;
+    margin-top: 25px;
+}
+
+.green{
+    background-color: #DBE47D;
+    border: 10px solid #BCCD00;;
+
 }

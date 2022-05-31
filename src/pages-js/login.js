@@ -17,25 +17,25 @@ function App() {
       <header>
         <img className='logo-img' src={logo} /> 
       </header>
-        <Form>
-        <label>Email</label>
-                <Input  className="inputs"
-                type="email"
-                placeholder="user@user.com"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                required/>
-            <label>Senha</label>
-                <Input className="inputs"
-                type="password"
-                placeholder="******"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-                required/> 
-                <Button cor="azul" className='button-form'>entrar</Button>
-                <Button  cor="vermelho"className='button-form'>cadastrar</Button>
-        </Form>
-     <Footer/>
+      <Form>
+        <label className="label">Email</label>
+          <Input  className="inputs"
+          type="email"
+          placeholder="user@user.com"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+          required/> 
+        <label className="label">Senha</label>
+          <Input className="inputs"
+          type="password"
+          placeholder="******"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          required/> 
+        <Button className='button blue'>Entrar</Button>
+        <Button className='button green'>Cadastrar</Button>
+      </Form>
+    <Footer/>
   </>
   );
 }

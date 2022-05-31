@@ -1,20 +1,22 @@
 .layoutForm {
-    display: flex;
-    align-items: center;
+    display:flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 35px;
+    align-items: center;
+    justify-content: center
 }
 
 .container {
-    background-color: rgb(242 187 119 / 20%);
+    display: flex;
+    background-color: rgba(242, 187, 119, 20%);
     flex-direction: column;
     align-items: center;
-    width: 400px;
-    height: 400px;
-    padding-bottom: 15px;
+    width: 600px;
+    padding: 30px;
     margin-top: 35px;
     border-radius: 50px;
-    display: flex;
-    justify-content: space-evenly;
+    box-shadow: 0px 5px 10px rgb(29 28 28 / 43%);
 }
+
+.container >*:not(:last-child){
+        margin-bottom: 30px;
+    }

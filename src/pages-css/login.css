@@ -17,3 +17,9 @@ header {
 p{
     font-family: Andale Mono, monospace;  
 }
+
+.label{
+    display: block;
+    font-size: 32px;
+    width: 100%;
+} 
