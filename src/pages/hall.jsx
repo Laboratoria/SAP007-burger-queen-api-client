@@ -67,8 +67,7 @@ function Hall() {
     };
     setOrder([...newOrder]);
   };
-  console.log(order);
-
+ 
     function listOrder(){
       const openTable ={
         client:info.client,
@@ -92,8 +91,7 @@ function Hall() {
       .catch((error) => {
         setError(codeError(error));
       });
-  
-    console.log(createOrder(openTable));
+      console.log(openTable)
     }
 
     function handleRemoveItem (item){
@@ -164,7 +162,9 @@ function Hall() {
           ) 
         })}
        <FaTrash/>
+        <p>Cliente:{info.client} Mesa: {info.table}</p>
         <p> Valor total : R${totalValue()}</p>
+        <Button children="Cancelar Pedido" onClick={handleLogout} />  
       <Button children="Sair" onClick={handleLogout} />
       <Button children="finalizar Pedido" onClick={listOrder} />
     </div>
