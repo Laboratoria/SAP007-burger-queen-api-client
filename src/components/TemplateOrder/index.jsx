@@ -18,7 +18,7 @@ function TemplateOrder( {product,onClickRemove} ) {
           {product.flavor ? <li><p>{product.flavor}</p></li>:null}
           <li>
             <p>{product.qtd}</p>
-           <Button onClick={onClickRemove}/>
+           <Button children="Excluir"onClick={onClickRemove}/>
           </li>
       </ul>  
     </div>

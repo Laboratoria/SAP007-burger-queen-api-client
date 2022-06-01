@@ -3,17 +3,36 @@ import Button from "../components/Button";
 // import handleProduct from "./hall";
 // import listOrder from "./hall";
 import { useNavigate } from "react-router-dom";
-// import { useState } from "react";
+import { allOrders } from "../services/api";
+import { useState, useEffect } from "react";
 
 
 function Kitchen() {
+
   const navigate = useNavigate();
-  // const [order, setOrder] = useState([]);
+  const [order, setOrder] = useState([]);
+
   function handleLogout() {
     localStorage.removeItem("token");
     navigate("/login");
   }
-  // allOrders(){}
+
+  function PushedAllOrders() {
+    allOrders()
+      .then((response) => response.json())
+      .then((data) => {
+        setOrder(
+          data.filter((item) => {
+            return order;
+          }),
+        );
+      });
+  };
+
+  useEffect(() => {
+    PushedAllOrders();
+  },);
+
   return (
     <div>
       <p>Cozinha</p>
