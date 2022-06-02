@@ -4,9 +4,7 @@ import { allOrders } from "../services/api";
 import TemplateKitchen from '../components/TemplateKitchen';
 import { useState, useEffect, useCallback } from "react";
 
-
 function Kitchen() {
-
   const navigate = useNavigate();
   const [order, setOrder] = useState([]);
   const [orderByStatus, setOrderByStatus] = useState([]);
@@ -31,7 +29,6 @@ function Kitchen() {
       const results = order.filter((item)=>item.status === status)
       setOrderByStatus(results)
    },[order])
-
   return (
     <div>
       <p>Cozinha</p>
