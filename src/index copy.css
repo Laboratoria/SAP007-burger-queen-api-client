@@ -54,22 +54,10 @@ a.Hiperlink {
 }
 .sectionOrder{
   background-color: aliceblue;
-  border-radius: 1px;
 }
-#cancel, #confirm{
-  color: #ffffff;
-  padding: 15px;
-  width: 150px;
-  border: black;
-  font-size: 16px;
-  border-radius: 10px;
-}
-#cancel{
-  background-color: #FC0C0C;
-  
-}
-#confirm{
-  background-color:#16AB1C;
+
+.btn_cancel{
+  background-color: red;
 }
 @media(min-width: 1024px) and (max-width:1440px) {
   .DivForm {

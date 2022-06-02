@@ -7,7 +7,6 @@ import TemplateOrder from "../components/TemplateOrder";
 import { getProduct, createOrder } from "../services/api";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaTrash } from "react-icons/fa";
 
 function Hall() {
   const navigate = useNavigate();
@@ -86,7 +85,7 @@ function Hall() {
       };
       return openTable;
     }
-    
+
     const resumeOrder = listOrder();
     console.log(resumeOrder);
 
@@ -135,16 +134,17 @@ function Hall() {
       <Header children="PEDIDOS" />
       <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
       <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />
-
-      {products.map((item) => {
-        return (
-          <Card
-            key={item.id}
-            product={item}
-            onClick={() => handleProduct(item)}
-          />
-        );
-      })}
+      <section className='sectionCard'>
+        {products.map((item) => {
+          return (
+            <Card
+              key={item.id}
+              product={item}
+              onClick={() => handleProduct(item)}
+            />
+          );
+        })}
+      </section>
       <div className="InfoClient">
         <Input
           placeholder="CLIENTE"
@@ -161,20 +161,22 @@ function Hall() {
           onChange={handleInfo}
         />
       </div>
-      {order.map((item) => {
-        return (
-          <TemplateOrder
-            key={item.id}
-            product={item}
-            onClickRemove={() => handleRemoveItem(item)}
-          />
-        );
-      })}
-      <FaTrash />
-      <p> Valor total : R${totalValue()}</p>
-      <Button children="Cancelar Pedido" onClick={handleLogout} />
+      <section className='sectionOrder'>     
+        {order.map((item) => {
+          return (
+            <TemplateOrder
+              key={item.id}
+              product={item}
+              onClickRemove={() => handleRemoveItem(item)}
+            />
+          );
+        })}
+        <p> VALOR TOTAL: R${totalValue().toFixed(2)}</p>
+      </section>
+      <button children="Cancelar" id="cancel" onClick={handleLogout}></button>
+      <button children="Confirmar" id="confirm" onClick={handleLogout}></button>
       <Button children="Sair" onClick={handleLogout} />
-      <Button children="finalizar Pedido" onClick={finalOrder} />
+
     </div>
   );
 }

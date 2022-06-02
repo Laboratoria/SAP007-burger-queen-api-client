@@ -26,9 +26,6 @@ function TemplateKitchen({ product }) {
         <li>
           <p> Mesa:{product.table}</p>
         </li>
-        {/* <li>
-          <p>R${(product.price)},00</p>
-          </li> */}
         {product.flavor ? (
           <li>
             <p>{product.flavor}</p>
