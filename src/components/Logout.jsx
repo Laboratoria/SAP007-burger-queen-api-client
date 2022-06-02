@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import Button from './Button';
     
     export const Logout = () => {
         let historyLogOut = useNavigate();
@@ -9,6 +10,6 @@ import { useNavigate } from 'react-router-dom'
         };
     
     return(
-        <button onClick={logOut}>Sair</button>
+        <Button clickFunction={logOut} children='Sair'/>
     )
 };

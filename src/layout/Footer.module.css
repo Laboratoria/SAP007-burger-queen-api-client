@@ -1,0 +1,19 @@
+@import '../layout/variables.css';
+
+.footer{
+    font-family: 'lulaBorgesNegrito';
+    font-size: 12px;
+    background-color: #D99E30;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    justify-self: stretch;
+    align-self: end;
+    text-align: center;
+    grid-template-areas: 'footer footer footer footer';
+}
+
+.developers{
+    text-align: center;
+}

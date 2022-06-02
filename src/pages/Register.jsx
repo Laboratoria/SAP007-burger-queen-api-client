@@ -1,20 +1,22 @@
 import { Input } from "../components/Input";
-import { Button } from "../components/Button";
+import Button from "../components/Button";
 import { useState } from "react";
 import { createUser } from "../services/auth";
 import { useNavigate } from "react-router-dom"
 import { ErrorsMessage } from "../services/ErrorsMessage";
 import { login } from "../services/token";
 import { ShowErrors } from "../components/ShowErrors";
+import styles from '../components/Form.module.css';
+import Logo from '../components/Logo';
 
-
-export function Register() {
+function Register() {
     const [name, setName] = useState();
     const [email, setEmail] = useState();//o email é o nome que vc deu no campo do input
     const [password, setPassword] = useState();// o valor recebido na linha 23 é enviado para dentro do useState(valor recebido)
     const [role, setRole] = useState();
     const [error, setError] = useState();
     const navigate = useNavigate();
+    const emailValid = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
     function registerUser(e) {
         e.preventDefault();
@@ -33,8 +35,10 @@ export function Register() {
             .catch((error));
     }
     return (
-        <div>
-            <form onSubmit={createUser}>
+        <>
+            <h1 className={styles.form_title}>Efetuar cadastro</h1>
+            <Logo />
+            <form className={styles.form} onSubmit={createUser}>
                 {/* chamou o evento de click da função RegisterUser */}
                 <div>
                     <Input
@@ -47,7 +51,7 @@ export function Register() {
                 </div>
                 <div>
                     <Input
-                        type="text"
+                        type="email"
                         id="email"
                         name="email" //nome que vc deu no campo do input que é password
                         placeholder="E-mail"
@@ -63,15 +67,17 @@ export function Register() {
                         handleOnChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <select defaultValue='role' placeholder='Função' onChange={(e) => setRole(e.target.value)}>
+                <select className={styles.button_select} defaultValue='role' placeholder='Função' onChange={(e) => setRole(e.target.value)}>
                     <option value='role' disabled hidden>Função</option>
                     <option value='attendance'>Atendimento</option>
                     <option value='kitchen'>Cozinha</option>
                 </select>
-                <Button clickFunction={registerUser} option="Efetuar Cadastro" />
-                <a href='/Login'>Já tenho cadastro</a>
+                <Button disabled={!emailValid.test(email)} clickFunction={registerUser} children="Efetuar Cadastro" />
+                <a className={styles.navigation} href='/Login'>Já tenho cadastro</a>
                 {error && <ShowErrors type="error" message={error} />}
             </form>
-        </div>
+        </>
     );
 };
+
+export default Register;

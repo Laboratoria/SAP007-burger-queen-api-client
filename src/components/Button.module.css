@@ -1,11 +1,21 @@
-.button {
-    background-color: #222;
-    color: #fff;
-    padding: 0.5em, 1em;
-    text-decoration: none;
+.button_enter {
+    display: grid;
+    background-color: #708c32;
+    color: black;
+    border: 1px solid #BF1736;
+    border-radius: 5px;
+    transform: scale(1);
     transition: 0.5s;
+    width: 8rem;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'actionManBold';
+    align-items: center;
+    justify-self: center;
 }
 
-.button:hover{
-    color: ffbb33;
+.button_enter:hover{
+    transform: scale(1.2);
+    background-color: #2669BF;
 }

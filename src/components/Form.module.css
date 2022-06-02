@@ -1,0 +1,43 @@
+@import '../layout/variables.css';
+
+.form_title{
+    margin-top: 5%;
+    grid-column-start: span 5;
+    color: #0C0129;
+    font-family: 'lulaBorgesNegrito';
+    text-align: center;
+}
+
+.form{
+    display: grid;
+    background-color: #6CA6D9;
+    border: 2px solid #BF1736;
+    border-radius: 10px;
+    grid-column: 4;
+    grid-row-start: 3;
+    justify-content: space-around;
+    height: 250px;
+    padding: 40px;
+}
+
+.button_select{
+    background-color: #F2C1B6;
+    border-radius: 10px;
+    border: 1px solid #BF1736;
+    height: 30px;
+    width: 150px;
+    justify-self: center;
+    cursor: pointer;
+    font-family: 'lulaBorgesNegrito';
+    font-size: 12px;
+}
+
+.button_select:hover{
+    background-color: #BF1736;
+}
+
+.navigation{
+    color: #0C0129;
+    align-items: center;
+    justify-self: center;
+}
