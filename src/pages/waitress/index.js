@@ -19,7 +19,7 @@ function Waitress() {
   const [hasProducts, setHasProducts] = useState(false);
   const [hasAllDay, setHasAllDay] = useState(false);
   
-
+ console.log(typeof(Number.parseInt(table)))
   const token = localStorage.getItem("token");
 
   // function getAllDay(option) {

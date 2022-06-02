@@ -13,7 +13,7 @@ function Client( {setClient, setTable} ) {
       />
       <select className="table" onChange={(e)=> setTable(e.target.value)}>
         <option value="">Mesa</option>
-        <option value="table-one">Mesa 1</option>
+        <option value="1" >Mesa 1</option>
         <option value="table-two">Mesa 2</option>
         <option value="table-three">Mesa 3</option>
         <option value="table-four">Mesa 4</option>

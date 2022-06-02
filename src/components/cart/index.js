@@ -2,30 +2,30 @@ import trash from "../../Images/trash-icon.png";
 import "./styles.modules.css";
 import { useState, useCallback } from "react";
 
-function Cart({ orderList, total, setOrder, totalPrice}) {
+function Cart({ orderList, total, setOrder, totalPrice }) {
 
   const [, updateState] = useState();
- const forceUpdate = useCallback(() => updateState({}), []);
-  
-  function RemoveItem(product){
+  const forceUpdate = useCallback(() => updateState({}), []);
+
+  function RemoveItem(product) {
     console.log("REMOVE ITEM")
-    
+
     const productList = orderList.find((item) => {
       console.log(item);
       return item.id === product.id;
     });
     if (productList) {
 
-      if(productList.qtd === 1){
+      if (productList.qtd === 1) {
         orderList.splice(orderList.findIndex((element) => element.id === product.id), 1);
         productList.qtd = 0;
       }
-      if(productList.qtd > 1){
+      if (productList.qtd > 1) {
         productList.qtd -= 1;
       }
-    } 
+    }
     console.log(orderList);
-     setOrder([...orderList]);
+    setOrder([...orderList]);
     totalPrice()
     forceUpdate();
   }
