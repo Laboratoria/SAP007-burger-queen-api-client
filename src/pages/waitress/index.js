@@ -18,8 +18,6 @@ function Waitress() {
   const [total, setTotal] = useState();
   const [hasProducts, setHasProducts] = useState(false);
   const [hasAllDay, setHasAllDay] = useState(false);
-  // const [activationBreakfast, setActivationBreakfast] = useState(false);
-
 
   const token = localStorage.getItem("token");
 
@@ -75,7 +73,7 @@ function Waitress() {
         name: product.name,
         price: product.price,
         flavor: product.flavor,
-        qtd: 1,
+        qtd: 1, /*setQuantity(+1),*/
         client,
         table,
       };
@@ -86,6 +84,7 @@ function Waitress() {
     totalPrice();
   }
 
+  
   const links = [
     {
       name: "Café da manhã",
@@ -136,8 +135,7 @@ function Waitress() {
   }
 
   const activeProducts = tab === "all-day" ? products[tab][allDayTab] : products[tab];
-  // products.length > 0;
-
+ 
   return (
     <>
       <HeaderPedidos links={links}  className="option" /*className="{activationBreakfast === true ? "selected" : "option"}"*//>
@@ -162,7 +160,9 @@ function Waitress() {
             <Client setClient={setClient} setTable={setTable} />
           </div>
           <div className="cart">
-            <Cart orderList={order} total={total} />
+         
+           
+            <Cart orderList={order} total={total} setOrder={setOrder} totalPrice={totalPrice}/>
           </div>
         </section>
       </main>
