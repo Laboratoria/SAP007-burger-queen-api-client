@@ -1,5 +1,7 @@
 import styles from "./style.module.css";
-import Button from '../Button';
+// import Button from '../Button';
+import { FaTrash } from "react-icons/fa";
+
 
 function TemplateOrder( {product,onClickRemove} ) {
 
@@ -18,7 +20,9 @@ function TemplateOrder( {product,onClickRemove} ) {
           {product.flavor ? <li><p>{product.flavor}</p></li>:null}
           <li>
             <p>{product.qtd}</p>
-           <Button children="Excluir"onClick={onClickRemove}/>
+            <div className='bin' onClick={onClickRemove}>
+              <FaTrash />
+           </div>
           </li>
       </ul>  
     </div>
