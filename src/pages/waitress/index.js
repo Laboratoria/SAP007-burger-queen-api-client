@@ -97,14 +97,16 @@ function Waitress() {
     },
   ];
 
-  function changeStateAllDay () {
-    setTab("all-day");
-    setHasAllDay(true);
-  }
-
   function changeStateBreakfast () {
     setTab("breakfast");
     setHasAllDay(false);
+    // setActivationBreakfast(true);
+  }
+
+  function changeStateAllDay () {
+    setTab("all-day");
+    setHasAllDay(true);
+    // setActivationBreakfast(false);
   }
   
   const linksAllDay = [
@@ -137,7 +139,7 @@ function Waitress() {
  
   return (
     <>
-      <HeaderPedidos links={links} />
+      <HeaderPedidos links={links}  className="option" /*className="{activationBreakfast === true ? "selected" : "option"}"*//>
 
       <main className="orders">
         <section className="products">

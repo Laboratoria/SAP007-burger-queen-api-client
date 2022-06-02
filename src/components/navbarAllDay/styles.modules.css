@@ -33,3 +33,7 @@
     text-align: center;
     cursor: pointer;
 }
+
+.all-day-option:hover {
+    color: #F75B42;
+}

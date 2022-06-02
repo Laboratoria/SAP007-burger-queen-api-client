@@ -3,7 +3,7 @@ import logo from "../../Images/logotipo.png";
 import logout from "../../Images/logout.jpg";
 import "./styles.modules.css";
 
-function HeaderPedidos({links}) {
+function HeaderPedidos({links, className}) {
     return (
         <header
             className="header-pedidos">
@@ -12,7 +12,7 @@ function HeaderPedidos({links}) {
                 <ul>
                     {links.map((link, index) => (
                         <li key={index}>
-                            <button className="option" onClick={link.onClick}>{link.name}</button>
+                            <button className={className} onClick={link.onClick}>{link.name}</button>
                         </li>
                     ))}
                    
