@@ -9,8 +9,8 @@ import {
 } from "../components/button/ButtonStyle";
 import StyleBackgroundImg from "../components/img-background/style-bg-img";
 import HeaderWelcome from "../components/header/headerWelcome";
-//import { ButtonsHallSeeOrdersSeeOrders } from "../components/button/ButtonStyle.js";
-//import { Link } from "react-router-dom";
+import { ButtonsHallSeeOrders } from "../components/button/ButtonStyle";
+import { Link } from "react-router-dom";
 
 const Kitchen = () => {
   const [kitchen, setKitchen] = useState([]);
@@ -36,6 +36,8 @@ const Kitchen = () => {
       setKitchen(filterArray);
     });
   }, []);
+
+  
 
   const changeStatus = (item, option) => {
     let newState = item.status;
@@ -73,11 +75,17 @@ const Kitchen = () => {
       <HeaderLogo showLogOut={true} />
       <HeaderWelcome />
 
-    {/*  <div className="container data-ready-order-client">
+      <div className="container data-ready-order-client">
         <Link to="/ordersdelivered">
-          <ButtonsHallSeeOrdersSeeOrders>Pedidos EnButtonsHallSeeOrdersttonsHallSeeOrders>
+          <ButtonsHallSeeOrders>Pedidos Entregues</ButtonsHallSeeOrders>
         </Link>
-  </div> */}
+       {/* <Link to="/readyorders">
+          <ButtonsHallSeeOrders>
+            Pedidos Prontos
+            {alertOrderIsReady}
+          </ButtonsHallSeeOrders>{" "}
+  </Link> */}
+      </div>
 
       {kitchen.map((item) => (
         <div className="container" key={item.id}>

@@ -56,7 +56,6 @@ export const ClientData = styled.input`
   height: 3.5rem;
   font-size: 20px;
   color: #f7f7ff;
-
   border-radius: 0.4rem;
 
   &&::placeholder {

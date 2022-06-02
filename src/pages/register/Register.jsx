@@ -7,7 +7,7 @@ import Modal from "../../components/modal/Modal";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import StyleBackgroundImg from "../../components/img-background/style-bg-img";
-import CheckboxRole from "../../components/circle-option/CheckboxRole";
+import CheckboxRole from "../../components/checkbox/CheckboxRole";
 import { LoginRegisterParagraph } from "../../components/style-html-elements/elements-style";
 import { ModalOfMenuOptions } from "../../components/button/ButtonStyle";
 import HeaderLogo from "../../components/header/HeaderLogo";

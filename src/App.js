@@ -1,11 +1,11 @@
 import AllRoutesApp from './Routes';
-import GlobalStyle from './globalStyles';
+import AllStyles from './globalStyles';
 
 function App() {
   return (
     <>
       <AllRoutesApp />
-      <GlobalStyle />
+      <AllStyles />
     </>
   );
 }

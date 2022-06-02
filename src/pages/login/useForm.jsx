@@ -52,6 +52,7 @@ const useForm = (validation) => {
           ) {
             alert(response.message);
           } else {
+            localStorage.setItem("role", response.role)
             localStorage.setItem("token", response.token);
             localStorage.setItem("id", response.id);
 

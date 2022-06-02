@@ -80,10 +80,8 @@ const ReadyOrders = () => {
             </DivProductKitchen>
           </BackgroundCard>
         ))}
-        
       </section>
     </>
-    
   );
 };
 
