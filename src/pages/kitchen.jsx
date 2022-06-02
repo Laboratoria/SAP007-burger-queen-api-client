@@ -1,10 +1,7 @@
 import Button from "../components/Button";
-// import TemplateOrder from '../components/TemplateOrder';
-// import handleProduct from "./hall";
-// import listOrder from "./hall";
 import { useNavigate } from "react-router-dom";
 import { allOrders } from "../services/api";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 
 function Kitchen() {
@@ -17,22 +14,24 @@ function Kitchen() {
     navigate("/login");
   }
 
-  function PushedAllOrders() {
+  const pushedAllOrders = useCallback(() =>{
     allOrders()
       .then((response) => response.json())
       .then((data) => {
         setOrder(
           data.filter((item) => {
+            console.log(item)
             return order;
           }),
         );
       });
-  };
-
-  useEffect(() => {
-    PushedAllOrders();
-  },);
-
+    },[order] )
+    
+    useEffect(() => {
+      pushedAllOrders()
+      console.log(order)
+    },[pushedAllOrders, order]);
+    
   return (
     <div>
       <p>Cozinha</p>
