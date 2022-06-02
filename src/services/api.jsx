@@ -1,4 +1,4 @@
-import {getToken} from "./token";
+import { getToken } from "./token";
 
 const URL = "https://lab-api-bq.herokuapp.com";
 
@@ -33,38 +33,32 @@ export const logedIn = (email, password) => {
 };
 
 export const getProduct = () => {
-  return fetch(`${URL}/products`,{
+  return fetch(`${URL}/products`, {
     method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": getToken("token"),
-      },
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": getToken("token"),
+    },
   });
 };
 
-export const createOrder = (info) =>{
-  return fetch(`${URL}/orders`,{
-    method:"POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": getToken(),
-      },
-      body: JSON.stringify(info),
-  });
-};
-
-export const allOrders = (client, table, products) =>{
-  return fetch(`${URL}/orders`,{
-    method:"GET",
+export const createOrder = (info) => {
+  return fetch(`${URL}/orders`, {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Authorization": getToken(),
-      body: JSON.stringify({
-        client: client.client,
-        table: table.table,
-        products: products,
-      }),
-    }
+    },
+    body: JSON.stringify(info),
   });
 };
 
+export const allOrders = () => {
+  return fetch(`${URL}/orders`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": getToken(),
+    }
+  });
+};

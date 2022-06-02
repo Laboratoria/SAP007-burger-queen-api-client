@@ -1,54 +1,54 @@
 import Button from "../components/Button";
-// import TemplateOrder from '../components/TemplateOrder';
-// import handleProduct from "./hall";
-// import listOrder from "./hall";
 import { useNavigate } from "react-router-dom";
 import { allOrders } from "../services/api";
-import { useState, useEffect } from "react";
+import TemplateKitchen from '../components/TemplateKitchen';
+import { useState, useEffect, useCallback } from "react";
 
 
 function Kitchen() {
 
   const navigate = useNavigate();
   const [order, setOrder] = useState([]);
+  const [orderByStatus, setOrderByStatus] = useState([]);
+
 
   function handleLogout() {
     localStorage.removeItem("token");
     navigate("/login");
   }
 
-  function PushedAllOrders() {
-    allOrders()
+    useEffect(() => {
+      allOrders()
       .then((response) => response.json())
-      .then((data) => {
-        setOrder(
-          data.filter((item) => {
-            return order;
-          }),
-        );
-      });
-  };
-
-  useEffect(() => {
-    PushedAllOrders();
-  },);
+      .then((data) => setOrder(data))
+    },[]);
+    
+    useEffect(() => { 
+      console.log(order)
+    },[order]);
+    
+    const filterByStatus = useCallback((status) =>{
+      const results = order.filter((item)=>item.status === status)
+      setOrderByStatus(results)
+   },[order])
 
   return (
     <div>
       <p>Cozinha</p>
-      {/* <section>
+      <section>
         {order.map((item) => {
           return (
-            <TemplateOrder
+            <TemplateKitchen
               key={item.id}
               product={item}
-              onClick={() => handleProduct(item)}
+            // onClick={() =>pushedAllOrders(item)}
             />
           )
         })}
-      </section> */}
+      </section>
       <Button children="sair" onClick={handleLogout} />
     </div>
+
   );
 }
 
