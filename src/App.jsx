@@ -1,12 +1,11 @@
 import { Home } from "./pages/Home"
-import { Login } from "./pages/Login"
-import { Register } from "./pages/Register"
+import Login  from "./pages/Login"
+import Register from "./pages/Register"
 import { HallAttendance } from "./pages/HallAttendance"
 import { HallKitchen } from "./pages/HallKitchen"
 import { Client } from "./pages/Client"
 
 import { PrivatePages } from "./services/PrivatePages"
-import { Navbar } from "./components/Navbar"
 import { Footer } from "./layout/Footer"
 
 import {
@@ -31,7 +30,6 @@ export function App() {
           <HallKitchen /> </PrivatePages>} />
         <Route path='/' element={<Navigate replace to='/' />} />
       </Routes>
-      <Navbar />
       <Footer />
     </Router>
   )

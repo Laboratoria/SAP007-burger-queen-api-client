@@ -1,0 +1,14 @@
+@import '../layout/variables.css';
+
+.input{
+    border-radius: 10px;
+    border: 1px solid #BF1736;
+    background-color: #D99E30;
+    padding: 12px;
+    margin: 5px
+}
+
+.input::placeholder{
+    color: black;
+    font-family: 'actionManBold';
+}
