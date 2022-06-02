@@ -2,7 +2,7 @@ import trash from "../../Images/trash-icon.png";
 import "./styles.modules.css";
 import { useState, useCallback } from "react";
 
-function Cart({ orderList, total, setOrder, totalPrice }) {
+function Cart({ onClick, orderList, total, setOrder, totalPrice}) {
 
   const [, updateState] = useState();
   const forceUpdate = useCallback(() => updateState({}), []);
@@ -61,7 +61,7 @@ function Cart({ orderList, total, setOrder, totalPrice }) {
           <tr>
             <td>Total: {total} R$</td>
             <td>
-              <button>Finalizar</button>
+              <button onClick={onClick} >Finalizar</button>
             </td>
           </tr>
         </tbody>
