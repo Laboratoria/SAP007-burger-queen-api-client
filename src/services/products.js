@@ -13,10 +13,3 @@ function request(endpoint, method, token) {
         .then(response => response.json())
         .then(json => json)
 }
-
-// export const getAllProducts = (token) => {
-//     return fetch(`https://lab-api-bq.herokuapp.com/products`, {
-//       method: "GET",
-//       headers: { "Content-Type": "application/json", Authorization: token },
-//     });
-//   };

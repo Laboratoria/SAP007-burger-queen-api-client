@@ -9,15 +9,14 @@ function Client( {setClient, setTable} ) {
         type="text"
         placeholder="cliente"
         onChange={(e)=> setClient(e.target.value)}
-        
       />
       <select className="table" onChange={(e)=> setTable(e.target.value)}>
         <option value="">Mesa</option>
-        <option value="table-one">Mesa 1</option>
-        <option value="table-two">Mesa 2</option>
-        <option value="table-three">Mesa 3</option>
-        <option value="table-four">Mesa 4</option>
-        <option value="table-five">Mesa 5</option>
+        <option value="1">Mesa 1</option>
+        <option value="2">Mesa 2</option>
+        <option value="3">Mesa 3</option>
+        <option value="4">Mesa 4</option>
+        <option value="5">Mesa 5</option>
       </select>
     </>
   );

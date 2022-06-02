@@ -7,32 +7,26 @@ import { getAllProducts } from "../../services/products";
 import "./styles.modules.css";
 import { useState, useEffect } from "react";
 import Navbar from "../../components/navbarAllDay";
+import { createOrder } from "../../services/order";
 
 function Waitress() {
   const [products, setProducts] = useState([]);
   const [tab, setTab] = useState("breakfast");
   const [allDayTab, setAllDayTab] = useState("hamburguer");
   const [order, setOrder] = useState([]);
-  const [client, setClient] = useState({ name: "" });
-  const [table, setTable] = useState({ table: "" });
+  const [client, setClient] = useState();
+  const [table, setTable] = useState();
   const [total, setTotal] = useState();
   const [hasProducts, setHasProducts] = useState(false);
   const [hasAllDay, setHasAllDay] = useState(false);
 
   const token = localStorage.getItem("token");
 
-  // function getAllDay(option) {
-  //   getAllProducts(token).then((data) => {
-  //     let filterProduts = data.filter((item) => {
-  //       return item.sub_type === option;
-  //     });
-  //     setProducts(filterProduts);
-  //   });
-  // }
-
   // function menuIndicator () {
   //   option.classList.toggle('active');
   // }
+
+  console.log(typeof table);
 
   useEffect(() => {
     getAllProducts(token).then((data) => {
@@ -74,16 +68,19 @@ function Waitress() {
         price: product.price,
         flavor: product.flavor,
         qtd: 1, /*setQuantity(+1),*/
-        client,
-        table,
+        client: client,
+        table: parseInt(table),
       };
-      console.log(newList);
       order.push(newList);
     }
     setOrder([...order]);
     totalPrice();
   }
 
+  function orderCreate(){
+    createOrder(token, order).then((data) => {
+      console.log(order);
+  })}
   
   const links = [
     {
@@ -162,7 +159,7 @@ function Waitress() {
           <div className="cart">
          
            
-            <Cart orderList={order} total={total} setOrder={setOrder} totalPrice={totalPrice}/>
+            <Cart onClick={() => orderCreate()} orderList={order} total={total} setOrder={setOrder} totalPrice={totalPrice}/>
           </div>
         </section>
       </main>
