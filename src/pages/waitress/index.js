@@ -8,7 +8,7 @@ import "./styles.modules.css";
 import { useState, useEffect } from "react";
 import Navbar from "../../components/navbarAllDay";
 import { createOrder } from "../../services/order";
-
+import Error from "../../components/errors";
 
 function Waitress() {
   const [products, setProducts] = useState([]);
@@ -20,7 +20,8 @@ function Waitress() {
   const [total, setTotal] = useState();
   const [hasProducts, setHasProducts] = useState(false);
   const [hasAllDay, setHasAllDay] = useState(false);
-
+  const [error, setError] = useState();
+  
   // function menuIndicator () {
   //   option.classList.toggle('active');
   // }
@@ -45,8 +46,8 @@ function Waitress() {
           hamburguer,
           drinks,
           side,
-        }
-      }
+        },
+      };
       setProducts(filterProducts);
       setHasProducts(true);
     });
@@ -64,20 +65,37 @@ function Waitress() {
         name: product.name,
         price: product.price,
         flavor: product.flavor,
-        qtd: 1, /*setQuantity(+1),*/
-
+        qtd: 1 /*setQuantity(+1),*/,
       };
       order.push(newList);
     }
     setOrder([...order]);
     totalPrice();
   }
-
+  
   function orderCreate() {
-
+    if(client && table && order){
     createOrder(client, table, order).then((data) => {
-      return data
-    })
+      console.log(data);
+      if(data.code === 400){
+        setError(data.message);
+        hideMessage();
+      }
+      setClient("");
+      setTable();
+      setOrder([]);
+      setTotal();
+    });}
+    else {
+      setError("Preencha os campos corretamente");
+      hideMessage();
+    }
+  }
+
+  function hideMessage() {
+    setTimeout(() => {
+      setError("");
+    }, 6000);
   }
 
   const links = [
@@ -127,25 +145,30 @@ function Waitress() {
     return setTotal(price);
   }
 
-  const activeProducts = tab === "all-day" ? products[tab][allDayTab] : products[tab];
+  const activeProducts =
+    tab === "all-day" ? products[tab][allDayTab] : products[tab];
 
   return (
     <>
-      <HeaderPedidos links={links} className="option" /*className="{activationBreakfast === true ? "selected" : "option"}"*/ />
+      <HeaderPedidos
+        links={links}
+        className="option" /*className="{activationBreakfast === true ? "selected" : "option"}"*/
+      />
 
       <main className="orders">
         <section className="products">
           <ul>
             {hasAllDay === true ? <Navbar links={linksAllDay} /> : null}
-            {hasProducts === true && activeProducts.map((item) => {
-              return (
-                <Card
-                  key={item.id}
-                  product={item}
-                  onClick={() => OrderProduct(item)}
-                />
-              );
-            })}
+            {hasProducts === true &&
+              activeProducts.map((item) => {
+                return (
+                  <Card
+                    key={item.id}
+                    product={item}
+                    onClick={() => OrderProduct(item)}
+                  />
+                );
+              })}
           </ul>
         </section>
         <section className="client-cart">
@@ -153,9 +176,14 @@ function Waitress() {
             <Client setClient={setClient} setTable={setTable} />
           </div>
           <div className="cart">
-
-
-            <Cart onClick={() => orderCreate()} orderList={order} total={total} setOrder={setOrder} totalPrice={totalPrice} />
+            <Cart
+              onClick={() => orderCreate()}
+              orderList={order}
+              total={total}
+              setOrder={setOrder}
+              totalPrice={totalPrice}
+            />
+            <Error text={error} className="error-waitress"/>
           </div>
         </section>
       </main>

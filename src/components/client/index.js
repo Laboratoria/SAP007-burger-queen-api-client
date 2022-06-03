@@ -1,16 +1,19 @@
 import Input from "../Inputs";
 import "./styles.modules.css";
 
-function Client( {setClient, setTable} ) {
+function Client({ setClient, setTable }) {
   return (
     <>
       <Input
         className="client-name"
         type="text"
         placeholder="cliente"
-        onChange={(e)=> setClient(e.target.value)}
+        onChange={(e) => setClient(e.target.value)}
       />
-      <select className="table" onChange={(e)=> setTable(Number(e.target.value))}>
+      <select
+        className="table"
+        onChange={(e) => setTable(Number(e.target.value))}
+      >
         <option value="">Mesa</option>
         <option value="1">Mesa 1</option>
         <option value="2">Mesa 2</option>
