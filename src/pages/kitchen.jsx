@@ -1,14 +1,13 @@
-import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { allOrders } from "../services/api";
 import TemplateKitchen from '../components/TemplateKitchen';
 import { useState, useEffect } from "react";
+import {FaSignInAlt} from "react-icons/fa"
 
 function Kitchen() {
   const navigate = useNavigate();
   const [order, setOrder] = useState([]);
   // const [orderByStatus, setOrderByStatus] = useState([]);
-
 
   function handleLogout() {
     localStorage.removeItem("token");
@@ -43,10 +42,11 @@ function Kitchen() {
           )
         })}
       </section>
-      <Button children="sair" onClick={handleLogout} />
+      <div className="logout"onClick={handleLogout} >
+      <FaSignInAlt size="26px"margin-rigth="0px"/>
+      </div>
     </div>
 
   );
 }
-
 export default Kitchen;

@@ -7,6 +7,7 @@ import TemplateOrder from "../components/TemplateOrder";
 import { getProduct, createOrder } from "../services/api";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaSignInAlt } from "react-icons/fa";
 
 function Hall() {
   const navigate = useNavigate();
@@ -15,8 +16,6 @@ function Hall() {
   const [order, setOrder] = useState([]);
   const [error, setError] = useState("");
   console.log(error);
-  // const [reference, setReference] = useState("");
-  // const [request, setRequest] = useState("");
 
   function handleLogout() {
     localStorage.removeItem("token");
@@ -134,7 +133,7 @@ function Hall() {
       <Header children="PEDIDOS" />
       <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
       <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />
-      <section className='sectionCard'>
+      <section className="sectionCard">
         {products.map((item) => {
           return (
             <Card
@@ -161,7 +160,7 @@ function Hall() {
           onChange={handleInfo}
         />
       </div>
-      <section className='sectionOrder'>     
+      <section className="sectionOrder">
         {order.map((item) => {
           return (
             <TemplateOrder
@@ -174,9 +173,10 @@ function Hall() {
         <p> VALOR TOTAL: R${totalValue().toFixed(2)}</p>
       </section>
       <button children="Cancelar" id="cancel" onClick={handleLogout}></button>
-      <button children="Confirmar" id="confirm" onClick={handleLogout}></button>
-      <Button children="Sair" onClick={handleLogout} />
-
+      <button children="Confirmar" id="confirm" onClick={finalOrder}></button>
+      <div className="logout" onClick={handleLogout}>
+        <FaSignInAlt size="26px" margin-rigth="0px" />
+      </div>
     </div>
   );
 }
