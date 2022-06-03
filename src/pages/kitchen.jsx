@@ -2,12 +2,12 @@ import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { allOrders } from "../services/api";
 import TemplateKitchen from '../components/TemplateKitchen';
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect} from "react";
 
 function Kitchen() {
   const navigate = useNavigate();
   const [order, setOrder] = useState([]);
-  const [orderByStatus, setOrderByStatus] = useState([]);
+  //const [orderByStatus, setOrderByStatus] = useState([]);
 
 
   function handleLogout() {
@@ -25,10 +25,10 @@ function Kitchen() {
       console.log(order)
     },[order]);
     
-    const filterByStatus = useCallback((status) =>{
-      const results = order.filter((item)=>item.status === status)
-      setOrderByStatus(results)
-   },[order])
+  //   const filterByStatus = useCallback((status) =>{
+  //     const results = order.filter((item)=>item.status === status)
+  //     setOrderByStatus(results)
+  //  },[order])
   return (
     <div>
       <p>Cozinha</p>
