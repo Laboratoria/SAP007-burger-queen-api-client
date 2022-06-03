@@ -62,7 +62,7 @@ function Cart({ onClick, orderList, total, setOrder, totalPrice}) {
           <tr>
             <td>Total: {total} R$</td>
             <td>
-              <button onClick={onClick} >Finalizar</button>
+              <button className="order-btn" onClick={onClick} >Finalizar</button>
             </td>
           </tr>
         </tbody>
