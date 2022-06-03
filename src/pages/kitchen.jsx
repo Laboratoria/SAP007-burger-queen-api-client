@@ -4,10 +4,11 @@ import TemplateKitchen from '../components/TemplateKitchen';
 import { useState, useEffect } from "react";
 import {FaSignInAlt} from "react-icons/fa"
 
+
 function Kitchen() {
   const navigate = useNavigate();
   const [order, setOrder] = useState([]);
-  // const [orderByStatus, setOrderByStatus] = useState([]);
+  //const [orderByStatus, setOrderByStatus] = useState([]);
 
   function handleLogout() {
     localStorage.removeItem("token");
