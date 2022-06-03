@@ -9,3 +9,8 @@
   font-size: 16px;
   margin:2% 0% 0% 7%;
 }
+@media(min-width: 768px) and (max-width:11024px){
+  .btn{
+    margin:2% 0% 0% 20%;
+  }
+}

@@ -7,5 +7,4 @@ function Role({type, name, placeholder, onChange,value,label}) {
       </label>  
   );
 }
-
 export default Role;

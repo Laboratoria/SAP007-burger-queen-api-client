@@ -1,13 +1,9 @@
-/* .DivTemplateOrder{
-  background-color: #0B79D9;
-
-}  */
 .UlTemplateOrder{
   width: 60%;
   height: 90%;
   border-radius: 20px;
+  font-size: 20px;
 }
-
 .bin{
   cursor: pointer;
 }
