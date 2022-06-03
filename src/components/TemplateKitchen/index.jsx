@@ -10,7 +10,8 @@ function TemplateKitchen({ product }) {
 
     <div className={styles.DivTemplateKitchen}>
       <ul className={styles.UlTemplateKitchen}>
-        <li>
+
+      <li>
           <Button children={product.status} />
         </li>
         <li>
@@ -31,12 +32,9 @@ function TemplateKitchen({ product }) {
           </li>
         ) : null}
         <li>
-          <p>QTD:{product.qtd}</p>
+          <p>{product.qtd}</p>
         </li>
         <li>
-          <p>Complemento:{product.complement}</p>
-          </li>
-          <li>
           <p>Atulização:{product.updatedAt}</p>
         </li>
       </ul>
