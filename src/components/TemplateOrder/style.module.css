@@ -1,8 +1,9 @@
-.DivTemplateOrder{
-    width: 80%;
-    background-color: #117DBF;;
-}
 .UlTemplateOrder{
-    width: 80%;
-    background-color: #ffffff;
+  width: 60%;
+  height: 90%;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.bin{
+  cursor: pointer;
 }

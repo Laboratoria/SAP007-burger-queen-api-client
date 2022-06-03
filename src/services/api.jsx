@@ -37,7 +37,7 @@ export const getProduct = () => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": getToken("token"),
+      Authorization: getToken("token"),
     },
   });
 };
@@ -47,7 +47,7 @@ export const createOrder = (info) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": getToken(),
+      Authorization: getToken(),
     },
     body: JSON.stringify(info),
   });
@@ -58,7 +58,7 @@ export const allOrders = () => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": getToken(),
-    }
+      Authorization: getToken(),
+    },
   });
 };

@@ -44,13 +44,16 @@ function Login() {
         type="email"
         value={email}
         placeholder="E-MAIL"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        title="Siga este formato exemplo@exemplo.com"
         onChange={(e) => setEmail(e.target.value)}
       />
       <Input
         type="password"
         value={password}
         placeholder="SENHA"
-        minlength="6"
+        pattern="[a-zA-Z0-9]{6}"
+        title="A senha deve conter no mínimo 6 caracteres entre números e letras"
         onChange={(e) => setPassword(e.target.value)}
       />
       <Button children="LOGAR" type="button" onClick={handleOnClick}/>
@@ -63,5 +66,4 @@ function Login() {
     </div>
   );
 }
-
 export default Login;

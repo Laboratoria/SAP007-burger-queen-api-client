@@ -5,9 +5,10 @@ import Input from "../components/Input";
 import { codeError } from "../services/error";
 import TemplateOrder from "../components/TemplateOrder";
 import { getProduct, createOrder } from "../services/api";
+// import SelectExtra from "../components/SelectExtra"
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaTrash } from "react-icons/fa";
+import { FaSignInAlt } from "react-icons/fa";
 
 function Hall() {
   const navigate = useNavigate();
@@ -15,9 +16,8 @@ function Hall() {
   const [products, setProducts] = useState([]);
   const [order, setOrder] = useState([]);
   const [error, setError] = useState("");
+  // const [additional, setAdditional] = useState("");
   console.log(error);
-  // const [reference, setReference] = useState("");
-  // const [request, setRequest] = useState("");
 
   function handleLogout() {
     localStorage.removeItem("token");
@@ -47,7 +47,9 @@ function Hall() {
       return auxInfo;
     });
   };
-
+  // const handleExtra = (e) => {
+  //   setAdditional(e.target.value);
+  // };
   function handleProduct(product) {
     const newOrder = order;
     const productList = newOrder.find((item) => {
@@ -61,6 +63,7 @@ function Hall() {
         name: product.name,
         price: product.price,
         flavor: product.flavor,
+        complement: product.complement,
         qtd: 1,
       };
       newOrder.push(newList);
@@ -79,6 +82,7 @@ function Hall() {
             name: item.name,
             price: item.price,
             flavor: item.flavor,
+            complement: item.complement,
             qtd: 1,
           };
           return infosOrder;
@@ -86,7 +90,7 @@ function Hall() {
       };
       return openTable;
     }
-    
+
     const resumeOrder = listOrder();
     console.log(resumeOrder);
 
@@ -135,16 +139,17 @@ function Hall() {
       <Header children="PEDIDOS" />
       <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
       <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />
-
-      {products.map((item) => {
-        return (
-          <Card
-            key={item.id}
-            product={item}
-            onClick={() => handleProduct(item)}
-          />
-        );
-      })}
+      <section className="sectionCard">
+        {products.map((item) => {
+          return (
+            <Card
+              key={item.id}
+              product={item}
+              onClick={() => handleProduct(item)}
+            />
+          );
+        })}
+      </section>
       <div className="InfoClient">
         <Input
           placeholder="CLIENTE"
@@ -161,21 +166,26 @@ function Hall() {
           onChange={handleInfo}
         />
       </div>
-      {order.map((item) => {
-        return (
-          <TemplateOrder
-            key={item.id}
-            product={item}
-            onClickRemove={() => handleRemoveItem(item)}
-          />
-        );
-      })}
-      <FaTrash />
-      <p> Valor total : R${totalValue()}</p>
-      <Button children="Cancelar Pedido" onClick={handleLogout} />
-      <Button children="Sair" onClick={handleLogout} />
-      <Button children="finalizar Pedido" onClick={finalOrder} />
+      <section className="sectionOrder">
+      {/* <Input  type="text" placeholder="Adiconal" name="adiconal" value={additional.name} onChange={handleExtra}/> */}
+        {order.map((item) => {
+          return (
+            <TemplateOrder
+              key={item.id}
+              product={item}
+              onClickRemove={() => handleRemoveItem(item)}
+            />
+          );
+        })}
+        <p> VALOR TOTAL: R${totalValue().toFixed(2)}</p>
+      </section>
+      <button children="Cancelar" id="cancel" onClick={handleLogout}></button>
+      <button children="Confirmar" id="confirm" onClick={finalOrder}></button>
+      <div className="logout" onClick={handleLogout}>
+        <FaSignInAlt size="26px" margin-rigth="0px" />
+      </div>
     </div>
   );
 }
 export default Hall;
+

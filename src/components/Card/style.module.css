@@ -1,14 +1,13 @@
 .DivCard{
   width: 160px;
+  height: 210px;
   display: flex;
   justify-content: center;
 }
-
 .UlCard{
-  width: 100%;
+ width: 100%;
   background-color: #9EF277 ;
-  border-radius: 10%;
-  display: flex;
+  border-radius: 10%;  
 }
 .id{
   visibility: hidden;

@@ -5,7 +5,7 @@ import { createUser } from "../services/api";
 import Message from "../components/Message";
 import { codeError } from "../services/error";
 import { setToken } from "../services/token";
-import Role from '../components/Role';
+import Role from "../components/Role";
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
@@ -16,7 +16,6 @@ function Register() {
   const [role, setRole] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const minLength = 6
 
   const location = useLocation();
   let feedback = " ";
@@ -41,31 +40,33 @@ function Register() {
   return (
     <div className="DivForm">
       <Logo />
-      <form onSubmit={createUser}>
-      <div className="DivRole">
-        <Role
-          type="radio"
-          value="kitchen"
-          name="role"
-          id="kitchen"
-          label="COZINHA"
-          onChange={(e) => setRole(e.target.value)}
-        />
-        <Role
-          type="radio"
-          value="hall"
-          name="role"
-          id="hall"
-          label="SALÃO"
-          onChange={(e) => setRole(e.target.value)}
-        />
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="DivRole">
+          <Role
+            type="radio"
+            value="kitchen"
+            name="role"
+            id="kitchen"
+            label="COZINHA"
+            onChange={(e) => setRole(e.target.value)}
+          />
+          <Role
+            type="radio"
+            value="hall"
+            name="role"
+            id="hall"
+            label="SALÃO"
+            required
+            onChange={(e) => setRole(e.target.value)}
+          />
+        </div>
         <Input
           type="name"
           placeholder="NOME"
           value={name}
           id="name"
           name="name"
+          required
           onChange={(e) => setName(e.target.value)}
         />
         <Input
@@ -74,6 +75,9 @@ function Register() {
           value={email}
           id="email"
           name="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          title="Siga este formato exemplo@exemplo.com"
+          required
           onChange={(e) => setEmail(e.target.value)}
         />
         <Input
@@ -82,15 +86,17 @@ function Register() {
           value={password}
           id="password"
           name="password"
-          minlength="6"
+          pattern="[a-zA-Z0-9]{6}"
+          title="A senha deve conter no mínimo 6 caracteres entre números e letras"
+          required
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button children="CADASTRAR" onClick={handleSubmit} disable={password.length < minLength}/>
+        <Button children="CADASTRAR" />
         <Link to="/login" className="Hiperlink">
           Já tenho cadastro
         </Link>
         {feedback && <Message msg={feedback} />}
-        {error && <Message  msg={error} />}
+        {error && <Message msg={error} />}
       </form>
     </div>
   );

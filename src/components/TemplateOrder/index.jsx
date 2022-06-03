@@ -1,24 +1,28 @@
 import styles from "./style.module.css";
-import Button from '../Button';
+import { FaTrash } from "react-icons/fa";
 
-function TemplateOrder( {product,onClickRemove} ) {
-
+function TemplateOrder( {product,onClickRemove}) {
   return (
     <div className={styles.DivTemplateOrder}>
       <ul className={styles.UlTemplateOrder}>
          <li>
-          <p>{product.id}</p>
+          {product.id ? <p></p>:null}
           </li>
          <li>
-          <p>{product.name}</p>
+          <p>Produto:{product.name}</p>
+          </li>
+          <li>
+          <p>Complemento:{product.complement}</p>
           </li>
           <li>
           <p>R${(product.price).toFixed(2)}</p>
           </li>
           {product.flavor ? <li><p>{product.flavor}</p></li>:null}
           <li>
-            <p>{product.qtd}</p>
-           <Button children="Excluir"onClick={onClickRemove}/>
+            <p>Quantidade:{product.qtd}</p>
+            <div className="bin" onClick={onClickRemove}>
+              <FaTrash />
+           </div>
           </li>
       </ul>  
     </div>
