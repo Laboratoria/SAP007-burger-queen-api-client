@@ -10,7 +10,8 @@ function TemplateKitchen({ product }) {
 
     <div className={styles.DivTemplateKitchen}>
       <ul className={styles.UlTemplateKitchen}>
-        <li>
+
+      <li>
           <Button children={product.status} />
         </li>
         <li>

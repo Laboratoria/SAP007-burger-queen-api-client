@@ -5,6 +5,7 @@ import Input from "../components/Input";
 import { codeError } from "../services/error";
 import TemplateOrder from "../components/TemplateOrder";
 import { getProduct, createOrder } from "../services/api";
+// import SelectExtra from "../components/SelectExtra"
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
@@ -15,6 +16,7 @@ function Hall() {
   const [products, setProducts] = useState([]);
   const [order, setOrder] = useState([]);
   const [error, setError] = useState("");
+  // const [additional, setAdditional] = useState("");
   console.log(error);
 
   function handleLogout() {
@@ -45,7 +47,9 @@ function Hall() {
       return auxInfo;
     });
   };
-
+  // const handleExtra = (e) => {
+  //   setAdditional(e.target.value);
+  // };
   function handleProduct(product) {
     const newOrder = order;
     const productList = newOrder.find((item) => {
@@ -59,6 +63,7 @@ function Hall() {
         name: product.name,
         price: product.price,
         flavor: product.flavor,
+        complement: product.complement,
         qtd: 1,
       };
       newOrder.push(newList);
@@ -77,6 +82,7 @@ function Hall() {
             name: item.name,
             price: item.price,
             flavor: item.flavor,
+            complement: item.complement,
             qtd: 1,
           };
           return infosOrder;
@@ -161,6 +167,7 @@ function Hall() {
         />
       </div>
       <section className="sectionOrder">
+      {/* <Input  type="text" placeholder="Adiconal" name="adiconal" value={additional.name} onChange={handleExtra}/> */}
         {order.map((item) => {
           return (
             <TemplateOrder
@@ -181,3 +188,4 @@ function Hall() {
   );
 }
 export default Hall;
+
