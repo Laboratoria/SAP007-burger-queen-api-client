@@ -65,7 +65,7 @@ function Waitress() {
         name: product.name,
         price: product.price,
         flavor: product.flavor,
-        qtd: 1 /*setQuantity(+1),*/,
+        qtd: 1 ,
       };
       order.push(newList);
     }
@@ -81,16 +81,21 @@ function Waitress() {
         setError(data.message);
         hideMessage();
       }
-      setClient("");
-      setTable();
-      setOrder([]);
-      setTotal();
+      handleReset()
     });}
     else {
       setError("Preencha os campos corretamente");
       hideMessage();
     }
   }
+
+  function handleReset() { 
+    setClient("")
+    setTable("")
+    setOrder([]);
+    setTotal();
+  };
+
 
   function hideMessage() {
     setTimeout(() => {
@@ -173,7 +178,7 @@ function Waitress() {
         </section>
         <section className="client-cart">
           <div className="client-infos">
-            <Client setClient={setClient} setTable={setTable} />
+            <Client setClient={setClient} setTable={setTable} client={client} table={table}/>
           </div>
           <div className="cart">
             <Cart

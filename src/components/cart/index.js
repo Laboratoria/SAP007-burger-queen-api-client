@@ -44,19 +44,20 @@ function Cart({ onClick, orderList, total, setOrder, totalPrice}) {
         </thead>
         <tbody>
           {orderList.map((product) => (
-            <tr>
-              <>
-                <td>{product.name}</td>
-                <td>{product.qtd}</td>
-                <td>{product.price}</td>
-              </>
+           <tr>
+                <>
 
-              <td>
-                <button className="trash" onClick={() => RemoveItem(product)}>
-                  <img className="trash-icon" src={trash} alt="deletar"></img>
-                </button>
-              </td>
-            </tr>
+                  <td>{product.name}</td>
+                  <td>{product.qtd}</td>
+                  <td>{product.price}</td>
+                </>
+
+                <td>
+                  <button className="trash" onClick={() => RemoveItem(product)}>
+                    <img className="trash-icon" src={trash} alt="deletar"></img>
+                  </button>
+                </td>
+              </tr>
           ))}
           <tr>
             <td>Total: {total} R$</td>
