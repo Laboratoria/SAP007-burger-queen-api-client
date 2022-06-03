@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../../components/navbarAllDay";
 import { createOrder } from "../../services/order";
 
+
 function Waitress() {
   const [products, setProducts] = useState([]);
   const [tab, setTab] = useState("breakfast");
@@ -19,18 +20,13 @@ function Waitress() {
   const [total, setTotal] = useState();
   const [hasProducts, setHasProducts] = useState(false);
   const [hasAllDay, setHasAllDay] = useState(false);
-  
- console.log(typeof(Number.parseInt(table)))
-  const token = localStorage.getItem("token");
 
   // function menuIndicator () {
   //   option.classList.toggle('active');
   // }
 
-  console.log(typeof table);
-
   useEffect(() => {
-    getAllProducts(token).then((data) => {
+    getAllProducts().then((data) => {
       const breakfast = data.filter((item) => {
         return item.type === "breakfast";
       });
@@ -69,8 +65,7 @@ function Waitress() {
         price: product.price,
         flavor: product.flavor,
         qtd: 1, /*setQuantity(+1),*/
-        client: client,
-        table: parseInt(table),
+
       };
       order.push(newList);
     }
@@ -78,11 +73,13 @@ function Waitress() {
     totalPrice();
   }
 
-  function orderCreate(){
-    createOrder(token, order).then((data) => {
-      console.log(order);
-  })}
-  
+  function orderCreate() {
+
+    createOrder(client, table, order).then((data) => {
+      return data
+    })
+  }
+
   const links = [
     {
       name: "Café da manhã",
@@ -94,18 +91,18 @@ function Waitress() {
     },
   ];
 
-  function changeStateBreakfast () {
+  function changeStateBreakfast() {
     setTab("breakfast");
     setHasAllDay(false);
     // setActivationBreakfast(true);
   }
 
-  function changeStateAllDay () {
+  function changeStateAllDay() {
     setTab("all-day");
     setHasAllDay(true);
     // setActivationBreakfast(false);
   }
-  
+
   const linksAllDay = [
     {
       name: "Hambúgueres",
@@ -125,18 +122,16 @@ function Waitress() {
     let price = 0;
     order.forEach((product) => {
       price += parseFloat(product.price) * parseFloat(product.qtd);
-      console.log(product.price, product.qtd);
     });
-    console.log(price);
 
     return setTotal(price);
   }
 
   const activeProducts = tab === "all-day" ? products[tab][allDayTab] : products[tab];
- 
+
   return (
     <>
-      <HeaderPedidos links={links}  className="option" /*className="{activationBreakfast === true ? "selected" : "option"}"*//>
+      <HeaderPedidos links={links} className="option" /*className="{activationBreakfast === true ? "selected" : "option"}"*/ />
 
       <main className="orders">
         <section className="products">
@@ -158,9 +153,9 @@ function Waitress() {
             <Client setClient={setClient} setTable={setTable} />
           </div>
           <div className="cart">
-         
-           
-            <Cart onClick={() => orderCreate()} orderList={order} total={total} setOrder={setOrder} totalPrice={totalPrice}/>
+
+
+            <Cart onClick={() => orderCreate()} orderList={order} total={total} setOrder={setOrder} totalPrice={totalPrice} />
           </div>
         </section>
       </main>

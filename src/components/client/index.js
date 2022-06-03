@@ -10,7 +10,7 @@ function Client( {setClient, setTable} ) {
         placeholder="cliente"
         onChange={(e)=> setClient(e.target.value)}
       />
-      <select className="table" onChange={(e)=> setTable(e.target.value)}>
+      <select className="table" onChange={(e)=> setTable(Number(e.target.value))}>
         <option value="">Mesa</option>
         <option value="1">Mesa 1</option>
         <option value="2">Mesa 2</option>
