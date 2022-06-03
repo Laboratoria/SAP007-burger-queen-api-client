@@ -25,11 +25,11 @@
   }
 @media(min-width: 1024px) and (max-width:1440px){
   .finn{
-    width: 4%;     
+    width: 3%;     
   }
 }
 @media(min-width: 1440px) and (max-width:2440px){
   .finn{
-    width: 3%;     
+    width: 2%;     
   }
 }
