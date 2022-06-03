@@ -4,20 +4,20 @@ export function Footer() {
     return (
         <>
             <footer className={styles.footer}>
-                <p><img src={require('../images/Sprout.png')} alt="imagem-eco" width="20px" /> Este estabelecimento é amigo da natureza e utiliza produtos, embalagens e utensílios que não agridem o meio ambiente.</p>
-                <p clasName={styles.developers}>Desenvolvido por
-                    <a
+                <p className={styles.ecoText}><img className={styles.iconImage} src={require('../images/Sprout.png')} alt="imagem-eco" width="20px" /> Este estabelecimento é amigo da natureza e utiliza produtos, embalagens e utensílios que não agridem o meio ambiente.</p>
+                <p className={styles.developers}>Desenvolvido por
+                    <a className={styles.devNames}
                         href="https://github.com/Fe-Monteiro"
                         target="_blank"
                         rel="noreferrer"
-                    > Fernanda Monteiro </a> |
-                    <a
+                    > <img className={styles.iconImage} src={require('../images/githubicon.png')} width="15px" /> Fernanda Monteiro </a> e
+                    <a className={styles.devNames}
                         href="https://github.com/natalieiss"
                         target="_blank"
                         rel="noreferrer"
-                    > Natalie Silva </a>
+                    > <img className={styles.iconImage} src={require('../images/githubicon.png')} width="15px" /> Natalie Silva </a>
                 </p>
             </footer>
         </>
-    );
+    )
 }

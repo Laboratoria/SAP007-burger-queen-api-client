@@ -16,7 +16,7 @@ export function Routes() {
     return (
         <Router>
             <Routes>
-                <Route path='/' element={<Home />} />
+                <Route exact path='/' element={<Home />} />
                 <Route path='/Attendance' element={<Attendance />} />
                 <Route path='/Client' element={<Client />} />
                 <Route path='/Kitchen' element={<Kitchen />} />

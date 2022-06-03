@@ -1,14 +1,15 @@
 @import '../layout/variables.css';
 
-.input{
+.input {
     border-radius: 10px;
     border: 1px solid #BF1736;
     background-color: #D99E30;
     padding: 12px;
-    margin: 5px
+    margin: 5px;
+    font-size: 2rem;
 }
 
-.input::placeholder{
+.input::placeholder {
     color: black;
     font-family: 'actionManBold';
 }

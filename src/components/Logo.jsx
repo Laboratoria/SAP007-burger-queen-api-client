@@ -1,9 +1,11 @@
 import styles from "./Logo.module.css"
 
-export default function Logo() {
+export default function Logo({ customClass }) {
     return (
         <>
-            <img className={styles.logo} src={require('../images/Logo.png')} alt="logo-heroes" />
+            <a href="/">
+                <img className={styles[customClass]} src={require('../images/Logo.png')} alt="logo-heroes" />
+            </a>
         </>
     )
 }

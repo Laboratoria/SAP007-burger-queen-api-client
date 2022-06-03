@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-size: 6px;
 }
 
 .background {
@@ -14,7 +15,7 @@
     background-size: cover;
 }
 
-.root{
+.root {
     height: 100vh;
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;

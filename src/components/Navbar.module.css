@@ -6,28 +6,35 @@
     border: 2px solid #BF1736;
     border-radius: 10px;
     grid-column: 4;
-    grid-row-start: 3;
+    grid-row-end: 3;
     justify-content: space-around;
     align-items: center;
     height: 250px;
-    padding: 30px;
-
+    padding: 60px;
+    margin-bottom: 80%;
+    padding-top: 15%;
+    margin-top: 20%;
 }
 
-.list a{
+.list {
+    margin-right: 10px;
+}
+
+.list a {
     display: grid;
     justify-content: center;
     list-style: none;
     text-decoration: none;
+    color: black;
     background-color: #D99E30;
     border: 1px solid #BF1736;
     border-radius: 5px;
+    font-family: 'actionManBold';
+    font-size: 2rem;
     transform: scale(1);
     transition: 0.5s;
-    width: 10rem;
-    color: black;
-    font-family: 'actionManBold';
-    padding: 7px;
+    width: 20rem;
+    padding: 7%;
 }
 
 .list a:hover {
@@ -35,9 +42,10 @@
     background-color: #2669BF;
 }
 
-.item{
+.item {
     height: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
     align-content: center;
+    margin-right: 80%;
 }

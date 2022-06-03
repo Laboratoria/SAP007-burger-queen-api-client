@@ -1,11 +1,12 @@
 @import '../layout/variables.css';
 
-.title{
+.title {
     margin-top: 5%;
     grid-column-start: span 5;
     color: #0C0129;
     font-family: 'lulaBorgesNegrito';
     text-align: center;
+    font-size: 5rem;
 }
 
 .about {
@@ -17,4 +18,9 @@
     font-family: 'actionManBold';
     margin-left: 10%;
     text-align: center;
+    font-size: 2.20rem;
+}
+
+.header {
+    font-size: 5rem;
 }

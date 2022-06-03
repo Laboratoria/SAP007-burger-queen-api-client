@@ -1,13 +1,13 @@
 import styles from "./Home.module.css"
 import Logo from "../components/Logo"
-import Header from "../layout/Header"
+import { header } from "../layout/Header"
 import Navbar from '../components/Navbar'
 
 export function Home() {
     return (
         <>
-            <h1 className={styles.title}>Bem-vindo ao <Header /></h1>
-            <Logo />
+            <h1 className={styles.title}>Bem-vindo ao {header}</h1>
+            <Logo customClass='logo' />
             <p className={styles.about}>Sabemos o quanto salvar o mundo é importante!
                 Por isso este app optimiza o atendimento dos super heróis do nosso planeta.
                 Você pode estar se perguntando se este restaurante é somente para o Batman ou Capitão America.

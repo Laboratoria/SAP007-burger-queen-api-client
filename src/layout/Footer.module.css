@@ -1,8 +1,7 @@
 @import '../layout/variables.css';
 
-.footer{
+.footer {
     font-family: 'lulaBorgesNegrito';
-    font-size: 12px;
     background-color: #D99E30;
     grid-column-start: 1;
     grid-column-end: 6;
@@ -14,6 +13,20 @@
     grid-template-areas: 'footer footer footer footer';
 }
 
-.developers{
+.ecoText {
+    font-size: 1.85rem;
+}
+
+.developers {
     text-align: center;
+    font-size: 1.85rem;
+}
+
+.devNames {
+    text-decoration: none;
+    font-size: 1.85rem;
+}
+
+.iconImage {
+    margin-bottom: -0.2%;
 }

@@ -1,5 +1,5 @@
 import { Home } from "./pages/Home"
-import Login  from "./pages/Login"
+import Login from "./pages/Login"
 import Register from "./pages/Register"
 import { HallAttendance } from "./pages/HallAttendance"
 import { HallKitchen } from "./pages/HallKitchen"

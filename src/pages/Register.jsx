@@ -37,7 +37,7 @@ function Register() {
     return (
         <>
             <h1 className={styles.form_title}>Efetuar cadastro</h1>
-            <Logo />
+            <Logo customClass="logoTwo" />
             <form className={styles.form} onSubmit={createUser}>
                 {/* chamou o evento de click da função RegisterUser */}
                 <div>
