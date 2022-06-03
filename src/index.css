@@ -11,7 +11,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100vw;
   height: 100vh;
 } 
 .DivForm {
@@ -37,6 +36,11 @@ a.Hiperlink {
   cursor: pointer;
   margin-top: 20%;
 }
+.navMenu{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3%;
+}
 .InfoClient{
   display: flex;
   justify-content: space-around;
@@ -49,27 +53,22 @@ a.Hiperlink {
 }
 .sectionOrder{
   background-color: aliceblue;
-  border-radius: 1px;
+  border-radius: 5px;
 }
-#cancel, #confirm{
+#confirm{
   color: #ffffff;
   padding: 15px;
-  width: 150px;
+  width: 180px;
   border: black;
   font-size: 16px;
   border-radius: 10px;
   margin:5%;
-}
-#cancel{
-  background-color: #FC0C0C;
-}
-#confirm{
   background-color:#16AB1C;
 }
 .logout{
   display: flex;
-  justify-content: flex-end;
-  margin-right: 5%;
+  justify-content: space-around;
+  align-items: center;
 }
 @media (min-width: 768) and (max-width:1024px){
   .DivForm{
@@ -109,5 +108,8 @@ a.Hiperlink {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .sectionCard{
+    margin-right: 1%;
   }
 }

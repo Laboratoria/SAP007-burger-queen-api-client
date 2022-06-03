@@ -22,6 +22,7 @@ function TemplateOrder( {product,onClickRemove} ) {
            </div>
           </li>
       </ul>  
+      <hr />
     </div>
   )
 };

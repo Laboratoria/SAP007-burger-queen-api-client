@@ -131,8 +131,10 @@ function Hall() {
   return (
     <div>
       <Header children="PEDIDOS" />
+      <nav className="navMenu">
       <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
       <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />
+      </nav>
       <section className="sectionCard">
         {products.map((item) => {
           return (
@@ -172,9 +174,8 @@ function Hall() {
         })}
         <p> VALOR TOTAL: R${totalValue().toFixed(2)}</p>
       </section>
-      <button children="Cancelar" id="cancel" onClick={handleLogout}></button>
-      <button children="Confirmar" id="confirm" onClick={finalOrder}></button>
       <div className="logout" onClick={handleLogout}>
+        <button children="Confirmar Pedido" id="confirm" onClick={finalOrder}></button>
         <FaSignInAlt size="26px" margin-rigth="0px" />
       </div>
     </div>
