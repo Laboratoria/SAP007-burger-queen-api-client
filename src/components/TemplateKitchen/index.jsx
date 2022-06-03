@@ -31,9 +31,12 @@ function TemplateKitchen({ product }) {
           </li>
         ) : null}
         <li>
-          <p>{product.qtd}</p>
+          <p>QTD:{product.qtd}</p>
         </li>
         <li>
+          <p>Complemento:{product.complement}</p>
+          </li>
+          <li>
           <p>Atulização:{product.updatedAt}</p>
         </li>
       </ul>
