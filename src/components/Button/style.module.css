@@ -3,14 +3,8 @@
   cursor: pointer;
   color: white;
   padding: 15px;
-  width: 150px;
+  width: 180px;
   border-radius: 10px;
   border: black;
   font-size: 16px;
-  margin:2% 0% 0% 7%;
-}
-@media(min-width: 768px) and (max-width:11024px){
-  .btn{
-    margin:2% 0% 0% 20%;
-  }
 }
