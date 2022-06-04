@@ -1,16 +1,30 @@
 .orders {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 4%;
+}
+
+.container-products {
+    display: flex;
+    justify-content: center;
 }
 
 .client-infos {
     display: flex;
     justify-content: space-evenly;
+    background-color: #F75B42;
+}
+
+.section-cart {
+    width: 90%;
 }
 
 .client-cart {
-    width: 50%;
+    padding: 4%;
+    margin: 2%;
+    border-radius: 20px;
     justify-content: center;
+    background-color: #F75B42;
 }
 
 .option {

@@ -21,7 +21,7 @@ function Waitress() {
   const [hasProducts, setHasProducts] = useState(false);
   const [hasAllDay, setHasAllDay] = useState(false);
   const [error, setError] = useState();
-  
+
   // function menuIndicator () {
   //   option.classList.toggle('active');
   // }
@@ -65,37 +65,36 @@ function Waitress() {
         name: product.name,
         price: product.price,
         flavor: product.flavor,
-        qtd: 1 ,
+        qtd: 1,
       };
       order.push(newList);
     }
     setOrder([...order]);
     totalPrice();
   }
-  
+
   function orderCreate() {
-    if(client && table && order){
-    createOrder(client, table, order).then((data) => {
-      console.log(data);
-      if(data.code === 400){
-        setError(data.message);
-        hideMessage();
-      }
-      handleReset()
-    });}
-    else {
+    if (client && table && order) {
+      createOrder(client, table, order).then((data) => {
+        console.log(data);
+        if (data.code === 400) {
+          setError(data.message);
+          hideMessage();
+        }
+        handleReset();
+      });
+    } else {
       setError("Preencha os campos corretamente");
       hideMessage();
     }
   }
 
-  function handleReset() { 
-    setClient("")
-    setTable("")
+  function handleReset() {
+    setClient("");
+    setTable("");
     setOrder([]);
     setTotal();
-  };
-
+  }
 
   function hideMessage() {
     setTimeout(() => {
@@ -167,18 +166,26 @@ function Waitress() {
             {hasProducts === true &&
               activeProducts.map((item) => {
                 return (
-                  <Card
-                    key={item.id}
-                    product={item}
-                    onClick={() => OrderProduct(item)}
-                  />
+                  <div className="container-products">
+                    <Card
+                      key={item.id}
+                      product={item}
+                      onClick={() => OrderProduct(item)}
+                    />
+                  </div>
                 );
               })}
           </ul>
         </section>
-        <section className="client-cart">
+        <section className="section-cart">
+          <div className="client-cart">
           <div className="client-infos">
-            <Client setClient={setClient} setTable={setTable} client={client} table={table}/>
+            <Client
+              setClient={setClient}
+              setTable={setTable}
+              client={client}
+              table={table}
+            />
           </div>
           <div className="cart">
             <Cart
@@ -188,7 +195,8 @@ function Waitress() {
               setOrder={setOrder}
               totalPrice={totalPrice}
             />
-            <Error text={error} className="error-waitress"/>
+            <Error text={error} className="error-waitress" />
+          </div>
           </div>
         </section>
       </main>
