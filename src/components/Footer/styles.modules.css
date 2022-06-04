@@ -1,13 +1,14 @@
-.footer {
-    position: fixed;
-    width: 100%;
-    font-size: 15px;
+footer .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 15px;
 }
 .footer a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
 }
 .footer p {
-    text-align: center;
+  text-align: center;
 }
