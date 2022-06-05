@@ -7,37 +7,27 @@ import { getAllProducts } from "../../services/products";
 import "./styles.modules.css";
 import { useState, useEffect } from "react";
 import Navbar from "../../components/navbarAllDay";
+import { createOrder } from "../../services/order";
+import Error from "../../components/errors";
 
 function Waitress() {
   const [products, setProducts] = useState([]);
   const [tab, setTab] = useState("breakfast");
   const [allDayTab, setAllDayTab] = useState("hamburguer");
   const [order, setOrder] = useState([]);
-  const [client, setClient] = useState({ name: "" });
-  const [table, setTable] = useState({ table: "" });
+  const [client, setClient] = useState();
+  const [table, setTable] = useState();
   const [total, setTotal] = useState();
   const [hasProducts, setHasProducts] = useState(false);
   const [hasAllDay, setHasAllDay] = useState(false);
-  // const [activationBreakfast, setActivationBreakfast] = useState(false);
-
-
-  const token = localStorage.getItem("token");
-
-  // function getAllDay(option) {
-  //   getAllProducts(token).then((data) => {
-  //     let filterProduts = data.filter((item) => {
-  //       return item.sub_type === option;
-  //     });
-  //     setProducts(filterProduts);
-  //   });
-  // }
+  const [error, setError] = useState();
 
   // function menuIndicator () {
   //   option.classList.toggle('active');
   // }
 
   useEffect(() => {
-    getAllProducts(token).then((data) => {
+    getAllProducts().then((data) => {
       const breakfast = data.filter((item) => {
         return item.type === "breakfast";
       });
@@ -56,8 +46,8 @@ function Waitress() {
           hamburguer,
           drinks,
           side,
-        }
-      }
+        },
+      };
       setProducts(filterProducts);
       setHasProducts(true);
     });
@@ -76,14 +66,40 @@ function Waitress() {
         price: product.price,
         flavor: product.flavor,
         qtd: 1,
-        client,
-        table,
       };
-      console.log(newList);
       order.push(newList);
     }
     setOrder([...order]);
     totalPrice();
+  }
+
+  function orderCreate() {
+    if (client && table && order) {
+      createOrder(client, table, order).then((data) => {
+        console.log(data);
+        if (data.code === 400) {
+          setError(data.message);
+          hideMessage();
+        }
+        handleReset();
+      });
+    } else {
+      setError("Preencha os campos corretamente");
+      hideMessage();
+    }
+  }
+
+  function handleReset() {
+    setClient("");
+    setTable("");
+    setOrder([]);
+    setTotal();
+  }
+
+  function hideMessage() {
+    setTimeout(() => {
+      setError("");
+    }, 6000);
   }
 
   const links = [
@@ -97,18 +113,18 @@ function Waitress() {
     },
   ];
 
-  function changeStateBreakfast () {
+  function changeStateBreakfast() {
     setTab("breakfast");
     setHasAllDay(false);
     // setActivationBreakfast(true);
   }
 
-  function changeStateAllDay () {
+  function changeStateAllDay() {
     setTab("all-day");
     setHasAllDay(true);
     // setActivationBreakfast(false);
   }
-  
+
   const linksAllDay = [
     {
       name: "Hambúgueres",
@@ -128,41 +144,59 @@ function Waitress() {
     let price = 0;
     order.forEach((product) => {
       price += parseFloat(product.price) * parseFloat(product.qtd);
-      console.log(product.price, product.qtd);
     });
-    console.log(price);
 
     return setTotal(price);
   }
 
-  const activeProducts = tab === "all-day" ? products[tab][allDayTab] : products[tab];
-  // products.length > 0;
+  const activeProducts =
+    tab === "all-day" ? products[tab][allDayTab] : products[tab];
 
   return (
     <>
-      <HeaderPedidos links={links}  className="option" /*className="{activationBreakfast === true ? "selected" : "option"}"*//>
+      <HeaderPedidos
+        links={links}
+        className="option" /*className="{activationBreakfast === true ? "selected" : "option"}"*/
+      />
 
+        {hasAllDay === true ? <Navbar links={linksAllDay} /> : null}
       <main className="orders">
         <section className="products">
           <ul>
-            {hasAllDay === true ? <Navbar links={linksAllDay} /> : null}
-            {hasProducts === true && activeProducts.map((item) => {
-              return (
-                <Card
-                  key={item.id}
-                  product={item}
-                  onClick={() => OrderProduct(item)}
-                />
-              );
-            })}
+            {hasProducts === true &&
+              activeProducts.map((item) => {
+                return (
+                  <div className="container-products">
+                    <Card
+                      key={item.id}
+                      product={item}
+                      onClick={() => OrderProduct(item)}
+                    />
+                  </div>
+                );
+              })}
           </ul>
         </section>
-        <section className="client-cart">
-          <div className="client-infos">
-            <Client setClient={setClient} setTable={setTable} />
-          </div>
-          <div className="cart">
-            <Cart orderList={order} total={total} />
+        <section className="section-cart">
+          <div className="client-cart">
+            <div className="client-infos">
+              <Client
+                setClient={setClient}
+                setTable={setTable}
+                client={client}
+                table={table}
+              />
+            </div>
+            <div className="cart">
+              <Cart
+                onClick={() => orderCreate()}
+                orderList={order}
+                total={total}
+                setOrder={setOrder}
+                totalPrice={totalPrice}
+              />
+              <Error text={error} className="error-waitress" />
+            </div>
           </div>
         </section>
       </main>

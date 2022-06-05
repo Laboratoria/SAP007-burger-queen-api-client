@@ -1,12 +1,14 @@
-export function getAllProducts(token) {
-    return request("/products", "GET", token);
+import { getToken } from "./storage";
+
+export function getAllProducts() {
+    return request("/products", "GET");
 }
-function request(endpoint, method, token) {
+function request(endpoint, method) {
     const options = {
         method: method,
         headers: {
             'Content-Type': 'application/json',
-            "Authorization": token
+            "Authorization": getToken()
         },
     }
     return fetch(`https://lab-api-bq.herokuapp.com${endpoint}`, options)
@@ -14,9 +16,18 @@ function request(endpoint, method, token) {
         .then(json => json)
 }
 
-// export const getAllProducts = (token) => {
-//     return fetch(`https://lab-api-bq.herokuapp.com/products`, {
-//       method: "GET",
-//       headers: { "Content-Type": "application/json", Authorization: token },
-//     });
-//   };
+// export function getAllProducts(token) {
+//     return request("/products", "GET", token);
+// }
+// function request(endpoint, method, token) {
+//     const options = {
+//         method: method,
+//         headers: {
+//             'Content-Type': 'application/json',
+//             "Authorization": token
+//         },
+//     }
+//     return fetch(`https://lab-api-bq.herokuapp.com${endpoint}`, options)
+//         .then(response => response.json())
+//         .then(json => json)
+// }
