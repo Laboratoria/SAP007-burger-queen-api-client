@@ -10,12 +10,12 @@ function Card({ product, onClick }) {
         </li>
         {product.flavor ? (
           <li>
-            <p>{product.flavor}</p>
+            <p>{product.flavor[0].toUpperCase() + product.flavor.substr(1)}</p>
           </li>
         ) : null}
         {product.complement ? (
           <li>
-            <p>{product.complement}</p>
+            <p>{product.complement[0].toUpperCase() + product.complement.substr(1)}</p>
           </li>
         ) : null}
       </ul>

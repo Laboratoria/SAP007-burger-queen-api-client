@@ -159,10 +159,10 @@ function Waitress() {
         className="option" /*className="{activationBreakfast === true ? "selected" : "option"}"*/
       />
 
+        {hasAllDay === true ? <Navbar links={linksAllDay} /> : null}
       <main className="orders">
         <section className="products">
           <ul>
-            {hasAllDay === true ? <Navbar links={linksAllDay} /> : null}
             {hasProducts === true &&
               activeProducts.map((item) => {
                 return (
@@ -179,24 +179,24 @@ function Waitress() {
         </section>
         <section className="section-cart">
           <div className="client-cart">
-          <div className="client-infos">
-            <Client
-              setClient={setClient}
-              setTable={setTable}
-              client={client}
-              table={table}
-            />
-          </div>
-          <div className="cart">
-            <Cart
-              onClick={() => orderCreate()}
-              orderList={order}
-              total={total}
-              setOrder={setOrder}
-              totalPrice={totalPrice}
-            />
-            <Error text={error} className="error-waitress" />
-          </div>
+            <div className="client-infos">
+              <Client
+                setClient={setClient}
+                setTable={setTable}
+                client={client}
+                table={table}
+              />
+            </div>
+            <div className="cart">
+              <Cart
+                onClick={() => orderCreate()}
+                orderList={order}
+                total={total}
+                setOrder={setOrder}
+                totalPrice={totalPrice}
+              />
+              <Error text={error} className="error-waitress" />
+            </div>
           </div>
         </section>
       </main>

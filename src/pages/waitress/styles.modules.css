@@ -1,61 +1,70 @@
 .orders {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 4%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3%;
 }
 
 .container-products {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .client-infos {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #F75B42;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #f75b42;
 }
 
 .section-cart {
-    width: 90%;
+  width: 90%;
 }
 
 .client-cart {
-    padding: 4%;
-    margin: 2%;
-    border-radius: 20px;
-    justify-content: center;
-    background-color: #F75B42;
+  padding: 4%;
+  margin-right: 4%;
+  border-radius: 20px;
+  justify-content: center;
+  background-color: #f75b42;
 }
 
 .option {
-    background-color: transparent;
-    width: max-content;
-    font-size: 16px;
-    font-weight: bold;
-    margin: initial;
-    padding: initial;
-    border-radius: initial;
-    box-shadow: initial;
-    border: initial;
-    text-align: center;
-    cursor: pointer;
+  background-color: transparent;
+  width: max-content;
+  font-size: 16px;
+  font-weight: bold;
+  margin: initial;
+  padding: initial;
+  border-radius: initial;
+  box-shadow: initial;
+  border: initial;
+  text-align: center;
+  cursor: pointer;
 }
 
 .option:hover {
-    color: #F75B42;
+  color: #f75b42;
 }
 
 .selected {
-    background-color: transparent;
-    width: max-content;
-    font-size: 16px;
-    font-weight: bold;
-    margin: initial;
-    padding: initial;
-    border-radius: initial;
-    box-shadow: initial;
-    border: initial;
-    text-align: center;
-    cursor: pointer;
-    color: red;
+  background-color: transparent;
+  width: max-content;
+  font-size: 16px;
+  font-weight: bold;
+  margin: initial;
+  padding: initial;
+  border-radius: initial;
+  box-shadow: initial;
+  border: initial;
+  text-align: center;
+  cursor: pointer;
+  color: red;
+}
+
+@media (min-width: 1024px) and (max-width: 2000px) {
+  .section-cart {
+    width: 50%;
+  }
+  .client-cart {
+    width: 80%;
+  }
 }

@@ -37,6 +37,7 @@ td,
 th {
   text-align: center;
   background-color: #F75B42;
+  height: fit-content;
 }
 
 .td-name {

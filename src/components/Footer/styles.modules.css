@@ -1,5 +1,5 @@
 footer .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   font-size: 15px;
@@ -11,4 +11,10 @@ footer .footer {
 }
 .footer p {
   text-align: center;
+}
+
+@media (min-width: 1024px) and (max-width: 2000px) {
+  footer .footer {
+    position:inherit;
+  }
 }

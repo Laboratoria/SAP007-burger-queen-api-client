@@ -39,3 +39,12 @@
     width: 100%;
     background-color: #F2D6A2;
 }
+
+@media (min-width: 1024px) and (max-width: 2000px) {
+  .container-card {
+    width: 70%;
+  justify-content: space-around;
+  margin: 1.5%;
+  padding: 1%;
+  }
+}

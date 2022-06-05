@@ -46,7 +46,17 @@ function Cart({ onClick, orderList, total, setOrder, totalPrice }) {
           {orderList.map((product) => (
             <tr>
               <>
-                <td className="td-name">{product.name}</td>
+                <td className="td-name">
+                  {product.name}{" "}
+                  {product.flavor
+                    ? product.flavor[0].toUpperCase() +
+                      product.flavor.substr(1)
+                    : null}
+                  {product.complement
+                    ? product.complement[0].toUpperCase() +
+                      product.complement.substr(1)
+                    : null}
+                </td>
                 <td className="td-qtd">{product.qtd}</td>
                 <td className="td-price">{product.price}</td>
               </>
@@ -61,7 +71,7 @@ function Cart({ onClick, orderList, total, setOrder, totalPrice }) {
         </tbody>
       </table>
       <div className="container-total">
-        <p>Total:  {total} R$</p>
+        <p>Total: {total} R$</p>
         <button className="order-btn" onClick={onClick}>
           Finalizar
         </button>
