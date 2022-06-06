@@ -1,4 +1,5 @@
-.button_enter {
+.button_enter,
+.button_register {
     display: grid;
     background-color: #708c32;
     color: black;
@@ -16,7 +17,21 @@
     font-size: 2rem;
 }
 
-.button_enter:hover {
+.button_enter:hover,
+.button_register:hover {
     transform: scale(1.2);
     background-color: #2669BF;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .button_enter {
+        height: 4rem;
+        margin-bottom: 12px;
+    }
+
+    .button_register {
+        height: 3.2rem;
+        width: 80%;
+        margin-bottom: 2px;
+    }
 }

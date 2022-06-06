@@ -29,4 +29,19 @@
 
 .iconImage {
     margin-bottom: -0.2%;
+    width: 15px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .ecoText,
+    .developers,
+    .devNames {
+        font-size: 1rem;
+    }
+
+    .iconImage {
+        width: 10px;
+    }
+
 }

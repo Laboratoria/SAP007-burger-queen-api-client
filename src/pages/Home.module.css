@@ -24,3 +24,42 @@
 .header {
     font-size: 5rem;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .about {
+        width: 110%;
+        margin-left: 20%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+    .title {
+        font-size: 2rem;
+        margin-top: 12%;
+        height: 30%;
+    }
+
+    .about {
+        font-size: 1.3rem;
+        grid-column: 1/ span 5;
+        grid-row-start: 3;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .title {
+        font-size: 2rem;
+        margin-top: 5%;
+    }
+
+    .about {
+        font-size: 1.3rem;
+        grid-column: 1/ span 3;
+        grid-row-end: 3;
+        margin-left: 3%;
+        margin-right: 5%;
+        padding-top: 13%;
+    }
+}

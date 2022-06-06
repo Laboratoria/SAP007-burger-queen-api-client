@@ -42,6 +42,7 @@ function Register() {
                 {/* chamou o evento de click da função RegisterUser */}
                 <div>
                     <Input
+                        customClass="input_register"
                         type="text"
                         id="name"
                         name="name" //nome que vc deu no campo do input que é email
@@ -51,6 +52,7 @@ function Register() {
                 </div>
                 <div>
                     <Input
+                        customClass="input_register"
                         type="email"
                         id="email"
                         name="email" //nome que vc deu no campo do input que é password
@@ -60,6 +62,7 @@ function Register() {
                 </div>
                 <div>
                     <Input
+                        customClass="input_register"
                         type="password"
                         id="password"
                         name="password"
@@ -72,7 +75,7 @@ function Register() {
                     <option value='attendance'>Atendimento</option>
                     <option value='kitchen'>Cozinha</option>
                 </select>
-                <Button disabled={!emailValid.test(email)} clickFunction={registerUser} children="Efetuar Cadastro" />
+                <Button customClass="button_register" disabled={!emailValid.test(email)} clickFunction={registerUser} children="Efetuar Cadastro" />
                 <a className={styles.navigation} href='/Login'>Já tenho cadastro</a>
                 {error && <ShowErrors type="error" message={error} />}
             </form>

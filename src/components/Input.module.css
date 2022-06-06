@@ -1,6 +1,7 @@
 @import '../layout/variables.css';
 
-.input {
+.input,
+.input_register {
     border-radius: 10px;
     border: 1px solid #BF1736;
     background-color: #D99E30;
@@ -9,7 +10,27 @@
     font-size: 2rem;
 }
 
-.input::placeholder {
+.input::placeholder,
+.input_register::placeholder {
     color: black;
     font-family: 'actionManBold';
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+    .input {
+        padding: 6%;
+    }
+
+    .input_register {
+        padding: 2%;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+    .input,
+    .input_register {
+        padding: 2%;
+        margin-left: 0%;
+    }
 }

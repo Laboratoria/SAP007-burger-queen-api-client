@@ -49,3 +49,48 @@
     align-content: center;
     margin-right: 80%;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .navbar {
+        grid-row-start: 3;
+        height: 120%;
+        width: 80%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+    .navbar {
+        grid-column: 2 /span 3;
+        grid-row-end: 5;
+        height: 14px;
+        padding-top: 7%;
+    }
+
+    .list a {
+        padding: 5%
+    }
+
+    .item {
+        height: 2px;
+        margin-bottom: 2px;
+        margin-top: 2px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .navbar {
+        height: 200%;
+        padding-top: 1%;
+        width: 30%;
+    }
+
+    .list a {
+        width: 16rem;
+        height: 10%;
+        padding: 5%;
+    }
+
+    .item {
+        margin-top: 20px;
+    }
+}

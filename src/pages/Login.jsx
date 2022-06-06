@@ -40,6 +40,7 @@ function Login() {
             <Logo customClass='logoTwo' />
             <form className={styles.form} onSubmit={logInt}>
                 <Input
+                    customClass="input"
                     type='text'
                     name='email'
                     id='email'
@@ -47,13 +48,14 @@ function Login() {
                     handleOnChange={(e) => setEmail(e.target.value)}
                 />
                 <Input
+                    customClass="input"
                     type='password'
                     id='password'
                     name='password'
                     placeholder='Senha'
                     handleOnChange={(e) => setPassword(e.target.value)}
                 />
-                <Button clickFunction={loginUser} type='button' children="Entrar" />
+                <Button customClass="button_enter" clickFunction={loginUser} type='button' children="Entrar" />
                 <a className={styles.navigation} href='/Register'>Cadastrar</a>
                 {error && <ShowErrors type="error" message={error} />}
             </form>

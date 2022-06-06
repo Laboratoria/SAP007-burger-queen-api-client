@@ -47,6 +47,61 @@
     font-size: 2rem;
 }
 
-option {
-    font-size: 2rem;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .form {
+        grid-row-start: 2;
+        height: 120%;
+        width: 80%;
+        margin-top: 70%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+    .form_title {
+        font-size: 2rem;
+        height: 30px;
+    }
+
+    .form {
+        grid-column: 2 /span 3;
+        grid-row-start: 3;
+        height: 130%;
+        padding-top: 7%;
+    }
+
+    .button_select {
+        height: 90%;
+        font-size: 2rem;
+        width: 70%;
+    }
+
+    option {
+        font-size: 1.5rem;
+    }
+
+    .navigation {
+        padding-top: 5%;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .form_title {
+        font-size: 2rem;
+        height: 30px;
+    }
+
+    .form {
+        height: 200%;
+        width: 50%;
+    }
+
+    .button_select {
+        height: 90%;
+        font-size: 2rem;
+        width: 70%;
+    }
+
+    option {
+        font-size: 1.5rem
+    }
 }
