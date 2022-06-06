@@ -1,17 +1,20 @@
 import Input from "../../componentes/Input/Input.jsx";
-import Header from "../../componentes/Header/Header.jsx"
-import Footer from "../../componentes/Footer/Footer.jsx"
-// import Button from "../../componentes/Button.jsx"
+import Header from "../../componentes/Header/Header.jsx";
+import Footer from "../../componentes/Footer/Footer.jsx";
 
-import style from "../register/register.module.css"
+import style from "../register/register.module.css";
+import Button from "../../componentes/Button.jsx";
+import { useNavigate } from "react-router-dom";
+// import { RiArrowGoBackFill } from "react-icons";
 
 const Register = () => {
-
+ const nav = useNavigate()
+//  RiArrowGoBackFill()
     return (
         <>
             <Header />
 
-            {/* <Button style={style.btnRegister} onClick={() => { nav('/home') }}>Cadastre-se</Button>  */}
+            {/* <Button style={style.btnHome} onClick={() => { nav('/home') }}  textBtn= {RiArrowGoBackFill}/> */}
 
             <form className={style.form}>
 
