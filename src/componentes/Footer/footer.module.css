@@ -1,0 +1,14 @@
+.footer {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    justify-content: center;
+    bottom: 0;
+}
+
+a{
+    align-self: end;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px; 
+}

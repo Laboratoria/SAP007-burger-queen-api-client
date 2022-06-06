@@ -1,0 +1,12 @@
+.form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.label {
+    margin: 5%;
+    font-size: 30px;
+    color: #ffff;
+}
+
