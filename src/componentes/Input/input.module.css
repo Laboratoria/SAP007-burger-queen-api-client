@@ -2,8 +2,9 @@
     height: 100%;
     width: 60%;
     font-size: 20px; 
+    color: #ffff;
     background-color: transparent;
     border-color: transparent;
     border-bottom: 2px solid #FFF733;
-    margin: 2% auto 0% auto;
+    margin: 0% 0% 0% 5%;
 }

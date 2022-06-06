@@ -2,48 +2,43 @@ import Input from "../../componentes/Input/Input.jsx";
 import Header from "../../componentes/Header/Header.jsx";
 import Footer from "../../componentes/Footer/Footer.jsx";
 
-import style from "../register/register.module.css";
 import Button from "../../componentes/Button.jsx";
+import style from "../register/register.module.css";
 import { useNavigate } from "react-router-dom";
-// import { RiArrowGoBackFill } from "react-icons";
+import { FaArrowCircleLeft } from "react-icons/fa";
+
 
 const Register = () => {
- const nav = useNavigate()
-//  RiArrowGoBackFill()
+    const nav = useNavigate()
     return (
         <>
             <Header />
 
-            {/* <Button style={style.btnHome} onClick={() => { nav('/home') }}  textBtn= {RiArrowGoBackFill}/> */}
+            <FaArrowCircleLeft className={style.backHome} onClick={() => { nav('/') }} />
 
             <form className={style.form}>
 
-                <label className={style.label}>Nome:
+                <label className={style.label}>Nome:</label>
+                <Input name="name" type="text" placeholder="Insira seu nome" required />
 
-                    <Input name="name" type="text" placeholder="Insira seu nome" required />
-                </label>
+                <label className={style.label}>Email:</label>
+                <Input name="email" type="email" placeholder="Insira seu email" required />
 
-                <label className={style.label}>Email:
-                    <Input name="email" type="text" placeholder="Insira seu email" required />
-                </label>
+                <label className={style.label}>Senha:</label>
+                <Input name="password" type="password" placeholder="Insira sua senha" required />
 
-                <label className={style.label}>Senha:
-                    <Input name="password" type="password" placeholder="Insira sua senha" required />
-                </label>
-
-                <label className={style.label}>Confirme sua senha:
-                    <Input name="checkPassword" type="password" placeholder="Confira sua senha" required />
-                </label>
+                <label className={style.label}>Confirme sua senha:</label>
+                <Input name="checkPassword" type="password" placeholder="Confira sua senha" required />
 
                 <label className={style.labelRadio}>Salão:
-                    <Input name="role" type="radio" value="hall" required />
+                <Input name="role" type="radio" value="hall" required />
                 </label>
 
                 <label className={style.labelRadio}>Cozinha:
-                    <Input name="role" type="radio" value="kitchen" required />
+                <Input name="role" type="radio" value="kitchen" required />
                 </label>
 
-                {/* <Button style={style.btnRegister} onClick={() => { nav('/register') }}>Cadastre-se</Button>  */}
+                <Button style={style.btnRegister} textBtn="Cadastre-se" />
 
             </form>
 
