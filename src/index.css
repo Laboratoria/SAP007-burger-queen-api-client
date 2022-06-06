@@ -4,3 +4,12 @@
   padding: 0;
   box-sizing: 0;
 }
+
+#root{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  
+}

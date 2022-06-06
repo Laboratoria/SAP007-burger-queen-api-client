@@ -6,44 +6,58 @@
     background: #FFF733;
 }
 
-.containerLogo{
+.containerLogo {
     height: auto;
     width: 100%;
 }
 
-.logo{
+.logo {
     height: auto;
     width: 100%;
-    margin: 15% auto;
+    margin: 20% auto;
 }
 
-.btnLogin{
-    background: #FFF733;
-    margin: auto;
+.btnLogin {
     display: flex;
-    justify-content: center;
-    border-radius: 54px;
-    height: 60px;
+    margin: auto;
+    height: 75px;
     width: 40%;
-    font-size: 45px;
+    background: #FFF733;
+    justify-content: center;
+    border-radius: 50px;
+    font-size: 50px;
 }
 
-.noRegister{
+.noRegister {
     margin-top: 2%;
-    color: #ffffff;
-    font-family: slabo, noto sna;
-    font-size: 30px;
     width: 100%;
+    color: #ffffff;
+    font-size: 35px;
     text-align: center;
 }
 
-.btnRegister{
+.btnRegister {
     margin-top: 2%;
     background: transparent;
-    color:#FFF733;
-    font-size: 30px;
+    color: #FFF733;
+    font-size: 35px;
     border-bottom: solid 2px #FFF733;
     border-top: transparent;
     border-left: transparent;
     border-right: transparent;
+}
+
+
+@media (max-width: 530px) {
+
+    .btnLogin {
+        height: 50px;
+        width: 50%;
+        font-size: 35px;
+    }
+
+    .noRegister,
+    .btnRegister {
+        font-size: 20px;
+    }
 }

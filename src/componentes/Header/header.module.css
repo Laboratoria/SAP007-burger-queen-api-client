@@ -1,0 +1,10 @@
+.picture{
+        height: 20%;
+        width: auto;
+}
+
+.logo{
+        height: 100%;
+        width: 100%;
+        align-self: center;
+}

@@ -1,10 +1,9 @@
 import React from "react";
 
-const Button = ({ children, onClick, style }) => {
+const Button = (props) => {
     return(
-     <button className={style} onClick={onClick}>{children}</button>
+     <button className={props.style} onClick={props.onClick}>{props.textBtn}</button>
 
     );
-
 }
 export default Button;
