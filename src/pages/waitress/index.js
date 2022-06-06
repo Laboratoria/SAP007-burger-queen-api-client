@@ -61,6 +61,7 @@ function Waitress() {
         name: product.name,
         price: product.price,
         flavor: product.flavor,
+        complement: product.complement,
         qtd: 1,
       };
       order.push(newList);
