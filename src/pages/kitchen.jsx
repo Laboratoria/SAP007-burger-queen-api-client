@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { allOrders } from "../services/api";
-import TemplateKitchen from '../components/TemplateKitchen';
+import jake from "../img/jake.jpg"
+import TemplateKitchen from "../components/TemplateKitchen";
+import Header from "../components/Header"
 import { useState, useEffect } from "react";
 import {FaSignInAlt} from "react-icons/fa"
 
@@ -31,8 +33,8 @@ function Kitchen() {
   //  },[order])
   return (
     <div>
-      <p>Cozinha</p>
-      <section>
+      <Header children="PEDIDOS" img={jake} alt={"Jake comendo pizza com sorvete"}/>
+      <section className="sectionTemplateKitchen">
         {order.map((item) => {
           return (
             <TemplateKitchen
