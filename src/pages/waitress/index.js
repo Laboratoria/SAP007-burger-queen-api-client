@@ -22,10 +22,6 @@ function Waitress() {
   const [hasAllDay, setHasAllDay] = useState(false);
   const [error, setError] = useState();
 
-  // function menuIndicator () {
-  //   option.classList.toggle('active');
-  // }
-
   useEffect(() => {
     getAllProducts().then((data) => {
       const breakfast = data.filter((item) => {
@@ -116,13 +112,13 @@ function Waitress() {
   function changeStateBreakfast() {
     setTab("breakfast");
     setHasAllDay(false);
-    // setActivationBreakfast(true);
+   
   }
 
   function changeStateAllDay() {
     setTab("all-day");
     setHasAllDay(true);
-    // setActivationBreakfast(false);
+    
   }
 
   const linksAllDay = [
@@ -156,7 +152,7 @@ function Waitress() {
     <>
       <HeaderPedidos
         links={links}
-        className="option" /*className="{activationBreakfast === true ? "selected" : "option"}"*/
+       
       />
 
         {hasAllDay === true ? <Navbar links={linksAllDay} /> : null}

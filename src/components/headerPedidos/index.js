@@ -5,14 +5,39 @@ import "./styles.modules.css";
 import { removeToken, removeName, removeRole } from "../../services/storage";
 
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-function HeaderPedidos({links, className}) {
+function HeaderPedidos({links}) {
     const navigate = useNavigate();
     function logoutUser(){
         removeToken()
         removeName()
         removeRole()
         navigate("/", {message: "redirecionando"})
+    }
+    
+    const [list, setList] = useState(links.map((link, index) => { 
+        const listobj = link
+        if (index === 0){
+            listobj.selected = true
+        } else {
+            listobj.selected = false
+        }
+        return listobj
+    }))
+
+    function handleClick(link, index) {
+        const newList = list.map((li, i)=> {
+            if(index === i){
+                li.selected = true
+            }else{
+                li.selected = false
+            }
+
+            return li
+        })
+        setList(newList)
+        link.onClick()
     }
 
     return (
@@ -21,9 +46,9 @@ function HeaderPedidos({links, className}) {
             <img src={logo} alt="logotipo" className="logotype" />
             <navbar className="menu">
                 <ul>
-                    {links.map((link, index) => (
+                    {list.map((link, index) => (
                         <li key={index}>
-                            <button className={className} onClick={link.onClick}>{link.name}</button>
+                            <button className={ link.selected ? "selected" : "option"} onClick={ () => handleClick(link, index)}>{link.name}</button>
                         </li>
                     ))}
                    
