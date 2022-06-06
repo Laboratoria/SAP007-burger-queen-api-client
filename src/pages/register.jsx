@@ -41,13 +41,14 @@ function Register() {
     <div className="DivForm">
       <Logo />
       <form onSubmit={handleSubmit}>
-        <div className="DivRole">
+        <div className="DivRole" data-testid="occupation">
           <Role
             type="radio"
             value="kitchen"
             name="role"
             id="kitchen"
             label="COZINHA"
+            data-testid="Cozinha"
             onChange={(e) => setRole(e.target.value)}
           />
           <Role
@@ -57,6 +58,7 @@ function Register() {
             id="hall"
             label="SALÃO"
             required
+            data-testid="Salão"
             onChange={(e) => setRole(e.target.value)}
           />
         </div>
@@ -86,8 +88,8 @@ function Register() {
           value={password}
           id="password"
           name="password"
-          pattern="[a-zA-Z0-9]{6}"
-          title="A senha deve conter no mínimo 6 caracteres entre números e letras"
+          pattern="[a-zA-Z0-9._%+-@#!*$?/&]{6,}$"
+          title="A senha deve conter no mínimo 6 caracteres"
           required
           onChange={(e) => setPassword(e.target.value)}
         />
