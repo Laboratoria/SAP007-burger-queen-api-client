@@ -4,15 +4,9 @@ function CardOrder ({product,key}){
          <ul >
          <li>
           <p >{product.id}</p>
-          </li>
-         <li>
           <p>{product.name}</p>
-          </li>
-          <li>
           <p>{product.complemet}</p>
-          </li>
           {product.flavor ? <li><p>{product.flavor}</p></li>:null}
-          <li>
             <p>{product.qtd}</p>
           </li>
       </ul>     

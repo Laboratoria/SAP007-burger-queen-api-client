@@ -17,7 +17,6 @@ function Hall() {
   const [products, setProducts] = useState([]);
   const [order, setOrder] = useState([]);
   const [error, setError] = useState("");
-  // const [additional, setAdditional] = useState("");
   console.log(error);
 
   function handleLogout() {
@@ -48,9 +47,7 @@ function Hall() {
       return auxInfo;
     });
   };
-  // const handleExtra = (e) => {
-  //   setAdditional(e.target.value);
-  // };
+
   function handleProduct(product) {
     const newOrder = order;
     const productList = newOrder.find((item) => {
@@ -170,8 +167,7 @@ function Hall() {
         />
       </div>
       <section className="sectionOrder">
-      {/* <Input  type="text" placeholder="Adiconal" name="adiconal" value={additional.name} onChange={handleExtra}/> */}
-        {order.map((item) => {
+           {order.map((item) => {
           return (
             <TemplateOrder
               key={item.id}
@@ -186,6 +182,7 @@ function Hall() {
         <button children="Confirmar Pedido" id="confirm" onClick={finalOrder}></button>
         <FaSignInAlt size="26px" margin-rigth="0px" />
       </div>
+     
     </div>
   );
 }

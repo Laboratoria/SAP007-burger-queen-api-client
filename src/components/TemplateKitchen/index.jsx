@@ -1,44 +1,22 @@
 import styles from "./style.module.css";
-// import jake from "../../img/jake.jpg"
 import Button from "../Button";
 
-function TemplateKitchen({ product }) {
+function TemplateKitchen({ products }) {
   return (
-    // <div className={styles.DivHeader}>
-    // <img src={jake} alt="Jake comendo uma pizza" className={styles.jake}/>
-    // <h1 className={styles.title}>{children}</h1>
-
-    <div className={styles.DivTemplateKitchen}>
       <ul className={styles.UlTemplateKitchen}>
-
       <li>
-          <Button children={product.status} />
-        </li>
-        <li>
-          <p>Criado:{product.createdAt}</p>
-        </li>
-        <li>
-          <p>Id:{product.id}</p>
-        </li>
-        <li>
-          <p> Cliente: {product.client_name}</p>
-        </li>
-        <li>
-          <p> Mesa:{product.table}</p>
-        </li>
-        {product.flavor ? (
-          <li>
-            <p>{product.flavor}</p>
-          </li>
+          <Button children={products.status} />
+          <p>Criado:{products.createdAt}</p>
+          <p>Id:{products.id}</p>
+          <p> Cliente: {products.client_name}</p>
+          <p> Mesa:{products.table}</p>
+        {products.flavor ? (
+            <p>{products.flavor}</p>
         ) : null}
-        <li>
-          <p>{product.qtd}</p>
-        </li>
-        <li>
-          <p>Atulização:{product.updatedAt}</p>
+          <p>{products.qtd}</p>
+          <p>Atulização:{products.updatedAt}</p>
         </li>
       </ul>
-    </div>
   );
 }
 export default TemplateKitchen;

@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import user from "@testing-library/user-event";
-import register from "../pages/register";
+import Register from "../pages/register";
 import { createUser } from "../services/api"
 
 jest.mock("../services/api")
@@ -13,7 +13,7 @@ describe("Register", () => {
   });
   it("Deverá cadastrar um usuário corretamente", async () => {
     createUser.mockResolvedValueOnce({})
-    render(<register />)
+    render(<Register />)
     const newRegister = {
       role:"kitchen",
       name: "Tania",
@@ -38,10 +38,6 @@ describe("Register", () => {
     expect(createUser).toHaveBeenCalledTimes(1)
   })
 })
-it("Deverá ser uma função", () => {
-  expect(typeof register).toBe("function");
-});
-
 it("deverá disparar uma função de click", () => {
   const text = "Cadastrar"
   const onClick = jest.fn();

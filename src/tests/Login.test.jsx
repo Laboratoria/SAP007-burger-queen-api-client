@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from "@testing-library/react";
 
 import user from "@testing-library/user-event";
-import login from "../pages/login";
+import Login from "../pages/login";
 import { logedIn } from "../services/api"
 
 jest.mock("../services/api")
@@ -13,7 +13,7 @@ describe("Login", () => {
   });
   it("Deverá logar usuário corretamente", async () => {
     logedIn.mockResolvedValueOnce({})
-    render(<login />)
+    render(<Login />)
     // const newLogin = {
     //   email: "tania@mara.com",
     //   password: "123456",
@@ -36,9 +36,6 @@ describe("Login", () => {
     expect(logedIn).toHaveBeenCalledTimes(1)
   })
 })
-it("Deverá ser uma função", () => {
-  expect(typeof login).toBe("function");
-});
 
 it("deverá disparar uma função de click", () => {
   const text = "Entar";

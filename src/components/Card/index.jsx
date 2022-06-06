@@ -1,23 +1,19 @@
 import styles from "./style.module.css"
+import {FaRegPlusSquare} from "react-icons/fa"
 
 function Card ({product, onClick}){
   return(
-    <div className={styles.DivCard}onClick={onClick}>
+    <div className={styles.DivCard}>
          <ul className={styles.UlCard}>
-         <li>
+         <li>  
           <p className={styles.id}>{product.id}</p>
-          </li>
-         <li>
-          <p>{product.name}</p>
-          </li>
-          <li>
+          <p>{product.name}</p>      
           <p>R${(product.price).toFixed(2)}</p>
+          {product.flavor ? <li><p>{product.flavor}</p></li>:null}     
+          <p>{product.qtd}</p>
           </li>
-          {product.flavor ? <li><p>{product.flavor}</p></li>:null}
-          <li>
-            <p>{product.qtd}</p>
-          </li>
-      </ul>     
+          <FaRegPlusSquare onClick={onClick} size="20px" className='sum'/>
+      </ul>    
       </div>
   )
 }
