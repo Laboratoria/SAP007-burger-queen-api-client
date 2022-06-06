@@ -2,6 +2,7 @@ import Button from "../components/Button";
 import Header from "../components/Header";
 import Card from "../components/Card";
 import Input from "../components/Input";
+import finn from "../img/finn.jpeg"
 import { codeError } from "../services/error";
 import TemplateOrder from "../components/TemplateOrder";
 import { getProduct, createOrder } from "../services/api";
@@ -136,7 +137,7 @@ function Hall() {
   }
   return (
     <div>
-      <Header children="PEDIDOS" />
+      <Header children="MENU" img={finn} alt={"Finn comendo um sanduíche"}/>
       <nav className="navMenu">
       <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
       <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />

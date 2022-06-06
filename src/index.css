@@ -71,6 +71,12 @@ a.Hiperlink {
   justify-content: space-around;
   align-items: center;
 }
+.sectionTemplateKitchen{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
 @media (min-width: 768px) and (max-width:1024px){
   .DivForm{
     margin: 30px 25%;
