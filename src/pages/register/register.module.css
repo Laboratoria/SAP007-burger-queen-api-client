@@ -1,12 +1,35 @@
+.backHome {
+    margin: 5%;
+    height: 10%;
+    width: 5%;
+    color: #ffff;
+}
+
 .form {
     display: flex;
     flex-direction: column;
-
+    height: 100%;
+    width: 100%;
 }
 
 .label {
+    width: 100%;
     margin: 5%;
     font-size: 30px;
     color: #ffff;
 }
 
+    .labelRadio{
+      flex-direction: row;
+      color: #ffff;
+    }
+
+    .btnRegister {
+        margin-top: 2%;
+        font-size: 35px;
+        height: 75px;
+    width: 40%;
+    background: #FFF733;
+    justify-content: center;
+    border-radius: 50px;
+    }

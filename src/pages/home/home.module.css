@@ -38,13 +38,11 @@
 
 .btnRegister {
     margin-top: 2%;
-    background: transparent;
     color: #FFF733;
     font-size: 35px;
+    border-color: transparent;
+    background-color: transparent;
     border-bottom: solid 2px #FFF733;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
 }
 
 
