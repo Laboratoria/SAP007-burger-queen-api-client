@@ -19,6 +19,11 @@
     border-radius: 3%;
 }
 
+.register-indicator {
+    background-color: #F75B42;
+    margin-bottom: 10%;
+}
+
 .checkbox{
     display: flex;
     flex-direction: row;

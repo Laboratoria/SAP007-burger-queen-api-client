@@ -25,7 +25,6 @@ function Cart({ onClick, orderList, total, setOrder, totalPrice }) {
         productList.qtd -= 1;
       }
     }
-    console.log(orderList);
     setOrder([...orderList]);
     totalPrice();
     forceUpdate();
@@ -51,7 +50,7 @@ function Cart({ onClick, orderList, total, setOrder, totalPrice }) {
                   {product.flavor
                     ? product.flavor[0].toUpperCase() +
                       product.flavor.substr(1)
-                    : null}
+                    : null}{" "}
                   {product.complement
                     ? product.complement[0].toUpperCase() +
                       product.complement.substr(1)

@@ -40,6 +40,11 @@
     width: 35%;
 }
 
+.logout img:hover{
+    background-color: #F75B42;
+    border-radius: 6px;
+  }
+
 .option {
     background-color: transparent;
     width: max-content;

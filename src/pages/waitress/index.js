@@ -61,6 +61,7 @@ function Waitress() {
         name: product.name,
         price: product.price,
         flavor: product.flavor,
+        complement: product.complement,
         qtd: 1,
       };
       order.push(newList);
@@ -72,11 +73,11 @@ function Waitress() {
   function orderCreate() {
     if (client && table && order) {
       createOrder(client, table, order).then((data) => {
-        console.log(data);
         if (data.code === 400) {
           setError(data.message);
           hideMessage();
         }
+        setError("Pedido finalizado com sucesso");
         handleReset();
       });
     } else {

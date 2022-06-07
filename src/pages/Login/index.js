@@ -44,6 +44,7 @@ function Login() {
           <Banner/>
         </aside>
         <form className="login" onSubmit={loginUser}>
+          <h1 className="login-indicator">Login</h1>
           <Input
             className="email"
             type="email"

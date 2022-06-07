@@ -48,6 +48,7 @@ function Register() {
           <Banner />
         </aside>
         <form className="register" onSubmit={registerUser} required>
+        <h1 className="register-indicator">Cadastro</h1>
           <Input
             className="user-name"
             type="text"

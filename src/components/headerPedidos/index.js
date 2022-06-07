@@ -3,7 +3,6 @@ import logo from "../../Images/logotipo.png";
 import logout from "../../Images/logout.jpg";
 import "./styles.modules.css";
 import { removeToken, removeName, removeRole } from "../../services/storage";
-
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 

@@ -28,9 +28,13 @@
 }
 
 
-
 .option:hover {
   color: #f75b42;
+}
+.error-waitress {
+  background-color: #f75b42;
+  text-align: center;
+  font-size: 17px;
 }
 
 
