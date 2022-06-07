@@ -3,10 +3,12 @@ import style from "../Input/input.module.css"
 
 const Input = (props) => {
     return(
-      <input className={style.input}
+      <input 
+      className= {`${style.input} ${props.className || ""}`}
        id = {props.id}
        name = {props.name}
        type = {props.type}
+       onChange={props.onChange}
        placeholder = {props.placeholder}
        value = {props.value}
        />

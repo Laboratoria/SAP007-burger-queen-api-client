@@ -6,26 +6,14 @@
 }
 
 .formWrapper{
-    display: flex;
-    justify-content: center;
-}
-
-.checkWrapper{
-    display: inline-flex;
-    justify-content:  space-evenly;
-    margin: 2%;
-}
-
-.roleWrapper{
-    align-items: center;
-    justify-content: space-evenly;
-
+        display: flex;
+        justify-content: center;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
 }
 
 .label {
@@ -35,17 +23,7 @@
     color: #ffff;
 }
 
-.labelRadio {
-    width: 30%;
-}
-
-.inputRadio{
-   width: 50%;
-   margin: 5% 5% 5% 0;
-
-}
-
-.btnRegister {
+.btnLogin {
     margin-top: 2%;
     font-size: 35px;
     height: 75px;

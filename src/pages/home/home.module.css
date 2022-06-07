@@ -59,3 +59,29 @@
         font-size: 20px;
     }
 }
+
+@media (min-width: 1128px) {
+
+    .logo {
+        height: 100%;
+        width: 100%;
+        margin: auto;
+    }
+
+}
+
+@media (min-width: 1983px) {
+
+    .logo {
+        height: 90%;
+        width: 100%;
+        margin: auto;
+    }
+
+    .noRegister,
+    .btnRegister {
+        font-size: 45px;
+    }
+
+
+}
