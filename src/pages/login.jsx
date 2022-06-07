@@ -5,7 +5,7 @@ import { logedIn } from "../services/api";
 import Message from "../components/Message";
 import { codeError } from '../services/error';
 import { setToken } from "../services/token";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { useState } from "react";
 
 function Login() {
@@ -14,11 +14,11 @@ function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const location = useLocation();
-  let message = " ";
-  if (location.state) {
-    message = location.state.message;
-  };
+  // const location = useLocation();
+  // let message = " ";
+  // if (location.state) {
+  //   message = location.state.message;
+  // };
 
   function handleOnClick(e) {
     e.preventDefault();
@@ -60,7 +60,7 @@ function Login() {
       <Link to="/register" className="Hiperlink">
         Cadastre-se
       </Link>
-      {message && <Message msg={message} />}
+      {/* {message && <Message msg={message} />} */}
       {error && <Message msg={error} />}
     </form>
     </div>

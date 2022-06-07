@@ -7,7 +7,7 @@ import { codeError } from "../services/error";
 import { setToken } from "../services/token";
 import Role from "../components/Role";
 import { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 function Register() {
   const [name, setName] = useState("");
@@ -17,11 +17,7 @@ function Register() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const location = useLocation();
-  let feedback = " ";
-  if (location.state) {
-    feedback = location.state.feedback;
-  }
+ 
   function handleSubmit(e) {
     e.preventDefault();
     createUser(name, email, password, role)
@@ -97,7 +93,6 @@ function Register() {
         <Link to="/login" className="Hiperlink">
           Já tenho cadastro
         </Link>
-        {feedback && <Message msg={feedback} />}
         {error && <Message msg={error} />}
       </form>
     </div>
