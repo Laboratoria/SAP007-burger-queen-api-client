@@ -3,10 +3,9 @@ import Header from "../components/Header";
 import Card from "../components/Card";
 import Input from "../components/Input";
 import finn from "../img/finn.jpeg"
-import { codeError } from "../services/error";
+import { FeedbackError } from "../services/CodeError";
 import TemplateOrder from "../components/TemplateOrder";
 import { getProduct, createOrder } from "../services/api";
-// import SelectExtra from "../components/SelectExtra"
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
@@ -97,7 +96,7 @@ function Hall() {
         navigate("/kitchen");
       })
       .catch((error) => {
-        setError(codeError(error));
+        setError(FeedbackError(error));
       });
   }
 
@@ -134,10 +133,10 @@ function Hall() {
   }
   return (
     <div>
-      <Header children="MENU" img={finn} alt={"Finn comendo um sanduíche"}/>
+      <Header children="MENU" img={finn} alt={"Finn comendo um sanduíche"} />
       <nav className="navMenu">
-      <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
-      <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />
+        <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
+        <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />
       </nav>
       <section className="sectionCard">
         {products.map((item) => {
@@ -167,7 +166,7 @@ function Hall() {
         />
       </div>
       <section className="sectionOrder">
-           {order.map((item) => {
+        {order.map((item) => {
           return (
             <TemplateOrder
               key={item.id}
@@ -182,7 +181,7 @@ function Hall() {
         <button children="Confirmar Pedido" id="confirm" onClick={finalOrder}></button>
         <FaSignInAlt size="26px" margin-rigth="0px" />
       </div>
-     
+
     </div>
   );
 }

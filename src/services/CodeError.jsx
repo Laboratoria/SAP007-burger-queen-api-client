@@ -1,7 +1,5 @@
-export function codeError (response){
+export function FeedbackError (response){
     switch (response.status){
-        case 200:
-             return "usuário cadastrado com sucesso"
         case 400:
             return"Preencha todos os campos";
         case 401:
