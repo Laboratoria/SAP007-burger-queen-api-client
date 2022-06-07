@@ -25,7 +25,6 @@ function Cart({ onClick, orderList, total, setOrder, totalPrice }) {
         productList.qtd -= 1;
       }
     }
-    console.log(orderList);
     setOrder([...orderList]);
     totalPrice();
     forceUpdate();

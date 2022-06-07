@@ -8,6 +8,11 @@
     justify-content: center;
 }
 
+.login-indicator {
+    background-color: #F75B42;
+    margin-bottom: 10%;
+}
+
 .login{
     display: flex;
     flex-direction: column;
