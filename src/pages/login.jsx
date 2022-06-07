@@ -3,7 +3,7 @@ import Button from "../components/Button";
 import Logo from "../components/Logo";
 import { logedIn } from "../services/api";
 import Message from "../components/Message";
-import { FeedbackError } from '../services/CodeError';
+import { FeedbackError } from "../services/CodeError";
 import { setToken } from "../services/token";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -11,9 +11,10 @@ import { useState } from "react";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
+  // const [message, setMenssage] = useState(false)
   const navigate = useNavigate();
-
+  // console.log(message)
 
   function handleOnClick(e) {
     e.preventDefault();
@@ -22,16 +23,18 @@ function Login() {
         if (response.status === 200) {
           return response.json();
         }
-        setError(FeedbackError(response));
+        setError(true);
       })
       .then((data) => {
         if (data) {
-          setToken(data.token);
+          setTimeout(() => {
+            setToken(data.token);
             navigate(data.role === "hall" ? "/hall" : "/kitchen");
+          }, 3000);
         }
       })
       .catch((error) => console.log(error));
-  };
+  }
 
   return (
     <div className="DivForm">
@@ -57,8 +60,7 @@ function Login() {
         <Link to="/register" className="Hiperlink">
           Cadastre-se
         </Link>
-        {error && <Message msg={error} />}
-
+        {error ? <Message msg={FeedbackError(error)} /> : null}
       </form>
     </div>
   );

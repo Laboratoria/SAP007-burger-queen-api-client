@@ -26,11 +26,8 @@ function Register() {
       .then((response) => {
         if (response.status === 200) {
           return response.json();
-        }else{
-          setTimeout(() => {
-          setError(FeedbackError(response));
-        }, 3000)
         }
+        setError(FeedbackError(response));
       })
       .then((data) => {
         if (data) {
@@ -39,7 +36,7 @@ function Register() {
           setTimeout(() => {
             navigate(data.role === "hall" ? "/hall" : "/kitchen");
           }, 3000)
-        }
+        };
       })
       .catch((error) => console.log(error));
   }
