@@ -1,16 +1,26 @@
-function CardOrder ({product,key}){
+function CardOrder ({item}){
   return(
-    <div key={key} onClick={onclick}>
+    <div>
          <ul >
          <li>
-          <p >{product.id}</p>
-          <p>{product.name}</p>
-          <p>{product.complemet}</p>
-          {product.flavor ? <li><p>{product.flavor}</p></li>:null}
-            <p>{product.qtd}</p>
+           <p>Status:{item.status}</p>
+          <p>{item.id}</p>
+          <p>{item.client_name}</p>
+          <p>{item.table}</p>
+          <p>{item.createdAt}</p>
+          <p>{item.processedAt}</p>
+          <p>{item.preparedAt}</p>
+          {item.flavor ? <li><p>{item.flavor}</p></li>:null}
+            <p>{item.qtd}</p>    
           </li>
       </ul>     
       </div>
   )
 }
 export default CardOrder;
+
+
+
+
+
+
