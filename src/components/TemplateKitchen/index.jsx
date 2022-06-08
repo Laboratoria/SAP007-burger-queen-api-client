@@ -1,20 +1,31 @@
 import styles from "./style.module.css";
 import Button from "../Button";
 
-function TemplateKitchen({ products }) {
+function TemplateKitchen( props ) {
   return (
     <ul className={styles.UlTemplateKitchen}>
       <li>
-        <Button children={products.status} />
-        <p>Criado:{products.createdAt}</p>
-        <p>Id:{products.id}</p>
-        <p> Cliente: {products.client_name}</p>
-        <p> Mesa:{products.table}</p>
-        {products.flavor ? (
-          <p>{products.flavor}</p>
+        <Button children={props.status}/>
+        <p>Id:{props.id}</p>
+        <p> Cliente: {props.client}</p>
+        <p> Mesa:{props.table}</p>
+        <p>Criado:{props.createdAt}</p>
+        {props.flavor ? (
+          <p>{props.flavor}</p>
         ) : null}
-        <p>{products.qtd}</p>
-        <p>Atulização:{products.updatedAt}</p>
+        <p>{props.qtd}</p>
+        <p>Atulização:{props.updatedAt}</p>
+        <p>Produtos:</p>
+        {props.products.map((product)=>{
+         return (
+           <div key={product.id}>
+          <p> {product.name}</p>
+          <p> {product.flavor}</p>
+          <p>{product.complement}</p>
+          <p>{product.qtd}</p>
+          </div>
+          )
+        })}
       </li>
     </ul>
   );

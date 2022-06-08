@@ -44,6 +44,7 @@ function Hall() {
     return setInfo(() => {
       const auxInfo = { ...info };
       auxInfo[e.target.name] = e.target.value;
+      console.log(auxInfo)
       return auxInfo;
     });
   };
@@ -157,6 +158,7 @@ function Hall() {
           name="client"
           value={info.client}
           onChange={handleInfo}
+          required
         />
         <Input
           placeholder="MESA"
@@ -164,6 +166,7 @@ function Hall() {
           name="table"
           value={info.table}
           onChange={handleInfo}
+          required
         />
       </div>
       <section className="sectionOrder">
