@@ -1,6 +1,6 @@
 import styles from './Input.module.css';
 
-export function Input({ type, text, name, placeholder, handleOnChange, customClass }) {
+function Input({ type, text, name, placeholder, handleOnChange, customClass }) {
     return (
         <input
             className={styles[customClass]}
@@ -12,3 +12,5 @@ export function Input({ type, text, name, placeholder, handleOnChange, customCla
         />
     )
 }
+
+export default Input;

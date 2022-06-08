@@ -1,12 +1,11 @@
 import styles from "./Home.module.css"
 import Logo from "../components/Logo"
-import { header } from "../layout/Header"
 import Navbar from '../components/Navbar'
 
 export function Home() {
     return (
         <>
-            <h1 className={styles.title}>Bem-vindo ao {header}</h1>
+            <h1 className={styles.title}>Bem-vindo ao Burger Heroes</h1>
             <Logo customClass='logo' />
             <p className={styles.about}>Sabemos o quanto salvar o mundo é importante!
                 Por isso este app optimiza o atendimento dos super heróis do nosso planeta.

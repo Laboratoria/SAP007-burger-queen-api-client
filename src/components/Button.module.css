@@ -1,5 +1,6 @@
 .button_enter,
-.button_register {
+.button_register,
+.button_logout {
     display: grid;
     background-color: #708c32;
     color: black;
@@ -18,7 +19,8 @@
 }
 
 .button_enter:hover,
-.button_register:hover {
+.button_register:hover,
+.button_logout:hover {
     transform: scale(1.2);
     background-color: #2669BF;
 }

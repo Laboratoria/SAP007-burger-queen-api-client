@@ -1,8 +1,8 @@
 import { Home } from "./pages/Home"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
-import { HallAttendance } from "./pages/HallAttendance"
-import { HallKitchen } from "./pages/HallKitchen"
+import HallAttendance from "./pages/HallAttendance"
+import HallKitchen from "./pages/HallKitchen"
 import { Client } from "./pages/Client"
 
 import { PrivatePages } from "./services/PrivatePages"
