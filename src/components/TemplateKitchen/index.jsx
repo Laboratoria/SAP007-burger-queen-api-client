@@ -5,7 +5,7 @@ function TemplateKitchen( props ) {
   return (
     <ul className={styles.UlTemplateKitchen}>
       <li>
-        <Button children={props.status}/>
+        <Button children={props.status} onClick={props.update}/>
         <p>Id:{props.id}</p>
         <p> Cliente: {props.client}</p>
         <p> Mesa:{props.table}</p>
