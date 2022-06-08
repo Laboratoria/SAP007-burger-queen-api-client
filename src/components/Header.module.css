@@ -1,0 +1,19 @@
+.header {
+    grid-column: 2;
+    margin-top: 0%;
+    width: 100%;
+    height: 100px;
+}
+
+.header_logo {
+    grid-column: 2;
+    width: 50%;
+    margin-left: 20%;
+}
+
+.header_title {
+    grid-column: 3;
+    font-size: 5rem;
+    color: red;
+    align-items: center
+}

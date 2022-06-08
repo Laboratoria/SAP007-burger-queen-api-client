@@ -1,7 +1,9 @@
-export function ErrorsMessage(resultMessage) {
+function ErrorsMessage(resultMessage) {
     switch (resultMessage.status) {
+        case 200:
+            return 'Usuário cadastrado com sucesso';
         case 400:
-            return 'Preencha todos os campos.';
+            return 'Preencha todos os campos ou dados incompletos.';
         case 401:
             return 'Usuário não identificado.';
         case 403:
@@ -10,5 +12,7 @@ export function ErrorsMessage(resultMessage) {
             return 'Usuário não encontrado';
         default:
             return 'Ocorreu algum erro.';
-    }
-}
+    };
+};
+
+export default ErrorsMessage;

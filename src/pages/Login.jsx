@@ -1,11 +1,11 @@
 import { useState } from 'react'; //é um hook do React muito bom para ser usado com eventos
-import Button from '../components/Button';
-import { Input } from '../components/Input';
+import { useNavigate } from "react-router-dom";
 import { logInt } from "../services/auth";
 import { login } from '../services/token';
-import { useNavigate } from "react-router-dom";
-import { ErrorsMessage } from "../services/ErrorsMessage";
-import { ShowErrors } from '../components/ShowErrors';
+import ErrorsMessage from "../services/ErrorsMessage";
+import Button from '../components/Button';
+import Input from '../components/Input';
+import ShowErrors from '../components/ShowErrors';
 import styles from '../components/Form.module.css';
 import Logo from '../components/Logo';
 
@@ -13,12 +13,12 @@ import Logo from '../components/Logo';
 function Login() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const navigate = useNavigate();
     const [error, setError] = useState();
+    const navigate = useNavigate();
 
     function loginUser(e) {
         e.preventDefault();
-        console.log(`Usuário ${email} foi cadastrado com a senha: ${password}`)
+        //console.log(`Usuário ${email} foi cadastrado com a senha: ${password}`)
         logInt(email, password)
             .then((response) => {
                 if (response.status === 200) {
@@ -28,7 +28,7 @@ function Login() {
             })
             .then((data) => {
                 login(data.token, data.role);
-                console.log(data)
+                console.log(data.role)
                 navigate(data.role === 'attendance' ? '/HallAttendance' : '/HallKitchen');
             })
             .catch((error));
@@ -55,9 +55,9 @@ function Login() {
                     placeholder='Senha'
                     handleOnChange={(e) => setPassword(e.target.value)}
                 />
+                <ShowErrors type="error" message={error} changeSetError={setError} />
                 <Button customClass="button_enter" clickFunction={loginUser} type='button' children="Entrar" />
                 <a className={styles.navigation} href='/Register'>Cadastrar</a>
-                {error && <ShowErrors type="error" message={error} />}
             </form>
         </>
     )

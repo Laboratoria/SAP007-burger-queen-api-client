@@ -1,15 +1,7 @@
-.message {
-    width: 50%;
-    color: rgb(0, 0, 0);
-    border: 1px solid black;
-}
-
-.success {
-    background-color: blue;
-    width: 50%;
-}
-
-.error {
-    background-color: red;
-    width: 50%;
+.msg {
+    width: 100%;
+    color: rgb(2, 2, 2);
+    border: 1px solid rgb(209, 5, 5);
+    font-size: 1.5rem;
+    text-align: center;
 }
