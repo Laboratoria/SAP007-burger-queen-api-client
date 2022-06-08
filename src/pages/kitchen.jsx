@@ -1,9 +1,8 @@
 import { allOrders } from "../services/api";
-import CardOrder from '../components/CardOrder';
 import jake from "../img/jake.jpg";
 import TemplateKitchen from "../components/TemplateKitchen";
 import Header from "../components/Header";
-// import {preparationTime} from "../components/Time"
+import { preparationTime } from "../components/Time";
 import { useState, useEffect, useCallback } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +12,7 @@ function Kitchen() {
   const [order, setOrder] = useState([]);
   const [orderByStatus, setOrderByStatus] = useState([]);
   console.log(orderByStatus);
+ 
   function handleLogout() {
     localStorage.removeItem("token");
     navigate("/login");
@@ -37,7 +37,6 @@ function Kitchen() {
     [order]
   );
 
-
   return (
     <div>
       <Header
@@ -46,32 +45,29 @@ function Kitchen() {
         alt={"Jake comendo pizza com sorvete"}
       />
       <section className="sectionTemplateKitchen">
-        {order.map((item, index) => {
-          const orderReady = item.status === "ready"
-          const infoCommand = item.Products.map((product) => {
-            return <TemplateKitchen key={product.id} products={item} />;
-          });
-          return (
-            <CardOrder
-              key={index}
-              status={item.status}
+        {order.map((item) => {
+          const orderReady = item.status === "ready";
+            return (<TemplateKitchen 
+              key={item.id} 
               id={item.id}
-              name={item.name}
+              client={item.client_name}
               table={item.table}
+              status={item.status}
               createdAt={item.createdAt}
-              processedAt={orderReady ? (item.processedAt) : ""}
-              preparedAt={orderReady ?(item.processedAt, item.createdAt) : ""}
-              orderProducts={infoCommand}
-            />
-          )
-        })}
+              updatedAt={item.updatedAt}
+              processedAt={orderReady ? item.processedAt : ""}
+              preparedAt={orderReady ? preparationTime(item.processedAt, item.createdAt) : "" }
+              products = {item.Products}
+              />
+            )
+        }
+      )}
       </section>
-
       <div className="logout" onClick={handleLogout}>
         <FaSignInAlt size="26px" margin-rigth="0px" />
       </div>
-
     </div>
-  );
+  ); 
 }
+
 export default Kitchen;
