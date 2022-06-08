@@ -11,7 +11,7 @@ import { useState } from "react";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   // const [message, setMenssage] = useState(false)
   const navigate = useNavigate();
   // console.log(message)
@@ -23,7 +23,9 @@ function Login() {
         if (response.status === 200) {
           return response.json();
         }
-        setError(true);
+        else{
+          setError(FeedbackError(response))
+        }
       })
       .then((data) => {
         if (data) {
