@@ -6,7 +6,6 @@ import { preparationTime } from "../components/Time";
 import { useState, useEffect } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import Button from "../components/Button";
 
 function Kitchen() {
   const navigate = useNavigate();
@@ -27,14 +26,16 @@ function Kitchen() {
     console.log(order);
   }, [order]);
 
-  const orderByStatus = (item, event) => {
-    updateOrder(item.id, event.target.value).then((response) => {
+  const orderByStatus = (item, status) => {
+    console.log("entrou")
+    updateOrder(item.id, status)
+    .then((response) => {
+      console.log(response)
       if (response.status === 200) {
         const results = order.map((result) => {
           if (result.id === item.id) {
-            result.status = event.target.value;
+            result.status = status;
           }
-          console.log(result, results)
           return result;
         });
         setOrder(results);
@@ -52,6 +53,15 @@ function Kitchen() {
       <section className="sectionTemplateKitchen">
         {order.map((item) => {
           const orderReady = item.status === "ready";
+          const orderPreparing = item.status === "preparing";
+          const orderPending = item.status === "pending";
+          let newState = "";
+          if(orderPending){
+            newState = "preparing"
+          }
+          if (orderPreparing){
+            newState = "ready"
+          }
           return (
             <TemplateKitchen
               key={item.id}
@@ -62,11 +72,7 @@ function Kitchen() {
               createdAt={item.createdAt}
               updatedAt={item.updatedAt}
               processedAt={orderReady ? item.processedAt : ""}
-              {...item.status === "pending" ?
-              <Button onClick={(event) => orderByStatus(item, event)}  value="preparing"children="Preparando"/> :
-              item.status === "preparing" &&
-              <Button onClick={(event) => orderByStatus(item, event)}  value="ready"children="Pronto"/> 
-            }
+              update={() => orderByStatus(item, newState)}
               preparedAt={
                 orderReady
                   ? preparationTime(item.processedAt, item.createdAt)
