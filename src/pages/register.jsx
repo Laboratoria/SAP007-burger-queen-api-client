@@ -37,7 +37,7 @@ function Register() {
     <div className="DivForm">
       <Logo />
       <form onSubmit={handleSubmit}>
-        <div className="DivRole" data-testid="occupation">
+        <div className="DivRole">
           <Role
             type="radio"
             value="kitchen"

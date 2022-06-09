@@ -34,6 +34,7 @@ function Kitchen() {
           if (result.id === item.id) {
             result.status = event.target.value;
           }
+          console.log(result, results)
           return result;
         });
         setOrder(results);

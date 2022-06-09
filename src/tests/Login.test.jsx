@@ -14,17 +14,14 @@ describe("Login", () => {
   it("Deverá logar usuário corretamente", async () => {
     logedIn.mockResolvedValueOnce({})
     render(<Login />)
-    // const newLogin = {
-    //   email: "tania@mara.com",
-    //   password: "123456",
-    // }
+ 
 
    const email = "emplo@exemplo.com"
    const password = "123456"
 
-    const getEmail = screen.getByPlaceholderText(/Email/i)
+    const getEmail = screen.getByPlaceholderText("E-MAIL")
     user.type(getEmail,email)
-    const getPassword = screen.getByPlaceholderText(/Senha/i)
+    const getPassword = screen.getByPlaceholderText("SENHA")
     user.type(getPassword, password)
 
     const btnLogin = screen.getByRole("button")
@@ -37,13 +34,4 @@ describe("Login", () => {
   })
 })
 
-it("deverá disparar uma função de click", () => {
-  const text = "Entar";
-  const onClick = jest.fn();
-  render(<button onClick={onClick}>{text}</button>);
-
-  expect(onClick).toHaveBeenCalledTimes(0);
-  user.click(screen.getByText(text));
-  expect(onClick).toHaveBeenCalledTimes(1);
-});
 

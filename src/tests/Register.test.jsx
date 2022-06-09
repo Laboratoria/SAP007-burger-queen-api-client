@@ -20,31 +20,23 @@ describe("Register", () => {
       email: "tania@mara.com",
       password: "123456"
     }
-    const getRole = screen.ByTestId("occupation")
-    user.selectOptions(getRole, newRegister.role)
-    const name = screen.getByPlaceholderText(/Name/i)
+    const getRole = screen.getByLabelText("COZINHA")
+    user.click(getRole)
+    const name = screen.getByPlaceholderText("NOME")
     user.type(name, newRegister.name)
-    const email = screen.getByPlaceholderText(/Email/i)
+    const email = screen.getByPlaceholderText("E-MAIL")
     user.type(email, newRegister.email)
-    const password = screen.getByPlaceholderText(/Password/i)
+    const password = screen.getByPlaceholderText("SENHA")
     user.type(password, newRegister.password)
 
-    const btnRegister = screen.getByRole("button")
+    const btnRegister = screen.getByText("CADASTRAR")
     user.click(btnRegister)
 
     await waitFor(() => {
-      expect(createUser).toHaveBeenCalledWith(newRegister)
+      expect(createUser).toHaveBeenCalledWith(newRegister.name, newRegister.email, newRegister.password, newRegister.role)
     });
     expect(createUser).toHaveBeenCalledTimes(1)
   })
 })
-it("deverá disparar uma função de click", () => {
-  const text = "Cadastrar"
-  const onClick = jest.fn();
-  render(<button onClick={onClick}>{text}</button>);
 
-  expect(onClick).toHaveBeenCalledTimes(0);
-  user.click(screen.getByText(text));
-  expect(onClick).toHaveBeenCalledTimes(1);
-});
 
