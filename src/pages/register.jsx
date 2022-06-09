@@ -3,9 +3,6 @@ import Button from "../components/Button";
 import Logo from "../components/Logo";
 import { createUser } from "../services/api";
 import Message from "../components/Message";
-import { FeedbackError } from "../services/feedback";
-import { FeedbackSucess } from '../services/CodeSucess';
-import { setToken } from "../services/token";
 import Role from "../components/Role";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -16,30 +13,17 @@ function Register() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
 
   function handleSubmit(e) {
     e.preventDefault();
     createUser(name, email, password, role)
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json();
-        }
-        setError(FeedbackError(response));
-      })
-      .then((data) => {
-        if (data) {
-          setToken(data.token);
-          setSuccess(FeedbackSucess)
-          setTimeout(() => {
-            navigate(data.role === "hall" ? "/hall" : "/kitchen");
-          }, 3000)
-        };
-      })
-      .catch((error) => console.log(error));
-  }
+    .then((data) => {
+      navigate(data.role === "hall" ? "/hall" : "/kitchen");
+    })
+    .catch((error) => setError(error.message)
+)}
   return (
     <div className="DivForm">
       <Logo />
@@ -100,7 +84,6 @@ function Register() {
         <Link to="/login" className="Hiperlink">
           Já tenho cadastro
         </Link>
-        {success && <Message msg={success} />}
         {error && <Message msg={error} />}
       </form>
     </div>

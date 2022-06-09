@@ -10,9 +10,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  // const [message, setMenssage] = useState(false)
   const navigate = useNavigate();
-  // console.log(message)
 
   function handleOnClick(e) {
     e.preventDefault();
@@ -20,9 +18,8 @@ function Login() {
       .then((data) => {
         navigate(data.role === "hall" ? "/hall" : "/kitchen");
       })
-    setTimeout(() => { })
-      .catch((error) => setError(error.message));
-  }
+      .catch((error) => setError(error.message)
+  )}
   return (
     <div className="DivForm">
       <Logo />
