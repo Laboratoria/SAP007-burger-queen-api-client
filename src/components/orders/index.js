@@ -8,28 +8,28 @@ function Order({ order, onClick }) {
       </button>
       <ul>
         <li>
-          <p>{order.id}</p>
+          <p>Nº: {order.id}</p>
         </li>
         <li>
-          <p>{order.table}</p>
+          <p>Mesa: {order.table}</p>
         </li>
         <li>
-          <p>{order.client_name}</p>
+          <p>Cliente: {order.client_name}</p>
         </li>
         <li>
-          <p>{order.createdAt}</p>
+          <p>Criado: {order.createdAt}</p>
         </li>
         {order.updatedAt ? (
           <li>
-            <p>{order.updatedAt}</p>
+            <p>Finzalizado: {order.updatedAt}</p>
           </li>
         ) : null}
       </ul>
+      <p>Itens:</p>
       {order.Products.map((item) => {
         return (
           <>
             <ul>
-              <p>Itens:</p>
               <li>
                 <p>{item.name}</p>
               </li>
@@ -46,7 +46,8 @@ function Order({ order, onClick }) {
                   </p>
                 </li>
               ) : null}
-              <li>{item.qtd}</li>
+              <li>
+                  <p>Qtd: {item.qtd}</p></li>
             </ul>
           </>
         );

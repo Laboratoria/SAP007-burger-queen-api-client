@@ -78,6 +78,7 @@ function Waitress() {
           hideMessage();
         }
         setError("Pedido finalizado com sucesso");
+        hideMessage();
         handleReset();
       });
     } else {

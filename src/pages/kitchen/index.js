@@ -4,7 +4,7 @@ import { removeToken, removeName, removeRole } from "../../services/storage";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Order from "../../components/orders";
-import { getOrders, deleteOrders } from "../../services/order";
+import { getOrders } from "../../services/order";
 import "./styles.modules.css";
 
 function Kitchen() {
@@ -16,23 +16,14 @@ function Kitchen() {
     navigate("/", { message: "redirecionando" });
   }
 
-  
   const [order, setOrder] = useState([]);
-  const [id, setId] = useState();
 
-  function deletando (idItem){
-          deleteOrders(idItem)
-          return idItem
-      }
-  
-      deletando(id) 
-      
-      useEffect(() => {
-          getOrders().then((orders) => {
-              console.log(orders)
-              setOrder(orders);
-        });
-    }, []);
+  useEffect(() => {
+    getOrders().then((orders) => {
+      console.log(orders);
+      setOrder(orders);
+    });
+  }, []);
 
   return (
     <>
@@ -49,7 +40,6 @@ function Kitchen() {
       <main>
         <section>
           {order.map((item) => {
-              setId(item.id);
             return <Order order={item} />;
           })}
         </section>
