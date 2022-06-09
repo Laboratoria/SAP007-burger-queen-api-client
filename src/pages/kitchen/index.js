@@ -4,7 +4,7 @@ import { removeToken, removeName, removeRole } from "../../services/storage";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Order from "../../components/orders";
-import { getOrders } from "../../services/order";
+import { getOrders, deleteOrders } from "../../services/order";
 import "./styles.modules.css";
 
 function Kitchen() {
@@ -16,27 +16,23 @@ function Kitchen() {
     navigate("/", { message: "redirecionando" });
   }
 
-//   const [order, setOrder] = useState();
+  
+  const [order, setOrder] = useState([]);
+  const [id, setId] = useState();
 
-  useEffect(() => {
-    getOrders().then((orders) => {
-        console.log(orders)
-        // const newOrder = {
-        //     status: orders.status,
-        //     id: orders.id,
-        //     table: orders.table,
-        //     client: orders.client_name,
-        //     createdAt: orders.createdAt,
-        //     updatedAt: orders.updatedAt,
-        //     // itens: {
-        //         //   orders.products.name,
-        //         //   drinks,
-        //         //   side,
-        //         // },
-        //     };
-        //     setOrder(newOrder);
+  function deletando (idItem){
+          deleteOrders(idItem)
+          return idItem
+      }
+  
+      deletando(id) 
+      
+      useEffect(() => {
+          getOrders().then((orders) => {
+              console.log(orders)
+              setOrder(orders);
         });
-  }, []);
+    }, []);
 
   return (
     <>
@@ -52,7 +48,10 @@ function Kitchen() {
       </header>
       <main>
         <section>
-          {/* <Order order={order} /> */}
+          {order.map((item) => {
+              setId(item.id);
+            return <Order order={item} />;
+          })}
         </section>
       </main>
     </>

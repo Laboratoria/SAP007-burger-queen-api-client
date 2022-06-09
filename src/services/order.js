@@ -37,3 +37,7 @@ function requests(endpoint, method) {
       .then(response => response.json())
       .then(json => json)
 }
+
+export function deleteOrders(id) {
+  return requests(`/orders/${id}`, "DELETE");
+}
