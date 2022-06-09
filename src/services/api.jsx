@@ -59,20 +59,12 @@ export const allOrders = () => {
     headers: {
       "Content-Type": "application/json",
       Authorization: getToken(),
-    },it("deverá disparar uma função de click", () => {
-      const text = "Entar";
-      const onClick = jest.fn();
-      render(<button onClick={onClick}>{text}</button>);
-    
-      expect(onClick).toHaveBeenCalledTimes(0);
-      user.click(screen.getByText(text));
-      expect(onClick).toHaveBeenCalledTimes(1);
-    });
-    
+    },
   });
 };
 
 export const updateOrder = (orderId, status) => {
+  console.log(orderId, status)
   return fetch (`${URL}/orders/${orderId}`, {
     method: "PUT",
     headers:{
