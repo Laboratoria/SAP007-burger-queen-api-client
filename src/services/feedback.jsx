@@ -1,4 +1,4 @@
-export function FeedbackError (response){
+export function errorMessage (response){
     switch (response.status){
         case 400:
             return"Preencha todos os campos";
@@ -12,3 +12,12 @@ export function FeedbackError (response){
             return "Ocorreu algum erro";
     };
 };
+export function sucessMessage (response){
+    switch (response.status){
+        case 200:
+             return "Usuário cadastrado com sucesso";
+             default:
+              return "Sucesso";
+  
+    };
+  };

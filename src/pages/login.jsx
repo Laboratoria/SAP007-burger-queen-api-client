@@ -3,8 +3,6 @@ import Button from "../components/Button";
 import Logo from "../components/Logo";
 import { logedIn } from "../services/api";
 import Message from "../components/Message";
-import { FeedbackError } from "../services/CodeError";
-import { setToken } from "../services/token";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -19,25 +17,12 @@ function Login() {
   function handleOnClick(e) {
     e.preventDefault();
     logedIn(email, password)
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json();
-        }
-        else{
-          setError(FeedbackError(response))
-        }
-      })
       .then((data) => {
-        if (data) {
-          setTimeout(() => {
-            setToken(data.token);
-            navigate(data.role === "hall" ? "/hall" : "/kitchen");
-          }, 3000);
-        }
+        navigate(data.role === "hall" ? "/hall" : "/kitchen");
       })
-      .catch((error) => console.log(error));
+    setTimeout(() => { })
+      .catch((error) => setError(error.message));
   }
-
   return (
     <div className="DivForm">
       <Logo />
@@ -62,7 +47,7 @@ function Login() {
         <Link to="/register" className="Hiperlink">
           Cadastre-se
         </Link>
-        {error ? <Message msg={FeedbackError(error)} /> : null}
+        {error ? <Message msg={error} /> : null}
       </form>
     </div>
   );

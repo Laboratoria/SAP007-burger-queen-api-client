@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Card from "../components/Card";
 import Input from "../components/Input";
 import finn from "../img/finn.jpeg"
-import { FeedbackError } from "../services/CodeError";
+import { FeedbackError } from "../services/feedback";
 import TemplateOrder from "../components/TemplateOrder";
 import { getProduct, createOrder } from "../services/api";
 import { useState, useEffect } from "react";

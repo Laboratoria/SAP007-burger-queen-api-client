@@ -1,4 +1,5 @@
-import { getToken } from "./token";
+import { getToken, setToken } from "./token";
+import { errorMessage } from './feedback';
 
 const URL = "https://lab-api-bq.herokuapp.com";
 
@@ -29,7 +30,18 @@ export const logedIn = (email, password) => {
       email: email,
       password: password,
     }),
-  });
+  })
+  .then((response)=>{
+    if(response.status !== 200){
+      const message = errorMessage(response);
+      throw new Error (message)
+    }
+    return response.json()
+  })
+  .then((data)=>{
+    setToken(data.token);
+    return data;
+  })
 };
 
 export const getProduct = () => {
