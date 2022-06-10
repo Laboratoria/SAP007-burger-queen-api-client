@@ -2,11 +2,10 @@ import Button from "../components/Button";
 import Header from "../components/Header";
 import Card from "../components/Card";
 import Input from "../components/Input";
+import TemplateOrder from "../components/TemplateOrder";
 import finn from "../img/finn.jpeg"
 import { codeError } from "../services/error";
-import TemplateOrder from "../components/TemplateOrder";
 import { getProduct, createOrder } from "../services/api";
-// import SelectExtra from "../components/SelectExtra"
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
@@ -91,7 +90,6 @@ function Hall() {
     }
 
     const resumeOrder = listOrder();
-    console.log(resumeOrder);
 
     createOrder(resumeOrder)
       .then(() => {
@@ -104,7 +102,6 @@ function Hall() {
 
   function handleRemoveItem(item) {
     const productInList = order.find((element) => element.id === item.id);
-
     if (productInList) {
       if (productInList.qtd === 1) {
         order.splice(
@@ -133,9 +130,10 @@ function Hall() {
     );
     return wholeInitial;
   }
+
   return (
     <div>
-      <Header children="MENU" img={finn} alt={"Finn comendo um sanduíche"}/>
+      <Header children="MENU" img={finn} alt={"Finn comendo um sanduíche"} />
       <nav className="navMenu">
       <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
       <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />
@@ -185,9 +183,7 @@ function Hall() {
         <button children="Confirmar Pedido" id="confirm" onClick={finalOrder}></button>
         <FaSignInAlt size="26px" margin-rigth="0px" />
       </div>
-     
     </div>
   );
 }
 export default Hall;
-

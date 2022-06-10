@@ -7,8 +7,8 @@ function TemplateKitchen( props ) {
       <li className={styles.liTemplateKitchen}>
         <Button children={props.status} onClick={props.update}/>
         <p>Id:{props.id}</p>
-        <p> Cliente: {props.client}</p>
-        <p> Mesa:{props.table}</p>
+        <p>Cliente: {props.client}</p>
+        <p>Mesa:{props.table}</p>
         <p>Criado:{props.createdAt}</p>
         {props.flavor ? (
           <p>{props.flavor}</p>
@@ -21,8 +21,8 @@ function TemplateKitchen( props ) {
         {props.products.map((product)=>{
          return (
            <div key={product.id}>
-          <p> {product.name}</p>
-          <p> {product.flavor}</p>
+          <p>{product.name}</p>
+          <p>{product.flavor}</p>
           <p>{product.complement}</p>
           <p>{product.qtd}</p>
           </div>

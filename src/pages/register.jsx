@@ -1,11 +1,11 @@
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Logo from "../components/Logo";
-import { createUser } from "../services/api";
 import Message from "../components/Message";
+import Role from "../components/Role";
+import { createUser } from "../services/api";
 import { codeError } from "../services/error";
 import { setToken } from "../services/token";
-import Role from "../components/Role";
 import { useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
 

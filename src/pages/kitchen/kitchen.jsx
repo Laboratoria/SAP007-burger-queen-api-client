@@ -63,9 +63,6 @@ function Kitchen() {
           } else if (orderPreparing) {
             newState = "ready"
           } else { newState = "ready" }
-          console.log(item.preparedAt)
-          console.log(preparationTime())
-          console.log(item.processedAt)
           return (
             <TemplateKitchen
               key={item.id}
