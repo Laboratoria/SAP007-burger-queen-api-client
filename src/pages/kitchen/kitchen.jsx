@@ -1,8 +1,9 @@
-import { allOrders, updateOrder } from "../services/api";
-import jake from "../img/jake.jpg";
-import TemplateKitchen from "../components/TemplateKitchen";
-import Header from "../components/Header";
-import { preparationTime, formatDateHour } from "../components/Time";
+import { allOrders, updateOrder } from "../../services/api";
+import jake from "../../img/jake.jpg";
+import TemplateKitchen from "../../components/TemplateKitchen";
+import Header from "../../components/Header";
+import { preparationTime, formatDateHour } from "../../components/Time";
+import "./style.css"
 import { useState, useEffect } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -44,6 +45,7 @@ function Kitchen() {
   };
 
   return (
+    <body id="bodyKitchen">
     <div>
       <Header
         children="PEDIDOS"
@@ -81,10 +83,11 @@ function Kitchen() {
           );
         })}
       </section>
-      <div className="logout" onClick={handleLogout}>
+      <div className="logout" id="logout" onClick={handleLogout}>
         <FaSignInAlt size="26px" margin-rigth="0px" />
       </div>
     </div>
+    </body>
   );
 }
 

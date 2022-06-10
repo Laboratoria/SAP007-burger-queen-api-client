@@ -4,7 +4,7 @@ import Button from "../Button";
 function TemplateKitchen( props ) {
   return (
     <ul className={styles.UlTemplateKitchen}>
-      <li>
+      <li className={styles.liTemplateKitchen}>
         <Button children={props.status} onClick={props.update}/>
         <p>Id:{props.id}</p>
         <p> Cliente: {props.client}</p>
