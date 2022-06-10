@@ -1,8 +1,9 @@
-import { allOrders, updateOrder } from "../services/api";
-import jake from "../img/jake.jpg";
-import TemplateKitchen from "../components/TemplateKitchen";
-import Header from "../components/Header";
-import { preparationTime, formatDateHour } from "../components/Time";
+import { allOrders, updateOrder } from "../../services/api";
+import jake from "../../img/jake.jpg";
+import TemplateKitchen from "../../components/TemplateKitchen";
+import Header from "../../components/Header";
+import { preparationTime, formatDateHour } from "../../components/Time";
+import "./style.css"
 import { useState, useEffect } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -29,21 +30,22 @@ function Kitchen() {
   const orderByStatus = (item, status) => {
     console.log("entrou")
     updateOrder(item.id, status)
-    .then((response) => {
-      console.log(response)
-      if (response.status === 200) {
-        const results = order.map((result) => {
-          if (result.id === item.id) {
-            result.status = status;
-          }
-          return result;
-        });
-        setOrder(results);
-      }
-    });
+      .then((response) => {
+        console.log(response)
+        if (response.status === 200) {
+          const results = order.map((result) => {
+            if (result.id === item.id) {
+              result.status = status;
+            }
+            return result;
+          });
+          setOrder(results);
+        }
+      });
   };
-  
+
   return (
+    <body id="bodyKitchen">
     <div>
       <Header
         children="PEDIDOS"
@@ -56,11 +58,11 @@ function Kitchen() {
           const orderPreparing = item.status === "preparing";
           const orderPending = item.status === "pending";
           let newState = "";
-          if(orderPending){
+          if (orderPending) {
             newState = "preparing"
-          }else if (orderPreparing){
+          } else if (orderPreparing) {
             newState = "ready"
-          } else {newState = "ready"}
+          } else { newState = "ready" }
           console.log(item.preparedAt)
           return (
             <TemplateKitchen
@@ -75,14 +77,15 @@ function Kitchen() {
               processedAt={orderReady ? preparationTime(item.processedAt) : ""}
               preparedAt={orderReady ? preparationTime(item.processedAt, item.createdAt) : ""}
               products={item.Products}
-              />
-              );
-            })}
+            />
+          );
+        })}
       </section>
-      <div className="logout" onClick={handleLogout}>
+      <div className="logout" id="logout" onClick={handleLogout}>
         <FaSignInAlt size="26px" margin-rigth="0px" />
       </div>
     </div>
+    </body>
   );
 }
 

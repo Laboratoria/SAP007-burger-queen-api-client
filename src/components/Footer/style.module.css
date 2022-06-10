@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: black;
   margin-top: 5px; 
   font-size: 18px;
 }
 a{
-  color:white;  
+  color:black;  
 }

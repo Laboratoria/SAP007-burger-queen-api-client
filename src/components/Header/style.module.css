@@ -7,29 +7,29 @@
     align-items: center;
     justify-content:space-evenly;
 }
-.finn{
+.person{
     width: 10%;
     border-radius: 60%;
     align-items: center;
 }
 .title{
-    color: #117DBF;
+    color: black;
 }
 @media(min-width: 640px) and (max-width:1024px){
   .DivHeader{
     width: 100%;
   }
-  .finn{
+  .person{
       width: 6%;     
     }
   }
 @media(min-width: 1024px) and (max-width:1440px){
-  .finn{
+  .person{
     width: 3%;     
   }
 }
 @media(min-width: 1440px) and (max-width:2440px){
-  .finn{
+  .person{
     width: 2%;     
   }
 }
