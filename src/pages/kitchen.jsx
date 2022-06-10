@@ -2,7 +2,7 @@ import { allOrders, updateOrder } from "../services/api";
 import jake from "../img/jake.jpg";
 import TemplateKitchen from "../components/TemplateKitchen";
 import Header from "../components/Header";
-import { preparationTime } from "../components/Time";
+import { preparationTime, formatDateHour } from "../components/Time";
 import { useState, useEffect } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -58,10 +58,10 @@ function Kitchen() {
           let newState = "";
           if(orderPending){
             newState = "preparing"
-          }
-          if (orderPreparing){
+          }else if (orderPreparing){
             newState = "ready"
-          }
+          } else {newState = "ready"}
+          console.log(item.preparedAt)
           return (
             <TemplateKitchen
               key={item.id}
@@ -69,15 +69,11 @@ function Kitchen() {
               client={item.client_name}
               table={item.table}
               status={item.status}
-              createdAt={item.createdAt}
-              updatedAt={item.updatedAt}
-              processedAt={orderReady ? item.processedAt : ""}
+              createdAt={formatDateHour(item.createdAt)}
+              updatedAt={formatDateHour(item.updatedAt)}
               update={() => orderByStatus(item, newState)}
-              preparedAt={
-                orderReady
-                  ? preparationTime(item.processedAt, item.createdAt)
-                  : ""
-              }
+              processedAt={orderReady ? preparationTime(item.processedAt) : ""}
+              preparedAt={orderReady ? preparationTime(item.processedAt, item.createdAt) : ""}
               products={item.Products}
               />
               );

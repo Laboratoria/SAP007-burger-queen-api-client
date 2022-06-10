@@ -1,4 +1,10 @@
-import { differenceInMinutes, minutesToHours } from "date-fns";
+import { differenceInMinutes, minutesToHours, format } from "date-fns";
+
+export const formatDateHour = (standardTime) =>{
+    const date = new Date (standardTime);
+    const hour = format(date, "dd/MM/yyyy HH:mm");
+    return hour;
+}
 
 export const preparationTime = (arrivalTime, exitTime) =>{
     const createdAt = new Date(arrivalTime);

@@ -15,6 +15,8 @@ function TemplateKitchen( props ) {
         ) : null}
         <p>{props.qtd}</p>
         <p>Atulização:{props.updatedAt}</p>
+        <p>Preparo:{props.processedAt}</p>
+        <p>Pronto:{props.preparedAt}</p>
         <p>Produtos:</p>
         {props.products.map((product)=>{
          return (
