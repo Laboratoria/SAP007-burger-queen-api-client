@@ -29,20 +29,20 @@ function Kitchen() {
   const orderByStatus = (item, status) => {
     console.log("entrou")
     updateOrder(item.id, status)
-    .then((response) => {
-      console.log(response)
-      if (response.status === 200) {
-        const results = order.map((result) => {
-          if (result.id === item.id) {
-            result.status = status;
-          }
-          return result;
-        });
-        setOrder(results);
-      }
-    });
+      .then((response) => {
+        console.log(response)
+        if (response.status === 200) {
+          const results = order.map((result) => {
+            if (result.id === item.id) {
+              result.status = status;
+            }
+            return result;
+          });
+          setOrder(results);
+        }
+      });
   };
-  
+
   return (
     <div>
       <Header
@@ -56,12 +56,14 @@ function Kitchen() {
           const orderPreparing = item.status === "preparing";
           const orderPending = item.status === "pending";
           let newState = "";
-          if(orderPending){
+          if (orderPending) {
             newState = "preparing"
-          }else if (orderPreparing){
+          } else if (orderPreparing) {
             newState = "ready"
-          } else {newState = "ready"}
+          } else { newState = "ready" }
           console.log(item.preparedAt)
+          console.log(preparationTime())
+          console.log(item.processedAt)
           return (
             <TemplateKitchen
               key={item.id}
@@ -72,12 +74,12 @@ function Kitchen() {
               createdAt={formatDateHour(item.createdAt)}
               updatedAt={formatDateHour(item.updatedAt)}
               update={() => orderByStatus(item, newState)}
-              processedAt={orderReady ? preparationTime(item.processedAt) : ""}
-              preparedAt={orderReady ? preparationTime(item.processedAt, item.createdAt) : ""}
+              processedAt={orderReady ? formatDateHour(item.processedAt) : ""}
+              preparedAt={orderReady ? preparationTime(item.processedAt, item.updatedAt) : ""}
               products={item.Products}
-              />
-              );
-            })}
+            />
+          );
+        })}
       </section>
       <div className="logout" onClick={handleLogout}>
         <FaSignInAlt size="26px" margin-rigth="0px" />
