@@ -64,6 +64,8 @@ function Kitchen() {
             newState = "ready"
           } else { newState = "ready" }
           console.log(item.preparedAt)
+          console.log(preparationTime())
+          console.log(item.processedAt)
           return (
             <TemplateKitchen
               key={item.id}
@@ -74,8 +76,8 @@ function Kitchen() {
               createdAt={formatDateHour(item.createdAt)}
               updatedAt={formatDateHour(item.updatedAt)}
               update={() => orderByStatus(item, newState)}
-              processedAt={orderReady ? preparationTime(item.processedAt) : ""}
-              preparedAt={orderReady ? preparationTime(item.processedAt, item.createdAt) : ""}
+              processedAt={orderReady ? formatDateHour(item.processedAt) : ""}
+              preparedAt={orderReady ? preparationTime(item.processedAt, item.updatedAt) : ""}
               products={item.Products}
             />
           );
