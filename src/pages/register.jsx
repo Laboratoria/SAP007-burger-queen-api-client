@@ -7,6 +7,7 @@ import Role from "../components/Role";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,11 +20,20 @@ function Register() {
   function handleSubmit(e) {
     e.preventDefault();
     createUser(name, email, password, role)
-    .then((data) => {
-      navigate(data.role === "hall" ? "/hall" : "/kitchen");
-    })
-    .catch((error) => setError(error.message)
-)}
+      .then(({ data, message }) => {
+        setError(message)
+        setTimeout(() => {
+          navigate(data.role === "hall" ? "/hall" : "/kitchen");
+        }, 3000)
+      })
+      .catch((error) => {
+        setError(error.message)
+        setTimeout(() => {
+          setError("")
+        }, 3000)
+      }
+      )
+  }
   return (
     <div className="DivForm">
       <Logo />

@@ -17,15 +17,16 @@ export const createUser = async (name, email, password, role) => {
       restaurant: "hora de burger",
     }),
   });
+  let message = "";
   if (response.status === 200) {
-    const message = sucessMessage(response);
-      console.log(message)
-  }else{
+    message = sucessMessage(response);
+    console.log(message)
+  } else {
     throw new Error(errorMessage(response));
   }
   const data = await response.json();
   setToken(data.token);
-  return data;
+  return { data, message };
 };
 
 
@@ -41,13 +42,14 @@ export const logedIn = async (email, password) => {
       password: password,
     }),
   });
+  let message = "";
   if (response.status !== 200) {
-    const message = errorMessage(response);
+    message = "E-mail ou senha incorretos";
     throw new Error(message);
   }
   const data = await response.json();
   setToken(data.token);
-  return data;
+  return { data, message };
 };
 
 export const getProduct = () => {

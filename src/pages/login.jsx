@@ -14,16 +14,24 @@ function Login() {
 
   function handleOnClick(e) {
     e.preventDefault();
+    console.log(email,password);
     logedIn(email, password)
-      .then((data) => {
+      .then(({data,message}) => {
         navigate(data.role === "hall" ? "/hall" : "/kitchen");
       })
-      .catch((error) => setError(error.message)
-  )}
+      .catch((error) => {
+        console.log(error)
+        setError(error.message)
+        setTimeout(() => {
+          setError("")
+        }, 3000)
+      }
+      )
+    }
   return (
     <div className="DivForm">
       <Logo />
-      <form>
+      <form onSubmit={handleOnClick}>
         <Input
           type="email"
           value={email}
@@ -36,11 +44,11 @@ function Login() {
           type="password"
           value={password}
           placeholder="SENHA"
-          pattern="[a-zA-Z0-9]{6}"
+          pattern="[a-zA-Z0-9]{6,}"
           title="A senha deve conter no mínimo 6 caracteres entre números e letras"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button children="LOGAR" type="button" onClick={handleOnClick} />
+        <Button children="LOGAR" type="submit" />
         <Link to="/register" className="Hiperlink">
           Cadastre-se
         </Link>
