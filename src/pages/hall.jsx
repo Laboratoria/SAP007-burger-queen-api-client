@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Card from "../components/Card";
 import Input from "../components/Input";
 import TemplateOrder from "../components/TemplateOrder";
-import finn from "../img/finn.jpeg"
+import finn from "../img/finn.png"
 import button from "../../src/components/Button/button.module.css";
 import { getProduct, createOrder } from "../services/api";
 import { useState, useEffect } from "react";
