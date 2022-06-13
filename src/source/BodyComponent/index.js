@@ -1,6 +1,6 @@
-import { React,} from 'react';
+import { React, } from 'react';
 import styled from 'styled-components';
-// import { URL } from '../Api/localStorage';
+
 
 const MainDiv = styled.div`
     background-color: red;
@@ -11,12 +11,13 @@ const MainDiv = styled.div`
 `
 
 const CentralContainer = styled.div`
-    background-color: yellow;
+    background-color: #e6d820;
     height: 100%;
     width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 `
 
 // const LoginArea = styled.form`
@@ -31,10 +32,23 @@ const CentralContainer = styled.div`
 
 export default function BodyContainer (){
 
+    const fetchBurgerQueen = () =>{
+        const url = 'https://lab-api-bq.herokuapp.com/'
+
+        fetch(url)
+        .then((response => response.json()))
+        .then( burgerqueen => {
+            console.log(burgerqueen)
+        })
+    }
+    
+        
+    
+
     return (
                 <>
                 <MainDiv>
-                    <CentralContainer>                        
+                    <CentralContainer>                     
                     </CentralContainer>
                 </MainDiv>
                 </>

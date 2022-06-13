@@ -1,13 +1,15 @@
 import React from 'react';
 import BodyContainer from '../../source/BodyComponent/index'
-import LoginComponent from '../LoginPage/index'
+import LoginComponent from '../../source/LoginComponent';
+import BurgerImg from '../../source/img/burgerlogo.png'
 
-export default function LoginPage () {
+export default function LoginPage (props) {
     return (
         <>
-        <BodyContainer>
-            <LoginComponent/>
-        </BodyContainer>
+            <BodyContainer>
+                <img src={BurgerImg} />
+                <LoginComponent />
+            </BodyContainer>
         </>
     )
 } 
