@@ -11,11 +11,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="kitchen" element={<PrivateRoute redirectTo="/">
+       <Route path="/register" element={<Register />} />
+         <Route path="kitchen" element={<PrivateRoute redirectTo="/">
          <Kitchen/></PrivateRoute>} />
         <Route path="hall" element={<PrivateRoute redirectTo="/">
-        <Hall /> </PrivateRoute >}/>
+        <Hall /> </PrivateRoute >}/> 
         <Route path="/" element={<Navigate replace to="/login" />} />
       </Routes>
       <Footer />

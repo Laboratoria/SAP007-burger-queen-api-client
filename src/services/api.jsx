@@ -1,9 +1,10 @@
-import { getToken } from "./token";
+import { getToken, setToken } from "./token";
+import { errorMessage, sucessMessage } from './feedback';
 
 const URL = "https://lab-api-bq.herokuapp.com";
 
-export const createUser = (name, email, password, role) => {
-  return fetch(`${URL}/users`, {
+export const createUser = async (name, email, password, role) => {
+  const response = await fetch(`${URL}/users`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -16,10 +17,21 @@ export const createUser = (name, email, password, role) => {
       restaurant: "hora de burger",
     }),
   });
+  let message = "";
+  if (response.status === 200) {
+    message = sucessMessage(response);
+    console.log(message)
+  } else {
+    throw new Error(errorMessage(response));
+  }
+  const data = await response.json();
+  setToken(data.token);
+  return { data, message };
 };
 
-export const logedIn = (email, password) => {
-  return fetch(`${URL}/auth`, {
+
+export const logedIn = async (email, password) => {
+  const response = await fetch(`${URL}/auth`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -30,6 +42,14 @@ export const logedIn = (email, password) => {
       password: password,
     }),
   });
+  let message = "";
+  if (response.status !== 200) {
+    message = "E-mail ou senha incorretos";
+    throw new Error(message);
+  }
+  const data = await response.json();
+  setToken(data.token);
+  return { data, message };
 };
 
 export const getProduct = () => {

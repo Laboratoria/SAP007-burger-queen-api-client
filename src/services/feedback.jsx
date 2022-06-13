@@ -1,7 +1,5 @@
-export function codeError (response){
+export function errorMessage (response){
     switch (response.status){
-        case 200:
-             return "usuário cadastrado com sucesso"
         case 400:
             return"Preencha todos os campos";
         case 401:
@@ -14,3 +12,12 @@ export function codeError (response){
             return "Ocorreu algum erro";
     };
 };
+export function sucessMessage (response){
+    switch (response.status){
+        case 200:
+             return "Usuário cadastrado com sucesso";
+             default:
+              return "Sucesso";
+  
+    };
+  };

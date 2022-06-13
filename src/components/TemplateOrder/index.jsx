@@ -1,7 +1,7 @@
 import styles from "./style.module.css";
 import { FaTrash } from "react-icons/fa";
 
-function TemplateOrder( {product,onClickRemove}) {
+function TemplateOrder({product,onClickRemove}) {
   return (
       <ul className={styles.UlTemplateOrder}>
          <li>

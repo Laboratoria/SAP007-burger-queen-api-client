@@ -5,10 +5,9 @@ import button from "../../src/components/Button/button.module.css";
 import Message from "../components/Message";
 import Role from "../components/Role";
 import { createUser } from "../services/api";
-import { codeError } from "../services/error";
-import { setToken } from "../services/token";
 import { useState } from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 function Register() {
   const [name, setName] = useState("");
@@ -18,21 +17,23 @@ function Register() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
- 
+
   function handleSubmit(e) {
     e.preventDefault();
     createUser(name, email, password, role)
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json();
-        }
-        setError(codeError(response));
+      .then(({ data, message }) => {
+        setError(message)
+        setTimeout(() => {
+          navigate(data.role === "hall" ? "/hall" : "/kitchen");
+        }, 3000)
       })
-      .then((data) => {
-        setToken(data.token);
-        navigate(data.role === "hall" ? "/hall" : "/kitchen");
-      })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setError(error.message)
+        setTimeout(() => {
+          setError("")
+        }, 3000)
+      }
+      )
   }
   return (
     <div className="DivForm">

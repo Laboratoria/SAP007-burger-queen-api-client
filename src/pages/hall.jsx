@@ -97,7 +97,7 @@ function Hall() {
         navigate("/kitchen");
       })
       .catch((error) => {
-        setError(codeError(error));
+        setError(FeedbackError(error));
       });
   }
 
