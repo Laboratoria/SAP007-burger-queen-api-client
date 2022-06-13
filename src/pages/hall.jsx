@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import Input from "../components/Input";
 import TemplateOrder from "../components/TemplateOrder";
 import finn from "../img/finn.jpeg"
+import button from "../../src/components/Button/button.module.css";
 import { codeError } from "../services/error";
 import { getProduct, createOrder } from "../services/api";
 import { useState, useEffect } from "react";
@@ -135,8 +136,8 @@ function Hall() {
     <div>
       <Header children="MENU" img={finn} alt={"Finn comendo um sanduíche"} />
       <nav className="navMenu">
-      <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
-      <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />
+        <Button children="CAFÉ" className={button.btnMenu} onClick={() => PushedProducts("breakfast")} />
+        <Button children="+ MENU" className={button.btnMenu} onClick={() => PushedProducts("all-day")} />
       </nav>
       <section className="sectionCard">
         {products.map((item) => {
@@ -168,7 +169,7 @@ function Hall() {
         />
       </div>
       <section className="sectionOrder">
-           {order.map((item) => {
+        {order.map((item) => {
           return (
             <TemplateOrder
               key={item.id}
@@ -177,7 +178,7 @@ function Hall() {
             />
           );
         })}
-        <p> VALOR TOTAL: R${totalValue().toFixed(2)}</p>
+        <p className="total"> VALOR TOTAL: R${totalValue().toFixed(2)}</p>
       </section>
       <div className="logout" onClick={handleLogout}>
         <button children="Confirmar Pedido" id="confirm" onClick={finalOrder}></button>

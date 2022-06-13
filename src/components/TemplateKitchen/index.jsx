@@ -1,12 +1,13 @@
 import styles from "./style.module.css";
+import button from "../Button/button.module.css";
 import Button from "../Button";
 
 function TemplateKitchen( props ) {
   return (
     <ul className={styles.UlTemplateKitchen}>
       <li className={styles.liTemplateKitchen}>
-        <Button children={props.status} onClick={props.update}/>
-        <p>Id:{props.id}</p>
+        <Button children={props.status} className={button.btnStatus} onClick={props.update}/>
+        <p>N°:{props.id}</p>
         <p>Cliente: {props.client}</p>
         <p>Mesa:{props.table}</p>
         <p>Criado:{props.createdAt}</p>

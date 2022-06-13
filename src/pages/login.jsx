@@ -1,6 +1,7 @@
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Logo from "../components/Logo";
+import button from "../../src/components/Button/button.module.css";
 import Message from "../components/Message";
 import { logedIn } from "../services/api";
 import { codeError } from '../services/error';
@@ -50,7 +51,7 @@ function Login() {
         title="A senha deve conter no mínimo 6 caracteres entre números e letras"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Button children="LOGAR" type="button" onClick={handleOnClick} />
+      <Button children="LOGAR" className={button.btnLogin} type="button" onClick={handleOnClick} />
       <Link to="/register" className="Hiperlink">
         Cadastre-se
       </Link>

@@ -1,4 +1,4 @@
-.btn{
+.btn,.btnStatus,.btnMenu,.btnRegister,.btnLogin{
   background-color: #F2BB16;
   cursor: pointer;
   color: white;
@@ -8,3 +8,7 @@
   border: black;
   font-size: 16px;
 }
+.btnStatus{
+  background-color: black;
+}
+
