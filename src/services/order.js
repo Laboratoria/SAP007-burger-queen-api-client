@@ -27,17 +27,30 @@ export function getOrders() {
 
 function requests(endpoint, method) {
   const options = {
-      method: method,
-      headers: {
-          'Content-Type': 'application/json',
-          "Authorization": getToken()
-      },
-  }
+    method: method,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: getToken(),
+    },
+  };
   return fetch(`https://lab-api-bq.herokuapp.com${endpoint}`, options)
-      .then(response => response.json())
-      .then(json => json)
+    .then((response) => response.json())
+    .then((json) => json);
 }
 
 export function deleteOrders(id) {
   return requests(`/orders/${id}`, "DELETE");
+}
+
+export function updateStatusOrder(id, status) {
+  console.log(id, status)
+  const body = {
+    status: status 
+  };
+
+  const headers = {
+    Authorization: getToken(),
+  };
+
+  return request(`/orders/${id}`, "PUT", body, headers);
 }

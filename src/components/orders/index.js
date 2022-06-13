@@ -47,7 +47,8 @@ function Order({ order, onClick }) {
                 </li>
               ) : null}
               <li>
-                  <p>Qtd: {item.qtd}</p></li>
+                <p>Qtd: {item.qtd}</p>
+              </li>
             </ul>
           </>
         );

@@ -4,7 +4,7 @@ import { removeToken, removeName, removeRole } from "../../services/storage";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Order from "../../components/orders";
-import { getOrders } from "../../services/order";
+import { getOrders, updateStatusOrder } from "../../services/order";
 import "./styles.modules.css";
 
 function Kitchen() {
@@ -17,6 +17,22 @@ function Kitchen() {
   }
 
   const [order, setOrder] = useState([]);
+
+  function updateStatus(element) {
+    order.map((item) => {
+      if (item.id === element.id) {
+        if (item.status === "pending") {
+          item.status = "preparing";
+        }
+        if (item.status === "preparing") {
+          item.status = "ready";
+        }
+      }
+      return updateStatusOrder(item.id, item.status).then(() => {
+        setOrder(item);
+      });
+    });
+  }
 
   useEffect(() => {
     getOrders().then((orders) => {
@@ -40,7 +56,7 @@ function Kitchen() {
       <main>
         <section>
           {order.map((item) => {
-            return <Order order={item} />;
+            return <Order order={item} onClick={() => updateStatus(item)} />;
           })}
         </section>
       </main>
