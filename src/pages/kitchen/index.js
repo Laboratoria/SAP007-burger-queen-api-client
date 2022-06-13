@@ -22,14 +22,11 @@ function Kitchen() {
     order.map((item) => {
       if (item.id === element.id) {
         if (item.status === "pending") {
-          item.status = "preparing";
-        }
-        if (item.status === "preparing") {
-          item.status = "ready";
+          item.status = "Preparando";
         }
       }
-      return updateStatusOrder(item.id, item.status).then(() => {
-        setOrder(item);
+      return updateStatusOrder(item.id, item.status).then((data) => {
+        setOrder(data);
       });
     });
   }
@@ -54,7 +51,7 @@ function Kitchen() {
         </button>
       </header>
       <main>
-        <section>
+        <section className="container-orders">
           {order.map((item) => {
             return <Order order={item} onClick={() => updateStatus(item)} />;
           })}

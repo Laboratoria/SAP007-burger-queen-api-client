@@ -21,7 +21,7 @@ function Order({ order, onClick }) {
         </li>
         {order.updatedAt ? (
           <li>
-            <p>Finzalizado: {order.updatedAt}</p>
+            <p>Finalizado: {order.updatedAt}</p>
           </li>
         ) : null}
       </ul>

@@ -1,7 +1,14 @@
 .menu-kitchen {
-    display: inline;
-    justify-content: center;
-    width: 50%;
-    text-align: center;
-    color: #f75b42;
+  display: inline;
+  justify-content: center;
+  width: 50%;
+  text-align: center;
+  color: #f75b42;
+}
+
+.container-orders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2%;
 }
