@@ -1,5 +1,5 @@
 import { allOrders, updateOrder } from "../../services/api";
-import jake from "../../img/jake.jpg";
+import jake from "../../img/jake.png";
 import TemplateKitchen from "../../components/TemplateKitchen";
 import Header from "../../components/Header";
 import { preparationTime, formatDateHour } from "../../components/Time";
