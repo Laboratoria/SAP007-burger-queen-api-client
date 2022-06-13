@@ -49,7 +49,7 @@ function Login() {
           title="A senha deve conter no mínimo 6 caracteres entre números e letras"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button children="LOGAR" type="submit" />
+        <Button children="LOGAR" type="submit" className={button.btnLogin}/>
         <Link to="/register" className="Hiperlink">
           Cadastre-se
         </Link>

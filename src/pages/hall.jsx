@@ -5,11 +5,11 @@ import Input from "../components/Input";
 import TemplateOrder from "../components/TemplateOrder";
 import finn from "../img/finn.jpeg"
 import button from "../../src/components/Button/button.module.css";
-import { codeError } from "../services/error";
 import { getProduct, createOrder } from "../services/api";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
+import { errorMessage } from "../services/feedback";
 
 function Hall() {
   const navigate = useNavigate();
@@ -97,7 +97,7 @@ function Hall() {
         navigate("/kitchen");
       })
       .catch((error) => {
-        setError(FeedbackError(error));
+        setError(errorMessage(error));
       });
   }
 
