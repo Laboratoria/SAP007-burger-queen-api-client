@@ -1,6 +1,7 @@
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Logo from "../components/Logo";
+import button from "../../src/components/Button/button.module.css";
 import Message from "../components/Message";
 import Role from "../components/Role";
 import { createUser } from "../services/api";
@@ -89,7 +90,7 @@ function Register() {
           required
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button children="CADASTRAR" />
+        <Button children="CADASTRAR" className={button.btnRegister}/>
         <Link to="/login" className="Hiperlink">
           Já tenho cadastro
         </Link>
