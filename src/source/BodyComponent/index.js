@@ -1,5 +1,7 @@
 import { React, } from 'react';
 import styled from 'styled-components';
+import BurgerImg from '../img/burgerlogo.png'
+import LoginComponent from '../LoginComponent/index';
 
 
 const MainDiv = styled.div`
@@ -33,14 +35,16 @@ const CentralContainer = styled.div`
 export default function BodyContainer (){
 
     const fetchBurgerQueen = () =>{
-        const url = 'https://lab-api-bq.herokuapp.com/'
+        const url = 'https://lab-api-bq.herokuapp.com/api-docs/'
 
         fetch(url)
         .then((response => response.json()))
         .then( burgerqueen => {
-            console.log(burgerqueen)
+            console.log(url)
         })
     }
+
+    
     
         
     
@@ -48,7 +52,9 @@ export default function BodyContainer (){
     return (
                 <>
                 <MainDiv>
-                    <CentralContainer>                     
+                    <CentralContainer>
+                        <img src={BurgerImg} alt="BurgerLogo"/>
+                        <LoginComponent />                     
                     </CentralContainer>
                 </MainDiv>
                 </>

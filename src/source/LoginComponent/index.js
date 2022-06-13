@@ -58,6 +58,7 @@ export default function LoginComponent () {
 
     const navigate = useNavigate()
     const handleOnClick = useCallback (() => navigate ('/Cadastro', {replace:true}), [navigate]);
+    
     return (
         <>
             <CentralDiv>
