@@ -82,3 +82,15 @@ export const allOrders = () => {
     },
   });
 };
+
+export const updateOrder = (orderId, status) => {
+  console.log(orderId, status)
+  return fetch (`${URL}/orders/${orderId}`, {
+    method: "PUT",
+    headers:{
+      "Content-Type": "application/json",
+      Authorization: getToken(),
+    },
+    body: JSON.stringify({status}),
+  })
+}

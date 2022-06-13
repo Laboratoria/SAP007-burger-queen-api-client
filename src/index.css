@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #11b4d9;
+  background:whitesmoke;
   display: flex; 
   flex-direction: column;
   justify-content: center;
@@ -33,7 +33,7 @@ a {
   font-size: 18px;
 }
 a.Hiperlink {
-  color: white;
+  color: black;
   cursor: pointer;
   margin-top: 20%;
 }
@@ -53,8 +53,11 @@ a.Hiperlink {
   flex-wrap: wrap;
 }
 .sectionOrder{
-  background-color: aliceblue;
+  background-color: #04B2D9;
   border-radius: 5px;
+}
+.total{
+ text-align: center;
 }
 #confirm{
   color: #ffffff;
@@ -73,9 +76,8 @@ a.Hiperlink {
 }
 .sectionTemplateKitchen{
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 @media (min-width: 768px) and (max-width:1024px){
   .DivForm{

@@ -1,12 +1,9 @@
-.DivTemplateKitchen{
-    width: 260px;
-    height: 290px;
-    display: flex;
-    justify-content: center;
-}
 .UlTemplateKitchen{
     background-color: #F2A922;
-    width: 100%;
     border: 2px solid black;
-    border-radius: 10%;;
+    border-radius: 10%;
+    padding: 10px;
+}
+.liTemplateKitchen{
+    margin-top: 2%;  
 }

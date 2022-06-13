@@ -1,9 +1,10 @@
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Logo from "../components/Logo";
-import { createUser } from "../services/api";
+import button from "../../src/components/Button/button.module.css";
 import Message from "../components/Message";
 import Role from "../components/Role";
+import { createUser } from "../services/api";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -38,7 +39,7 @@ function Register() {
     <div className="DivForm">
       <Logo />
       <form onSubmit={handleSubmit}>
-        <div className="DivRole" data-testid="occupation">
+        <div className="DivRole">
           <Role
             type="radio"
             value="kitchen"
@@ -90,7 +91,7 @@ function Register() {
           required
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button children="CADASTRAR" />
+        <Button children="CADASTRAR" className={button.btnRegister}/>
         <Link to="/login" className="Hiperlink">
           Já tenho cadastro
         </Link>

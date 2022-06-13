@@ -2,9 +2,10 @@ import Button from "../components/Button";
 import Header from "../components/Header";
 import Card from "../components/Card";
 import Input from "../components/Input";
-import finn from "../img/finn.jpeg"
-import { FeedbackError } from "../services/feedback";
 import TemplateOrder from "../components/TemplateOrder";
+import finn from "../img/finn.jpeg"
+import button from "../../src/components/Button/button.module.css";
+import { codeError } from "../services/error";
 import { getProduct, createOrder } from "../services/api";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -43,6 +44,7 @@ function Hall() {
     return setInfo(() => {
       const auxInfo = { ...info };
       auxInfo[e.target.name] = e.target.value;
+      console.log(auxInfo)
       return auxInfo;
     });
   };
@@ -89,7 +91,6 @@ function Hall() {
     }
 
     const resumeOrder = listOrder();
-    console.log(resumeOrder);
 
     createOrder(resumeOrder)
       .then(() => {
@@ -102,7 +103,6 @@ function Hall() {
 
   function handleRemoveItem(item) {
     const productInList = order.find((element) => element.id === item.id);
-
     if (productInList) {
       if (productInList.qtd === 1) {
         order.splice(
@@ -131,12 +131,13 @@ function Hall() {
     );
     return wholeInitial;
   }
+
   return (
     <div>
       <Header children="MENU" img={finn} alt={"Finn comendo um sanduíche"} />
       <nav className="navMenu">
-        <Button children="CAFÉ" onClick={() => PushedProducts("breakfast")} />
-        <Button children="+ MENU" onClick={() => PushedProducts("all-day")} />
+        <Button children="CAFÉ" className={button.btnMenu} onClick={() => PushedProducts("breakfast")} />
+        <Button children="+ MENU" className={button.btnMenu} onClick={() => PushedProducts("all-day")} />
       </nav>
       <section className="sectionCard">
         {products.map((item) => {
@@ -156,6 +157,7 @@ function Hall() {
           name="client"
           value={info.client}
           onChange={handleInfo}
+          required
         />
         <Input
           placeholder="MESA"
@@ -163,6 +165,7 @@ function Hall() {
           name="table"
           value={info.table}
           onChange={handleInfo}
+          required
         />
       </div>
       <section className="sectionOrder">
@@ -175,15 +178,13 @@ function Hall() {
             />
           );
         })}
-        <p> VALOR TOTAL: R${totalValue().toFixed(2)}</p>
+        <p className="total"> VALOR TOTAL: R${totalValue().toFixed(2)}</p>
       </section>
       <div className="logout" onClick={handleLogout}>
         <button children="Confirmar Pedido" id="confirm" onClick={finalOrder}></button>
         <FaSignInAlt size="26px" margin-rigth="0px" />
       </div>
-
     </div>
   );
 }
 export default Hall;
-
