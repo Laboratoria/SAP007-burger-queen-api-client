@@ -72,6 +72,7 @@ function Waitress() {
 
   function orderCreate() {
     if (client && table && order) {
+      console.log(order)
       createOrder(client, table, order).then((data) => {
         if (data.code === 400) {
           setError(data.message);

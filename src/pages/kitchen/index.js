@@ -2,7 +2,7 @@ import logo from "../../Images/logotipo.png";
 import logout from "../../Images/logout.jpg";
 import { removeToken, removeName, removeRole } from "../../services/storage";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect /*, useCallback*/ } from "react";
 import Order from "../../components/orders";
 import { getOrders, updateStatusOrder } from "../../services/order";
 import "./styles.modules.css";
@@ -17,30 +17,34 @@ function Kitchen() {
   }
 
   const [order, setOrder] = useState([]);
+  // const [, updateState] = useState();
+  // const forceUpdate = useCallback(() => updateState({}), []);
+
 
   function updateStatus(element) {
+
     let orderUpdated = order.map((item) => {
       if (item.id === element.id) {
         if (item.status === "pending") {
           item.status = "Preparando";
-        }else if(item.status === "Preparando"){
+        } else if (item.status === "Preparando") {
           item.status = "Pronto"
+          //  forceUpdate()
         }
-         updateStatusOrder(item.id, item.status).then((data) => {
-         console.log(data)
+        updateStatusOrder(item.id, item.status).then((data) => {
+
         })
       }
       return item
     });
-    console.log('novo order')
-    console.log(orderUpdated)
+
     return setOrder(orderUpdated)
   }
 
   useEffect(() => {
     getOrders().then((orders) => {
-      console.log(orders);
-      setOrder(orders);
+
+      setOrder(orders.reverse());
     });
   }, []);
 
@@ -58,6 +62,7 @@ function Kitchen() {
       </header>
       <main>
         <section className="container-orders">
+
           {order.map((item) => {
             return <Order order={item} onClick={() => updateStatus(item)} />;
           })}

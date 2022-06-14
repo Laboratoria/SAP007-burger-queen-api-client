@@ -1,7 +1,9 @@
 import "./styles.modules.css";
 import { formatDateHour, preparationTime } from "../../utils";
 
+
 function Order({ order, onClick }) {
+
   return (
     <div className="order-card">
       <button type="button" onClick={onClick} className="status-button">
@@ -18,11 +20,11 @@ function Order({ order, onClick }) {
           <p>Cliente: {order.client_name}</p>
         </li>
         <li>
-          <p>Criado: {formatDateHour( order.createdAt)}</p>
+          <p>Criado: {formatDateHour(order.createdAt)}</p>
         </li>
         {order.status === "Pronto" ? (
           <li>
-            <p>Finalizado: {preparationTime(order.createdAt,order.updatedAt )}</p>
+            <p>Tempo de preparo: {preparationTime(order.processedAt, order.updatedAt)}</p>
           </li>
         ) : null}
       </ul>

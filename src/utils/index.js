@@ -7,7 +7,6 @@ export const formatDateHour = (standardTime) => {
 }
 
 export const preparationTime = (arrivalTime, exitTime) => {
-    console.log(arrivalTime, exitTime )
     const createdAt = new Date(arrivalTime);
     const processedAt = new Date(exitTime);
     const preparation = differenceInMinutes(processedAt, createdAt)
