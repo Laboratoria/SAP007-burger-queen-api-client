@@ -20,6 +20,7 @@ const ButtonInput = styled.button`
     background-color: red;
     color: white;
     outline: none;
+    cursor: pointer;
 `
 
 const CentralDiv = styled.div`
@@ -35,6 +36,7 @@ const AlertText = styled.p`
 
 const SigninUpButton = styled.h1`
     color: red;
+    cursor: pointer;
 
 `
 
