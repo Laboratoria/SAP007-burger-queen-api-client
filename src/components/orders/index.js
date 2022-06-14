@@ -1,4 +1,5 @@
 import "./styles.modules.css";
+import { formatDateHour, preparationTime } from "../../utils";
 
 function Order({ order, onClick }) {
   return (
@@ -17,11 +18,11 @@ function Order({ order, onClick }) {
           <p>Cliente: {order.client_name}</p>
         </li>
         <li>
-          <p>Criado: {order.createdAt}</p>
+          <p>Criado: {formatDateHour( order.createdAt)}</p>
         </li>
-        {order.updatedAt ? (
+        {order.status === "Pronto" ? (
           <li>
-            <p>Finalizado: {order.updatedAt}</p>
+            <p>Finalizado: {preparationTime(order.createdAt,order.updatedAt )}</p>
           </li>
         ) : null}
       </ul>

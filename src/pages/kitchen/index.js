@@ -19,16 +19,22 @@ function Kitchen() {
   const [order, setOrder] = useState([]);
 
   function updateStatus(element) {
-    order.map((item) => {
+    let orderUpdated = order.map((item) => {
       if (item.id === element.id) {
         if (item.status === "pending") {
           item.status = "Preparando";
+        }else if(item.status === "Preparando"){
+          item.status = "Pronto"
         }
+         updateStatusOrder(item.id, item.status).then((data) => {
+         console.log(data)
+        })
       }
-      return updateStatusOrder(item.id, item.status).then((data) => {
-        setOrder(data);
-      });
+      return item
     });
+    console.log('novo order')
+    console.log(orderUpdated)
+    return setOrder(orderUpdated)
   }
 
   useEffect(() => {
