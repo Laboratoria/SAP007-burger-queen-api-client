@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
-
+import styled from 'styled-components';
 
 const SubmitTitle = styled.h2`
     font-weight: bold;
@@ -25,6 +24,11 @@ const ButtonInput = styled.button`
     color: white;
     outline: none;
 `
+
+// name: userName,
+//       email: userEmail,
+//       password: userPassword,
+//       role: userRole,
 
 export default function SubmitComponent () {
     return(
