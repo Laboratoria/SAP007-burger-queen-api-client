@@ -43,10 +43,14 @@ function Kitchen() {
 
   useEffect(() => {
     getOrders().then((orders) => {
+      const list = [...orders]
+      list.sort((a, b) => b.id- a.id);
+      setOrder(list);
 
-      setOrder(orders.reverse());
     });
   }, []);
+
+  
 
   return (
     <>
