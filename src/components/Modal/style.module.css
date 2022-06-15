@@ -1,0 +1,32 @@
+.DivModal{
+    background-color: rgba(0,0,0, 0.8) ;
+    width: 100%;  
+    height: 100vh;
+    padding: 15px;   
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.DivModalContent{
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #fff;
+    color:#000;
+}
+.btnModal{
+    float: right;
+    background: unset;
+    border: unset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 2%;
+    font-size: 22px;
+    position: relative;
+}

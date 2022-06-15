@@ -2,12 +2,12 @@ import Button from "../components/Button";
 import Header from "../components/Header";
 import Card from "../components/Card";
 import Input from "../components/Input";
-import TemplateOrder from "../components/TemplateOrder";
+import TemplateOrder from "../components/TemplateOrder"; import Modal from "../components/Modal";
 import finn from "../img/finn.png"
 import button from "../../src/components/Button/button.module.css";
 import { getProduct, createOrder } from "../services/api";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
 import { errorMessage } from "../services/feedback";
 
@@ -16,6 +16,7 @@ function Hall() {
   const [info, setInfo] = useState({ client: "", table: "" });
   const [products, setProducts] = useState([]);
   const [order, setOrder] = useState([]);
+  const [historic, setHistoric] = useState(false);
   const [error, setError] = useState("");
   console.log(error);
 
@@ -184,6 +185,12 @@ function Hall() {
         <button children="Confirmar Pedido" id="confirm" onClick={finalOrder}></button>
         <FaSignInAlt size="26px" margin-rigth="0px" />
       </div>
+      <button onClick={() => setHistoric(true)}>MODAL</button>
+      {historic ?(
+      <Modal onClickClose={() => setHistoric(false)}>
+        <h2>Histórico</h2>
+      </Modal >): null
+      }
     </div>
   );
 }

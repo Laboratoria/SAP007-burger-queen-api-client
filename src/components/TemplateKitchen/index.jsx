@@ -11,21 +11,20 @@ function TemplateKitchen( props ) {
         <p>Cliente: {props.client}</p>
         <p>Mesa:{props.table}</p>
         <p>Criado:{props.createdAt}</p>
-        {props.flavor ? (
-          <p>{props.flavor}</p>
-        ) : null}
-        <p>{props.qtd}</p>
         <p>Atulização:{props.updatedAt}</p>
         <p>Preparo:{props.processedAt}</p>
         <p>Pronto:{props.preparedAt}</p>
+        {props.flavor ? (
+          <p>{props.flavor}</p>
+        ) : null}
         <p>Produtos:</p>
-        {props.products.map((product)=>{
+        {props.products.map((products)=>{
          return (
-           <div key={product.id}>
-          <p>{product.name}</p>
-          <p>{product.flavor}</p>
-          <p>{product.complement}</p>
-          <p>{product.qtd}</p>
+           <div key={products.id}>
+          <p>{products.name}</p>
+          <p>{products.flavor}</p>
+          <p>{products.complement}</p>
+          <p>{products.qtd}</p>
           </div>
           )
         })}

@@ -1,9 +1,8 @@
-import { allOrders, updateOrder } from "../../services/api";
-import jake from "../../img/jake.png";
-import TemplateKitchen from "../../components/TemplateKitchen";
-import Header from "../../components/Header";
-import { preparationTime, formatDateHour } from "../../components/Time";
-import "./style.css"
+import { allOrders, updateOrder } from "../services/api";
+import jake from "../img/jake.png";
+import TemplateKitchen from "../components/TemplateKitchen";
+import Header from "../components/Header";
+import { preparationTime, formatDateHour } from "../components/Time";
 import { useState, useEffect } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +27,6 @@ function Kitchen() {
   }, [order]);
 
   const orderByStatus = (item, status) => {
-    console.log("entrou")
     updateOrder(item.id, status)
       .then((response) => {
         console.log(response)
