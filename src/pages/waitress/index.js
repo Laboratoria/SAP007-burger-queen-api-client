@@ -24,6 +24,7 @@ function Waitress() {
 
   useEffect(() => {
     getAllProducts().then((data) => {
+      console.log(data)
       const breakfast = data.filter((item) => {
         return item.type === "breakfast";
       });
@@ -180,8 +181,8 @@ function Waitress() {
           <div className="client-cart">
             <div className="client-infos">
               <Client
-                setClient={setClient}
-                setTable={setTable}
+                onChangeClient={setClient}
+                onChangeTable={setTable}
                 client={client}
                 table={table}
               />
