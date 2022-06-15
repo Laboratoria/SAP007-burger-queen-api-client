@@ -8,10 +8,10 @@ function TemplateOrder({product,onClickRemove}) {
           {product.id ? <p></p>:null}
           <p>Produto:{product.name}</p>
           <p>Complemento:{product.complement}</p>
-          <p>R${(product.price).toFixed(2)}</p>
-          {product.flavor ? <li><p>{product.flavor}</p></li>:null}
+          <p>R${(product.price)}</p>
+          {product.flavor ? <p>{product.flavor}</p>:null}
             <p>Quantidade:{product.qtd}</p>
-            <div className="bin" onClick={onClickRemove}>
+            <div data-testid="icon" className="bin" onClick={onClickRemove}>
               <FaTrash />
            </div>
           </li>

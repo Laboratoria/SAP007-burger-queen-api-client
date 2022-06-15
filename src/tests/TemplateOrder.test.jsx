@@ -1,30 +1,31 @@
 import "@testing-library/jest-dom";
-import { screen, render,waitFor } from "@testing-library/react";
+import { screen, render } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import TemplateOrder from "../components/TemplateOrder";
 
+const infoComand = {
+  name:"café americano",
+  flavor: "null",
+  price: 5,
+  qtd:1,
+}
 describe("<TemplateOrder />", () => {
-  it("Renderizar uma UL com as informações da comanda", async() => {
-    render(<TemplateOrder />);
-    const infoComand = {
-      product:"café americano",
-      price: "R$5,00",
-      flavor: "null",
-      qtd:"1",
-    }
-    console.log(infoComand)
-    const product = screen.getByText("café americano")
-    user.type(product, infoComand.product)
-    const price = screen.getByText("R$5,00")
-    user.type(price, infoComand.price)
+  it("Renderizar uma UL com as informações da comanda", () => {
+    const click = jest.fn()
+    render(<TemplateOrder  product={infoComand} onClickRemove={click}/>);
+   
+    const name = screen.getByText("Produto:café americano")
+    expect(name).toBeInTheDocument()
     const flavor = screen.getByText("null")
-    user.type(flavor, infoComand.flavor)
-    const qtd = screen.getByText("1")
-    user.type(qtd, infoComand.qtd)
+    expect(flavor).toBeInTheDocument()
+    const price = screen.getByText("R$5.00")
+    expect(price).toBeInTheDocument()
+    const qtd = screen.getByText("Quantidade:1")
+    expect(qtd).toBeInTheDocument()
 
-    await waitFor(() => {
-      expect(TemplateOrder).toHaveBeenCalledWith(infoComand)
-    });
-    expect(TemplateOrder).toHaveBeenCalledTimes(1)
+    const icon = screen.getByTestId("icon")
+    user.click(icon)
+    expect(click).toHaveBeenCalledTimes(1)
+   
   });
 });
