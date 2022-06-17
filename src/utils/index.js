@@ -9,7 +9,6 @@ export const formatDateHour = (standardTime) => {
 export const preparationTime = (exitTime, arrivalTime) => {
     const createdAt = new Date(arrivalTime);
     const processedAt = new Date(exitTime);
-    console.log(createdAt, processedAt)
     const preparation = differenceInMinutes(processedAt, createdAt)
     if (preparation < 60) {
         return `${preparation} min(s)`

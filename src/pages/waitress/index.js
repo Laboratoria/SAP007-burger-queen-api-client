@@ -7,7 +7,8 @@ import { getAllProducts } from "../../services/products";
 import "./styles.css";
 import { useState, useEffect } from "react";
 import Navbar from "../../components/navbarAllDay";
-import { createOrder } from "../../services/order";
+import { createOrder, getOrders, updateStatusOrder } from "../../services/order";
+import Order from "../../components/orders";
 import Error from "../../components/errors";
 
 function Waitress() {
@@ -15,11 +16,13 @@ function Waitress() {
   const [tab, setTab] = useState("breakfast");
   const [allDayTab, setAllDayTab] = useState("hamburguer");
   const [order, setOrder] = useState([]);
+  const [ordersReady, setOrdersReady] = useState([]);
   const [client, setClient] = useState();
   const [table, setTable] = useState();
   const [total, setTotal] = useState();
   const [hasProducts, setHasProducts] = useState(false);
   const [hasAllDay, setHasAllDay] = useState(false);
+  const [hasOrders, setHasOrders] = useState(false);
   const [error, setError] = useState();
 
   useEffect(() => {
@@ -111,21 +114,34 @@ function Waitress() {
     },
     {
       name: "Pedidos",
-      onClick: () => changeStateBreakfast(),
+      onClick: () => changeStateOrders(),
     },
   ];
 
   function changeStateBreakfast() {
     setTab("breakfast");
     setHasAllDay(false);
-
   }
 
   function changeStateAllDay() {
     setTab("all-day");
     setHasAllDay(true);
-
   }
+
+  function changeStateOrders() {
+    setTab("pedidos");
+    setHasAllDay(false);
+    setHasOrders(true);
+  }
+
+  useEffect(() => {
+    getOrders().then((orders) => {
+      const list = [...orders]
+      list.sort((a, b) => (b.status === "Entregue") - (a.status === "Pronto"));
+      let ready = list.filter((item) => item.status === "Pronto" || item.status === "Entregue");
+      setOrdersReady(ready);
+    });
+  }, []);
 
   const linksAllDay = [
     {
@@ -141,6 +157,20 @@ function Waitress() {
       onClick: () => setAllDayTab("side"),
     },
   ];
+
+  function updateStatus(element) {
+    let orderUpdated = ordersReady.map((item) => {
+      if (item.id === element.id) {
+        if (item.status === "Pronto") {
+          item.status = "Entregue";
+        }
+        updateStatusOrder(item.id, item.status).then((data) => {
+        })
+      }
+      return item
+    });
+    return setOrdersReady(orderUpdated)
+  }
 
   function totalPrice() {
     let price = 0;
@@ -158,50 +188,58 @@ function Waitress() {
     <>
       <HeaderPedidos
         links={links}
-
       />
-
       {hasAllDay === true ? <Navbar links={linksAllDay} /> : null}
-      <main className="orders">
-        <section className="products">
-          <ul>
-            {hasProducts === true &&
-              activeProducts.map((item) => {
-                return (
-                  <div className="container-products">
-                    <Card
-                      key={item.id}
-                      product={item}
-                      onClick={() => OrderProduct(item)}
-                    />
-                  </div>
-                );
-              })}
-          </ul>
-        </section>
-        <section className="section-cart">
-          <div className="client-cart">
-            <div className="client-infos">
-              <Client
-                onChangeClient={setClient}
-                onChangeTable={setTable}
-                client={client}
-                table={table}
-              />
+      {hasOrders === false ?
+        <main className="orders">
+          <section className="products">
+            <ul>
+              {hasProducts === true &&
+                activeProducts.map((item) => {
+                  return (
+                    <div className="container-products">
+                      <Card
+                        key={item.id}
+                        product={item}
+                        onClick={() => OrderProduct(item)}
+                      />
+                    </div>
+                  );
+                })}
+            </ul>
+          </section>
+          <section className="section-cart">
+            <div className="client-cart">
+              <div className="client-infos">
+                <Client
+                  onChangeClient={setClient}
+                  onChangeTable={setTable}
+                  client={client}
+                  table={table}
+                />
+              </div>
+              <div className="cart">
+                <Cart
+                  onClick={() => orderCreate()}
+                  orderList={order}
+                  total={total}
+                  setOrder={setOrder}
+                  totalPrice={totalPrice}
+                />
+                <Error text={error} className="error-waitress" />
+              </div>
             </div>
-            <div className="cart">
-              <Cart
-                onClick={() => orderCreate()}
-                orderList={order}
-                total={total}
-                setOrder={setOrder}
-                totalPrice={totalPrice}
-              />
-              <Error text={error} className="error-waitress" />
-            </div>
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
+        :
+        <main>
+          <section className="container-orders">
+            {ordersReady.map((item) => {
+              return <Order order={item} onClick={() => updateStatus(item)} />
+            })}
+          </section>
+        </main>
+      }
       <Footer />
     </>
   );
