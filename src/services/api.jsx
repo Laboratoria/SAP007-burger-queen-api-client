@@ -70,7 +70,7 @@ export const createOrder = (info) => {
       Authorization: getToken(),
     },
     body: JSON.stringify(info),
-  });
+  })
 };
 
 export const allOrders = () => {
@@ -80,17 +80,17 @@ export const allOrders = () => {
       "Content-Type": "application/json",
       Authorization: getToken(),
     },
-  });
+  })
 };
 
 export const updateOrder = (orderId, status) => {
   console.log(orderId, status)
-  return fetch (`${URL}/orders/${orderId}`, {
+  return fetch(`${URL}/orders/${orderId}`, {
     method: "PUT",
-    headers:{
+    headers: {
       "Content-Type": "application/json",
       Authorization: getToken(),
     },
-    body: JSON.stringify({status}),
+    body: JSON.stringify({ status }),
   })
 }

@@ -5,6 +5,12 @@
   /* border: 2px solid #0B79D9 ; */
   padding: 5%;
 }
+@media (min-width: 768px) and (max-width:1024px){
+  .LogoImg{
+    width: 350px;
+    height: 350px;
+  }
+}
 @media(min-width: 1024px) and (max-width:1440px){
   .LogoImg{
     width: 420px;
