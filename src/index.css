@@ -79,6 +79,13 @@ a.Hiperlink {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+.btnModal{
+  background-color:unset;
+  border: unset;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
 @media (min-width: 768px) and (max-width:1024px){
   .DivForm{
     margin: 30px 25%;
