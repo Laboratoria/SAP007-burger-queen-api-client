@@ -16,15 +16,24 @@ function Kitchen() {
     navigate("/login");
   }
 
+
   useEffect(() => {
     allOrders()
       .then((response) => response.json())
-      .then((data) => setOrder(data));
-  }, []);
+      .then((data) => {
+        const showOrders = data.filter((order) => {
+          const toBeDone = order.status === "pending" || order.status === "preparing"
+          return toBeDone
+        })
+        setOrder(showOrders)
+      })
+        .then((data) => {
+          const sortByStatus = [...data]
+          sortByStatus.sort((a, b) => b.id - a.id)
+          setOrder(sortByStatus)
+        })
+  }, [])
 
-  useEffect(() => {
-    console.log(order);
-  }, [order]);
 
   const orderByStatus = (item, status) => {
     updateOrder(item.id, status)
@@ -44,44 +53,44 @@ function Kitchen() {
 
   return (
     <body id="bodyKitchen">
-    <div>
-      <Header
-        children="PEDIDOS"
-        img={jake}
-        alt={"Jake comendo pizza com sorvete"}
-      />
-      <section className="sectionTemplateKitchen">
-        {order.map((item) => {
-          const orderReady = item.status === "ready";
-          const orderPreparing = item.status === "preparing";
-          const orderPending = item.status === "pending";
-          let newState = "";
-          if (orderPending) {
-            newState = "preparing"
-          } else if (orderPreparing) {
-            newState = "ready"
-          } else { newState = "ready" }
-          return (
-            <TemplateKitchen
-              key={item.id}
-              id={item.id}
-              client={item.client_name}
-              table={item.table}
-              status={item.status}
-              createdAt={formatDateHour(item.createdAt)}
-              updatedAt={formatDateHour(item.updatedAt)}
-              update={() => orderByStatus(item, newState)}
-              processedAt={orderReady ? formatDateHour(item.processedAt) : ""}
-              preparedAt={orderReady ? preparationTime(item.processedAt, item.updatedAt) : ""}
-              products={item.Products}
-            />
-          );
-        })}
-      </section>
-      <div className="logout" id="logout" onClick={handleLogout}>
-        <FaSignInAlt size="26px" margin-rigth="0px" />
+      <div>
+        <Header
+          children="PEDIDOS"
+          img={jake}
+          alt={"Jake comendo pizza com sorvete"}
+        />
+        <section className="sectionTemplateKitchen">
+          {order.map((item) => {
+            const orderReady = item.status === "ready";
+            const orderPreparing = item.status === "preparing";
+            const orderPending = item.status === "pending";
+            let newState = "";
+            if (orderPending) {
+              newState = "preparing"
+            } else if (orderPreparing) {
+              newState = "ready"
+            } else { newState = "ready" }
+            return (
+              <TemplateKitchen
+                key={item.id}
+                id={item.id}
+                client={item.client_name}
+                table={item.table}
+                status={item.status}
+                createdAt={formatDateHour(item.createdAt)}
+                updatedAt={formatDateHour(item.updatedAt)}
+                update={() => orderByStatus(item, newState)}
+                processedAt={orderReady ? formatDateHour(item.processedAt) : ""}
+                preparedAt={orderReady ? preparationTime(item.processedAt, item.updatedAt) : ""}
+                products={item.Products}
+              />
+            );
+          })}
+        </section>
+        <div className="logout" id="logout" onClick={handleLogout}>
+          <FaSignInAlt size="26px" margin-rigth="0px" />
+        </div>
       </div>
-    </div>
     </body>
   );
 }

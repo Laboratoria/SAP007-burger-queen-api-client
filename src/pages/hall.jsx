@@ -7,8 +7,8 @@ import finn from "../img/finn.png"
 import button from "../../src/components/Button/button.module.css";
 import { getProduct, createOrder } from "../services/api";
 import { useState, useEffect } from "react";
-import {  useNavigate } from "react-router-dom";
-import { FaSignInAlt,FaClipboardList } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { FaSignInAlt, FaClipboardList } from "react-icons/fa";
 import { errorMessage } from "../services/feedback";
 
 function Hall() {
@@ -23,6 +23,10 @@ function Hall() {
   function handleLogout() {
     localStorage.removeItem("token");
     navigate("/login");
+  }
+  function resetCommand() {
+    setInfo({ client: "", table: "" })
+    setOrder([])
   }
 
   function PushedProducts(option) {
@@ -95,7 +99,7 @@ function Hall() {
 
     createOrder(resumeOrder)
       .then(() => {
-        navigate("/kitchen");
+        resetCommand();
       })
       .catch((error) => {
         setError(errorMessage(error));
@@ -132,6 +136,7 @@ function Hall() {
     );
     return wholeInitial;
   }
+
 
   return (
     <div>
@@ -181,15 +186,15 @@ function Hall() {
         })}
         <p className="total"> VALOR TOTAL: R${totalValue().toFixed(2)}</p>
       </section>
-      <div className="logout" onClick={handleLogout}>
+      <div className="logout">
         <button children="Confirmar Pedido" id="confirm" onClick={finalOrder}></button>
-        <FaSignInAlt size="26px" margin-rigth="0px" />
+        <FaSignInAlt size="26px" margin-rigth="0px" onClick={handleLogout}/>
       </div>
-      <button className="btnModal"onClick={() => setHistoric(true)}><FaClipboardList size="26px" /></button>
-      {historic ?(
-      <Modal onClickClose={() => setHistoric(false)}>
-        <h2>Histórico</h2>
-      </Modal >): null
+      <button className="btnModal" onClick={() => setHistoric(true)}><FaClipboardList size="26px" /></button>
+      {historic ? (
+        <Modal onClickClose={() => setHistoric(false)}>
+          <h2>Histórico</h2>
+        </Modal >) : null
       }
     </div>
   );
