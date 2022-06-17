@@ -1,23 +1,23 @@
 
 import logo from "../../Images/logotipo.png";
 import logout from "../../Images/logout.jpg";
-import "./styles.modules.css";
+import "./styles.css";
 import { removeToken, removeName, removeRole } from "../../services/storage";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-function HeaderPedidos({links}) {
+function HeaderPedidos({ links }) {
     const navigate = useNavigate();
-    function logoutUser(){
+    function logoutUser() {
         removeToken()
         removeName()
         removeRole()
-        navigate("/", {message: "redirecionando"})
+        navigate("/", { message: "redirecionando" })
     }
-    
-    const [list, setList] = useState(links.map((link, index) => { 
+
+    const [list, setList] = useState(links.map((link, index) => {
         const listobj = link
-        if (index === 0){
+        if (index === 0) {
             listobj.selected = true
         } else {
             listobj.selected = false
@@ -26,13 +26,12 @@ function HeaderPedidos({links}) {
     }))
 
     function handleClick(link, index) {
-        const newList = list.map((li, i)=> {
-            if(index === i){
+        const newList = list.map((li, i) => {
+            if (index === i) {
                 li.selected = true
-            }else{
+            } else {
                 li.selected = false
             }
-
             return li
         })
         setList(newList)
@@ -47,14 +46,13 @@ function HeaderPedidos({links}) {
                 <ul>
                     {list.map((link, index) => (
                         <li key={index}>
-                            <button className={ link.selected ? "selected" : "option"} onClick={ () => handleClick(link, index)}>{link.name}</button>
+                            <button className={link.selected ? "selected" : "option"} onClick={() => handleClick(link, index)}>{link.name}</button>
                         </li>
                     ))}
-                   
                 </ul>
                 <hr></hr>
             </navbar>
-            <button className="logout" onClick={ ()=>logoutUser()}>
+            <button className="logout" onClick={() => logoutUser()}>
                 <img src={logout} alt="Deslogar" ></img>
             </button>
         </header>

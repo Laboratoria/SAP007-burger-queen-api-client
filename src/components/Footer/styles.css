@@ -15,6 +15,6 @@ footer .footer {
 
 @media (min-width: 1024px) and (max-width: 2000px) {
   footer .footer {
-    position:inherit;
+    position: inherit;
   }
 }

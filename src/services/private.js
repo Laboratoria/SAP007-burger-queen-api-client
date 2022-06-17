@@ -1,10 +1,11 @@
 import { Navigate } from "react-router-dom";
 import Kitchen from "../pages/kitchen/index.js";
 import Waitress from "../pages/waitress/index.js";
+import { getToken } from "./storage"
 
 const role = () => localStorage.getItem("role");
 const isAuthenticated = () => {
-  const token = localStorage.getItem("token");
+  const token = getToken;
   if (token !== null && token !== "undefined") {
     return true;
   }
@@ -14,7 +15,6 @@ const isAuthenticated = () => {
 const PrivateRoute = () => {
   if (isAuthenticated) {
     if (role() === "kitchen") {
-      
       return <Kitchen />;
     }
     if (role() === "waitress") {

@@ -5,5 +5,5 @@ export function request(endpoint, method, body, headers) {
         body: JSON.stringify(body)
     }
     return fetch(`https://lab-api-bq.herokuapp.com${endpoint}`, options)
-    .then(response => response.json())
+        .then(response => response.json())
 }

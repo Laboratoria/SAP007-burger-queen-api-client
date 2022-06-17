@@ -7,25 +7,31 @@ import Error from "../../components/errors";
 import { useState } from "react";
 import { userLogin } from "../../services/auth";
 import { useNavigate } from "react-router-dom";
-import "./styles.modules.css";
+import { setToken, setName, setRole } from "../../services/storage"
+import "./styles.css";
 
 function Login() {
   const navigate = useNavigate();
   function loginUser(e) {
     e.preventDefault();
-    userLogin(email, password).then((user) => {
-      console.log(user);
-      if (user.token) {
-        localStorage.setItem("name", user.name);
-        localStorage.setItem("token", user.token);
-        localStorage.setItem("role", user.role);
-        navigate("/panel", { message: "redirecionado" })
-        return user;
-      } else if (user.code) {
-        setError(user.message);
-        hideMessage();
-      }
-    });
+    if (email && password) {
+      userLogin(email, password).then((user) => {
+        if (user.token) {
+          setToken(user.token);
+          setName(user.name);
+          setRole(user.role);
+          navigate("/panel", { message: "redirecionado" })
+          return user;
+        } else if (user.code) {
+          setError(user.message);
+          hideMessage();
+        }
+      })
+    } else {
+      setError("Preencha os campos corretamente");
+      hideMessage();
+    }
+
     function hideMessage() {
       setTimeout(() => {
         setError("");
@@ -41,7 +47,7 @@ function Login() {
       <Header />
       <section className="container-login">
         <aside className="container-banner">
-          <Banner/>
+          <Banner />
         </aside>
         <form className="login" onSubmit={loginUser}>
           <h1 className="login-indicator">Login</h1>

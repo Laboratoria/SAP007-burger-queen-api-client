@@ -1,5 +1,5 @@
 import Input from "../Inputs";
-import "./styles.modules.css";
+import "./styles.css";
 
 function Client({ onChangeClient, onChangeTable, client, table }) {
   return (

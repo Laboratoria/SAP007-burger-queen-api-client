@@ -1,4 +1,4 @@
-import styles from "./styles.modules.css";
+import styles from "./styles.css";
 import plusIcon from "../../Images/plus-icon.png";
 
 function Card({ product, onClick }) {
@@ -10,7 +10,7 @@ function Card({ product, onClick }) {
         </li>
         {product.flavor ? (
           <li>
-            <p>{product.flavor[0].toUpperCase() + product.flavor.substr(1) }</p>
+            <p>{product.flavor[0].toUpperCase() + product.flavor.substr(1)}</p>
           </li>
         ) : null}
         {product.complement ? (
@@ -20,8 +20,8 @@ function Card({ product, onClick }) {
         ) : null}
       </ul>
       <li>
-          <p>{product.price.toFixed(2)} R$</p>
-        </li>
+        <p>R$ {product.price.toFixed(2)}</p>
+      </li>
       <button type="button" onClick={onClick} className="add-button">
         <img src={plusIcon} alt="Adicionar Produto" className="plus-icon"></img>
       </button>

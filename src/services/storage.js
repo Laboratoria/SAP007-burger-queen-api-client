@@ -1,19 +1,27 @@
-export function setToken(token){
+export function setToken(token) {
     localStorage.setItem("token", token)
 }
 
-export function getToken(){
+export function setName(name) {
+    localStorage.setItem("name", name)
+}
+
+export function setRole(role) {
+    localStorage.setItem("role", role)
+}
+
+export function getToken() {
     return localStorage.getItem("token")
 }
 
-export function removeToken(){
+export function removeToken() {
     return localStorage.removeItem("token")
 }
 
-export function removeName(){
+export function removeName() {
     return localStorage.removeItem("name")
 }
 
-export function removeRole(){
+export function removeRole() {
     return localStorage.removeItem("role")
 }

@@ -4,7 +4,7 @@ import Footer from "../../components/Footer/index";
 import Cart from "../../components/cart/index";
 import Card from "../../components/card";
 import { getAllProducts } from "../../services/products";
-import "./styles.modules.css";
+import "./styles.css";
 import { useState, useEffect } from "react";
 import Navbar from "../../components/navbarAllDay";
 import { createOrder } from "../../services/order";
@@ -24,7 +24,6 @@ function Waitress() {
 
   useEffect(() => {
     getAllProducts().then((data) => {
-      console.log(data)
       const breakfast = data.filter((item) => {
         return item.type === "breakfast";
       });
@@ -73,7 +72,6 @@ function Waitress() {
 
   function orderCreate() {
     if (client && table && order) {
-      console.log(order)
       createOrder(client, table, order).then((data) => {
         if (data.code === 400) {
           setError(data.message);
@@ -99,7 +97,7 @@ function Waitress() {
   function hideMessage() {
     setTimeout(() => {
       setError("");
-    }, 6000);
+    }, 5000);
   }
 
   const links = [
@@ -111,18 +109,22 @@ function Waitress() {
       name: "Dia Todo",
       onClick: () => changeStateAllDay(),
     },
+    {
+      name: "Pedidos",
+      onClick: () => changeStateBreakfast(),
+    },
   ];
 
   function changeStateBreakfast() {
     setTab("breakfast");
     setHasAllDay(false);
-   
+
   }
 
   function changeStateAllDay() {
     setTab("all-day");
     setHasAllDay(true);
-    
+
   }
 
   const linksAllDay = [
@@ -156,10 +158,10 @@ function Waitress() {
     <>
       <HeaderPedidos
         links={links}
-       
+
       />
 
-        {hasAllDay === true ? <Navbar links={linksAllDay} /> : null}
+      {hasAllDay === true ? <Navbar links={linksAllDay} /> : null}
       <main className="orders">
         <section className="products">
           <ul>
