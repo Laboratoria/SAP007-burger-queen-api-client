@@ -46,7 +46,7 @@ const Modal = ({ children, isOpen, onClickClose }) => {
         <button className={style.btnModal} type="button" onClick={onClickClose}>
           X
         </button>
-        <section>
+        <section className={style.infosHistoric}>
         {order.map((item) => {
           const orderReady = item.status === "ready";
           const orderDelivered = item.status === "delivered";
