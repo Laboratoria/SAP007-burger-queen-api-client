@@ -17,9 +17,7 @@ function Kitchen() {
   }
 
   const [order, setOrder] = useState([]);
-  // const [, updateState] = useState();
-  // const forceUpdate = useCallback(() => updateState({}), []);
-
+  
 
   function updateStatus(element) {
 
@@ -29,9 +27,10 @@ function Kitchen() {
           item.status = "Preparando";
         } else if (item.status === "Preparando") {
           item.status = "Pronto"
-          //  forceUpdate()
+          
         }
         updateStatusOrder(item.id, item.status).then((data) => {
+         
 
         })
       }

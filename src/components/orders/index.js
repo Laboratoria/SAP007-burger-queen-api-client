@@ -24,7 +24,7 @@ function Order({ order, onClick }) {
         </li>
         {order.status === "Pronto" ? (
           <li>
-            <p>Tempo de preparo: {preparationTime(order.processedAt, order.updatedAt)}</p>
+            <p>Tempo de preparo: {preparationTime(order.updatedAt, order.createdAt)}</p>
           </li>
         ) : null}
       </ul>

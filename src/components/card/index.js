@@ -20,7 +20,7 @@ function Card({ product, onClick }) {
         ) : null}
       </ul>
       <li>
-          <p>R${product.price.toFixed(2)}</p>
+          <p>{product.price.toFixed(2)} R$</p>
         </li>
       <button type="button" onClick={onClick} className="add-button">
         <img src={plusIcon} alt="Adicionar Produto" className="plus-icon"></img>

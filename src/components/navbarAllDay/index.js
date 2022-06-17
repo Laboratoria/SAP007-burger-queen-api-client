@@ -13,6 +13,8 @@ function Navbar({ links }) {
     return listobj
 }))
 
+// list.selected = index === 0
+
 function handleClick(link, index) {
     const newList = list.map((li, i)=> {
         if(index === i){

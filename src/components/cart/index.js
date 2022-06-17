@@ -70,7 +70,7 @@ function Cart({ onClick, orderList, total, setOrder, totalPrice }) {
         </tbody>
       </table>
       <div className="container-total">
-        <p>Total: {total} R$</p>
+        <p>Total: {total} R$ </p>
         <button className="order-btn" onClick={onClick}>
           Finalizar
         </button>
