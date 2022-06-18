@@ -1,8 +1,28 @@
-import React, { useState, useNavigate }from 'react';
+import React, { useState }from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { userRegister } from '../../Api/api';
 import  { ErrorAlert }  from '../../Api/ErrorMsg';
 import { getToken } from '../../Api/localStorage';
+
+const MainDiv = styled.div`
+    background-color: red;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+const CentralContainer = styled.div`
+    background-color: #e6d820;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
 
 const SubmitTitle = styled.h2`
     font-weight: bold;
@@ -29,10 +49,12 @@ const ButtonInput = styled.button`
     cursor: pointer;
 `
 
-// name: userName,
-//       email: userEmail,
-//       password: userPassword,
-//       role: userRole,
+const FormStyled = styled.form `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
 
 export default function SubmitComponent () {
     const [userName, setName] = useState ("");
@@ -61,28 +83,47 @@ export default function SubmitComponent () {
 
     return(
         <>
+        <MainDiv>
+            <CentralContainer>
             <SubmitTitle>Cadastre seus dados</SubmitTitle>
-            <form onSubmit={handleSubmit}>
+            <FormStyled onSubmit={handleSubmit}>
                 <SubmitInput placeholder="Registre seu nome"
                 inputType="text"
                 inputValue={userName}
-                inputOnChange={(event) => setName(event.target.value)}></SubmitInput>
+                inputOnChange={(event) => setName(event.target.value)} />
 
                 <SubmitInput placeholder="Registre seu email"
                 inputType="text"
                 inputValue={userEmail}
-                inputOnChange={(event) => setEmail(event.targe.value)}></SubmitInput>
+                inputOnChange={(event) => setEmail(event.targe.value)} />
 
                 <SubmitInput placeholder="Registre sua senha"
                 inputType="password"
                 inputValue={userPassword}
-                inputOnChange={(event) => setPassword(event.target.value)}></SubmitInput>
+                inputOnChange={(event) => setPassword(event.target.value)} />
+                <div>
+                    <label>
+                        <input type="radio"
+                         value="hall"
+                         name="role"
+                         checked={userRole === "hall"}
+                         onChange ={(e) => setRole (e.target.value)} />
+                    </label>
+                    <label>
+                        <input type="radio" 
+                        value="kitchen"
+                        name="role"
+                        checked={userRole === "kitchen"}
+                        onChange={(e) => setRole(e.target.value)} />
+                    </label>
+                </div>
                 <ButtonInput onClick={handleSubmit} type="submit">Cadastrar</ButtonInput>
                 <ErrorAlert 
                 disable={errorMessage ? false : true}
                 message={errorMessage} />
-            </form>
-            
+            </FormStyled>
+            </CentralContainer>
+        </MainDiv>
         </>
     )
 }
