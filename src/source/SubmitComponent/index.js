@@ -1,6 +1,8 @@
-import React, { useState }from 'react';
+import React, { useState, useNavigate }from 'react';
 import styled from 'styled-components';
 import { userRegister } from '../../Api/api';
+import  { ErrorAlert }  from '../../Api/ErrorMsg';
+import { getToken } from '../../Api/localStorage';
 
 const SubmitTitle = styled.h2`
     font-weight: bold;
@@ -48,19 +50,39 @@ export default function SubmitComponent () {
             if(response.status === 200) {
                 const data = await response.json();
                 console.log(data.token);
-                setToken(data.token);
+                getToken(data.token);
                 navigate("/");
             }
+             setErrorMessage(errorMessage(response));
+        }   catch(error) {
+            console.log(error);
         }
     }
 
     return(
         <>
             <SubmitTitle>Cadastre seus dados</SubmitTitle>
-            <SubmitInput placeholder="Registre seu nome"></SubmitInput>
-            <SubmitInput placeholder="Registre seu email"></SubmitInput>
-            <SubmitInput placeholder="Registre sua senha"></SubmitInput>
-            <ButtonInput onClick={handleSubmit} type="submit">Cadastrar</ButtonInput>
+            <form onSubmit={handleSubmit}>
+                <SubmitInput placeholder="Registre seu nome"
+                inputType="text"
+                inputValue={userName}
+                inputOnChange={(event) => setName(event.target.value)}></SubmitInput>
+
+                <SubmitInput placeholder="Registre seu email"
+                inputType="text"
+                inputValue={userEmail}
+                inputOnChange={(event) => setEmail(event.targe.value)}></SubmitInput>
+
+                <SubmitInput placeholder="Registre sua senha"
+                inputType="password"
+                inputValue={userPassword}
+                inputOnChange={(event) => setPassword(event.target.value)}></SubmitInput>
+                <ButtonInput onClick={handleSubmit} type="submit">Cadastrar</ButtonInput>
+                <ErrorAlert 
+                disable={errorMessage ? false : true}
+                message={errorMessage} />
+            </form>
+            
         </>
     )
 }

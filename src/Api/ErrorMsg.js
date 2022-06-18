@@ -1,5 +1,4 @@
-/* eslint-disable default-case */
-export const errorAlert = (response) => {
+export const ErrorAlert = (response) => {
     switch (response.status) {
         case 400:
             return "Preencha todos os campos solicitados";
