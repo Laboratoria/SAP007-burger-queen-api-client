@@ -42,9 +42,20 @@ O planejamento foi acompanhado pela ferramenta _Projects_ do _GitHub_.Com a meto
 
 #### Protótipos
 
-Realizado na ferramenta _Figma_, foi desenhado pensando no fluxo da rotina de trabalho da hamburgueria, conforme fluxograma abaixo:
+Realizado na ferramenta [ _Figma_ ](https://www.figma.com/files/project/59452390/Team-project?fuid=1063884082921018774), foi desenhado pensando no fluxo da rotina de trabalho da hamburgueria, conforme fluxograma abaixo:
 
-A paleta de cores escolhida foi de acordo com a logo do restuarnte, que consta os dois personagens principais do desenho: Finn e Jake.
+![Fluxograma](./readme.img/fluxograma.png)
+
+A paleta de cores escolhida foi de acordo com a logo do resturante, que consta os dois personagens principais do desenho: Finn e Jake.
+
+#### A paleta de cores:
+![Paleta](./readme.img/paleta-hora-de-burger.png)
+
+
+#### Logo da Hamburgueria:
+
+![Logo](./src/img/logo.jpeg)
+
 
 ## 4. Histórias de Usuário
 
@@ -113,3 +124,25 @@ Julia Benedicto
 
 Projeto realizado pelas desenvolvedoras Marione Pereira e Thaís Bonalume, no bootcamp Laboratória, turma SAP007.
 Esse foi o nosso quarto projeto e nos ensinou um fluxo de desenvolvimento de projeto completo, desde a pesquisa de usuário a implementação após os testes.
+
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/marione-tainara-da-sp/">
+  <img align="right" alt="Marione"  width="100px" style="border-radius:10px" src="https://avatars.githubusercontent.com/u/91857912?v=4.png"> <br>       
+  <sub>
+          <b>Marione Pereira</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/thais-moreira-bonalume/">
+  <img align="right" alt="Thaís"  width="100px" style="border-radius:10px" src="https://avatars.githubusercontent.com/u/65199369?v=4.png"><br>
+             <sub>
+          <b>Thais Bonalume</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
