@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { getAllProducts } from "../../services/products";
+
 import Order from "./index";
 
 describe("Tests for Order component", () => {
