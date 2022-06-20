@@ -7,22 +7,22 @@ describe("<TemplateKitchen />", () => {
     const infosKitchen = {
       id: 5014,
       client: "Tania Mara",
-      mesa: "3",
-      create: "13/06/2022 19:12",
-      update:"13/06/2022 19:22",
-      preparated:"13/06/2022 20:22",
-      ready: "1 hora(s)",
-      products:[ {
-        name:"café americano",
-        flavor:"null",
-        complement:"null",
+      table: "3",
+      createdAt: "13/06/2022 19:12",
+      updatedAt: "13/06/2022 19:22",
+      processedAt: "13/06/2022 20:22",
+      preparedAt: "1 hora(s)",
+      products: [{
+        name: "café americano",
+        flavor: "null",
+        complement: "null",
         price: 5,
         qtd: 1,
       }]
     }
-    render(<TemplateKitchen props={infosKitchen}/>);
-    
-    const id = screen.getByText("N°:5014")
+    render(<TemplateKitchen {...infosKitchen} />);
+
+    const id = screen.getByText("N°: 5014")
     expect(id).toBeInTheDocument()
     const client = screen.getByText("Cliente: Tania Mara")
     expect(client).toBeInTheDocument()
@@ -36,12 +36,10 @@ describe("<TemplateKitchen />", () => {
     expect(preparated).toBeInTheDocument()
     const ready = screen.getByText("Pronto: 1 hora(s)")
     expect(ready).toBeInTheDocument()
-    const name = screen.getByText(infosKitchen.products.name)
+    const name = screen.getByText(infosKitchen.products[0].name)
     expect(name).toBeInTheDocument()
-    const flavor = screen.getByText("null")
-    expect(flavor).toBeInTheDocument()
-    const complement = screen.getByText("null")
-    expect(complement).toBeInTheDocument()
+    const options = screen.getAllByText("null")
+    expect(options.length).toEqual(2)
     const qtd = screen.getByText("1")
     expect(qtd).toBeInTheDocument()
   });

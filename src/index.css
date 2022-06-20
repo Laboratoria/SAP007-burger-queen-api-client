@@ -73,18 +73,25 @@ a.Hiperlink {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: unset;
+  border: unset;
 }
 .sectionTemplateKitchen{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+.divModal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .btnModal{
   background-color:unset;
   border: unset;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+}
+.textModal{
+  text-align: center;
 }
 @media (min-width: 768px) and (max-width:1024px){
   .DivForm{

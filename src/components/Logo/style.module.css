@@ -2,7 +2,6 @@
   width: 200px;
   height: 200px;
   border-radius: 50px;
-  /* border: 2px solid #0B79D9 ; */
   padding: 5%;
 }
 @media (min-width: 768px) and (max-width:1024px){

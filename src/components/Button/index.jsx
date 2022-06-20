@@ -1,6 +1,4 @@
-
-
- function Button ({ type, children, onClick,className})  {
+function Button({ type, children, onClick, className }) {
   return (
     <button type={type} className={className} onClick={onClick}>{children}</button>
   );

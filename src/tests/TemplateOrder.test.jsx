@@ -4,16 +4,16 @@ import user from "@testing-library/user-event";
 import TemplateOrder from "../components/TemplateOrder";
 
 const infoComand = {
-  name:"café americano",
+  name: "café americano",
   flavor: "null",
-  price: 5,
-  qtd:1,
+  price: "5.00",
+  qtd: 1,
 }
 describe("<TemplateOrder />", () => {
   it("Renderizar uma UL com as informações da comanda", () => {
     const click = jest.fn()
-    render(<TemplateOrder  product={infoComand} onClickRemove={click}/>);
-   
+    render(<TemplateOrder product={infoComand} onClickRemove={click} />);
+
     const name = screen.getByText("Produto:café americano")
     expect(name).toBeInTheDocument()
     const flavor = screen.getByText("null")
@@ -26,6 +26,6 @@ describe("<TemplateOrder />", () => {
     const icon = screen.getByTestId("icon")
     user.click(icon)
     expect(click).toHaveBeenCalledTimes(1)
-   
+
   });
 });
