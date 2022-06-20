@@ -5,7 +5,7 @@ import Banner from "../../components/Banner";
 import Footer from "../../components/Footer";
 import Error from "../../components/errors";
 import { useNavigate } from "react-router-dom";
-import "./styles.modules.css";
+import "./styles.css";
 import Radio from "../../components/radio";
 import { createUser } from "../../services/auth";
 import { useState } from "react";
@@ -14,19 +14,25 @@ function Register() {
   const navigate = useNavigate();
   function registerUser(e) {
     e.preventDefault();
-    createUser(name, email, password, role).then((data) => {
-      if (data.code) {
-        setError(data.message);
-        hideMessage();
-      }
-      if (data.token) {
-        localStorage.setItem("name", data.name);
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("role", data.role);
-        navigate("/panel", {message: "redirecionando"})
-        return data
-      }
-    });
+    if (name && email && password && role) {
+      createUser(name, email, password, role).then((data) => {
+        if (data.code) {
+          setError(data.message);
+          hideMessage();
+        }
+        if (data.token) {
+          localStorage.setItem("name", data.name);
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("role", data.role);
+          navigate("/panel", { message: "redirecionando" })
+          return data
+        }
+      })
+    } else {
+      setError("Preencha os campos corretamente");
+      hideMessage();
+    }
+
     function hideMessage() {
       setTimeout(() => {
         setError("");
@@ -48,7 +54,7 @@ function Register() {
           <Banner />
         </aside>
         <form className="register" onSubmit={registerUser} required>
-        <h1 className="register-indicator">Cadastro</h1>
+          <h1 className="register-indicator">Cadastro</h1>
           <Input
             className="user-name"
             type="text"

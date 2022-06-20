@@ -18,8 +18,26 @@
   background-color: #f2d6a2;
 }
 
-.status-button {
+.status-brown {
   background-color: #6a2f27;
+  color: white;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+}
+
+.status-blue {
+  background-color: #589ebf;
+  color: white;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+}
+
+.status-green {
+  background-color: #929f45;
   color: white;
   width: 90%;
   border-radius: 10px;

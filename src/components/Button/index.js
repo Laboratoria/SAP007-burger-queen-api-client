@@ -1,18 +1,18 @@
-import "./styles.modules.css";
+import "./styles.css";
 
 function Button({
     className, type, onClick, children
-}){
-    return(
-        <button 
-        className= {className}
-        type={type}
-        onClick={onClick}
+}) {
+    return (
+        <button
+            className={className}
+            type={type}
+            onClick={onClick}
         >
-        {children}
+            {children}
         </button>
 
     )
 }
 
-export default Button
+export default Button;

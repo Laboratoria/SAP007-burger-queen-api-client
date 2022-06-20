@@ -3,7 +3,7 @@ import AppRoutes from './routes.js';
 function App() {
   return (
     <div className="App">
-      <AppRoutes/>
+      <AppRoutes />
     </div>
   );
 }

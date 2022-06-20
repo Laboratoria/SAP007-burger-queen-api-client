@@ -1,30 +1,53 @@
-.menu-all-day {
-    margin-top: 2%;
+.header-pedidos {
   display: flex;
-  width: 48%;
-  flex-direction: column;
-}
-
-.menu-all-day ul {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 4%;
-}
-.menu-all-day li {
-  list-style-type: none;
-  display: flex;
+  align-items: center;
   justify-content: space-evenly;
 }
 
-.line-all-day {
-margin-top: 1%;
-margin-bottom: 1%;
+.logotype {
+  width: 9%;
 }
 
-.all-day-option {
+.menu {
+  display: inline;
+  width: 50%;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+}
+.menu li {
+  list-style-type: none;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.logout {
+  background-color: transparent;
+  width: 4%;
+  margin: initial;
+  padding: initial;
+  border-radius: initial;
+  box-shadow: initial;
+  border: initial;
+  text-align: initial;
+  cursor: pointer;
+}
+.logout img {
+  width: 100%;
+}
+
+.logout img:hover {
+  background-color: #f75b42;
+  border-radius: 6px;
+}
+
+.option {
   background-color: transparent;
   width: max-content;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   margin: initial;
   padding: initial;
@@ -33,10 +56,6 @@ margin-bottom: 1%;
   border: initial;
   text-align: center;
   cursor: pointer;
-}
-
-.all-day-option:hover {
-  color: #f75b42;
 }
 
 .selected {
@@ -51,5 +70,5 @@ margin-bottom: 1%;
   border: initial;
   text-align: center;
   cursor: pointer;
-  color: #F75B42;
+  color: #f75b42;
 }

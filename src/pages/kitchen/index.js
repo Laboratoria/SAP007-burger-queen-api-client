@@ -2,10 +2,10 @@ import logo from "../../Images/logotipo.png";
 import logout from "../../Images/logout.jpg";
 import { removeToken, removeName, removeRole } from "../../services/storage";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect /*, useCallback*/ } from "react";
+import { useState, useEffect } from "react";
 import Order from "../../components/orders";
 import { getOrders, updateStatusOrder } from "../../services/order";
-import "./styles.modules.css";
+import "./styles.css";
 
 function Kitchen() {
   const navigate = useNavigate();
@@ -16,41 +16,31 @@ function Kitchen() {
     navigate("/", { message: "redirecionando" });
   }
 
-  const [order, setOrder] = useState([]);
-  // const [, updateState] = useState();
-  // const forceUpdate = useCallback(() => updateState({}), []);
-
+  const [listOrder, setListOrder] = useState([]);
 
   function updateStatus(element) {
-
-    let orderUpdated = order.map((item) => {
+    let orderUpdated = listOrder.map((item) => {
       if (item.id === element.id) {
         if (item.status === "pending") {
           item.status = "Preparando";
         } else if (item.status === "Preparando") {
           item.status = "Pronto"
-          //  forceUpdate()
         }
         updateStatusOrder(item.id, item.status).then((data) => {
-
         })
       }
       return item
     });
-
-    return setOrder(orderUpdated)
+    return setListOrder(orderUpdated);
   }
 
   useEffect(() => {
     getOrders().then((orders) => {
-      const list = [...orders]
-      list.sort((a, b) => b.id- a.id);
-      setOrder(list);
-
+      const orderKitchen = [...orders]
+      orderKitchen.sort((a, b) => b.id - a.id);
+      setListOrder(orderKitchen);
     });
   }, []);
-
-  
 
   return (
     <>
@@ -66,9 +56,9 @@ function Kitchen() {
       </header>
       <main>
         <section className="container-orders">
-
-          {order.map((item) => {
-            return <Order order={item} onClick={() => updateStatus(item)} />;
+          {listOrder.map((item) => {
+            return item.status === "pending" || item.status === "Pronto" || item.status === "Preparando" ?
+              <Order order={item} onClick={() => updateStatus(item)} /> : null
           })}
         </section>
       </main>

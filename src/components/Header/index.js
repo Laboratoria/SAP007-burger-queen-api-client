@@ -1,13 +1,13 @@
 import logo from "../../Images/logotipo.png";
-import "./styles.modules.css";
+import "./styles.css";
 
-function Header(){
-    return (
-      <div 
+function Header() {
+  return (
+    <div
       className="container-logotype">
-          <img src={logo} alt="logotipo"/>
-      </div>
-    );
-  }
-  
-  export default Header;
+      <img src={logo} alt="logotipo" />
+    </div>
+  );
+}
+
+export default Header;

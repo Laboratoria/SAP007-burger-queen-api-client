@@ -1,0 +1,55 @@
+.menu-all-day {
+  margin-top: 2%;
+  display: flex;
+  width: 48%;
+  flex-direction: column;
+}
+
+.menu-all-day ul {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4%;
+}
+.menu-all-day li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.line-all-day {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.all-day-option {
+  background-color: transparent;
+  width: max-content;
+  font-size: 15px;
+  font-weight: bold;
+  margin: initial;
+  padding: initial;
+  border-radius: initial;
+  box-shadow: initial;
+  border: initial;
+  text-align: center;
+  cursor: pointer;
+}
+
+.all-day-option:hover {
+  color: #f75b42;
+}
+
+.selected {
+  background-color: transparent;
+  width: max-content;
+  font-size: 16px;
+  font-weight: bold;
+  margin: initial;
+  padding: initial;
+  border-radius: initial;
+  box-shadow: initial;
+  border: initial;
+  text-align: center;
+  cursor: pointer;
+  color: #f75b42;
+}

@@ -1,5 +1,5 @@
 import trash from "../../Images/trash-icon.png";
-import "./styles.modules.css";
+import "./styles.css";
 import { useState, useCallback } from "react";
 
 function Cart({ onClick, orderList, total, setOrder, totalPrice }) {
@@ -7,8 +7,6 @@ function Cart({ onClick, orderList, total, setOrder, totalPrice }) {
   const forceUpdate = useCallback(() => updateState({}), []);
 
   function RemoveItem(product) {
-    console.log("REMOVE ITEM");
-
     const productList = orderList.find((item) => {
       console.log(item);
       return item.id === product.id;
@@ -49,17 +47,16 @@ function Cart({ onClick, orderList, total, setOrder, totalPrice }) {
                   {product.name}{" "}
                   {product.flavor
                     ? product.flavor[0].toUpperCase() +
-                      product.flavor.substr(1)
+                    product.flavor.substr(1)
                     : null}{" "}
                   {product.complement
                     ? product.complement[0].toUpperCase() +
-                      product.complement.substr(1)
+                    product.complement.substr(1)
                     : null}
                 </td>
                 <td className="td-qtd">{product.qtd}</td>
                 <td className="td-price">{product.price}</td>
               </>
-
               <td className="td-trash">
                 <button className="trash" onClick={() => RemoveItem(product)}>
                   <img className="trash-icon" src={trash} alt="deletar"></img>
@@ -70,7 +67,7 @@ function Cart({ onClick, orderList, total, setOrder, totalPrice }) {
         </tbody>
       </table>
       <div className="container-total">
-        <p>Total: {total} R$</p>
+        <p>Total: R$ {total}</p>
         <button className="order-btn" onClick={onClick}>
           Finalizar
         </button>

@@ -43,10 +43,9 @@ export function deleteOrders(id) {
 }
 
 export function updateStatusOrder(id, status) {
-  console.log(id, status)
   const body = {
-   "status": `${status}`,
-}
+    "status": `${status}`,
+  }
 
   const headers = {
     Authorization: getToken(),

@@ -1,7 +1,7 @@
 import Input from "../Inputs";
-import "./styles.modules.css";
+import "./styles.css";
 
-function Client({ setClient, setTable, client, table }) {
+function Client({ onChangeClient, onChangeTable, client, table }) {
   return (
     <>
       <Input
@@ -9,11 +9,11 @@ function Client({ setClient, setTable, client, table }) {
         type="text"
         placeholder="cliente"
         value={client}
-        onChange={(e) => setClient(e.target.value)}
+        onChange={(e) => onChangeClient(e.target.value)}
       />
       <select
         className="table"
-        onChange={(e) => setTable(Number(e.target.value))}
+        onChange={(e) => onChangeTable(Number(e.target.value))}
         value={table}
       >
         <option id="0" value="">

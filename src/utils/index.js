@@ -6,7 +6,7 @@ export const formatDateHour = (standardTime) => {
     return hour;
 }
 
-export const preparationTime = (arrivalTime, exitTime) => {
+export const preparationTime = (exitTime, arrivalTime) => {
     const createdAt = new Date(arrivalTime);
     const processedAt = new Date(exitTime);
     const preparation = differenceInMinutes(processedAt, createdAt)

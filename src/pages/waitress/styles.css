@@ -27,7 +27,6 @@
   background-color: #f75b42;
 }
 
-
 .option:hover {
   color: #f75b42;
 }
@@ -37,6 +36,12 @@
   font-size: 17px;
 }
 
+.container-orders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2%;
+}
 
 @media (min-width: 1024px) and (max-width: 2000px) {
   .section-cart {
