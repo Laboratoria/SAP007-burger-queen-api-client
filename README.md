@@ -104,6 +104,10 @@ Solução: Colocamos border-radius e espaçamos os cards
 #### História 4
 
 Julia Benedicto
+* Botão histórico não estava muito descritivo sobre o que se tratava
+Solução: Implementamos um título descritivo.
+* Quando não havia complemento ficava vazio o paragrafo (exemplo: complemento: )
+Solução: Colacamos uma condicional que a descrição do campo só aparece se tiver um complemento.
 
 ## 6. Tecnologias Utilizadas
 

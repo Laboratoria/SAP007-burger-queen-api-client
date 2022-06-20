@@ -49,7 +49,6 @@ function Hall() {
     return setInfo(() => {
       const auxInfo = { ...info };
       auxInfo[e.target.name] = e.target.value;
-      console.log(auxInfo)
       return auxInfo;
     });
   };
@@ -188,9 +187,12 @@ function Hall() {
       </section>
       <div className="logout">
         <button children="Confirmar Pedido" id="confirm" onClick={finalOrder}></button>
-        <FaSignInAlt size="26px" margin-rigth="0px" onClick={handleLogout}/>
+        <FaSignInAlt size="26px" margin-rigth="0px" onClick={handleLogout} />
       </div>
-      <button className="btnModal" onClick={() => setHistoric(true)}><FaClipboardList size="26px" /></button>
+      <div className="divModal">
+      <h3 className="textModal">Histórico</h3>
+      <button className="btnModal" onClick={() => setHistoric(true)}><FaClipboardList size="40px" /></button>
+      </div>
       {historic ? (
         <Modal onClickClose={() => setHistoric(false)}>
           <h2>Histórico</h2>

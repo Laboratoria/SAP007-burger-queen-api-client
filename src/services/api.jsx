@@ -36,7 +36,6 @@ export const logedIn = async (email, password) => {
     headers: {
       "Content-Type": "application/json",
     },
-
     body: JSON.stringify({
       email: email,
       password: password,

@@ -16,7 +16,6 @@ function Kitchen() {
     navigate("/login");
   }
 
-
   useEffect(() => {
     allOrders()
       .then((response) => response.json())
@@ -38,7 +37,6 @@ function Kitchen() {
   const orderByStatus = (item, status) => {
     updateOrder(item.id, status)
       .then((response) => {
-        console.log(response)
         if (response.status === 200) {
           const results = order.map((result) => {
             if (result.id === item.id) {
@@ -87,9 +85,9 @@ function Kitchen() {
             );
           })}
         </section>
-        <div className="logout" id="logout" onClick={handleLogout}>
+        <button className="logout" id="logout" onClick={handleLogout}>
           <FaSignInAlt size="26px" margin-rigth="0px" />
-        </div>
+        </button>
       </div>
     </body>
   );

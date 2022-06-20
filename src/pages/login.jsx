@@ -15,20 +15,22 @@ function Login() {
 
   function handleOnClick(e) {
     e.preventDefault();
-    console.log(email,password);
+    console.log(email, password);
     logedIn(email, password)
-      .then(({data,message}) => {
-        navigate(data.role === "hall" ? "/hall" : "/kitchen");
+      .then(({ data, message }) => {
+        setError(message)
+        setTimeout(() => {
+          navigate(data.role === "hall" ? "/hall" : "/kitchen");
+        }, 3000)
       })
       .catch((error) => {
-        console.log(error)
         setError(error.message)
         setTimeout(() => {
           setError("")
         }, 3000)
       }
       )
-    }
+  }
   return (
     <div className="DivForm">
       <Logo />
@@ -49,7 +51,7 @@ function Login() {
           title="A senha deve conter no mínimo 6 caracteres entre números e letras"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button children="LOGAR" type="submit" className={button.btnLogin}/>
+        <Button children="LOGAR" type="submit" className={button.btnLogin} />
         <Link to="/register" className="Hiperlink">
           Cadastre-se
         </Link>

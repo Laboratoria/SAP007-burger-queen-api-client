@@ -1,11 +1,10 @@
-import style from "./style.module.css";
+import Button from "../Button";
 import TemplateKitchen from "../TemplateKitchen";
+import { formatDateHour, preparationTime } from "../Time";
+import style from "./style.module.css";
+import button from "../Button/button.module.css";
 import { allOrders, updateOrder } from "../../services/api";
 import { useState, useEffect } from "react";
-import { formatDateHour, preparationTime } from "../Time";
-import Button from '../Button';
-import button from "../Button/button.module.css";
-
 
 const Modal = ({ isOpen, onClickClose }) => {
 
@@ -29,7 +28,6 @@ const Modal = ({ isOpen, onClickClose }) => {
   const orderByStatus = (item, status) => {
     updateOrder(item.id, status)
       .then((response) => {
-        console.log(response)
         if (response.status === 200) {
           const results = order.map((result) => {
             if (result.id === item.id) {
@@ -51,7 +49,7 @@ const Modal = ({ isOpen, onClickClose }) => {
         <button className={style.btnModal} type="button" onClick={onClickClose}>
           X
         </button>
-        <nav className='navMenu'>
+        <nav className="navMenu">
           <Button children="PRONTO" className={button.btnMenu} onClick={() => filterOrders("ready")} />
           <Button children="ENTREGUE" className={button.btnMenu} onClick={() => filterOrders("delivered")} />
         </nav>
