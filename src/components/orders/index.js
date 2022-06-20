@@ -4,7 +4,7 @@ import { formatDateHour, preparationTime } from "../../utils";
 function Order({ order, onClick }) {
   return (
     <div className="order-card">
-      <button type="button" onClick={onClick} className="status-button">
+      <button type="button" onClick={onClick} className={order.status === "Preparando" ? "status-blue" : order.status === "Pronto" || order.stauts === "Entregue" ? "status-green" : "status-brown"}>
         {order.status}
       </button>
       <ul>

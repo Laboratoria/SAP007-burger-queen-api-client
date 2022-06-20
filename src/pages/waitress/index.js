@@ -137,8 +137,16 @@ function Waitress() {
   useEffect(() => {
     getOrders().then((orders) => {
       const list = [...orders]
-      list.sort((a, b) => (b.status === "Entregue") - (a.status === "Pronto"));
+      list.sort((a, b) => {
+        if (a.status > b.status)
+          return -1;
+        if (a.status < b.status)
+          return 1
+        return 0
+      });
+
       let ready = list.filter((item) => item.status === "Pronto" || item.status === "Entregue");
+      console.log(ready)
       setOrdersReady(ready);
     });
   }, []);
