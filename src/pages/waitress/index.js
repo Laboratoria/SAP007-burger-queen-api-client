@@ -121,11 +121,13 @@ function Waitress() {
   function changeStateBreakfast() {
     setTab("breakfast");
     setHasAllDay(false);
+    setHasOrders(false);
   }
 
   function changeStateAllDay() {
     setTab("all-day");
     setHasAllDay(true);
+    setHasOrders(false);
   }
 
   function changeStateOrders() {
