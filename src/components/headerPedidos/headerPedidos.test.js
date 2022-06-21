@@ -12,11 +12,21 @@ describe("Tests for HeaderPedidos component", () => {
       name: "Dia Todo",
       onClick: () => onClick(),
     },
+    {
+      name: "Pedidos",
+      onClick: () => onClick(),
+    },
   ];
   it("should render  two li inside HeaderPedidos", () => {
     render(<HeaderPedidos links={links} />);
-    const link = screen.getByRole("listitem");
-    expect(link).toHaveLength(2);
+    const breakfast = screen.getByRole("Café da manhã");
+    const allDay = screen.getByRole("Dia Todo");
+    const orders = screen.getByRole("Pedidos");
+
+    expect(breakfast).toBeInTheDocument();
+    expect(allDay).toBeInTheDocument();
+    expect(orders).toBeInTheDocument();
+    // expect(links).toHaveLength(3);
   });
 
   // it("Should call the function by click", () => {
