@@ -1,0 +1,19 @@
+.status_main {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: dense;
+    overflow-y: visible;
+    overflow-x: hidden;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 74vh;
+    justify-content: center;
+    grid-gap: 25px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .status_main {
+        grid-template-columns: repeat(2, auto);
+    }
+}

@@ -1,3 +1,4 @@
+import React from "react";
 import styles from './ShowErrors.module.css';
 import { useState, useEffect } from 'react';
 
@@ -17,7 +18,9 @@ function ShowErrors({ changeSetError, message }) {
         return () => clearTimeout(count);
     }, [changeSetError, message]);
 
-    return <>{visible && <p className={styles.msg}>{message}</p>}</>;
+    return (
+        <>{visible && <p className={styles.msg}>{message}</p>}</>
+    )
 }
 
 export default ShowErrors;

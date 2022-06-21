@@ -1,0 +1,80 @@
+@import '../layout/variables.css';
+
+.modal {
+    background-color: #BF1736;
+    color: black;
+    width: 40rem;
+    height: 25vh;
+    position: absolute;
+    top: 45rem;
+    margin-left: 80rem;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: solid black;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.45);
+}
+
+.content_modal {
+    align-items: center;
+    font-family: 'actionManBold';
+    font-size: 3rem;
+    padding: 25px;
+    text-align: center;
+}
+
+.close_modal {
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    right: calc(-90%);
+    top: -30px;
+}
+
+.close_modal::before,
+.close_modal::after {
+    content: ' ';
+    position: absolute;
+    width: 5px;
+    height: 24px;
+    background-color: white;
+}
+
+.close_modal::before {
+    transform: rotate(45deg);
+}
+
+.close_modal::after {
+    transform: rotate(135deg);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .modal {
+        top: 50rem;
+        margin-left: 50rem;
+    }
+
+    .close_modal {
+        cursor: pointer;
+        position: relative;
+        align-items: center;
+        right: calc(-85%);
+        top: -70px;
+    }
+}
+
+/* @media (min-width: 480px) and (max-width: 767px) {
+    .modal {
+        left: 33rem;
+    }
+
+    
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+    .modal {
+        left: 33rem;
+    }
+} */

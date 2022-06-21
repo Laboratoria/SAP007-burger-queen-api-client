@@ -1,0 +1,36 @@
+.main_summary {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: dense;
+    overflow-y: visible;
+    overflow-x: hidden;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 74vh;
+    justify-content: center;
+    grid-gap: 25px;
+}
+
+.main_summary::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px black;
+    background-color: transparent;
+}
+
+.main_summary::-webkit-scrollbar{
+    width: 10px;
+    background-color: white;
+}
+
+.main_summary::-webkit-scrollbar-thumb{
+    background-color: white;
+    border: 3px solid;
+    border-radius: 10px;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main_summary {
+        grid-template-columns: repeat(2, auto);
+    }
+}

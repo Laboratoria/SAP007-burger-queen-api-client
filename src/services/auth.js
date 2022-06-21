@@ -1,4 +1,3 @@
-import { findRenderedDOMComponentWithTag } from 'react-dom/test-utils';
 import { getToken } from './token';
 
 const URL = 'https://lab-api-bq.herokuapp.com';
@@ -32,23 +31,72 @@ export const logInt = (email, password) => {
     });
 };
 
-export const getProducts = () => {
-    return fetch(`${URL}/products`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'aplication/json',
-            Authorization: getToken('token'),
-        }
-    });
+export const getProducts = async () => {
+    try {
+        const response = await fetch(`${URL}/products`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: getToken(),
+            }
+        });
+        return response.json()
+    } catch (error) {
+        return error
+    }
 };
 
-export const createOrder = (data) => {
-    return fetch(`${URL}/orders`, {
-        method: 'POST',
-        header: {
-            'Content-Type': 'aplication/json',
-            Authorization: getToken('token'),
-        },
-        body: JSON.stringify(data)
-    });
+export const createOrder = async (order) => {
+    console.log(getToken())
+    try {
+        const response = await fetch(`${URL}/orders`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': getToken(),
+            },
+            body: JSON.stringify({
+                client: order.client,
+                table: order.table,
+                products: order.products,
+            })
+        })
+        console.log(response)
+        return response.json()
+    } catch (error) {
+        return error
+    }
 };
+
+export const getAllOrders = async () => {
+    try {
+        const response = await fetch(`${URL}/orders`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: getToken()
+            }
+        })
+        return response.json()
+    } catch (error) {
+        return error
+    }
+}
+
+export const updateOrder = async (orderId, status) => {
+    try {
+        const response = await fetch(`${URL}/orders/${orderId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: getToken(),
+            },
+            body: JSON.stringify({
+                status: status
+            })
+        })
+        return response.json()
+    } catch (error) {
+        return error
+    }
+}  

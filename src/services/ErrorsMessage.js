@@ -3,7 +3,7 @@ function ErrorsMessage(resultMessage) {
         case 200:
             return 'Usuário cadastrado com sucesso';
         case 400:
-            return 'Preencha todos os campos ou dados incompletos.';
+            return 'Email/Senha não fornecido.';
         case 401:
             return 'Usuário não identificado.';
         case 403:

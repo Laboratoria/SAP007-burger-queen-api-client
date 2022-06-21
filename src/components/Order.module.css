@@ -1,0 +1,61 @@
+@import '../layout/variables.css';
+
+.order_card {
+    background-color: #91CDF2;
+    border-radius: 10px;
+    box-shadow: 4.8px 4.8px 4.8px rgb(0 0 0 / 25%);
+    list-style: none;
+    margin: 20px 0 10px 13px;
+    width: 40rem;
+    padding: 20px;
+    height: 30vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.order_card::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px black;
+    background-color: transparent;
+}
+
+.order_card::-webkit-scrollbar{
+    width: 10px;
+    background-color: white;
+}
+
+.order_card::-webkit-scrollbar-thumb{
+    background-color: white;
+    border: 3px solid;
+    border-radius: 10px;
+}
+
+.title_list {
+    margin: 20px 0 10px;
+    text-align: center;
+}
+
+.product_list {
+    padding: 0 0 10px 5px;
+}
+
+.items_list,
+.product_list,
+.title_list,
+.current_state {
+    font-size: 2rem;
+    font-family: 'actionManBold';
+}
+
+.current_state {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.container_button_status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

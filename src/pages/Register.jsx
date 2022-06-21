@@ -1,3 +1,4 @@
+import React from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import { useState } from "react";
@@ -11,51 +12,44 @@ import Logo from '../components/Logo';
 
 function Register() {
     const [name, setName] = useState();
-    const [email, setEmail] = useState();//o email é o nome que vc deu no campo do input
-    const [password, setPassword] = useState();// o valor recebido na linha 23 é enviado para dentro do useState(valor recebido)
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
     const [role, setRole] = useState();
     const [error, setError] = useState();
     const navigate = useNavigate();
 
     function registerUser(e) {
         e.preventDefault();
-        if(name.length < 3){
+        if (name.length < 3) {
             setError('Nome muito curto')
-            console.log('nome')
             return
         }
-        if(!/\S+@\S+\.\S+/.test(email)){
+        if (!/\S+@\S+\.\S+/.test(email)) {
             setError('Email inválido')
-            console.log('email')
             return
         }
-        console.log(password)
-        if(password === undefined || password.length < 6){
+        if (password === undefined || password.length < 6) {
             setError('Senha muito curta, por favor insira uma senha com mais de 6 caracteres')
-            console.log('password')
             return
         }
-        console.log('else')
         createUser(name, email, password, role)
-        .then((response) => {
-            if (response.status === 200) {
-                return response.json();
-            }
-            setError(ErrorsMessage(response));
+            .then((response) => {
+                if (response.status === 200) {
+                    return response.json();
+                }
+                setError(ErrorsMessage(response));
             })
             .then((data) => {
                 login(data.token, data.role);
-                console.log(data)
                 navigate(data.role === 'attendance' ? '/HallAttendance' : '/HallKitchen');
             })
             .catch((error) => console.log(error))
-}
+    }
     return (
-        <>
+        <main className={styles.main}>
             <h1 className={styles.form_title}>Efetuar cadastro</h1>
             <Logo customClass="logoTwo" />
             <form className={styles.form} onSubmit={createUser}>
-                {/* chamou o evento de click da função RegisterUser */}
                 <div>
                     <Input
                         customClass="input_register"
@@ -88,11 +82,13 @@ function Register() {
                     <option value='attendance'>Atendimento</option>
                     <option value='kitchen'>Cozinha</option>
                 </select>
-                <ShowErrors type="error" message={error} changeSetError={setError} />
+                <div className={styles.show_errors}>
+                    <ShowErrors type="error" message={error} changeSetError={setError} />
+                </div>
                 <Button customClass="button_register" clickFunction={registerUser} children="Efetuar Cadastro" />
                 <a className={styles.navigation} href='/Login'>Já tenho cadastro</a>
             </form>
-        </>
+        </main>
     );
 };
 

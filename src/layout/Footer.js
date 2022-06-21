@@ -1,3 +1,4 @@
+import React from "react"
 import styles from './Footer.module.css';
 
 export function Footer() {
@@ -10,11 +11,13 @@ export function Footer() {
                         href="https://github.com/Fe-Monteiro"
                         target="_blank"
                         rel="noreferrer"
+                    // eslint-disable-next-line jsx-a11y/alt-text
                     > <img className={styles.iconImage} src={require('../images/githubicon.png')} /> Fernanda Monteiro </a> e
                     <a className={styles.devNames}
                         href="https://github.com/natalieiss"
                         target="_blank"
                         rel="noreferrer"
+                    // eslint-disable-next-line jsx-a11y/alt-text
                     > <img className={styles.iconImage} src={require('../images/githubicon.png')} /> Natalie Silva </a>
                 </p>
             </footer>

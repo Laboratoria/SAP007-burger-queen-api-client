@@ -1,43 +1,46 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { timeAndDate, getPrepTime } from "../components/timeAndDate.js"
 import { getAllOrders, updateOrder } from "../services/auth";
-import { Order, OrderProduct } from "../components/Order";
+import { timeAndDate, getPrepTime } from "../components/timeAndDate";
 import Logo from '../images/Logo.png';
 import Header from "../components/Header";
 import NavStatus from "../components/NavStatus";
+import { Order, OrderProduct } from "../components/Order";
 import Modal from "../components/Modal";
-import styles from './HallKitchen.module.css';
+import styles from './HallAttendanceStatus.module.css';
 
-function HallKitchen() {
+
+function Status() {
+
     const [orders, setOrders] = useState([]);
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     useEffect(() => {
-        async function filterCommand() {
+        async function filterOrders() {
             try {
                 const response = await getAllOrders();
                 const filteredOrders = response.filter((order) => {
-                    const kitchenOrders = order.status === "pending" || order.status === "processing"
-                    return kitchenOrders
+                    return order.status === "deliver";
                 })
                 setOrders(filteredOrders);
-                const modal = filteredOrders.length === 0;
-                setIsModalVisible(modal);
+                const modal = filteredOrders.length === 0
+                setIsModalVisible(modal)
             } catch (error) {
                 return error
             }
         }
-        filterCommand();
+        filterOrders();
     })
 
     return (
         <div>
-            <Header children='Cozinha' img={Logo} alt={'Logo da Burger Heroes'} />
-            <NavStatus firstLink='/HallKitchen' nameFirstLink='A Preparar' secondLink='/Summary' nameSecondLink='Histórico' />
-            <section className={styles.main_kitchen}>
+            <Header children='Atendimento' img={Logo} alt={'Logo da Burger Heroes'} />
+            <NavStatus firstLink='/HallAttendance' nameFirstLink='Novo Pedido' secondLink='/HallAttendanceStatus' nameSecondLink='Pedidos Prontos'
+                thirdLink='/Summary' nameThirdLink='Histórico'
+            />
+            <section className={styles.status_main}>
                 {orders.map((item, index) => {
-                    const updateToDeliver = item.status === "deliver"
+                    const updateToProcessing = item.status === "deliver"
                     const infosProduct = item.Products.map((product) => {
                         return (
                             <OrderProduct
@@ -58,21 +61,20 @@ function HallKitchen() {
                             nameClient={item.client_name}
                             table={item.table}
                             createDate={timeAndDate(item.createdAt)}
-                            finished={updateToDeliver ? timeAndDate(item.processedAt) : ""}
-                            preparationTime={updateToDeliver ? getPrepTime(item.processedAt, item.createdAt) : ""}
+                            finished={updateToProcessing ? timeAndDate(item.processedAt) : ""}
+                            preparationTime={updateToProcessing ? getPrepTime(item.processedAt, item.createdAt) : ""}
                             orderProducts={infosProduct}
                             textButton={item.status}
-                            updateStatus={() => updateOrder(item.id, "processing")}
-                            readyOrder={() => updateOrder(item.id, "deliver")}
+                            readyForDelivery={() => updateOrder(item.id, "served")}
                         />
                     )
                 })}
             </section>
-            {isModalVisible ?
-                <Modal className='modalactive' onClose={() => setIsModalVisible(false)}>Não há pedidos para serem preparados</Modal> : null
+            {isModalVisible &&
+                <Modal clickFunction={() => setIsModalVisible(false)}>Não há pedidos prontos</Modal>
             }
         </div>
     )
 }
 
-export default HallKitchen;
+export default Status;

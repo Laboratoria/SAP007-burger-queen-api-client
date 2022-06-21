@@ -1,0 +1,23 @@
+.item_command{
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 20px;
+    font-size: 2rem;
+  }
+  
+  .item_name{
+    width: 15rem;
+    font-size: 2rem;
+  }
+  
+  .item_qtd{
+    display: flex;
+  }
+  
+  .number_qtd,
+  .item_price,
+  .complement {
+    margin: 0 5px 0 5px;
+    font-size: 2rem;
+  }

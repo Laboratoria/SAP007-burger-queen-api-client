@@ -9,7 +9,7 @@ describe('Login', () => {
 
     it('Should trigger a click function', () => {
         const text = 'Entrar';
-        const onClick = jest.fn(); //o que essa const ta fazendo?
+        const onClick = jest.fn();
         render(<button onClick={onClick}>{text}</button>);
 
         expect(onClick).toHaveBeenCalledTimes(0);

@@ -1,10 +1,11 @@
+import React from "react";
 import styles from "./Home.module.css"
 import Logo from "../components/Logo"
 import Navbar from '../components/Navbar'
 
-export function Home() {
+function Home() {
     return (
-        <>
+        <main className={styles.main}>
             <h1 className={styles.title}>Bem-vindo ao Burger Heroes</h1>
             <Logo customClass='logo' />
             <p className={styles.about}>Sabemos o quanto salvar o mundo é importante!
@@ -16,6 +17,8 @@ export function Home() {
                 essa hamburgueria foi criada especialmente pra você!
                 Prepare-se pois realizar seus pedidos na Burger Heroes é tão rápido quanto um estalar de dedos!</p>
             <Navbar />
-        </>
+        </main>
     )
 }
+
+export default Home;

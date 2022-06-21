@@ -1,5 +1,12 @@
 @import '../layout/variables.css';
 
+.main {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20%;
+}
+
 .form_title {
     margin-top: 5%;
     grid-column-start: span 5;
@@ -17,7 +24,7 @@
     grid-column: 4;
     grid-row-end: 3;
     justify-content: space-around;
-    height: 250px;
+    height: 350px;
     padding: 60px;
     margin-bottom: 80%;
     padding-top: 15%;
@@ -51,11 +58,19 @@ option {
     font-size: 1.5rem;
 }
 
+.show_errors {
+    width: 30rem;
+    display: flex;
+    height: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .form {
         grid-row-start: 2;
-        height: 120%;
-        width: 80%;
+        height: 350px;
+        width: 200px;
         margin-top: 70%;
     }
 }
@@ -69,7 +84,7 @@ option {
     .form {
         grid-column: 2 /span 3;
         grid-row-start: 3;
-        height: 130%;
+        height: 200%;
         padding-top: 7%;
     }
 
@@ -95,8 +110,10 @@ option {
     }
 
     .form {
-        height: 200%;
-        width: 50%;
+        height: 390%;
+        width: 180%;
+        margin-top: 5%;
+        padding: 2%;
     }
 
     .button_select {

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from 'react'; //é um hook do React muito bom para ser usado com eventos
 import { useNavigate } from "react-router-dom";
 import { logInt } from "../services/auth";
@@ -18,24 +19,26 @@ function Login() {
 
     function loginUser(e) {
         e.preventDefault();
-        //console.log(`Usuário ${email} foi cadastrado com a senha: ${password}`)
         logInt(email, password)
             .then((response) => {
                 if (response.status === 200) {
                     return response.json();
                 }
                 setError(ErrorsMessage(response));
+                return response.json()
             })
             .then((data) => {
-                login(data.token, data.role);
-                console.log(data.role)
-                navigate(data.role === 'attendance' ? '/HallAttendance' : '/HallKitchen');
+                if (!data.code) {
+                    login(data.token, data.role);
+                    navigate(data.role === 'attendance' ? '/HallAttendance' : '/HallKitchen');
+                }
+                return data
             })
             .catch((error));
     }
 
     return (
-        <>
+        <main className={styles.main}>
             <h1 className={styles.form_title}>Efetuar login</h1>
             <Logo customClass='logoTwo' />
             <form className={styles.form} onSubmit={logInt}>
@@ -55,11 +58,13 @@ function Login() {
                     placeholder='Senha'
                     handleOnChange={(e) => setPassword(e.target.value)}
                 />
-                <ShowErrors type="error" message={error} changeSetError={setError} />
+                <div className={styles.show_errors}>
+                    <ShowErrors type="error" message={error} changeSetError={setError} />
+                </div>
                 <Button customClass="button_enter" clickFunction={loginUser} type='button' children="Entrar" />
                 <a className={styles.navigation} href='/Register'>Cadastrar</a>
             </form>
-        </>
+        </main>
     )
 }
 export default Login;

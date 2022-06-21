@@ -1,0 +1,90 @@
+@import '../layout/variables.css';
+
+.main_hall_attendance {
+    display: flex;
+    flex-direction: column;
+}
+
+.container_order {
+    display: grid;
+    grid-template-columns: 64% 22%;
+    gap: 5%
+}
+
+.container_products {
+    width: 100%;
+    background-color: #8DA656;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px;
+    margin-left: 30px;
+    border-radius: 2%;
+    border: 2px solid #BF1736;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 6%;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+}
+
+.flavors {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 10px 0;
+}
+
+.command_main {
+    width: 130%;
+    background-color: #8DA656;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 10px;
+    border-radius: 2%;
+    border: 2px solid #BF1736;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'actionManBold';
+}
+
+.total {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: end;
+    margin-top: 20px;
+}
+
+.finalize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container_products {
+        margin-left: 10px;
+    }
+
+    .container_order {
+        gap: 3%
+    }
+
+    .command_main {
+        width: 145%;
+    }
+    
+}

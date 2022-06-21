@@ -1,6 +1,10 @@
 * {
+    list-style: none;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
     font-size: 6px;
 }
 
@@ -16,8 +20,7 @@
 }
 
 .root {
-    height: 100vh;
     display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
-    grid-template-rows: 20% 20% 20% 20%;
+    grid-template-rows: 95vh 5vh;
+    grid-template-columns: 1fr;
 }

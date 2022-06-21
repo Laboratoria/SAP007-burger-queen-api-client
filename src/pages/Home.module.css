@@ -1,5 +1,12 @@
 @import '../layout/variables.css';
 
+.main {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20%;
+}
+
 .title {
     margin-top: 5%;
     grid-column-start: span 5;
@@ -18,7 +25,7 @@
     font-family: 'actionManBold';
     margin-left: 10%;
     text-align: center;
-    font-size: 2.20rem;
+    font-size: 2.5rem;
 }
 
 .header {
@@ -40,7 +47,7 @@
     }
 
     .about {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         grid-column: 1/ span 5;
         grid-row-start: 3;
         margin-left: 10%;
@@ -55,11 +62,11 @@
     }
 
     .about {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         grid-column: 1/ span 3;
-        grid-row-end: 3;
+        grid-row-start: 3;
         margin-left: 3%;
         margin-right: 5%;
-        padding-top: 13%;
+        padding-top: 20%;
     }
 }
