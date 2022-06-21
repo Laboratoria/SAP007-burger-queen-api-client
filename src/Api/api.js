@@ -1,4 +1,4 @@
-import { getToken } from './localStorage.js';
+import { getToken, createTokenAndRole } from './localStorage.js';
 
 export const userLogin = async (userEmail, userPassword) => {
   const url = "https://lab-api-bq.herokuapp.com/auth";
@@ -28,5 +28,16 @@ export const userRegister = async (userName, userEmail, userPassword, userRole,)
       restaurante:"Burger Queen"
     })
   })
+  createTokenAndRole(data.token);
   return responseRegister
+}
+
+export const getProduct = () => {
+  const url = "https://lab-api-bq.herokuapp.com"
+  return fetch (`${url}/products`, {
+    method: "GET",
+    headers: {"Content-Type": "application/json",
+    Authorization: getToken("token"),
+  }
+  });
 }

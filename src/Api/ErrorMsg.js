@@ -8,8 +8,7 @@ export const ErrorAlert = (response) => {
             return "Email já cadastrado";
         case 404:
             return "Usuário não encontrado";
-        default:
-            return "Ocorreu um erro, tente novamente";             
+                  
     }
 }
 
