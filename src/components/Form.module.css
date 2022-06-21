@@ -10,7 +10,7 @@
 .form_title {
     margin-top: 5%;
     grid-column-start: span 5;
-    color: #0C0129;
+    color: var(--font-color-six);
     font-family: 'lulaBorgesNegrito';
     text-align: center;
     font-size: 5rem;
@@ -18,8 +18,8 @@
 
 .form {
     display: grid;
-    background-color: #6CA6D9;
-    border: 2px solid #BF1736;
+    background-color: var(--font-color-three);
+    border: 2px solid var(--font-color-one);
     border-radius: 10px;
     grid-column: 4;
     grid-row-end: 3;
@@ -34,7 +34,7 @@
 .button_select {
     background-color: #F2C1B6;
     border-radius: 10px;
-    border: 1px solid #BF1736;
+    border: 1px solid var(--font-color-one);
     height: 30px;
     width: 150px;
     justify-self: center;
@@ -44,11 +44,11 @@
 }
 
 .button_select:hover {
-    background-color: #BF1736;
+    background-color: var(--font-color-one);
 }
 
 .navigation {
-    color: #0C0129;
+    color: var(--font-color-six);
     align-items: center;
     justify-self: center;
     font-size: 2rem;

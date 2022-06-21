@@ -1,3 +1,5 @@
+@import '../layout/variables.css';
+
 .header {
     display: flex;
     align-items: center;
@@ -14,7 +16,8 @@
 
 .header_title {
     font-size: 5rem;
-    color: red;
+    color: var(--font-color-six);
+    font-family: 'lulaBorgesNegrito';
     align-items: center
 }
 

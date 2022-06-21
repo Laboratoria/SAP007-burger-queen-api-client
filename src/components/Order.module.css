@@ -13,17 +13,17 @@
     overflow-x: hidden;
 }
 
-.order_card::-webkit-scrollbar-track{
-    box-shadow: inset 0 0 6px black;
+.order_card::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px var(--font-color);
     background-color: transparent;
 }
 
-.order_card::-webkit-scrollbar{
+.order_card::-webkit-scrollbar {
     width: 10px;
     background-color: white;
 }
 
-.order_card::-webkit-scrollbar-thumb{
+.order_card::-webkit-scrollbar-thumb {
     background-color: white;
     border: 3px solid;
     border-radius: 10px;
@@ -47,7 +47,7 @@
 }
 
 .current_state {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;

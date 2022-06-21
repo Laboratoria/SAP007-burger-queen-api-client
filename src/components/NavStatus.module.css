@@ -5,7 +5,7 @@
     justify-content: space-around;
     margin: 0;
     list-style: none;
-    background-color: #2669BF;
+    background-color: var(--font-color-two);
     padding: 10px;
 }
 
@@ -20,5 +20,5 @@
 }
 
 .nav_link:hover {
-    background-color: #91CDF2;
+    background-color: var(--font-color-seven);
 }

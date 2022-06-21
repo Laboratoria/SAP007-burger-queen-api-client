@@ -10,7 +10,7 @@
 .title {
     margin-top: 5%;
     grid-column-start: span 5;
-    color: #0C0129;
+    color: var(--font-color-six);
     font-family: 'lulaBorgesNegrito';
     text-align: center;
     font-size: 5rem;
@@ -21,7 +21,7 @@
     grid-row-start: 4;
     grid-row-end: 5;
     align-items: center;
-    color: #0C0129;
+    color: var(--font-color-six);
     font-family: 'actionManBold';
     margin-left: 10%;
     text-align: center;

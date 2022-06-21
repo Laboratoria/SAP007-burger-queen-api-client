@@ -14,7 +14,7 @@
 }
 
 .card {
-    background-color: #91CDF2;
+    background-color: var(--font-color-seven);
     height: 90%;
     width: 20rem;
     border-radius: 20px;

@@ -1,3 +1,5 @@
+@import '../layout/variables.css';
+
 .main_summary {
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -12,17 +14,17 @@
     grid-gap: 25px;
 }
 
-.main_summary::-webkit-scrollbar-track{
-    box-shadow: inset 0 0 6px black;
+.main_summary::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px var(--font-color);
     background-color: transparent;
 }
 
-.main_summary::-webkit-scrollbar{
+.main_summary::-webkit-scrollbar {
     width: 10px;
     background-color: white;
 }
 
-.main_summary::-webkit-scrollbar-thumb{
+.main_summary::-webkit-scrollbar-thumb {
     background-color: white;
     border: 3px solid;
     border-radius: 10px;

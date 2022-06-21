@@ -2,8 +2,8 @@
 
 .navbar {
     display: grid;
-    background-color: #6CA6D9;
-    border: 2px solid #BF1736;
+    background-color: var(--font-color-three);
+    border: 2px solid var(--font-color-one);
     border-radius: 10px;
     grid-column: 4;
     grid-row-end: 3;
@@ -23,9 +23,9 @@
     justify-content: center;
     list-style: none;
     text-decoration: none;
-    color: black;
-    background-color: #D99E30;
-    border: 1px solid #BF1736;
+    color: var(--font-color);
+    background-color: var(--font-color-four);
+    border: 1px solid var(--font-color-one);
     border-radius: 5px;
     font-family: 'actionManBold';
     font-size: 2rem;
@@ -37,7 +37,7 @@
 
 .list a:hover {
     transform: scale(1.2);
-    background-color: #2669BF;
+    background-color: var(--font-color-two);
 }
 
 .item {
@@ -57,7 +57,7 @@
 
     .item {
         margin-top: 17px;
-        
+
     }
 }
 

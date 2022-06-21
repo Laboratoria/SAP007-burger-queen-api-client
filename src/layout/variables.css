@@ -1,11 +1,16 @@
 :root {
-    --background-color: #1C232E;
-    --shadow: #2F3A4B;
-    --letter: black;
-    --menu: #3C4A5F;
-    --buttons: #546B8D;
-    --main-font: 'Poiret One', cursive;
+    --font-color-one: #BF1736;
+    --font-color-two: #2669BF;
+    --font-color-three: #6CA6D9;
+    --font-color-four: #D99E30;
+    --font-color-five: #708C32;
     --font-color: black;
+    --font-color-six: #0C0129;
+    --font-color-seven: #91CDF2;
+    --font-color-eigth: #8DA656;
+
+    --main-font: 'Poiret One', cursive;
+
     --font-color-error: red;
     --font-color-success: green;
 }

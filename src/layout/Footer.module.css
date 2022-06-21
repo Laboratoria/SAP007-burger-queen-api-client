@@ -2,7 +2,7 @@
 
 .footer {
     font-family: 'lulaBorgesNegrito';
-    background-color: #D99E30;
+    background-color: var(--font-color-four);
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 5;

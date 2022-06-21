@@ -6,9 +6,9 @@
 .button_status {
     cursor: pointer;
     display: grid;
-    background-color: #708c32;
-    color: black;
-    border: 1px solid #BF1736;
+    background-color: var(--font-color-five);
+    color: var(--font-color);
+    border: 1px solid var(--font-color-one);
     border-radius: 5px;
     transform: scale(1);
     transition: 0.5s;
@@ -27,7 +27,7 @@
 .button_logout:hover,
 .button_status:hover {
     transform: scale(1.2);
-    background-color: #2669BF;
+    background-color: var(--font-color-two);
 }
 
 .button_logout {
@@ -49,7 +49,7 @@
     font-size: 2rem;
     align-items: center;
     justify-self: center;
-    background-color: #BF1736;
+    background-color: var(--font-color-one);
 }
 
 .hall_attendance_menu {
@@ -57,7 +57,7 @@
     font-family: 'lulaBorgesNegrito';
     padding: 10px;
     margin: 0 15px;
-    background-color: #D99E30;
+    background-color: var(--font-color-four);
     box-shadow: 0px 4.8px 4.8px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     border: none;
@@ -70,9 +70,9 @@
 
 .button_finalize {
     cursor: pointer;
-    background-color: #BF1736;
-    color: black;
-    border: 1px solid #BF1736;
+    background-color: var(--font-color-one);
+    color: var(--font-color);
+    border: 1px solid var(--font-color-one);
     border-radius: 5px;
     transform: scale(1);
     transition: 0.5s;
@@ -85,7 +85,7 @@
 
 .button_finalize:hover {
     transform: scale(1.2);
-    background-color: #2669BF;
+    background-color: var(--font-color-two);
 }
 
 .button_qtd {

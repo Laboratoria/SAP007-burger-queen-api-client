@@ -6,8 +6,8 @@
 .input_name_client,
 .input_number_table {
     border-radius: 10px;
-    border: 1px solid #BF1736;
-    background-color: #D99E30;
+    border: 1px solid var(--font-color-one);
+    background-color: var(--font-color-four);
     padding: 12px;
     margin: 5px;
     font-size: 2rem;
@@ -18,13 +18,13 @@
 .input_search::placeholder,
 .input_name_client::placeholder,
 .input_number_table::placeholder {
-    color: black;
+    color: var(--font-color);
     font-family: 'actionManBold';
 }
 
 .input_name_client,
 .input_number_table {
-    padding: 8px; 
+    padding: 8px;
 }
 
 .input_search {
@@ -44,6 +44,7 @@
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
+
     .input,
     .input_register {
         padding: 8px;

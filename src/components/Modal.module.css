@@ -1,8 +1,8 @@
 @import '../layout/variables.css';
 
 .modal {
-    background-color: #BF1736;
-    color: black;
+    background-color: var(--font-color-one);
+    color: var(--font-color);
     width: 40rem;
     height: 25vh;
     position: absolute;
@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    border: solid black;
+    border: solid var(--font-color);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.45);
 }
 
