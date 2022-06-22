@@ -5,13 +5,13 @@
 
 # Índice
 
-- [1. Resumo do projeto](#1-Resumo-do-Projeto-📌)
-- [2. Histórias de usuário](#2-Histórias-de-Usuário-👩🏻-👨🏻)
-- [3. Protótipo, Paleta de Cores e Tema](#3-Protótipo-Paleta-de-Cores-e-Tema-🎨)
-- [4. Testes de Usabilidade](#4-Testes-de-Usabilidade-👥)
-- [5. Aplicação em Funcionamento](#5-Aplicação-em-Funcionamento-💻)
-- [6. Tecnologias Utilizadas](#6-Tecnologias-utilizadas-:octocat:)
-- [7. Autoras](#7-Autoras-👩🏻‍💻-👩🏻‍💻)
+- [1. Resumo do projeto](#1-Resumo-do-Projeto-pushpin)
+- [2. Histórias de usuário](#2-Histórias-de-Usuário-woman-man)
+- [3. Protótipo, Paleta de Cores e Tema](#3-Protótipo-Paleta-de-Cores-e-Tema-art)
+- [4. Testes de Usabilidade](#4-Testes-de-Usabilidade-busts_in_silhouette)
+- [5. Aplicação em Funcionamento](#5-Aplicação-em-Funcionamento-computer)
+- [6. Tecnologias Utilizadas](#6-Tecnologias-utilizadas-octocat)
+- [7. Autoras](#7-Autoras-woman_technologist-woman_technologist)
 
 ---
 <div align='center'>
@@ -38,7 +38,7 @@ Credenciais de acesso:
 ---
 <div align='center'>
 
-# 1. Resumo do Projeto 📌
+# 1. Resumo do Projeto :pushpin:
 </div>
 
 Um restaurante de hambúrgueres necessita uma
@@ -67,7 +67,7 @@ O projeto foi realizado em 6 sprints utilizando as metodologias ágeis SCRUM e K
 
 <div align='center'>
 
-# 2. Histórias de Usuário 👩🏻👨🏻
+# 2. Histórias de Usuário :woman: :man:
 </div>
 
 <div align='center'>
@@ -78,7 +78,7 @@ O projeto foi realizado em 6 sprints utilizando as metodologias ágeis SCRUM e K
 
 <div align='center'>
 
-# 3. Protótipo, Paleta de Cores e Tema 🎨
+# 3. Protótipo, Paleta de Cores e Tema :art:
 </div>
 
 O protótipo, disponível [neste link](https://www.figma.com/file/1lObcDyrzTJ3JQwJ3BXkdf/Burguer-Queen?node-id=0%3A1), foi desenvolvido pensando em conceitos importantes para aplicações web como tipografia, hierarquia e contraste.
@@ -94,7 +94,7 @@ O tema e a paleta de cores foram inpirados no filme Tá Chovendo Hambúrguer, de
 
 <div align='center'>
 
-# 4. Testes de Usabilidade 👥
+# 4. Testes de Usabilidade :busts_in_silhouette:
 </div>
 
 Durante o desenvolvimento do projeto, foram realizados testes de usabilidade com usuários no intuito de analisar a experiência do usuário com a aplicação. Com base nos feedbacks dos testes, foram implementadas as seguintes soluções:
@@ -107,7 +107,7 @@ Durante o desenvolvimento do projeto, foram realizados testes de usabilidade com
 
 <div align='center'>
 
-# 5. Aplicação em Funcionamento 💻
+# 5. Aplicação em Funcionamento :computer:
 
 <img width=650px src="./src/Images/aplicacao.gif">
 
@@ -137,7 +137,7 @@ Durante o desenvolvimento do projeto, foram realizados testes de usabilidade com
 
 <div align='center'>
 
-# 7. Autoras 👩🏻‍💻👩🏻‍💻
+# 7. Autoras :woman_technologist: :woman_technologist:
 </div>
 
 # Keila Hadama
