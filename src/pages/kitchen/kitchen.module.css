@@ -1,0 +1,12 @@
+.section{
+    display: flex;
+    justify-content: center;
+}
+
+.welcome{
+    color: #ffff; 
+}
+
+.text{
+    color: #ffff;
+}

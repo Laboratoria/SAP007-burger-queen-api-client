@@ -1,5 +1,6 @@
-const mainUrl = "lab-api-bq.herokuapp.com";
-const urlUsers = `${mainUrl}/users/`;
+const mainUrl = "https://lab-api-bq.herokuapp.com";
+const urlUsers = `${mainUrl}/users`;
+const urlAuth = `${mainUrl}/auth`;
 const headers = { "Content-Type": "application/json" };
 
 export const createUser = (user) => {
@@ -13,7 +14,22 @@ export const createUser = (user) => {
             role: user.role,
             restaurant: "Five Starts"
         })
-    }
+    })
+}
 
-    )
-} 
+export const userLogin = async (user) => {
+    try {
+        const res = await fetch(urlAuth, {
+            method: "POST",
+            headers,
+            body: JSON.stringify({
+                email: user.email,
+                password: user.password,
+            })
+        })
+
+        return res
+    } catch (error) {
+        return error
+    }
+}

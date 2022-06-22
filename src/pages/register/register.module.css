@@ -4,6 +4,10 @@
     width: 5%;
     color: #ffff;
 }
+.msgError{
+    color: red;
+    font-size: 20px;
+}
 
 .formWrapper{
     display: flex;
