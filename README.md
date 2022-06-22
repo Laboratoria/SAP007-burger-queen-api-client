@@ -63,6 +63,7 @@ tela_, e como cada mudança no estado vai refletir na interface.
 
 O projeto foi realizado em 6 sprints utilizando as metodologias ágeis SCRUM e KANBAN, por meio da plataforma [Trello](https://trello.com/b/oGsYEhKx).
 
+
 ---
 
 <div align='center'>
@@ -149,3 +150,12 @@ Durante o desenvolvimento do projeto, foram realizados testes de usabilidade com
 
 - [LinkedIn](https://www.linkedin.com/in/leticiaantunes95/)
 - E-mail: leticiaantunes95@outlook.com
+
+---
+
+<div align='center'>
+
+## Obrigada pela visita, volte sempre! :grinning:
+
+<img width=500px src="./src/Images/GIF_Tá_Chovendo_Hamburguer2.gif">
+</div>
