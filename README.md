@@ -8,6 +8,7 @@
 Aplicativo web voltado para gerenciamento interno de pedidos e comandas do restaurante Tá Chovendo Hambúrguer. O usuário pode realizar ações como atendente anotando pedidos, mandando para preparo e servindo os pedidos prontos da cozinha ou como cozinheiro vizualizando pedidos a serem feitos, preparando e atualizando o status dos pedidos.
 
 <div align='center'>
+
 🔗 [Link da aplicação](https://sap-007-burger-queen-api-client.vercel.app/) 🔗
 
 Credenciais de acesso:
