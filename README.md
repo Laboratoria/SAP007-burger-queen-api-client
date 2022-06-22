@@ -157,5 +157,5 @@ Durante o desenvolvimento do projeto, foram realizados testes de usabilidade com
 
 ## Obrigada pela visita, volte sempre! :grinning:
 
-<img width=650px src="./src/Images/GIF_Tá_Chovendo_Hamburguer2.gif">
+<img src="./src/Images/GIF_Tá_Chovendo_Hamburguer2.gif">
 </div>
