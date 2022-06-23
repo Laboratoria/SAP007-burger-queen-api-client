@@ -1,0 +1,14 @@
+@import '../layout/variables.css';
+
+.thanos_img {
+    width: 100%;
+    height: 50%;
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'actionManBold';
+    font-size: 300%;
+}
