@@ -9,7 +9,7 @@ const Navbar = () => {
             <div className={styles.list}>
                 <NavLink className={styles.item} to="/Login" >Atendimento</NavLink>
                 <NavLink className={styles.item} to="/Login">Cozinha</NavLink>
-                <NavLink className={styles.item}to="/Login">Área do cliente</NavLink>
+                <NavLink className={styles.item} to="/HallClient">Área do cliente</NavLink>
             </div>
         </nav>
     );
