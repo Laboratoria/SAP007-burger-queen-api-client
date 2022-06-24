@@ -55,7 +55,7 @@ function Register() {
                         customClass="input_register"
                         type="text"
                         placeholder="Nome"
-                        handleOnChange={(e) => setName(e.target.value)} //cada letra que digitar modifica o valor no useState() e usou o setName para atribuir o valor o que é digitado aqui é enviado junto com o evento click
+                        handleOnChange={(e) => setName(e.target.value)}
                         required
                     />
                 </div>

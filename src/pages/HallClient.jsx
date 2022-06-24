@@ -4,8 +4,6 @@ import { removeLogin } from "../services/token";
 import Button from '../components/Button';
 import styles from "./HallClient.module.css"
 
-//import Login from "./Login"
-
 function HallClient() {
 
     const navigate = useNavigate();
