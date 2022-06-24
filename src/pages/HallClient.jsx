@@ -16,13 +16,13 @@ function HallClient() {
 
     return (
         <>
-            <h1 className={styles.description}>Página em construção.</h1>
-            <div>
+            <main className={styles.img_content}>
                 <img src={require('../images/thanoshand.png')} alt="thanos-hand" className={styles.thanos_img} />
-            </div>
-            <div>
-                <Button customClass='button_logout' children='Sair' clickFunction={Logout} />
-            </div>
+                <h1 className={styles.description}>Ops... O Thanos destruiu esta página, estamos reconstruindo.</h1>
+                <div>
+                    <Button customClass='button_logout' children='Sair' clickFunction={Logout} />
+                </div>
+            </main>
         </>
     )
 }

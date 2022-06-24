@@ -112,6 +112,10 @@ Também serão implementados novos testes assíncronos e unitários.
 
 ## Com o auxílio do figma também criamos um protótipo interativo para ser utilizado nos testes iniciais de usabilidade.
 
+<p align="center">
+  <img width="600" height="337" src="./src/assets/readme/demonstracaoteste.gif"/>
+</p>
+
 ---
 ## 9. DEMONSTRAÇÕES DA APLICAÇÃO WEB
 

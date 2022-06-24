@@ -62,7 +62,7 @@ function HallAttendance() {
             return error
         }
     }
-    const getChange = (e) => { //pegando os valores do input name e table
+    const getChange = (e) => {
         setClientInf({
             ...clientInf,
             [e.target.id]: e.target.value

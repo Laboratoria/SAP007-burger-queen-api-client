@@ -32,8 +32,9 @@
 
 .button_logout {
     cursor: pointer;
-    position: relative;
-    left: 200%;
+    position: absolute;
+    top: 2%;
+    right: 10%
 }
 
 .button_add {
@@ -107,11 +108,5 @@
         height: 3.2rem;
         width: 80%;
         margin-bottom: 2px;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .button_logout {
-        left: 100%;
     }
 }
