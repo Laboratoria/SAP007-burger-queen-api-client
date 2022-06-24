@@ -36,7 +36,7 @@ Na aplicação haverá uma aba de histórico de pedidos onde os mesmos permanece
 
 Clique [aqui](https://natalieiss.github.io/Terceiro-Projeto-Social-Network) para converir o resultado da aplicação. 
 
-Se preferir não se cadastrar nesta aplicação web, será possível realizar o _login_ através dos _e-mails_ e senhas previamente cadastradas na aplicação:
+Se preferir não se cadastrar nesta aplicação web, será possível realizar o _login_ através dos _e-mails_ e senhas previamente cadastrados:
 
 Para acessar o atendimento - Email: atendimento@burgerheroes.com Senha: 123456
 <p>
