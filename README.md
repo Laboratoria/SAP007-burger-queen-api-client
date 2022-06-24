@@ -39,7 +39,9 @@ Clique [aqui](https://natalieiss.github.io/Terceiro-Projeto-Social-Network) para
 Se preferir não se cadastrar será possível realizar o _login_ na aplicação através dos _e-mails_ e senhas já cadastradas na aplicação:
 
 Para acessar o atendimento - Email: atendimento@burgerheroes.com Senha: 123456
+<p>
 Para acessar cozinha - Email: cozinha@burgerheroes.com Senha: 123456
+</p>
 
 ---
 ## 3. Futuro do Projeto
