@@ -120,7 +120,7 @@ function HallAttendance() {
 
     async function getSubmit() {
         const orderData = {
-            client: clientInf.name, //inserindo o nome do cliente e mesa nos dados do pedido
+            client: clientInf.name,
             table: clientInf.table,
             products: orderList.map((item) => {
                 const infosProduct = {

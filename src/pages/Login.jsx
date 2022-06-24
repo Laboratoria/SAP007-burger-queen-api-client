@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from 'react'; //é um hook do React muito bom para ser usado com eventos
+import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { logInt } from "../services/auth";
 import { login } from '../services/token';
