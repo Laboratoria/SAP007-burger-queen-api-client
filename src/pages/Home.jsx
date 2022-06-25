@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar'
 function Home() {
     return (
         <main className={styles.main}>
-            <h1 className={styles.title}>Bem-vindo ao Burger Heroes</h1>
+            <h1 className={styles.title}>Bem-vinde ao Burger Heroes</h1>
             <Logo customClass='logo' />
             <p className={styles.about}>Sabemos o quanto salvar o mundo é importante!
                 Por isso este app otimiza o atendimento dos super heróis do nosso planeta.
