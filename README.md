@@ -48,9 +48,9 @@ Para acessar cozinha - Email: cozinha@burgerheroes.com Senha: 123456
 
 Para as próximas implementações (v2.0) iremos melhorar a segurança de nossos usuários acrescentando uma Política de Privacidade e Cookies bem como um termo de usuário para melhor atender ao disposto na Lei Geral de Proteção de Dados Pessoais (LGPD). 
 Pensando em um modelo futurista será criado um ambiente exclusivo para cadastro, _login_ e senha do próprio cliente. Desta forma, será possível que o cliente escolha se quer realizar o seu proprio atendimento.
-Esta projeto também será refatorado. Será acrescentada a responsividade da aplicação para celulares bem como serão implementadas melhorias na estilização através do CSS.
+Esta projeto também será refatorado. Será aprimorada a responsividade para os tablets e iremos acrescenta-la para celulares. Serão implementadas melhorias na estilização através do CSS.
 Também serão implementados novos testes assíncronos e unitários.
-Acrescentaremos também novos recursos para melhorar a acessibilidade da aplicação.
+Acrescentaremos também novos recursos para melhorar a acessibilidade na aplicação.
 
 
 ---
