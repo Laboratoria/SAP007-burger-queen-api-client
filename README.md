@@ -27,7 +27,7 @@ Quarto projeto desenvolvido no bootcamp de front-end da Laboratoria. Neste proje
 ## 2. Resumo do projeto
 
 A Burger Heroes sabe o quanto salvar o mundo é importante, sendo assim, fornece aos seus clientes, atendimento e cozinha uma forma rápida e fácil de realizar pedidos, gerenciá-los e prepará-los.
-Para a Burger Heroes os heróis são os proprios clientes. Ela utiliza produtos e utensilhos que não agridem o meio ambiente, é uma verdadeira empresa _eco-friendly_. Apesar de adotar uma referencia aos heróis da Marvel e DC, acredita que qualquer pessoa que opte por utilizar produtos _eco friendly_ são os verdadeiros heróis do planeta. 
+Para a Burger Heroes os heróis são os próprios clientes. Ela utiliza produtos e utensílios que não agridem o meio ambiente, é uma verdadeira empresa _eco-friendly_. Apesar de adotar uma referencia aos heróis da Marvel e DC, acredita que qualquer pessoa que opte por utilizar produtos _eco friendly_ são os verdadeiros heróis do planeta. 
 A Burger Heroes é uma empresa fictícia mas que a grande maioria da população já almeja para o futuro onde empreender também significa cuidar do meio ambiente. 
 Por meio desta aplicação web é possível que o atendimento adicione pedidos a mesa do cliente, inserindo o numero e o nome da pessoa que está atendendo e assim, envia-los para a cozinha.
 A cozinha recebe o pedido enviado pelo atendimento para inciar seu preparo e, logo que o pedido estiver pronto, envia-lo de volta ao atendimento para que seja realizada a entrega.
