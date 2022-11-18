@@ -16,7 +16,6 @@ jobs:
     steps:
     # Setup do Job
     - uses: actions/checkout@v2
-    - uses: cypress-io/github-action@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
