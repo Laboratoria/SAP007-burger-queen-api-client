@@ -27,7 +27,8 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:cypress/recommended"
     ]
   },
   "browserslist": {
@@ -41,5 +42,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@argos-ci/cli": "^0.2.5",
+    "@argos-ci/cypress": "^0.0.5",
+    "cypress": "^11.1.0",
+    "install": "^0.13.0"
   }
 }
