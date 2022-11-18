@@ -5,7 +5,7 @@ name: Testes Visuais Hora de Burger
 
 on:
   push:
-    branches: [ feature/testes-visuais ]
+    branches: [ main ]
 
 jobs:
   build:
