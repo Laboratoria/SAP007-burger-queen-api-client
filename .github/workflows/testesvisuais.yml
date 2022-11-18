@@ -25,5 +25,6 @@ jobs:
     - run: | 
         cd ./SAP007-burger-queen-api-client
         yarn install
+        yarn start
         yarn run cypress:open
         ls -la
