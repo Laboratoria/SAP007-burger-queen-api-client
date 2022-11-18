@@ -1,0 +1,30 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Testes Visuais Hora de Burger
+
+on:
+  push:
+    branches: [ feature/testes-visuais ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+    steps:
+    # Setup do Job
+    - uses: actions/checkout@v2
+    - uses: cypress-io/github-action@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    # ./Setup do Job
+    - run: ls -la
+    - run: | 
+        cd ./SAP007-burger-queen-api-client
+        yarn install
+        yarn run cypress:open
+        ls -la
